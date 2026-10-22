@@ -1,0 +1,164 @@
+{
+  "$comment": "Sidecar layout_config for Test 1 (3000 kVA, 2 levels). Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19). Ten riser stacks: two named, eight via floor_band_designations (OFF-009).",
+  "sheet_roles": {
+    "S1": "normal"
+  },
+  "sheet_skips": {},
+  "floor_order": {
+    "S1": [
+      "2",
+      "1"
+    ]
+  },
+  "floor_anchors": {
+    "1": "4L-1-A",
+    "2": "4L-2-A"
+  },
+  "floor_anchors_mechanical": {
+    "1": "4M-1-A",
+    "2": "4M-2-A"
+  },
+  "floor_band_designations": [
+    "4L-1-B",
+    "4L-2-B",
+    "4L-1-C",
+    "4L-2-C",
+    "4L-1-D",
+    "4L-2-D",
+    "4L-1-E",
+    "4L-2-E",
+    "2P-1-A",
+    "2P-2-A",
+    "4M-1-B",
+    "4M-2-B",
+    "2P-1-B",
+    "2P-2-B",
+    "4M-1-C",
+    "4M-2-C"
+  ],
+  "level_map": {
+    "4L-1-A": "1",
+    "4L-2-A": "2",
+    "4L-1-B": "1",
+    "4L-2-B": "2",
+    "4L-1-C": "1",
+    "4L-2-C": "2",
+    "4L-1-D": "1",
+    "4L-2-D": "2",
+    "4L-1-E": "1",
+    "4L-2-E": "2",
+    "4M-1-A": "1",
+    "4M-2-A": "2",
+    "2P-1-A": "1",
+    "2P-2-A": "2",
+    "4M-1-B": "1",
+    "4M-2-B": "2",
+    "2P-1-B": "1",
+    "2P-2-B": "2",
+    "4M-1-C": "1",
+    "4M-2-C": "2"
+  },
+  "level_order": [
+    "2",
+    "1"
+  ],
+  "ats_xoffset_overrides": {},
+  "riser_step_standard": 650,
+  "subfeed_max_depth": 3,
+  "subfeed_start_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_src_types": [
+    "L2-4"
+  ],
+  "subfeed_dst_types": [
+    "L2-4"
+  ],
+  "subfeed_straighten": [
+    "F-303",
+    "F-305",
+    "F-307",
+    "F-309",
+    "F-311",
+    "F-313",
+    "F-316",
+    "F-318",
+    "F-321",
+    "F-323"
+  ],
+  "s2_level_line_pitch": {},
+  "s2_shift_delta": {},
+  "subfeed_midy_nudge": {},
+  "a1_tag_placement": {
+    "F-302": {
+      "side": "right"
+    },
+    "F-303": {
+      "side": "right"
+    },
+    "F-304": {
+      "side": "right"
+    },
+    "F-305": {
+      "side": "right"
+    },
+    "F-306": {
+      "side": "right"
+    },
+    "F-307": {
+      "side": "right"
+    },
+    "F-308": {
+      "side": "right"
+    },
+    "F-309": {
+      "side": "right"
+    },
+    "F-310": {
+      "side": "right"
+    },
+    "F-311": {
+      "side": "right"
+    },
+    "F-312": {
+      "side": "right"
+    },
+    "F-313": {
+      "side": "right"
+    },
+    "F-314": {
+      "side": "right"
+    },
+    "F-315": {
+      "side": "right"
+    },
+    "F-316": {
+      "side": "right"
+    },
+    "F-317": {
+      "side": "right"
+    },
+    "F-318": {
+      "side": "right"
+    },
+    "F-319": {
+      "side": "right"
+    },
+    "F-320": {
+      "side": "right"
+    },
+    "F-321": {
+      "side": "right"
+    },
+    "F-322": {
+      "side": "right"
+    },
+    "F-323": {
+      "side": "right"
+    }
+  },
+  "a3_text_placement": {},
+  "fc_pennant_placement": {},
+  "fc_pennant_y_nudges": {}
+}

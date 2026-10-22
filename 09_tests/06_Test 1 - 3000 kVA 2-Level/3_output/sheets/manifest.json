@@ -1,0 +1,55 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/06_Test 1 - 3000 kVA 2-Level/2_build/test1_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-22T03:24:22.413Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "test1_S1_dark.svg",
+      "png": "test1_S1_dark.png",
+      "png_width": 3524,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": -634,
+        "y": 3388,
+        "w": 3524,
+        "h": 1702
+      },
+      "coverage": {
+        "rendered": 104,
+        "total": 104,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "test1_S1_light.svg",
+      "png": "test1_S1_light.png",
+      "png_width": 3524,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": -634,
+        "y": 3388,
+        "w": 3524,
+        "h": 1702
+      },
+      "coverage": {
+        "rendered": 104,
+        "total": 104,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

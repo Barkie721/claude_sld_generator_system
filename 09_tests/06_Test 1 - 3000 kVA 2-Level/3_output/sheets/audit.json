@@ -1,0 +1,20 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/06_Test 1 - 3000 kVA 2-Level/2_build/test1_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-22T03:24:23.388Z",
+  "sheets": [
+    {
+      "ok": true,
+      "sheetId": "S1",
+      "counts": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 0,
+        "dropped_entity": 0
+      },
+      "findings": []
+    }
+  ]
+}

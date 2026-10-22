@@ -1,0 +1,3068 @@
+{
+  "$schema": "sld_topology/v1",
+  "metadata": {
+    "schema_version": "1.0.0",
+    "project_name": "Test 1 — 3000 kVA Service, 2 Levels",
+    "created_date": "2026-10-22",
+    "slug": "test1",
+    "heading": "Test 1 — 3000 kVA",
+    "facts": [
+      "3000 kVA service, 480Y/277V 3PH 4W, 4000A GFP main",
+      "10 feeders — 5 lighting, 2 power (150 kVA step-down), 3 mechanical",
+      "2 storeys — every branch a two-level riser, A-7 level lines on S1"
+    ],
+    "created_by": "AI Compositor",
+    "checked_by": null,
+    "revised_date": null,
+    "nec_edition": "2023",
+    "sheet_template": "30x42",
+    "px_per_inch": 96,
+    "data_layer_versions": {
+      "sld_sheet_templates": "V1_0_0",
+      "feeder_schedule": "V1_0_0",
+      "3_phase_transformer_feeder_schedule": "V1_0_0",
+      "transformer_impedance": "V1_0_0",
+      "equipment_designation_legend": "V1_0_0",
+      "nec_standard_ratings": "V1_0_0"
+    },
+    "compositor_halts": [
+      {
+        "id": "HALT-001",
+        "topic": "Utility available fault current",
+        "text": "COMPOSITOR_HALT: utility available fault current not provided (T3-EOR). No available_fc anywhere in this topology, therefore no A-4 fault-current tags are placed and the DV-4 bus-bracing / AIC check cannot run. Switchboard and panelboard AIC ratings are unset pending this value. Affects sw-201, d-301, r-391, r-392.",
+        "nec_reference": "NEC 110.9 / 110.24",
+        "blocks": "A-4 tags · DV-4 bus bracing / AIC · switchboard + panelboard AIC ratings"
+      },
+      {
+        "id": "HALT-002",
+        "topic": "Utility transformer impedance (%Z, X/R)",
+        "text": "COMPOSITOR_HALT: utility transformer impedance (%Z, X/R) is a utility-provided nameplate value. transformer_impedance_V1_0_0.json covers dry-type distribution units only and has no 3000 kVA row, so pct_z / x_over_r on d-301 are left null rather than fabricated. Affects d-301.",
+        "nec_reference": null,
+        "blocks": "Fault-current study at the service entrance"
+      },
+      {
+        "id": "HALT-003",
+        "topic": "Feeder distances",
+        "text": "COMPOSITOR_HALT: feeder distances not provided (T3-EOR). No voltage-drop calculation performed; voltage_drop_pct is absent on every R-1 and no A-5 tags are placed. Affects every R-1 in this topology.",
+        "nec_reference": "NEC 210.19(A) IN / 215.2(A)(1) IN",
+        "blocks": "Voltage-drop calculation · A-5 tags"
+      }
+    ],
+    "compositor_notes": [
+      {
+        "id": "NOTE-001",
+        "topic": "Service voltage, configuration and main",
+        "text": "480Y/277V 3PH 4W assumed. FLA at 3000 kVA = 3,000,000 / (480 x 1.732) = 3608 A, so the main is the next standard rating above it: 4000AF / 4000AT LSIG with GFP (NEC 240.6(A), 230.95). Main and secondary bus 4000 A. Service lateral tag 40004 (15 sets 4\" C, (4)500 AL + 500 AL GND).",
+        "nec_reference": "NEC 230.95 / 240.6(A)"
+      },
+      {
+        "id": "NOTE-002",
+        "topic": "Occupancy and levels",
+        "text": "Commercial occupancy assumed, 2 storeys, electrical room on Level 1, one normal-power sheet. A-7 level lines on Levels 1 and 2.",
+        "nec_reference": null
+      },
+      {
+        "id": "NOTE-003",
+        "topic": "Branch interpretation",
+        "text": "\"5 lighting, 2 power, 3 mech branches\" is taken as ten switchboard feeder breakers, each serving a two-level riser: a Level-1 head panel and a Level-2 panel sub-fed from it. Upper-floor OCPD is internal to the Level-1 panel per its own schedule. Branches: CB-01 250AF/225AT -> 4L-1-A -> 4L-2-A (lighting); CB-02 250AF/225AT -> 4L-1-B -> 4L-2-B (lighting); CB-03 250AF/225AT -> 4L-1-C -> 4L-2-C (lighting); CB-04 250AF/225AT -> 4L-1-D -> 4L-2-D (lighting); CB-05 250AF/225AT -> 4L-1-E -> 4L-2-E (lighting); CB-06 400AF/400AT -> 4M-1-A -> 4M-2-A (mechanical); CB-07 400AF/250AT -> 2P-1-A -> 2P-2-A (power); CB-08 400AF/400AT -> 4M-1-B -> 4M-2-B (mechanical); CB-09 400AF/250AT -> 2P-1-B -> 2P-2-B (power); CB-10 400AF/400AT -> 4M-1-C -> 4M-2-C (mechanical).",
+        "nec_reference": null
+      },
+      {
+        "id": "NOTE-004",
+        "topic": "Panel and feeder sizing",
+        "text": "No connected-load schedule was provided, so every panel rating is a default size, not a calculation. Lighting 225 A MLO (L1, tag 2254) / 100 A MLO (L2, tag 1004) at 480Y/277V; mechanical 400 A MLO (L1, tag 4004) / 225 A MLO (L2, tag 2254) at 480Y/277V; power via 150 kVA 480D-208Y/120V step-down, 500 A MCB (L1) / 225 A MLO (L2). Sum of feeder trips 2825 A against a 4000 A bus.",
+        "nec_reference": null
+      },
+      {
+        "id": "NOTE-005",
+        "topic": "150 kVA transformer protection",
+        "text": "Primary OCPD 250 A (transformer schedule tag 2503) in the switchboard; secondary OCPD 500 A (tag 5004T) in the 2P-1-x panel main, which protects the secondary conductors per NEC 240.21(C). %Z 4.35 / X-R 2.95 are transformer_impedance midpoints.",
+        "nec_reference": "NEC 240.21(C) / 450.3(B)"
+      },
+      {
+        "id": "NOTE-006",
+        "topic": "No fire pump, generator, ATS or SPD",
+        "text": "None stated and none defaulted in. If a fire pump is added it must be tapped ahead of the main disconnect per NEC 695.4(B); that is non-negotiable.",
+        "nec_reference": "NEC 695.4(B)"
+      }
+    ]
+  },
+  "sheets": [
+    {
+      "sheet_id": "S1",
+      "sheet_number": "E-501",
+      "title": "MAIN SINGLE-LINE DIAGRAM — NORMAL POWER"
+    }
+  ],
+  "devices": [
+    {
+      "id": "d-301",
+      "node_type": "L0-1",
+      "designation": "UTILITY-XFMR",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva_rating": 3000,
+        "primary_voltage": "13.2kV",
+        "secondary_voltage": "480Y/277V",
+        "phases": 3,
+        "wires": 4
+      },
+      "calc_fields": {
+        "pct_z": null,
+        "x_over_r": null
+      }
+    },
+    {
+      "id": "d-302",
+      "node_type": "L1-4",
+      "designation": "UTIL-MTR",
+      "sheet_id": "S1",
+      "data_fields": {
+        "meter_type": "utility"
+      }
+    },
+    {
+      "id": "d-303",
+      "node_type": "L1-1",
+      "designation": "MAIN-GFP",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 4000,
+        "at": 4000,
+        "poles": 3,
+        "trip_type": "LSIG"
+      }
+    },
+    {
+      "id": "d-304",
+      "node_type": "L1-3",
+      "designation": "NG-BOND",
+      "sheet_id": "S1",
+      "data_fields": {
+        "sds": "service_entrance"
+      }
+    },
+    {
+      "id": "d-305",
+      "node_type": "L2-1",
+      "designation": "CB-01",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 250,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-306",
+      "node_type": "L2-4",
+      "designation": "4L-1-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-307",
+      "node_type": "L2-4",
+      "designation": "4L-2-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "100A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-308",
+      "node_type": "L2-1",
+      "designation": "CB-02",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 250,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-309",
+      "node_type": "L2-4",
+      "designation": "4L-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-310",
+      "node_type": "L2-4",
+      "designation": "4L-2-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "100A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-311",
+      "node_type": "L2-1",
+      "designation": "CB-03",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 250,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-312",
+      "node_type": "L2-4",
+      "designation": "4L-1-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-313",
+      "node_type": "L2-4",
+      "designation": "4L-2-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "100A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-314",
+      "node_type": "L2-1",
+      "designation": "CB-04",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 250,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-315",
+      "node_type": "L2-4",
+      "designation": "4L-1-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-316",
+      "node_type": "L2-4",
+      "designation": "4L-2-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "100A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-317",
+      "node_type": "L2-1",
+      "designation": "CB-05",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 250,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-318",
+      "node_type": "L2-4",
+      "designation": "4L-1-E",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-319",
+      "node_type": "L2-4",
+      "designation": "4L-2-E",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "100A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-320",
+      "node_type": "L2-1",
+      "designation": "CB-06",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-321",
+      "node_type": "L2-4",
+      "designation": "4M-1-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-322",
+      "node_type": "L2-4",
+      "designation": "4M-2-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-323",
+      "node_type": "L2-1",
+      "designation": "CB-07",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 250,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-324",
+      "node_type": "L2-2",
+      "designation": "4T-1-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 150,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.35,
+        "x_over_r": 2.95
+      }
+    },
+    {
+      "id": "d-325",
+      "node_type": "L2-4",
+      "designation": "2P-1-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "500A",
+        "voltage": "208Y/120V",
+        "mcb": true
+      }
+    },
+    {
+      "id": "d-326",
+      "node_type": "L2-4",
+      "designation": "2P-2-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-327",
+      "node_type": "L2-1",
+      "designation": "CB-08",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-328",
+      "node_type": "L2-4",
+      "designation": "4M-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-329",
+      "node_type": "L2-4",
+      "designation": "4M-2-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-330",
+      "node_type": "L2-1",
+      "designation": "CB-09",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 250,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-331",
+      "node_type": "L2-2",
+      "designation": "4T-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 150,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.35,
+        "x_over_r": 2.95
+      }
+    },
+    {
+      "id": "d-332",
+      "node_type": "L2-4",
+      "designation": "2P-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "500A",
+        "voltage": "208Y/120V",
+        "mcb": true
+      }
+    },
+    {
+      "id": "d-333",
+      "node_type": "L2-4",
+      "designation": "2P-2-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-334",
+      "node_type": "L2-1",
+      "designation": "CB-10",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-335",
+      "node_type": "L2-4",
+      "designation": "4M-1-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-336",
+      "node_type": "L2-4",
+      "designation": "4M-2-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    }
+  ],
+  "routed_elements": [
+    {
+      "id": "r-301",
+      "edge_type": "R-1",
+      "designation": "F-301",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-301",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-303",
+        "port": "line_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {
+        "is_service_entrance": true
+      },
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "500",
+        "ground_material": "AL",
+        "conduit_type": "EMT",
+        "conduit_size": "4\"",
+        "num_sets": 15
+      },
+      "annotation_ids": [
+        "a-601"
+      ]
+    },
+    {
+      "id": "r-302",
+      "edge_type": "R-1",
+      "designation": "F-302",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-305",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-306",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-602",
+        "a-603"
+      ]
+    },
+    {
+      "id": "r-303",
+      "edge_type": "R-1",
+      "designation": "F-303",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-306",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-307",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "1/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "1/0",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-604",
+        "a-605"
+      ]
+    },
+    {
+      "id": "r-304",
+      "edge_type": "R-1",
+      "designation": "F-304",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-308",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-309",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-606",
+        "a-607"
+      ]
+    },
+    {
+      "id": "r-305",
+      "edge_type": "R-1",
+      "designation": "F-305",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-309",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-310",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "1/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "1/0",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-608",
+        "a-609"
+      ]
+    },
+    {
+      "id": "r-306",
+      "edge_type": "R-1",
+      "designation": "F-306",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-311",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-312",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-610",
+        "a-611"
+      ]
+    },
+    {
+      "id": "r-307",
+      "edge_type": "R-1",
+      "designation": "F-307",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-312",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-313",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "1/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "1/0",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-612",
+        "a-613"
+      ]
+    },
+    {
+      "id": "r-308",
+      "edge_type": "R-1",
+      "designation": "F-308",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-314",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-315",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-614",
+        "a-615"
+      ]
+    },
+    {
+      "id": "r-309",
+      "edge_type": "R-1",
+      "designation": "F-309",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-315",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-316",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "1/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "1/0",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-616",
+        "a-617"
+      ]
+    },
+    {
+      "id": "r-310",
+      "edge_type": "R-1",
+      "designation": "F-310",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-317",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-318",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-618",
+        "a-619"
+      ]
+    },
+    {
+      "id": "r-311",
+      "edge_type": "R-1",
+      "designation": "F-311",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-318",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-319",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "1/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "1/0",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-620",
+        "a-621"
+      ]
+    },
+    {
+      "id": "r-312",
+      "edge_type": "R-1",
+      "designation": "F-312",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-320",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-321",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-622",
+        "a-623"
+      ]
+    },
+    {
+      "id": "r-313",
+      "edge_type": "R-1",
+      "designation": "F-313",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-321",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-322",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-624",
+        "a-625"
+      ]
+    },
+    {
+      "id": "r-314",
+      "edge_type": "R-1",
+      "designation": "F-314",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-323",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-324",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-626",
+        "a-627"
+      ]
+    },
+    {
+      "id": "r-315",
+      "edge_type": "R-1",
+      "designation": "F-315",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-324",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-325",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-628",
+        "a-629"
+      ]
+    },
+    {
+      "id": "r-316",
+      "edge_type": "R-1",
+      "designation": "F-316",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-325",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-326",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-630",
+        "a-631"
+      ]
+    },
+    {
+      "id": "r-317",
+      "edge_type": "R-1",
+      "designation": "F-317",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-327",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-328",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-632",
+        "a-633"
+      ]
+    },
+    {
+      "id": "r-318",
+      "edge_type": "R-1",
+      "designation": "F-318",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-328",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-329",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-634",
+        "a-635"
+      ]
+    },
+    {
+      "id": "r-319",
+      "edge_type": "R-1",
+      "designation": "F-319",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-330",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-331",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-636",
+        "a-637"
+      ]
+    },
+    {
+      "id": "r-320",
+      "edge_type": "R-1",
+      "designation": "F-320",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-331",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-332",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-638",
+        "a-639"
+      ]
+    },
+    {
+      "id": "r-321",
+      "edge_type": "R-1",
+      "designation": "F-321",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-332",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-333",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-640",
+        "a-641"
+      ]
+    },
+    {
+      "id": "r-322",
+      "edge_type": "R-1",
+      "designation": "F-322",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-334",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-335",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-642",
+        "a-643"
+      ]
+    },
+    {
+      "id": "r-323",
+      "edge_type": "R-1",
+      "designation": "F-323",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-335",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-336",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-644",
+        "a-645"
+      ]
+    },
+    {
+      "id": "r-391",
+      "edge_type": "R-2",
+      "designation": "main-bus-4MSB-1-A",
+      "sheet_id": "S1",
+      "bus_level": "main",
+      "stroke_weight": 2.5,
+      "start": null,
+      "end": null,
+      "stub_exempt": null,
+      "data_fields": {},
+      "calc_fields": {
+        "bus_rating": 4000
+      },
+      "annotation_ids": []
+    },
+    {
+      "id": "r-392",
+      "edge_type": "R-2",
+      "designation": "sec-bus-4MSB-1-A",
+      "sheet_id": "S1",
+      "bus_level": "secondary",
+      "stroke_weight": 2,
+      "start": null,
+      "end": null,
+      "stub_exempt": null,
+      "data_fields": {},
+      "calc_fields": {
+        "bus_rating": 4000
+      },
+      "annotation_ids": []
+    }
+  ],
+  "annotations": [
+    {
+      "id": "a-601",
+      "annotation_type": "A-2",
+      "bound_to": "r-301",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(15) 4\"C - (4)500 AL + 500 AL GND"
+      }
+    },
+    {
+      "id": "a-602",
+      "annotation_type": "A-1",
+      "bound_to": "r-302",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-603",
+      "annotation_type": "A-2",
+      "bound_to": "r-302",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-604",
+      "annotation_type": "A-1",
+      "bound_to": "r-303",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "1004"
+      }
+    },
+    {
+      "id": "a-605",
+      "annotation_type": "A-2",
+      "bound_to": "r-303",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2\"C - (4)#1/0 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-606",
+      "annotation_type": "A-1",
+      "bound_to": "r-304",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-607",
+      "annotation_type": "A-2",
+      "bound_to": "r-304",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-608",
+      "annotation_type": "A-1",
+      "bound_to": "r-305",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "1004"
+      }
+    },
+    {
+      "id": "a-609",
+      "annotation_type": "A-2",
+      "bound_to": "r-305",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2\"C - (4)#1/0 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-610",
+      "annotation_type": "A-1",
+      "bound_to": "r-306",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-611",
+      "annotation_type": "A-2",
+      "bound_to": "r-306",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-612",
+      "annotation_type": "A-1",
+      "bound_to": "r-307",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "1004"
+      }
+    },
+    {
+      "id": "a-613",
+      "annotation_type": "A-2",
+      "bound_to": "r-307",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2\"C - (4)#1/0 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-614",
+      "annotation_type": "A-1",
+      "bound_to": "r-308",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-615",
+      "annotation_type": "A-2",
+      "bound_to": "r-308",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-616",
+      "annotation_type": "A-1",
+      "bound_to": "r-309",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "1004"
+      }
+    },
+    {
+      "id": "a-617",
+      "annotation_type": "A-2",
+      "bound_to": "r-309",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2\"C - (4)#1/0 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-618",
+      "annotation_type": "A-1",
+      "bound_to": "r-310",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-619",
+      "annotation_type": "A-2",
+      "bound_to": "r-310",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-620",
+      "annotation_type": "A-1",
+      "bound_to": "r-311",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "1004"
+      }
+    },
+    {
+      "id": "a-621",
+      "annotation_type": "A-2",
+      "bound_to": "r-311",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2\"C - (4)#1/0 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-622",
+      "annotation_type": "A-1",
+      "bound_to": "r-312",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-623",
+      "annotation_type": "A-2",
+      "bound_to": "r-312",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-624",
+      "annotation_type": "A-1",
+      "bound_to": "r-313",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-625",
+      "annotation_type": "A-2",
+      "bound_to": "r-313",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-626",
+      "annotation_type": "A-1",
+      "bound_to": "r-314",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2503"
+      }
+    },
+    {
+      "id": "a-627",
+      "annotation_type": "A-2",
+      "bound_to": "r-314",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-628",
+      "annotation_type": "A-1",
+      "bound_to": "r-315",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "5004T"
+      }
+    },
+    {
+      "id": "a-629",
+      "annotation_type": "A-2",
+      "bound_to": "r-315",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3 1/2\"C - (4)500 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-630",
+      "annotation_type": "A-1",
+      "bound_to": "r-316",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-631",
+      "annotation_type": "A-2",
+      "bound_to": "r-316",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-632",
+      "annotation_type": "A-1",
+      "bound_to": "r-317",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-633",
+      "annotation_type": "A-2",
+      "bound_to": "r-317",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-634",
+      "annotation_type": "A-1",
+      "bound_to": "r-318",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-635",
+      "annotation_type": "A-2",
+      "bound_to": "r-318",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-636",
+      "annotation_type": "A-1",
+      "bound_to": "r-319",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2503"
+      }
+    },
+    {
+      "id": "a-637",
+      "annotation_type": "A-2",
+      "bound_to": "r-319",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-638",
+      "annotation_type": "A-1",
+      "bound_to": "r-320",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "5004T"
+      }
+    },
+    {
+      "id": "a-639",
+      "annotation_type": "A-2",
+      "bound_to": "r-320",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3 1/2\"C - (4)500 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-640",
+      "annotation_type": "A-1",
+      "bound_to": "r-321",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-641",
+      "annotation_type": "A-2",
+      "bound_to": "r-321",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-642",
+      "annotation_type": "A-1",
+      "bound_to": "r-322",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-643",
+      "annotation_type": "A-2",
+      "bound_to": "r-322",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-644",
+      "annotation_type": "A-1",
+      "bound_to": "r-323",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-645",
+      "annotation_type": "A-2",
+      "bound_to": "r-323",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    }
+  ],
+  "switchboards": [
+    {
+      "id": "sw-201",
+      "designation": "4MSB-1-A",
+      "variant": "NP",
+      "bus_architecture": "two-level",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "4000A",
+        "voltage": "480Y/277V",
+        "wires": "4W, 3PH"
+      },
+      "secondary_bus_overflow_ids": [],
+      "main_bus_id": "r-391",
+      "secondary_bus_id": "r-392",
+      "distribution_bus_id": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-201",
+      "switchboard_id": "sw-201",
+      "type": "incoming",
+      "order": 1,
+      "nec_class": null,
+      "section_tag": "SEC-1",
+      "device_ids": []
+    },
+    {
+      "id": "sec-202",
+      "switchboard_id": "sw-201",
+      "type": "metering",
+      "order": 2,
+      "nec_class": null,
+      "section_tag": "SEC-2",
+      "device_ids": [
+        "d-302"
+      ]
+    },
+    {
+      "id": "sec-203",
+      "switchboard_id": "sw-201",
+      "type": "main_breaker",
+      "order": 3,
+      "nec_class": null,
+      "section_tag": "SEC-3",
+      "device_ids": [
+        "d-303"
+      ]
+    },
+    {
+      "id": "sec-204",
+      "switchboard_id": "sw-201",
+      "type": "distribution",
+      "order": 4,
+      "nec_class": null,
+      "section_tag": "SEC-4",
+      "device_ids": [
+        "d-305",
+        "d-308",
+        "d-311",
+        "d-314",
+        "d-317",
+        "d-320",
+        "d-323",
+        "d-327",
+        "d-330",
+        "d-334",
+        "d-304"
+      ]
+    }
+  ],
+  "port_assignments": [
+    {
+      "id": "pa-301",
+      "device_id": "d-303",
+      "port": "line_in",
+      "bus_id": "r-391"
+    },
+    {
+      "id": "pa-302",
+      "device_id": "d-303",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-303",
+      "device_id": "d-305",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-304",
+      "device_id": "d-308",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-305",
+      "device_id": "d-311",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-306",
+      "device_id": "d-314",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-307",
+      "device_id": "d-317",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-308",
+      "device_id": "d-320",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-309",
+      "device_id": "d-323",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-310",
+      "device_id": "d-327",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-311",
+      "device_id": "d-330",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    },
+    {
+      "id": "pa-312",
+      "device_id": "d-334",
+      "port": "bus_out",
+      "bus_id": "r-392"
+    }
+  ],
+  "spur_attachments": [],
+  "measurement_attachments": [
+    {
+      "id": "meas-301",
+      "device_id": "d-302",
+      "host_routed_element_id": "r-391",
+      "mode": "ct",
+      "position": "incoming_section"
+    }
+  ],
+  "cross_sheet_refs": [],
+  "layout_config": {
+    "$comment": "Embedded copy of test1_layout_config.json. Embedded (not sidecar-only) so validator rule CV-14 runs — its capability gate reads topology.layout_config.subfeed_start_ports and cannot see external configs (08_validation/lib/context_V1_0_0.mjs). Sidecar keys still win at layout time.",
+    "sheet_roles": {
+      "S1": "normal"
+    },
+    "sheet_skips": {},
+    "floor_order": {
+      "S1": [
+        "2",
+        "1"
+      ]
+    },
+    "floor_anchors": {
+      "1": "4L-1-A",
+      "2": "4L-2-A"
+    },
+    "floor_anchors_mechanical": {
+      "1": "4M-1-A",
+      "2": "4M-2-A"
+    },
+    "floor_band_designations": [
+      "4L-1-B",
+      "4L-2-B",
+      "4L-1-C",
+      "4L-2-C",
+      "4L-1-D",
+      "4L-2-D",
+      "4L-1-E",
+      "4L-2-E",
+      "2P-1-A",
+      "2P-2-A",
+      "4M-1-B",
+      "4M-2-B",
+      "2P-1-B",
+      "2P-2-B",
+      "4M-1-C",
+      "4M-2-C"
+    ],
+    "level_map": {
+      "4L-1-A": "1",
+      "4L-2-A": "2",
+      "4L-1-B": "1",
+      "4L-2-B": "2",
+      "4L-1-C": "1",
+      "4L-2-C": "2",
+      "4L-1-D": "1",
+      "4L-2-D": "2",
+      "4L-1-E": "1",
+      "4L-2-E": "2",
+      "4M-1-A": "1",
+      "4M-2-A": "2",
+      "2P-1-A": "1",
+      "2P-2-A": "2",
+      "4M-1-B": "1",
+      "4M-2-B": "2",
+      "2P-1-B": "1",
+      "2P-2-B": "2",
+      "4M-1-C": "1",
+      "4M-2-C": "2"
+    },
+    "level_order": [
+      "2",
+      "1"
+    ],
+    "ats_xoffset_overrides": {},
+    "riser_step_standard": 650,
+    "subfeed_max_depth": 3,
+    "subfeed_start_ports": [
+      "feed_bottom",
+      "feed_top"
+    ],
+    "subfeed_src_types": [
+      "L2-4"
+    ],
+    "subfeed_dst_types": [
+      "L2-4"
+    ],
+    "subfeed_straighten": [
+      "F-303",
+      "F-305",
+      "F-307",
+      "F-309",
+      "F-311",
+      "F-313",
+      "F-316",
+      "F-318",
+      "F-321",
+      "F-323"
+    ],
+    "s2_level_line_pitch": {},
+    "s2_shift_delta": {},
+    "subfeed_midy_nudge": {},
+    "a1_tag_placement": {
+      "F-302": {
+        "side": "right"
+      },
+      "F-303": {
+        "side": "right"
+      },
+      "F-304": {
+        "side": "right"
+      },
+      "F-305": {
+        "side": "right"
+      },
+      "F-306": {
+        "side": "right"
+      },
+      "F-307": {
+        "side": "right"
+      },
+      "F-308": {
+        "side": "right"
+      },
+      "F-309": {
+        "side": "right"
+      },
+      "F-310": {
+        "side": "right"
+      },
+      "F-311": {
+        "side": "right"
+      },
+      "F-312": {
+        "side": "right"
+      },
+      "F-313": {
+        "side": "right"
+      },
+      "F-314": {
+        "side": "right"
+      },
+      "F-315": {
+        "side": "right"
+      },
+      "F-316": {
+        "side": "right"
+      },
+      "F-317": {
+        "side": "right"
+      },
+      "F-318": {
+        "side": "right"
+      },
+      "F-319": {
+        "side": "right"
+      },
+      "F-320": {
+        "side": "right"
+      },
+      "F-321": {
+        "side": "right"
+      },
+      "F-322": {
+        "side": "right"
+      },
+      "F-323": {
+        "side": "right"
+      }
+    },
+    "a3_text_placement": {},
+    "fc_pennant_placement": {},
+    "fc_pennant_y_nudges": {}
+  },
+  "geometry": {
+    "effective_px_per_inch": 96,
+    "content_area": {
+      "width_px": 2550,
+      "height_px": 4950
+    },
+    "devices": {
+      "d-301": {
+        "anchor": {
+          "x": -200,
+          "y": 4720
+        },
+        "w": 168,
+        "h": 140,
+        "anchor_mode": "top_left"
+      },
+      "d-302": {
+        "anchor": {
+          "x": 537,
+          "y": 4600
+        },
+        "w": 36,
+        "h": 36,
+        "anchor_mode": "top_left"
+      },
+      "d-303": {
+        "anchor": {
+          "x": 765,
+          "y": 4580
+        },
+        "w": 36,
+        "h": 15,
+        "anchor_mode": "bus_dot_top"
+      },
+      "d-304": {
+        "anchor": {
+          "x": 2530,
+          "y": 4690
+        },
+        "w": 80,
+        "h": 80,
+        "anchor_mode": "top_left"
+      },
+      "d-305": {
+        "anchor": {
+          "x": 980,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-306": {
+        "anchor": {
+          "x": 948,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-307": {
+        "anchor": {
+          "x": 948,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-308": {
+        "anchor": {
+          "x": 1140,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-309": {
+        "anchor": {
+          "x": 1108,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-310": {
+        "anchor": {
+          "x": 1108,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-311": {
+        "anchor": {
+          "x": 1300,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-312": {
+        "anchor": {
+          "x": 1268,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-313": {
+        "anchor": {
+          "x": 1268,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-314": {
+        "anchor": {
+          "x": 1460,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-315": {
+        "anchor": {
+          "x": 1428,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-316": {
+        "anchor": {
+          "x": 1428,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-317": {
+        "anchor": {
+          "x": 1620,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-318": {
+        "anchor": {
+          "x": 1588,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-319": {
+        "anchor": {
+          "x": 1588,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-320": {
+        "anchor": {
+          "x": 1780,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-321": {
+        "anchor": {
+          "x": 1748,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-322": {
+        "anchor": {
+          "x": 1748,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-323": {
+        "anchor": {
+          "x": 1940,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-324": {
+        "anchor": {
+          "x": 1915.42,
+          "y": 4288
+        },
+        "w": 49.17,
+        "h": 35,
+        "anchor_mode": "top_left"
+      },
+      "d-325": {
+        "anchor": {
+          "x": 1908,
+          "y": 3798
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-326": {
+        "anchor": {
+          "x": 1908,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-327": {
+        "anchor": {
+          "x": 2130,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-328": {
+        "anchor": {
+          "x": 2098,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-329": {
+        "anchor": {
+          "x": 2098,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-330": {
+        "anchor": {
+          "x": 2290,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-331": {
+        "anchor": {
+          "x": 2265.42,
+          "y": 4288
+        },
+        "w": 49.17,
+        "h": 35,
+        "anchor_mode": "top_left"
+      },
+      "d-332": {
+        "anchor": {
+          "x": 2258,
+          "y": 3798
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-333": {
+        "anchor": {
+          "x": 2258,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-334": {
+        "anchor": {
+          "x": 2480,
+          "y": 4690
+        },
+        "w": 14.14,
+        "h": 44.37,
+        "anchor_mode": "bus_dot_bottom"
+      },
+      "d-335": {
+        "anchor": {
+          "x": 2448,
+          "y": 4158
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      },
+      "d-336": {
+        "anchor": {
+          "x": 2448,
+          "y": 3508
+        },
+        "w": 64,
+        "h": 88,
+        "anchor_mode": "top_left"
+      }
+    },
+    "routed_elements": {
+      "r-391": {
+        "path_vertices": [
+          {
+            "x": 280,
+            "y": 4580
+          },
+          {
+            "x": 765,
+            "y": 4580
+          }
+        ]
+      },
+      "r-392": {
+        "path_vertices": [
+          {
+            "x": 765,
+            "y": 4690
+          },
+          {
+            "x": 2550,
+            "y": 4690
+          }
+        ]
+      },
+      "r-301": {
+        "path_vertices": [
+          {
+            "x": -88,
+            "y": 4860
+          },
+          {
+            "x": -88,
+            "y": 4950
+          },
+          {
+            "x": 345,
+            "y": 4950
+          },
+          {
+            "x": 345,
+            "y": 4585
+          }
+        ]
+      },
+      "r-302": {
+        "path_vertices": [
+          {
+            "x": 980,
+            "y": 4645.63
+          },
+          {
+            "x": 980,
+            "y": 4246
+          }
+        ]
+      },
+      "r-304": {
+        "path_vertices": [
+          {
+            "x": 1140,
+            "y": 4645.63
+          },
+          {
+            "x": 1140,
+            "y": 4246
+          }
+        ]
+      },
+      "r-306": {
+        "path_vertices": [
+          {
+            "x": 1300,
+            "y": 4645.63
+          },
+          {
+            "x": 1300,
+            "y": 4246
+          }
+        ]
+      },
+      "r-308": {
+        "path_vertices": [
+          {
+            "x": 1460,
+            "y": 4645.63
+          },
+          {
+            "x": 1460,
+            "y": 4246
+          }
+        ]
+      },
+      "r-310": {
+        "path_vertices": [
+          {
+            "x": 1620,
+            "y": 4645.63
+          },
+          {
+            "x": 1620,
+            "y": 4246
+          }
+        ]
+      },
+      "r-312": {
+        "path_vertices": [
+          {
+            "x": 1780,
+            "y": 4645.63
+          },
+          {
+            "x": 1780,
+            "y": 4246
+          }
+        ]
+      },
+      "r-314": {
+        "path_vertices": [
+          {
+            "x": 1940,
+            "y": 4645.63
+          },
+          {
+            "x": 1940,
+            "y": 4323
+          }
+        ]
+      },
+      "r-315": {
+        "path_vertices": [
+          {
+            "x": 1940,
+            "y": 4288
+          },
+          {
+            "x": 1940,
+            "y": 3886
+          }
+        ]
+      },
+      "r-317": {
+        "path_vertices": [
+          {
+            "x": 2130,
+            "y": 4645.63
+          },
+          {
+            "x": 2130,
+            "y": 4246
+          }
+        ]
+      },
+      "r-319": {
+        "path_vertices": [
+          {
+            "x": 2290,
+            "y": 4645.63
+          },
+          {
+            "x": 2290,
+            "y": 4323
+          }
+        ]
+      },
+      "r-320": {
+        "path_vertices": [
+          {
+            "x": 2290,
+            "y": 4288
+          },
+          {
+            "x": 2290,
+            "y": 3886
+          }
+        ]
+      },
+      "r-322": {
+        "path_vertices": [
+          {
+            "x": 2480,
+            "y": 4645.63
+          },
+          {
+            "x": 2480,
+            "y": 4246
+          }
+        ]
+      },
+      "r-303": {
+        "path_vertices": [
+          {
+            "x": 980,
+            "y": 4158
+          },
+          {
+            "x": 980,
+            "y": 4068
+          },
+          {
+            "x": 980,
+            "y": 4068
+          },
+          {
+            "x": 980,
+            "y": 3596
+          }
+        ]
+      },
+      "r-305": {
+        "path_vertices": [
+          {
+            "x": 1140,
+            "y": 4158
+          },
+          {
+            "x": 1140,
+            "y": 4068
+          },
+          {
+            "x": 1140,
+            "y": 4068
+          },
+          {
+            "x": 1140,
+            "y": 3596
+          }
+        ]
+      },
+      "r-307": {
+        "path_vertices": [
+          {
+            "x": 1300,
+            "y": 4158
+          },
+          {
+            "x": 1300,
+            "y": 4068
+          },
+          {
+            "x": 1300,
+            "y": 4068
+          },
+          {
+            "x": 1300,
+            "y": 3596
+          }
+        ]
+      },
+      "r-309": {
+        "path_vertices": [
+          {
+            "x": 1460,
+            "y": 4158
+          },
+          {
+            "x": 1460,
+            "y": 4068
+          },
+          {
+            "x": 1460,
+            "y": 4068
+          },
+          {
+            "x": 1460,
+            "y": 3596
+          }
+        ]
+      },
+      "r-311": {
+        "path_vertices": [
+          {
+            "x": 1620,
+            "y": 4158
+          },
+          {
+            "x": 1620,
+            "y": 4068
+          },
+          {
+            "x": 1620,
+            "y": 4068
+          },
+          {
+            "x": 1620,
+            "y": 3596
+          }
+        ]
+      },
+      "r-313": {
+        "path_vertices": [
+          {
+            "x": 1780,
+            "y": 4158
+          },
+          {
+            "x": 1780,
+            "y": 4068
+          },
+          {
+            "x": 1780,
+            "y": 4068
+          },
+          {
+            "x": 1780,
+            "y": 3596
+          }
+        ]
+      },
+      "r-316": {
+        "path_vertices": [
+          {
+            "x": 1940,
+            "y": 3798
+          },
+          {
+            "x": 1940,
+            "y": 3708
+          },
+          {
+            "x": 1940,
+            "y": 3708
+          },
+          {
+            "x": 1940,
+            "y": 3596
+          }
+        ]
+      },
+      "r-318": {
+        "path_vertices": [
+          {
+            "x": 2130,
+            "y": 4158
+          },
+          {
+            "x": 2130,
+            "y": 4068
+          },
+          {
+            "x": 2130,
+            "y": 4068
+          },
+          {
+            "x": 2130,
+            "y": 3596
+          }
+        ]
+      },
+      "r-321": {
+        "path_vertices": [
+          {
+            "x": 2290,
+            "y": 3798
+          },
+          {
+            "x": 2290,
+            "y": 3708
+          },
+          {
+            "x": 2290,
+            "y": 3708
+          },
+          {
+            "x": 2290,
+            "y": 3596
+          }
+        ]
+      },
+      "r-323": {
+        "path_vertices": [
+          {
+            "x": 2480,
+            "y": 4158
+          },
+          {
+            "x": 2480,
+            "y": 4068
+          },
+          {
+            "x": 2480,
+            "y": 4068
+          },
+          {
+            "x": 2480,
+            "y": 3596
+          }
+        ]
+      }
+    },
+    "annotations": {
+      "a-602": {
+        "x": 980,
+        "y": 4465.63,
+        "pill": {
+          "x": 1050,
+          "y": 4465.63
+        }
+      },
+      "a-606": {
+        "x": 1140,
+        "y": 4465.63,
+        "pill": {
+          "x": 1210,
+          "y": 4465.63
+        }
+      },
+      "a-610": {
+        "x": 1300,
+        "y": 4465.63,
+        "pill": {
+          "x": 1370,
+          "y": 4465.63
+        }
+      },
+      "a-614": {
+        "x": 1460,
+        "y": 4465.63,
+        "pill": {
+          "x": 1530,
+          "y": 4465.63
+        }
+      },
+      "a-618": {
+        "x": 1620,
+        "y": 4465.63,
+        "pill": {
+          "x": 1690,
+          "y": 4465.63
+        }
+      },
+      "a-622": {
+        "x": 1780,
+        "y": 4465.63,
+        "pill": {
+          "x": 1850,
+          "y": 4465.63
+        }
+      },
+      "a-628": {
+        "x": 1940,
+        "y": 4216,
+        "pill": {
+          "x": 2017,
+          "y": 4216
+        }
+      },
+      "a-626": {
+        "x": 1940,
+        "y": 4465.63,
+        "pill": {
+          "x": 2010,
+          "y": 4465.63
+        }
+      },
+      "a-632": {
+        "x": 2130,
+        "y": 4465.63,
+        "pill": {
+          "x": 2200,
+          "y": 4465.63
+        }
+      },
+      "a-638": {
+        "x": 2290,
+        "y": 4216,
+        "pill": {
+          "x": 2367,
+          "y": 4216
+        }
+      },
+      "a-636": {
+        "x": 2290,
+        "y": 4465.63,
+        "pill": {
+          "x": 2360,
+          "y": 4465.63
+        }
+      },
+      "a-642": {
+        "x": 2480,
+        "y": 4465.63,
+        "pill": {
+          "x": 2550,
+          "y": 4465.63
+        }
+      },
+      "a-604": {
+        "x": 980,
+        "y": 4068,
+        "pill": {
+          "x": 1050,
+          "y": 4068
+        }
+      },
+      "a-608": {
+        "x": 1140,
+        "y": 4068,
+        "pill": {
+          "x": 1210,
+          "y": 4068
+        }
+      },
+      "a-612": {
+        "x": 1300,
+        "y": 4068,
+        "pill": {
+          "x": 1370,
+          "y": 4068
+        }
+      },
+      "a-616": {
+        "x": 1460,
+        "y": 4068,
+        "pill": {
+          "x": 1530,
+          "y": 4068
+        }
+      },
+      "a-620": {
+        "x": 1620,
+        "y": 4068,
+        "pill": {
+          "x": 1690,
+          "y": 4068
+        }
+      },
+      "a-624": {
+        "x": 1780,
+        "y": 4068,
+        "pill": {
+          "x": 1850,
+          "y": 4068
+        }
+      },
+      "a-630": {
+        "x": 1940,
+        "y": 3708,
+        "pill": {
+          "x": 2010,
+          "y": 3708
+        }
+      },
+      "a-634": {
+        "x": 2130,
+        "y": 4068,
+        "pill": {
+          "x": 2200,
+          "y": 4068
+        }
+      },
+      "a-640": {
+        "x": 2290,
+        "y": 3708,
+        "pill": {
+          "x": 2360,
+          "y": 3708
+        }
+      },
+      "a-644": {
+        "x": 2480,
+        "y": 4068,
+        "pill": {
+          "x": 2550,
+          "y": 4068
+        }
+      }
+    },
+    "level_lines": [
+      {
+        "sheet": "S1",
+        "level": "2",
+        "label": "LEVEL 2",
+        "y": 3636,
+        "x_start": -240,
+        "x_end": 2650
+      },
+      {
+        "sheet": "S1",
+        "level": "1",
+        "label": "LEVEL 1",
+        "y": 4860,
+        "x_start": -240,
+        "x_end": 2650
+      }
+    ],
+    "sections": {
+      "sec-201": {
+        "sheet": "S1",
+        "switchboard_id": "sw-201",
+        "type": "incoming",
+        "nec_class": null,
+        "section_tag": "SEC-1",
+        "x": 240,
+        "y": 4520,
+        "w": 210,
+        "h": 280
+      },
+      "sec-202": {
+        "sheet": "S1",
+        "switchboard_id": "sw-201",
+        "type": "metering",
+        "nec_class": null,
+        "section_tag": "SEC-2",
+        "x": 450,
+        "y": 4520,
+        "w": 210,
+        "h": 280
+      },
+      "sec-203": {
+        "sheet": "S1",
+        "switchboard_id": "sw-201",
+        "type": "main_breaker",
+        "nec_class": null,
+        "section_tag": "SEC-3",
+        "x": 660,
+        "y": 4520,
+        "w": 210,
+        "h": 280
+      },
+      "sec-204": {
+        "sheet": "S1",
+        "switchboard_id": "sw-201",
+        "type": "distribution",
+        "nec_class": null,
+        "section_tag": "SEC-4",
+        "x": 870,
+        "y": 4520,
+        "w": 1720,
+        "h": 280
+      }
+    },
+    "equipment_labels": [
+      {
+        "sheet": "S1",
+        "bound_to": "sw-201",
+        "bound_to_type": "switchboard",
+        "anchor": {
+          "x": 220,
+          "y": 4620
+        },
+        "align": "end",
+        "line_pitch": 18,
+        "first_line_pitch": 20,
+        "label": "4MSB-1-A",
+        "lines": [
+          "4000A",
+          "480Y/277V",
+          "4W, 3PH"
+        ]
+      }
+    ],
+    "glyph_supplements": [
+      {
+        "id": "gs-S1-util-feed",
+        "sheet": "S1",
+        "kind": "polyline",
+        "host_device_id": "d-301",
+        "role": "utility_primary_feed",
+        "vertices": [
+          {
+            "x": -144,
+            "y": 4860
+          },
+          {
+            "x": -144,
+            "y": 4950
+          },
+          {
+            "x": -414,
+            "y": 4950
+          }
+        ]
+      },
+      {
+        "id": "gs-S1-util-squig",
+        "sheet": "S1",
+        "kind": "squiggle",
+        "host_device_id": "d-301",
+        "role": "utility_primary_continuation",
+        "x": -414,
+        "y": 4950,
+        "text": "TO UTILITY",
+        "text_side": "left",
+        "orient": "vertical"
+      }
+    ],
+    "bus_dots": [
+      {
+        "id": "bd-S1-incoming",
+        "sheet": "S1",
+        "host_device_id": "sec-201",
+        "role": "incoming",
+        "x": 345,
+        "y": 4580
+      }
+    ],
+    "layout_warnings": [
+      "Exported from sld_engine.mjs at 96px/in: 36 devices, 25 routed, 22 annotations."
+    ]
+  }
+}
