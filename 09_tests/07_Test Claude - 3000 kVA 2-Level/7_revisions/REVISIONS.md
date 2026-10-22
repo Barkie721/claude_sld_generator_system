@@ -1,4 +1,4 @@
-# Test 1 — 3000 kVA 2-Level — revision log: every change requested after the drawing was generated
+# Test Claude — 3000 kVA 2-Level — revision log: every change requested after the drawing was generated
 
 > **Canonical:** `00_Docs/project_instructions_V1_0_0.md` §7.1 owns the change-request protocol;
 > this file is the per-project record it writes to.

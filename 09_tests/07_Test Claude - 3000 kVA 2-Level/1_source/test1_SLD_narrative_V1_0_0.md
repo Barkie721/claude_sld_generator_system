@@ -1,5 +1,5 @@
 # ELECTRICAL NARRATIVE — TEST 1, 3000 kVA SERVICE, 2 LEVELS (V1_0_0)
-# Project: Test 1 — 3000 kVA Service, 2 Levels | Location: ______________________
+# Project: Test Claude — 3000 kVA Service, 2 Levels | Location: ______________________
 # Target: sld_topology_rules_V1_0_0 pipeline (schema 1.0.0)
 # -----------------------------------------------------------------------------
 # Stated scope (owner, 2026-10-22, verbatim): "Let's create a single line 3000kva

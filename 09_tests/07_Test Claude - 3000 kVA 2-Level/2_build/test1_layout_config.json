@@ -1,5 +1,5 @@
 {
-  "$comment": "Sidecar layout_config for Test 1 (3000 kVA, 2 levels). Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19). Ten riser stacks: two named, eight via floor_band_designations (OFF-009).",
+  "$comment": "Sidecar layout_config for Test Claude (3000 kVA, 2 levels). Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19). Ten riser stacks: two named, eight via floor_band_designations (OFF-009).",
   "sheet_roles": {
     "S1": "normal"
   },

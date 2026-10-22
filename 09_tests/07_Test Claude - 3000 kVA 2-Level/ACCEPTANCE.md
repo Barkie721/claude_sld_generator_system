@@ -1,4 +1,4 @@
-# Test 1 — 3000 kVA 2-Level — acceptance criteria, and what measures each one
+# Test Claude — 3000 kVA 2-Level — acceptance criteria, and what measures each one
 
 > **Canonical:** `06_deliverables/README.md` owns the five graduation criteria; this file tracks
 > drawing-quality criteria for this project and names the tool that proves each.
@@ -45,7 +45,7 @@ and `page_scale` objects exactly, so this table is a transcription, not a re-mea
 > (is the device between the right two lines); `band_outside` is the **datum gap** — how far its
 > bottom edge sits from its own line. A device can be in the right band and 900 px off its datum.
 
-> **Test 1 note — `band_outside` 10.** Every one is a Level-1 panel (median 614 px, max 974 px
+> **Test Claude note — `band_outside` 10.** Every one is a Level-1 panel (median 614 px, max 974 px
 > on the 2P-1-x MCB heads). The Level-1 line is drawn below the switchboard band, the same
 > base-floor datum artifact that reads 2 on the default 2500 kVA and measures identically on the
 > frozen golden. Membership (`out_of_band`) is 0. Not a defect.

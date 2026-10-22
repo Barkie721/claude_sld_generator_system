@@ -2,7 +2,7 @@
 /**
  * test1_build_topology.mjs — the ONLY hand-edited file in this project.
  *
- * Test 1: 3000 kVA, 480Y/277V service, 2 levels, one sheet. Stated scope (owner,
+ * Test Claude: 3000 kVA, 480Y/277V service, 2 levels, one sheet. Stated scope (owner,
  * 2026-10-22): "3000 kVA service, 5 lighting branches, 2 power and 3 mech,
  * 2 levels — figure out the rest". Every value beyond that is a Tier-2 default
  * itemised in 1_source/test1_SLD_narrative_V1_0_0.md and in
@@ -232,7 +232,7 @@ const LAYOUT_CONFIG = {
 };
 
 const SIDECAR_COMMENT =
-  'Sidecar layout_config for Test 1 (3000 kVA, 2 levels). Every hospital-golden default that ' +
+  'Sidecar layout_config for Test Claude (3000 kVA, 2 levels). Every hospital-golden default that ' +
   'names hospital designations is explicitly cleared — absent keys fall back to the engine\'s ' +
   '_DEF_* hospital values (schema §19). Ten riser stacks: two named, eight via ' +
   'floor_band_designations (OFF-009).';
@@ -348,10 +348,10 @@ const topology = {
 
   metadata: {
     schema_version: '1.0.0',
-    project_name: 'Test 1 — 3000 kVA Service, 2 Levels',
+    project_name: 'Test Claude — 3000 kVA Service, 2 Levels',
     created_date: '2026-10-22',
     slug: SLUG,
-    heading: 'Test 1 — 3000 kVA',
+    heading: 'Test Claude — 3000 kVA',
     facts: [
       '3000 kVA service, 480Y/277V 3PH 4W, 4000A GFP main',
       '10 feeders — 5 lighting, 2 power (150 kVA step-down), 3 mechanical',

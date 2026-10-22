@@ -1,4 +1,4 @@
-# Test 1 — 3000 kVA, commercial, 1 sheet, first run clean
+# Test Claude — 3000 kVA, commercial, 1 sheet, first run clean
 
 > **Canonical:** `09_tests/README.md` owns the standard project structure; this file describes only
 > this project. Repo operations → `00_Docs/repo_runbook_V1_0_0.md`.
@@ -19,7 +19,7 @@ Device, routed and annotation counts and the engine rev are **not restated here*
 ## 1. Run it
 
 ```bash
-cd "09_tests/07_Test 1 - 3000 kVA 2-Level"
+cd "09_tests/07_Test Claude - 3000 kVA 2-Level"
 bash run_pipeline.sh          # phone storage is noexec — bash, never ./
 ```
 

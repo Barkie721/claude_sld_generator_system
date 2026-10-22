@@ -1,7 +1,7 @@
   wrote test1_layout_config.json
   wrote test1_SLD_topology_V1_0_0.json
   sheets=1 devices=36 routed=25 annotations=45 switchboards=1 sections=4 halts=3
-=== /home/user/claude_sld_generator_system/09_tests/07_Test 1 - 3000 kVA 2-Level/2_build/test1_SLD_topology_V1_0_0.json (schema 1.0.0, 1 sheets, 36 devices, 25 routed) ===
+=== /home/user/claude_sld_generator_system/09_tests/07_Test Claude - 3000 kVA 2-Level/2_build/test1_SLD_topology_V1_0_0.json (schema 1.0.0, 1 sheets, 36 devices, 25 routed) ===
 INFO  TV-1       routed_elements[id=r-301]
       r-301: TV-1 service-entrance exemption (is_service_entrance, §15 amendment 8)   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TV-1; schema V1.1 §15 amendment 8]
 RESULT: 0 errors, 0 migration items, 0 warnings, 1 info | rules run: 55, vacuous: 2 | skipped: SH-2a (missing geometry), SH-5a (missing geometry), SH-2b (missing geometry), SH-4 (missing geometry), SH-5b (missing geometry), SH-3 (missing geometry), SH-3-A7 (missing geometry), SH-6 (missing geometry)
@@ -11,10 +11,10 @@ RESULT: 0 errors, 0 migration items, 0 warnings, 1 info | rules run: 55, vacuous
      HALT-002  Utility transformer impedance (%Z, X/R)  — blocks: Fault-current study at the service entrance
      HALT-003  Feeder distances  — blocks: Voltage-drop calculation · A-5 tags
 RESULT open_items halts=3 notes=6 placeholders=0
-[run_layout] wrote /home/user/claude_sld_generator_system/09_tests/07_Test 1 - 3000 kVA 2-Level/2_build/test1_geom_block.json
+[run_layout] wrote /home/user/claude_sld_generator_system/09_tests/07_Test Claude - 3000 kVA 2-Level/2_build/test1_geom_block.json
 [run_layout] devices=36 routed=25 annotations=22 content=2550x4950
   merged. layout_warnings: 1 | drops: 0
-=== /home/user/claude_sld_generator_system/09_tests/07_Test 1 - 3000 kVA 2-Level/2_build/test1_SLD_topology_V1_0_0__WITH_GEOMETRY.json (schema 1.0.0, 1 sheets, 36 devices, 25 routed) ===
+=== /home/user/claude_sld_generator_system/09_tests/07_Test Claude - 3000 kVA 2-Level/2_build/test1_SLD_topology_V1_0_0__WITH_GEOMETRY.json (schema 1.0.0, 1 sheets, 36 devices, 25 routed) ===
 INFO  SCHEMA-14  geometry
       partial coverage: devices 36/36, routed 25/25, annotations 22/45 (defined semantics §14.2)   [03_contracts/sld_topology_schema_V1_0_0.md §14]
 INFO  TV-1       routed_elements[id=r-301]
@@ -24,11 +24,11 @@ PREFLIGHT: s_pred { S1=1 } | calibration {"s_pred_min":0.2,"sh4_inflate_px":1000
   viewer rebuilt
 [snapshot]  ok  test1_S1_dark  coverage 104/104
 [snapshot]  ok  test1_S1_light  coverage 104/104
-[snapshot] wrote 2 capture(s) → /home/user/claude_sld_generator_system/09_tests/07_Test 1 - 3000 kVA 2-Level/3_output/sheets
+[snapshot] wrote 2 capture(s) → /home/user/claude_sld_generator_system/09_tests/07_Test Claude - 3000 kVA 2-Level/3_output/sheets
 [snapshot] audit S1: ok  label_overlap 0 · glyph_collision 0 · out_of_frame 0 · feeder_crossing 0 · layout_warnings 0
 [snapshot] audit → audit.json (advisory)
 [snapshot]  ok  test1_S1_light__page  coverage 104/104
-[snapshot] wrote 1 capture(s) → /home/user/claude_sld_generator_system/09_tests/07_Test 1 - 3000 kVA 2-Level/3_output/pages
+[snapshot] wrote 1 capture(s) → /home/user/claude_sld_generator_system/09_tests/07_Test Claude - 3000 kVA 2-Level/3_output/pages
 segments: 1 horizontal, 34 vertical
 
 === COLLINEAR HORIZONTAL OVERLAPS: 0 ===
@@ -206,6 +206,6 @@ FRAME HONESTY   (viewBox minus the 120px pad vs true ink extent, tol ±2px)
   S1           0.00       0.0 /    0.0 /    0.0 /    0.0    honest
 
 RESULT frame_honesty frame_sheets=1 frame_dishonest=0 frame_worst_px=0.00 frame_tol_px=2
-  wrote 3_output/RESULTS.json — run 2
+  wrote 3_output/RESULTS.json — run 3
   engine 1.0.22 · sheets 1 · P3 0 errors / 63 rules
   checks non-zero: band_outside=10 frame_sheets=1 frame_tol_px=2
