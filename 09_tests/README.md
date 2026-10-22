@@ -16,6 +16,7 @@ Two different things live in this folder and they follow different rules.
 | `04_Clinic AI Test - 3000A - One Sheet/` | the same clinic with NP (left) + EM (right) on one sheet, ATS normal feeds drawn whole — needs engine 1.0.19 (OFF-032); see its REVISIONS R-002 | the 7-folder standard |
 | `05_LCC Hotel - 1200A 208V/` | a working project — 1200 A, 120/208 V hotel switchgear composed from a red-lined snippet; first user of engine 1.0.20–1.0.22 (transformer-fed main, `a2_callout_feeders`) | the 7-folder standard |
 | `06_Test Codex - 3000 kVA 480V/` | 3,000 kVA 480 V service, 8 risers across four levels, eight Level-3-only transformer taps; branch `test-codex` | the 7-folder standard |
+| `07_Test Claude - 3000 kVA 2-Level/` | a working project — 3000 kVA, 2 storeys, ten two-level risers (5 lighting · 2 power via 150 kVA step-down · 3 mechanical) on one sheet; eight stacks floor-banded via OFF-009; branch `test-claude` | the 7-folder standard |
 | every new project | `cp -r _PROJECT_TEMPLATE "<NN>_<New Project>"` — take the next number | the 7-folder standard |
 
 ### ⚠️ The canonical DEFAULT single line lives in `01_inputs/defaults/`, not here
