@@ -20,7 +20,7 @@ the one feature doc you are editing**, before touching C# code. ⚠️ **No gate
 and no gate there can see this one** — the contract drop is the only seam.
 
 **Where this repo sits.** Since 2026-10-21 it is a **standalone public repository**,
-`Barkie721/claude_sld_generator_system`, whose history starts at a single initial commit (`e29b8c8`). It
+`Barkie721/claude_sld_generator_system`, whose history starts at a single initial commit (`7ded9f2`; the first eight commits were squashed into it on 2026-10-21, replacing the original `e29b8c8`). It
 was separated from the workspace repository `Barkie721/revit_electrical-dedarms_system`, of which it had
 been a folder since `89e70e3` (2026-10-06); that copy was taken at the workspace repository's `5936fc5`.
 ⚠️ **The workspace repository still holds its own `claude_sld_generator_system\` folder, and the two
