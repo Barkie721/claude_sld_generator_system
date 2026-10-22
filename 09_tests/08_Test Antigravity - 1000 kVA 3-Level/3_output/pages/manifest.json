@@ -1,0 +1,36 @@
+{
+  "html": "C:\\Users\\HRJ72\\_Mayo_Antigravity_Workspace\\claude_sld_generator_system\\09_tests\\08_Test Antigravity - 1000 kVA 3-Level\\2_build\\antigravity_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-22T04:29:55.503Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "antigravity_S1_light__page.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 114,
+        "total": 114,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 1,
+        "tx": 748,
+        "ty": -2474
+      }
+    }
+  ],
+  "mode": "page"
+}
