@@ -1,0 +1,101 @@
+{
+  "html": "/home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/Clinic AI Test - 3000A/2_build/clinic_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.19",
+  "generated": "2026-10-20T06:21:34.201Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "clinic_S1_dark.svg",
+      "png": "clinic_S1_dark.png",
+      "png_width": 3534,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": -634,
+        "y": 3127.4067332602635,
+        "w": 3534,
+        "h": 1962.5932667397365
+      },
+      "coverage": {
+        "rendered": 73,
+        "total": 73,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "clinic_S1_light.svg",
+      "png": "clinic_S1_light.png",
+      "png_width": 3534,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": -634,
+        "y": 3127.4067332602635,
+        "w": 3534,
+        "h": 1962.5932667397365
+      },
+      "coverage": {
+        "rendered": 73,
+        "total": 73,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S2",
+      "theme": "dark",
+      "svg": "clinic_S2_dark.svg",
+      "png": "clinic_S2_dark.png",
+      "png_width": 2434,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": -380,
+        "y": 2093.4067332602635,
+        "w": 2433.385,
+        "h": 2896.5932667397365
+      },
+      "coverage": {
+        "rendered": 97,
+        "total": 97,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S2",
+      "theme": "light",
+      "svg": "clinic_S2_light.svg",
+      "png": "clinic_S2_light.png",
+      "png_width": 2434,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": -380,
+        "y": 2093.4067332602635,
+        "w": 2433.385,
+        "h": 2896.5932667397365
+      },
+      "coverage": {
+        "rendered": 97,
+        "total": 97,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

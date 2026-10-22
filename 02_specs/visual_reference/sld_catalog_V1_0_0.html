@@ -1,0 +1,1432 @@
+<!DOCTYPE html>
+<!-- sld_catalog V1.0.0 — headless window.__snapshot / window.__audit hooks so 02_specs/visual_reference/snapshot_catalog.mjs can rasterize each symbol for visual back-check (mirrors 04_renderer). 35 symbols. The A-8 Equipment Label card is the four-line block (Label + 3 Line slots, matching the Revit family); its caption covers switchboard | device, and the L3-1 side stack is A-8-ified with fla/lra combined on one line. -->
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="revision" content="sld_catalog_V1_0_0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SLD Symbol Catalog</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --sld-linework: #00FFFF;
+    --sld-section: #39FF14;
+    --sld-pink: #FF69B4;
+    --sld-port: #FFD600;
+    --sld-fc: #FF3333;
+    --sld-vd: #1A5FAA;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: #0a0e17;
+    --bg-secondary: #111827;
+    --bg-card: #151d2e;
+    --bg-card-hover: #1a2438;
+    --bg-code: #0d1117;
+    --border: #1e2d45;
+    --border-active: #00e5ff;
+    --text-primary: #e8edf5;
+    --text-secondary: #8899b4;
+    --text-muted: #556a8a;
+    --accent: #00e5ff;
+    --accent-dim: rgba(0, 229, 255, 0.08);
+    --accent-glow: rgba(0, 229, 255, 0.15);
+    --pink: #ff69b4;
+    --green: #39ff14;
+    --svg-bg: #0a0e17;
+    --toggle-bg: #1e2d45;
+    --toggle-knob: #00e5ff;
+    --scrollbar-track: #111827;
+    --scrollbar-thumb: #1e2d45;
+    --badge-bg: rgba(0, 229, 255, 0.1);
+    --badge-text: #00e5ff;
+    --placeholder-bg: rgba(255, 165, 0, 0.08);
+    --placeholder-border: rgba(255, 165, 0, 0.25);
+    --placeholder-text: #ffa500;
+    --sld-text: #FFFFFF;
+    --sld-muted: #556a8a;
+    --sld-legend-body: #e0e4ec;
+    --sld-legend-dim: #00e5ff;
+  }
+
+  [data-theme="light"] {
+    --bg-primary: #f0f2f5;
+    --bg-secondary: #ffffff;
+    --bg-card: #ffffff;
+    --bg-card-hover: #f8f9fb;
+    --bg-code: #f6f8fa;
+    --border: #d1d9e6;
+    --border-active: #0077b6;
+    --text-primary: #1a1f2e;
+    --text-secondary: #4a5568;
+    --text-muted: #8899aa;
+    --accent: #0077b6;
+    --accent-dim: rgba(0, 119, 182, 0.06);
+    --accent-glow: rgba(0, 119, 182, 0.12);
+    --pink: #d6336c;
+    --green: #1a8f2d;
+    --svg-bg: #f8fafd;
+    --toggle-bg: #d1d9e6;
+    --toggle-knob: #0077b6;
+    --scrollbar-track: #e8ecf1;
+    --scrollbar-thumb: #c1c9d6;
+    --badge-bg: rgba(0, 119, 182, 0.08);
+    --badge-text: #0077b6;
+    --placeholder-bg: rgba(200, 120, 0, 0.06);
+    --placeholder-border: rgba(200, 120, 0, 0.3);
+    --placeholder-text: #b87400;
+    --sld-text: #1a1f2e;
+    --sld-muted: #8899aa;
+    --sld-legend-body: #27272a;
+    --sld-legend-dim: #0077b6;
+    --sld-fc: #CC2222;
+    --sld-vd: #14478A;
+  }
+
+  .port-marker { transition: opacity 0.2s; }
+  .port-diamond { fill: #FFD600; stroke: #000; stroke-width: 0.6; }
+  .port-label { fill: #FFD600; font-family: 'JetBrains Mono', monospace; font-weight: 600; }
+  .ports-hidden .port-marker { opacity: 0; pointer-events: none; }
+
+  .port-toggle {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 6px 14px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: #FFD600;
+    cursor: pointer;
+    transition: all var(--transition);
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .port-toggle:hover { border-color: #FFD600; }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background var(--transition), color var(--transition);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar { width: 6px; height: 6px; }
+  ::-webkit-scrollbar-track { background: var(--scrollbar-track); }
+  ::-webkit-scrollbar-thumb { background: var(--scrollbar-thumb); border-radius: 3px; }
+
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    backdrop-filter: blur(12px);
+    transition: background var(--transition), border-color var(--transition);
+  }
+
+  .header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .logo {
+    width: 36px;
+    height: 36px;
+    border-radius: 8px;
+    background: linear-gradient(135deg, var(--accent), var(--pink));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 700;
+    font-size: 14px;
+    color: #0a0e17;
+    flex-shrink: 0;
+  }
+
+  .header h1 {
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  .header h1 span {
+    color: var(--text-muted);
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .header-right {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+
+  .symbol-count {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    color: var(--text-muted);
+    padding: 4px 10px;
+    background: var(--accent-dim);
+    border-radius: 20px;
+    border: 1px solid var(--border);
+  }
+
+  .theme-toggle {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .theme-toggle svg {
+    width: 16px;
+    height: 16px;
+    fill: none;
+    stroke: var(--text-muted);
+    transition: stroke var(--transition);
+  }
+
+  .toggle-track {
+    width: 44px;
+    height: 24px;
+    background: var(--toggle-bg);
+    border-radius: 12px;
+    position: relative;
+    transition: background var(--transition);
+  }
+
+  .toggle-knob {
+    width: 18px;
+    height: 18px;
+    background: var(--toggle-knob);
+    border-radius: 50%;
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    transition: transform var(--transition), background var(--transition);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.3);
+  }
+
+  [data-theme="light"] .toggle-knob {
+    transform: translateX(20px);
+  }
+
+  .catalog {
+    padding: 28px 32px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(420px, 1fr));
+    gap: 20px;
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 500px) {
+    .catalog { grid-template-columns: 1fr; padding: 16px; gap: 14px; }
+    .header { padding: 12px 16px; }
+    .header h1 span { display: none; }
+  }
+
+  .card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background var(--transition), border-color var(--transition), box-shadow var(--transition);
+  }
+
+  .card:hover {
+    background: var(--bg-card-hover);
+    border-color: color-mix(in srgb, var(--border-active) 40%, var(--border));
+    box-shadow: 0 4px 24px var(--accent-glow);
+  }
+
+  .card.placeholder {
+    border-color: var(--placeholder-border);
+    background: var(--placeholder-bg);
+  }
+
+  .card.placeholder:hover {
+    border-color: var(--placeholder-text);
+    box-shadow: none;
+  }
+
+  .card-header {
+    padding: 14px 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid var(--border);
+    gap: 12px;
+  }
+
+  .card-title-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    min-width: 0;
+  }
+
+  .card-number {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--badge-text);
+    background: var(--badge-bg);
+    padding: 2px 8px;
+    border-radius: 6px;
+    flex-shrink: 0;
+  }
+
+  .card.placeholder .card-number {
+    color: var(--placeholder-text);
+    background: var(--placeholder-bg);
+    border: 1px solid var(--placeholder-border);
+  }
+
+  .card-title {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
+
+  .card-body {
+    position: relative;
+    min-height: 200px;
+  }
+
+
+
+  .svg-preview {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--svg-bg);
+    min-height: 200px;
+  }
+
+  .svg-preview svg {
+    max-width: 100%;
+    height: auto;
+    max-height: 220px;
+  }
+
+  [data-theme="light"] .svg-preview svg text:not(.port-label) { fill: #1a1f2e !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#00FFFF"] { stroke: #0077b6 !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#CCCCCC"] { stroke: #000000 !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#FF69B4"] { stroke: #d6336c !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#39FF14"] { stroke: #1a8f2d !important; }
+  [data-theme="light"] .svg-preview svg [fill="#00FFFF"] { fill: #0077b6 !important; }
+  [data-theme="light"] .svg-preview svg [fill="#FF69B4"] { fill: #d6336c !important; }
+  [data-theme="light"] .svg-preview svg [fill="#FFFFFF"] { fill: #1a1f2e !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#FFFFFF"] { stroke: #1a1f2e !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#4a5568"] { stroke: #a0aec0 !important; }
+  [data-theme="light"] .svg-preview svg [fill="#0a0e17"] { fill: #f8fafd !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#FF3333"] { stroke: #CC2222 !important; }
+  [data-theme="light"] .svg-preview svg [stroke="#1A5FAA"] { stroke: #14478A !important; }
+  [data-theme="light"] .port-diamond { fill: #e5a600; }
+  [data-theme="light"] .port-label { fill: #b38600; }
+
+
+
+  .card-footer {
+    padding: 10px 18px;
+    border-top: 1px solid var(--border);
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+
+  .port-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    padding: 2px 8px;
+    border-radius: 4px;
+    background: var(--accent-dim);
+    color: var(--badge-text);
+    border: 1px solid color-mix(in srgb, var(--accent) 20%, transparent);
+  }
+
+  .card.placeholder .card-footer { opacity: 0.5; font-style: italic; }
+
+  .class-b-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    color: var(--green);
+    background: rgba(57, 255, 20, 0.08);
+    border: 1px solid rgba(57, 255, 20, 0.25);
+    padding: 2px 6px;
+    border-radius: 4px;
+    letter-spacing: 0.5px;
+  }
+
+  .wide-card { grid-column: 1 / -1; }
+  .wide-card .svg-preview { min-height: 280px; }
+
+  .legend-panel {
+    padding: 32px;
+    background: var(--svg-bg);
+  }
+  .wide-card .card-body-table {
+    padding: 32px 24px;
+    overflow-x: auto;
+    background: var(--svg-bg);
+  }
+  .wide-card table {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    color: var(--text-primary);
+  }
+  .wide-card caption {
+    text-align: center;
+    font-family: 'JetBrains Mono', monospace;
+  }
+  .wide-card th {
+    padding: 6px 8px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .wide-card td {
+    padding: 5px 8px;
+    text-align: center;
+    white-space: nowrap;
+  }
+  .feeder-notes {
+    margin-top: 16px;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px;
+    color: var(--text-muted);
+    line-height: 1.7;
+  }
+  .feeder-notes .notes-header {
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+
+  .placeholder-note {
+    font-size: 11px;
+    color: var(--placeholder-text);
+    font-family: 'JetBrains Mono', monospace;
+    padding: 40px 20px;
+    text-align: center;
+    line-height: 1.7;
+  }
+
+  .tab-bar {
+    display: flex;
+    gap: 8px;
+    padding: 12px 32px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+    position: sticky;
+    top: 57px;
+    z-index: 99;
+    transition: background var(--transition), border-color var(--transition);
+  }
+  @media (max-width: 500px) { .tab-bar { padding: 10px 16px; top: 49px; } }
+
+  .tab-btn {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 6px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg-card);
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: all var(--transition);
+  }
+  .tab-btn:hover { border-color: var(--accent); color: var(--text-primary); }
+  .tab-btn.active {
+    border-color: var(--accent);
+    background: var(--accent-dim);
+    color: var(--accent);
+  }
+
+  .catalog.hidden, .prop-canvas.hidden { display: none; }
+
+  .prop-canvas {
+    padding: 28px 32px;
+    max-width: 1600px;
+    margin: 0 auto;
+    overflow-x: auto;
+  }
+  .prop-canvas svg text { font-family: 'JetBrains Mono', monospace; }
+  [data-theme="light"] .prop-canvas svg svg text:not(.port-label) { fill: #1a1f2e !important; }
+  [data-theme="light"] .prop-canvas svg svg [stroke="#00FFFF"] { stroke: #0077b6 !important; }
+  [data-theme="light"] .prop-canvas svg svg [stroke="#CCCCCC"] { stroke: #000000 !important; }
+  [data-theme="light"] .prop-canvas svg svg [stroke="#FF69B4"] { stroke: #d6336c !important; }
+  [data-theme="light"] .prop-canvas svg svg [fill="#00FFFF"] { fill: #0077b6 !important; }
+  [data-theme="light"] .prop-canvas svg svg [fill="#FF69B4"] { fill: #d6336c !important; }
+  [data-theme="light"] .prop-canvas svg svg [fill="#0a0e17"] { fill: #f8fafd !important; }
+  [data-theme="light"] .prop-canvas svg svg [stroke="#FF3333"] { stroke: #CC2222 !important; }
+  [data-theme="light"] .prop-canvas svg svg [stroke="#1A5FAA"] { stroke: #14478A !important; }
+  [data-theme="light"] .prop-canvas svg svg [stroke="#FFFFFF"] { stroke: #1a1f2e !important; }
+  @media (max-width: 500px) { .prop-canvas { padding: 16px; } }
+
+  .layer-divider {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 0 2px;
+    cursor: pointer;
+    user-select: none;
+  }
+  .layer-divider:hover .layer-divider-tag { opacity: 0.8; }
+  .layer-divider-chevron {
+    display: inline-block;
+    transition: transform 0.2s ease;
+    font-size: 11px;
+  }
+  .layer-divider.collapsed .layer-divider-chevron { transform: rotate(-90deg); }
+  .layer-divider-tag {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--accent);
+    white-space: nowrap;
+  }
+  .layer-divider-line {
+    flex: 1;
+    height: 1px;
+    background: var(--border);
+  }
+  .layer-divider-desc {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 12px;
+    color: var(--text-muted);
+    white-space: nowrap;
+  }
+
+  .layer-badge {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 9px;
+    font-weight: 700;
+    padding: 1px 5px;
+    border-radius: 4px;
+    flex-shrink: 0;
+  }
+  .layer-badge[data-layer="L0"] { color: #FF69B4; background: rgba(255,105,180,0.12); }
+  .layer-badge[data-layer="L1"] { color: #FFD600; background: rgba(255,214,0,0.12); }
+  .layer-badge[data-layer="L2"] { color: #00e5ff; background: rgba(0,229,255,0.10); }
+  .layer-badge[data-layer="L3"] { color: #39FF14; background: rgba(57,255,20,0.12); }
+  .layer-badge[data-layer="R"]  { color: #FF69B4; background: rgba(255,105,180,0.12); }
+  .layer-badge[data-layer="A"]  { color: #8899b4; background: rgba(136,153,180,0.12); }
+  [data-theme="light"] .layer-badge[data-layer="L0"] { color: #c4387a; background: rgba(196,56,122,0.10); }
+  [data-theme="light"] .layer-badge[data-layer="L1"] { color: #a68b00; background: rgba(166,139,0,0.10); }
+  [data-theme="light"] .layer-badge[data-layer="L2"] { color: #0077b6; background: rgba(0,119,182,0.08); }
+  [data-theme="light"] .layer-badge[data-layer="L3"] { color: #1a8f2d; background: rgba(26,143,45,0.10); }
+  [data-theme="light"] .layer-badge[data-layer="R"]  { color: #c4387a; background: rgba(196,56,122,0.10); }
+  [data-theme="light"] .layer-badge[data-layer="A"]  { color: #556a8a; background: rgba(85,106,138,0.10); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-left">
+    <div class="logo">SLD</div>
+    <h1>Symbol Catalog <span>Power Distribution &mdash; Single Line Diagram</span></h1>
+  </div>
+  <div class="header-right">
+    <button class="port-toggle" onclick="togglePorts()">
+      <span>◆</span>
+      <span id="port-label">Hide Ports</span>
+    </button>
+    <div class="symbol-count">35 symbols + 3 reference</div>
+    <div class="theme-toggle" onclick="toggleTheme()" title="Toggle light/dark mode">
+      <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="5" stroke-width="2"/><line x1="12" y1="1" x2="12" y2="3" stroke-width="2" stroke-linecap="round"/><line x1="12" y1="21" x2="12" y2="23" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78" stroke-width="2" stroke-linecap="round"/><line x1="1" y1="12" x2="3" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="21" y1="12" x2="23" y2="12" stroke-width="2" stroke-linecap="round"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36" stroke-width="2" stroke-linecap="round"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22" stroke-width="2" stroke-linecap="round"/></svg>
+      <div class="toggle-track"><div class="toggle-knob"></div></div>
+      <svg viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <button class="tab-btn active" onclick="switchTab('symbols')">Symbols</button>
+  <button class="tab-btn" onclick="switchTab('reference')">Reference</button>
+  <button class="tab-btn" onclick="switchTab('proportions')">Proportions</button>
+  <button class="port-toggle" id="collapse-all-btn" onclick="toggleAllLayers()" style="margin-left:auto;">
+    <span id="collapse-all-label">Collapse All</span>
+  </button>
+</div>
+
+<div class="catalog" id="catalog"></div>
+<div class="catalog hidden" id="catalog-ref"></div>
+<div class="prop-canvas hidden" id="catalog-prop"></div>
+
+<script>
+function toggleTheme() {
+  const html = document.documentElement;
+  html.dataset.theme = html.dataset.theme === 'dark' ? 'light' : 'dark';
+}
+
+function togglePorts() {
+  document.body.classList.toggle('ports-hidden');
+  var lbl = document.getElementById('port-label');
+  lbl.textContent = document.body.classList.contains('ports-hidden') ? 'Show Ports' : 'Hide Ports';
+}
+
+function switchTab(tab) {
+  var tabs = {
+    symbols: document.getElementById('catalog'),
+    reference: document.getElementById('catalog-ref'),
+    proportions: document.getElementById('catalog-prop')
+  };
+  var btns = document.querySelectorAll('.tab-btn');
+  var idx = {symbols: 0, reference: 1, proportions: 2};
+  for (var key in tabs) {
+    if (key === tab) {
+      tabs[key].classList.remove('hidden');
+      btns[idx[key]].classList.add('active');
+    } else {
+      tabs[key].classList.add('hidden');
+      btns[idx[key]].classList.remove('active');
+    }
+  }
+  var colBtn = document.getElementById('collapse-all-btn');
+  colBtn.style.display = (tab === 'symbols') ? 'flex' : 'none';
+}
+
+var allCollapsed = false;
+function toggleAllLayers() {
+  allCollapsed = !allCollapsed;
+  var layers = ['L0','L1','L2','L3','R','A'];
+  layers.forEach(function(lid) {
+    var group = document.getElementById('layer-' + lid);
+    var divider = document.getElementById('divider-' + lid);
+    if (group) group.style.display = allCollapsed ? 'none' : 'contents';
+    if (divider) divider.classList.toggle('collapsed', allCollapsed);
+  });
+  document.getElementById('collapse-all-label').textContent = allCollapsed ? 'Expand All' : 'Collapse All';
+}
+
+// Port marker SVG snippets per symbol (keyed by id)
+const portMarkers = {
+  "L0-1": '<g class="port-marker"><polygon points="80,135 85,140 80,145 75,140" class="port-diamond"/><text x="80" y="155" text-anchor="middle" font-size="8" class="port-label">primary_in</text><polygon points="140,135 145,140 140,145 135,140" class="port-diamond"/><text x="140" y="155" text-anchor="middle" font-size="8" class="port-label">secondary_out</text></g>',
+  "L2-2": '<g class="port-marker"><polygon points="83.5,62 88.5,67 83.5,72 78.5,67" class="port-diamond"/><text x="92" y="70" font-size="8" class="port-label">primary_in</text><polygon points="83.5,15 88.5,20 83.5,25 78.5,20" class="port-diamond"/><text x="92" y="23" font-size="8" class="port-label">secondary_out</text><polygon points="60,23 65,28 60,33 55,28" class="port-diamond"/><text x="51" y="31" text-anchor="end" font-size="8" class="port-label">flex_left</text><polygon points="107,23 102,28 107,33 112,28" class="port-diamond"/><text x="116" y="31" font-size="8" class="port-label">flex_right</text></g>',
+  "L2-1": '<g class="port-marker"><polygon points="30,1 35,6 30,11 25,6" class="port-diamond"/><text x="21" y="9" text-anchor="end" font-size="8" class="port-label">line_in</text><polygon points="30,55 35,60 30,65 25,60" class="port-diamond"/><text x="39" y="63" font-size="8" class="port-label">bus_out</text></g>',
+  "L1-1": '<g class="port-marker"><polygon points="60,1 65,6 60,11 55,6" class="port-diamond"/><text x="51" y="9" text-anchor="end" font-size="8" class="port-label">line_in</text><polygon points="60,55 65,60 60,65 55,60" class="port-diamond"/><text x="69" y="63" font-size="8" class="port-label">bus_out</text></g>',
+  "L2-4": '<g class="port-marker"><polygon points="120,35 125,40 120,45 115,40" class="port-diamond"/><text x="120" y="30" text-anchor="middle" font-size="8" class="port-label">feed_top</text><polygon points="120,175 125,180 120,185 115,180" class="port-diamond"/><text x="120" y="195" text-anchor="middle" font-size="8" class="port-label">feed_bottom</text><polygon points="45,105 50,110 45,115 40,110" class="port-diamond"/><text x="36" y="113" text-anchor="end" font-size="8" class="port-label">feed_left</text><polygon points="195,105 190,110 195,115 200,110" class="port-diamond"/><text x="204" y="113" font-size="8" class="port-label">feed_right</text></g>',
+  "L2-3": '<g class="port-marker"><polygon points="130,5 135,10 130,15 125,10" class="port-diamond"/><text x="139" y="13" font-size="8" class="port-label">load_out</text><polygon points="95,235 100,240 95,245 90,240" class="port-diamond"/><text x="86" y="232" text-anchor="end" font-size="8" class="port-label">source1_in</text><polygon points="165,235 170,240 165,245 160,240" class="port-diamond"/><text x="174" y="232" font-size="8" class="port-label">source2_in</text></g>',
+  "L1-4": '<g class="port-marker"><polygon points="63.5,17 68.5,22 63.5,27 58.5,22" class="port-diamond"/><text x="72" y="25" font-size="8" class="port-label">ct_bi</text></g>',
+  "L2-8": '<g class="port-marker"><polygon points="10.5,45 15.5,50 10.5,55 5.5,50" class="port-diamond"/><text x="10.5" y="41" text-anchor="middle" font-size="8" class="port-label">ct_bi</text></g>',
+  "L1-3": '<g class="port-marker"><text x="130" y="176" text-anchor="middle" font-size="8" class="port-label" font-style="italic">no ports (floats)</text></g>',
+  "L1-2": '<g class="port-marker"><text x="236" y="201" text-anchor="middle" font-size="8" class="port-label" font-style="italic">ports via Bus R-2</text></g>',
+  "A-1": '<g class="port-marker"><polygon points="40,45 45,50 40,55 35,50" class="port-diamond"/><text x="40" y="65" text-anchor="middle" font-size="8" class="port-label">anno_attach</text><polygon points="292,45 297,50 292,55 287,50" class="port-diamond"/><text x="292" y="65" text-anchor="middle" font-size="8" class="port-label">anno_attach</text></g>',
+  "A-2": '<g class="port-marker"><polygon points="50,95 55,100 50,105 45,100" class="port-diamond"/><text x="59" y="103" font-size="8" class="port-label">anno_attach</text></g>',
+  "A-3": '<g class="port-marker"><polygon points="128,65 133,70 128,75 123,70" class="port-diamond"/><text x="128" y="85" text-anchor="middle" font-size="8" class="port-label">feeder_bi</text><polygon points="260,75 265,80 260,85 255,80" class="port-diamond"/><text x="260" y="71" text-anchor="middle" font-size="8" class="port-label">feeder_bi</text></g>',
+  "L2-5": '<g class="port-marker"><polygon points="63.5,15 68.5,20 63.5,25 58.5,20" class="port-diamond"/><text x="63.5" y="11" text-anchor="middle" font-size="8" class="port-label">load_out</text><polygon points="63.5,62 68.5,67 63.5,72 58.5,67" class="port-diamond"/><text x="63.5" y="80" text-anchor="middle" font-size="8" class="port-label">line_in</text><polygon points="40,23 45,28 40,33 35,28" class="port-diamond"/><text x="31" y="31" text-anchor="end" font-size="8" class="port-label">flex_left</text><polygon points="87,23 82,28 87,33 92,28" class="port-diamond"/><text x="96" y="31" font-size="8" class="port-label">flex_right</text></g>',
+  "L2-6": '<g class="port-marker"><polygon points="80,51 85,56 80,61 75,56" class="port-diamond"/><text x="80" y="68" text-anchor="middle" font-size="8" class="port-label">line_in (mode A)</text><polygon points="80,17 85,22 80,27 75,22" class="port-diamond"/><text x="80" y="13" text-anchor="middle" font-size="8" class="port-label">spur_top</text><polygon points="80,43 85,48 80,53 75,48" class="port-diamond"/><text x="80" y="63" text-anchor="middle" font-size="8" class="port-label">spur_bottom</text><polygon points="44,30 49,35 44,40 39,35" class="port-diamond"/><text x="35" y="38" text-anchor="end" font-size="8" class="port-label">spur_left</text><polygon points="116,30 111,35 116,40 121,35" class="port-diamond"/><text x="125" y="38" font-size="8" class="port-label">spur_right</text></g>',
+  "L3-1": '<g class="port-marker"><polygon points="123.5,137 128.5,142 123.5,147 118.5,142" class="port-diamond"/><text x="123.5" y="157" text-anchor="middle" font-size="8" class="port-label">load_in</text></g>',
+  "L2-7": '<g class="port-marker"><polygon points="40,61 45,66 40,71 35,66" class="port-diamond"/><text x="40" y="78" text-anchor="middle" font-size="8" class="port-label">bus_out</text><polygon points="140,61 145,66 140,71 135,66" class="port-diamond"/><text x="140" y="78" text-anchor="middle" font-size="8" class="port-label">bus_out</text></g>',
+  "L3-2": '<g class="port-marker"><polygon points="105,54 110,59 105,64 100,59" class="port-diamond"/><text x="105" y="74" text-anchor="middle" font-size="8" class="port-label">load_in</text><polygon points="105,16 110,21 105,26 100,21" class="port-diamond"/><text x="105" y="12" text-anchor="middle" font-size="8" class="port-label">flex_top</text></g>',
+  "R-1": '<g class="port-marker"><polygon points="15,10 20,15 15,20 10,15" class="port-diamond"/><text x="24" y="18" font-size="8" class="port-label">start</text><polygon points="185,125 190,130 185,135 180,130" class="port-diamond"/><text x="194" y="133" font-size="8" class="port-label">end</text></g>',
+  "R-2": '<g class="port-marker"><polygon points="15,15 20,20 15,25 10,20" class="port-diamond"/><text x="15" y="11" text-anchor="middle" font-size="8" class="port-label">bus_splice_left</text><polygon points="185,15 190,20 185,25 180,20" class="port-diamond"/><text x="185" y="11" text-anchor="middle" font-size="8" class="port-label">bus_splice_right</text><polygon points="100,15 105,20 100,25 95,20" class="port-diamond"/><text x="100" y="35" text-anchor="middle" font-size="8" class="port-label">bus_tap_bi</text></g>',
+  "R-3": '<g class="port-marker"><polygon points="15,30 20,35 15,40 10,35" class="port-diamond"/><text x="15" y="55" text-anchor="middle" font-size="8" class="port-label">feed_start</text><polygon points="345,30 350,35 345,40 340,35" class="port-diamond"/><text x="345" y="55" text-anchor="middle" font-size="8" class="port-label">feed_end</text><polygon points="80,30 85,35 80,40 75,35" class="port-diamond"/><text x="80" y="22" text-anchor="middle" font-size="8" class="port-label">tap_01</text><polygon points="180,30 185,35 180,40 175,35" class="port-diamond"/><text x="180" y="22" text-anchor="middle" font-size="8" class="port-label">tap_02</text><polygon points="280,30 285,35 280,40 275,35" class="port-diamond"/><text x="280" y="22" text-anchor="middle" font-size="8" class="port-label">tap_03</text></g>',
+  "L3-3": '<g class="port-marker"><polygon points="83.5,65 88.5,70 83.5,75 78.5,70" class="port-diamond"/><text x="83.5" y="82" text-anchor="middle" font-size="8" class="port-label">load_in</text></g>',
+  "A-4": '<g class="port-marker"><polygon points="28,55 33,60 28,65 23,60" class="port-diamond"/><text x="28" y="75" text-anchor="middle" font-size="8" class="port-label">anno_attach</text></g>',
+  "A-5": '<g class="port-marker"><polygon points="168,55 173,60 168,65 163,60" class="port-diamond"/><text x="168" y="75" text-anchor="middle" font-size="8" class="port-label">anno_attach</text></g>',
+  "A-6": '<g class="port-marker"><polygon points="28,55 33,60 28,65 23,60" class="port-diamond"/><text x="37" y="63" font-size="8" class="port-label">anno_attach</text><polygon points="247,50 252,55 247,60 242,55" class="port-diamond"/><text x="238" y="58" text-anchor="end" font-size="8" class="port-label">anno_left</text><polygon points="291,50 296,55 291,60 286,55" class="port-diamond"/><text x="300" y="58" font-size="8" class="port-label">anno_right</text><polygon points="269,31 274,36 269,41 264,36" class="port-diamond"/><text x="269" y="27" text-anchor="middle" font-size="8" class="port-label">anno_top</text><polygon points="269,69 274,74 269,79 264,74" class="port-diamond"/><text x="269" y="86" text-anchor="middle" font-size="8" class="port-label">anno_bottom</text></g>'
+};
+
+
+
+const symbols = [
+  {
+        id: "L0-1", num: "L0-1", layer: "L0", title: "Utility Transformer",
+    ports: ["primary_in", "secondary_out"], placeholder: false, svg: '<svg viewBox="-40 0 300 220" xmlns="http://www.w3.org/2000/svg">\n  <path d="M40,100 L40,20 L180,20 L180,100"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="110" y="72" text-anchor="middle"\n        font-family="monospace" font-size="36" font-weight="700"\n        fill="#FFFFFF">T</text>\n  <rect x="20" y="100" width="180" height="40"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <path d="M20,140 L20,200 L200,200 L200,140"\n        fill="none" stroke="#39FF14" stroke-width="1.5"\n        stroke-dasharray="12,6"/>\n  <text x="210" y="38" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">UTILITY TRANSFORMER</text>\n  <text x="210" y="58" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">2500KVA</text>\n  <text x="210" y="76" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">480Y/277V</text>\n  <text x="210" y="94" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">4W, 3PH</text>\n</svg>'
+  },
+  {
+        id: "L0-2", num: "L0-2", layer: "L0", title: "MV Transformer",
+    ports: [], placeholder: true, notes: 'Medium-voltage transformer within switchgear lineup.\nGeometry, reference SVG, and anti-patterns not yet defined.\nPrimary: MV bus, Secondary: LV bus. IEEE C57.12.00, NEC 450.3.', svg: null
+  },
+  {
+        id: "L1-1", num: "L1-1", layer: "L1", title: "GFP Circuit Breaker",
+    ports: ["line_in", "bus_out"], placeholder: false, svg: '<svg viewBox="-95.5 -74 300 220" xmlns="http://www.w3.org/2000/svg">\n  <circle cx="60" cy="10" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <path d="M60,10 Q47,26 60,42"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="60" cy="42" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <line x1="60" y1="46" x2="60" y2="58"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="60" cy="60" r="2.5"\n          fill="#FF69B4" stroke="#FF69B4" stroke-width="1"/>\n  <rect x="24" y="20" width="24" height="14"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="36" y="30" text-anchor="middle"\n        font-family="monospace" font-size="8" font-weight="700"\n        fill="#FFFFFF">GFP</text>\n  <line x1="48" y1="26" x2="51" y2="26"\n        stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="4,3"/>\n  <circle cx="51" cy="26" r="1.2" fill="#00FFFF" opacity="0.7"/>\n  <line x1="36" y1="34" x2="36" y2="52"\n        stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="4,3"/>\n  <line x1="36" y1="52" x2="60" y2="52"\n        stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="4,3"/>\n  <circle cx="60" cy="52" r="1.2" fill="#00FFFF" opacity="0.7"/>\n  <text x="72" y="23" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">3000A</text>\n  <text x="72" y="33" font-family="monospace" font-size="12"\n        font-weight="700" fill="#FFFFFF">3P</text>\n</svg>'
+  },
+  {
+        id: "L1-2", num: "L1-2", layer: "L1", title: "Switchboard Section (hosts Bus R-2)",
+    ports: [], placeholder: false, svg: '<svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg">\n  <rect x="140" y="30" width="192" height="192"\n        fill="none" stroke="#39FF14" stroke-width="1.2"\n        stroke-dasharray="8,5"/>\n  <line x1="188" y1="186" x2="284" y2="186"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="236" cy="186" r="5" fill="#FF69B4"/>\n  <text x="125" y="78" text-anchor="end"\n        font-family="monospace" font-size="12" font-weight="700"\n        text-decoration="underline"\n        fill="#FFFFFF">4MSB-B-A</text>\n  <text x="125" y="98" text-anchor="end"\n        font-family="monospace" font-size="12" font-weight="700"\n        fill="#FFFFFF">3000A</text>\n  <text x="125" y="116" text-anchor="end"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">480Y/277V</text>\n  <text x="125" y="134" text-anchor="end"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">4W, 3PH</text>\n</svg>'
+  },
+  {
+        id: "L1-3", num: "L1-3", layer: "L1", title: "Neutral-Ground Bond",
+    ports: [], placeholder: false, svg: '<svg viewBox="-20 -16.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <line x1="108" y1="40" x2="152" y2="40"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="130" cy="40" r="5" fill="#FF69B4"/>\n  <line x1="130" y1="40" x2="130" y2="65"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="130" cy="65" r="5" fill="#FF69B4"/>\n  <line x1="110" y1="65" x2="150" y2="65"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="130" y1="65" x2="130" y2="115"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="108" y1="115" x2="152" y2="115"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="114" y1="127" x2="146" y2="127"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="120" y1="139" x2="140" y2="139"\n        stroke="#00FFFF" stroke-width="3"/>\n  <ellipse cx="130" cy="147" rx="4" ry="2.5" fill="#00FFFF"/>\n</svg>'
+  },
+  {
+        id: "L1-4", num: "L1-4", layer: "L1", title: "Utility Grade Meter",
+    ports: ["ct_bi"], placeholder: false, svg: '<svg viewBox="-86.5 -62.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <line x1="63.5" y1="35" x2="63.5" y2="22"\n        stroke="#00FFFF" stroke-width="3"/>\n  <path d="M63.5,22 C63.5,19 60.5,15 57.5,13 C54.5,11 50.5,13 48.5,17"\n        fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round"/>\n  <path d="M63.5,22 C63.5,19 66.5,15 69.5,13 C72.5,11 76.5,13 78.5,17"\n        fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round"/>\n  <rect x="40" y="35" width="47" height="47"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="63.5" cy="58.5" r="14"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="63.5" y="63" text-anchor="middle"\n        font-family="monospace" font-size="12" font-weight="700"\n        fill="#FFFFFF">M</text>\n</svg>'
+  },
+  {
+        id: "L1-5", num: "L1-5", layer: "L1", title: "Generator",
+    ports: ["gen_out"], placeholder: true, notes: 'Geometry, reference SVG, and anti-patterns not yet defined.\nKnown: Circle with "G", single gen_out port, KW/voltage/fuel fields.\nRef: NEC 700.12, 701.12, NFPA 110', svg: null
+  },
+  {
+        id: "L1-6", num: "L1-6", layer: "L1", title: "Draw-Out Circuit Breaker",
+    ports: ["line_in", "bus_out"], placeholder: true, notes: 'Draw-out variant of circuit breaker with cradle/rail mechanism.\nElectrically identical to L2-1 (Circuit Breaker).\nGeometry, reference SVG, and anti-patterns not yet defined.\nCommon at L1 main switchboard positions (3000A+ frames).', svg: null
+  },
+  {
+        id: "L2-1", num: "L2-1", layer: "L2", title: "Circuit Breaker",
+    ports: ["line_in", "bus_out"], placeholder: false, svg: '<svg viewBox="-107.5 -74 300 220" xmlns="http://www.w3.org/2000/svg">\n  <circle cx="30" cy="10" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <path d="M30,10 Q17,26 30,42"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="30" cy="42" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <line x1="30" y1="46" x2="30" y2="58"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="30" cy="60" r="2.5"\n          fill="#FF69B4" stroke="#FF69B4" stroke-width="1"/>\n  <text x="42" y="23" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">400A</text>\n  <text x="42" y="33" font-family="monospace" font-size="12"\n        font-weight="700" fill="#FFFFFF">3P</text>\n</svg>'
+  },
+  {
+        id: "L2-2", num: "L2-2", layer: "L2", title: "LV Transformer",
+    ports: ["primary_in", "secondary_out", "flex_left", "flex_right"], placeholder: false, svg: '<svg viewBox="-76.5 -54.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <rect x="60" y="20" width="47" height="47"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="83.5" y="51" text-anchor="middle"\n        font-family="monospace" font-size="24" font-weight="700"\n        fill="#FFFFFF">T</text>\n  <line x1="60" y1="43.5" x2="41" y2="43.5"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="41" y1="43.5" x2="41" y2="76"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="32" y1="76" x2="50" y2="76"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="35" y1="82" x2="47" y2="82"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="37" y1="88" x2="45" y2="88"\n        stroke="#00FFFF" stroke-width="3"/>\n  <ellipse cx="41" cy="91" rx="2" ry="1.2" fill="#00FFFF"/>\n  <text x="115" y="34" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">4T-B-A</text>\n  <text x="115" y="50" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">225KVA</text>\n  <text x="115" y="64" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">480V-</text>\n  <text x="115" y="78" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">208Y/120V</text>\n</svg>'
+  },
+  {
+        id: "L2-3", num: "L2-3", layer: "L2", title: "Automatic Transfer Switch (ATS)",
+    ports: ["load_out", "source1_in", "source2_in"], placeholder: false, svg: '<svg viewBox="-44.75 -4.15 379.5 278.3" xmlns="http://www.w3.org/2000/svg">\n  <line x1="130" y1="10" x2="130" y2="40"\n        stroke="#00FFFF" stroke-width="3"/>\n  <rect x="60" y="40" width="140" height="140"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="130" cy="68" r="10"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="95" cy="148" r="10"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="165" cy="148" r="10"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <line x1="123" y1="76" x2="101" y2="141"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="95" y1="158" x2="95" y2="240"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="165" y1="158" x2="165" y2="240"\n        stroke="#00FFFF" stroke-width="3"/>\n  <text x="218" y="58" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">L4A-B-A</text>\n  <text x="218" y="76" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">400A</text>\n  <text x="218" y="94" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">4-POLE</text>\n</svg>'
+  },
+  {
+        id: "L2-4", num: "L2-4", layer: "L2", title: "Panelboard",
+    ports: ["feed_top", "feed_bottom", "feed_left", "feed_right"], placeholder: false, svg: '<svg viewBox="-30 0 300 220" xmlns="http://www.w3.org/2000/svg">\n  <rect x="50" y="40" width="140" height="140"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="120" y="72" text-anchor="middle"\n        font-family="monospace" font-size="12" font-weight="700"\n        text-decoration="underline"\n        fill="#FFFFFF">4B-2-A</text>\n  <text x="120" y="100" text-anchor="middle"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">480/277V 3Ø</text>\n  <text x="120" y="122" text-anchor="middle"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">MLO</text>\n  <text x="120" y="144" text-anchor="middle"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">225A</text>\n</svg>'
+  },
+  {
+        id: "L2-5", num: "L2-5", layer: "L2", title: "Disconnect Switch",
+    ports: ["load_out", "line_in", "flex_left", "flex_right"], placeholder: false, svg: '<svg viewBox="-50 -66.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <rect x="40" y="20" width="47" height="47"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="63.5" y="47" text-anchor="middle"\n        font-family="monospace" font-size="16" font-weight="700"\n        fill="#FFFFFF">F</text>\n  <line x1="87" y1="36" x2="103" y2="36"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="103" y1="36" x2="103" y2="52"\n        stroke="#00FFFF" stroke-width="3"/>\n  <text x="115" y="32" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">FPD-B-A</text>\n  <text x="115" y="48" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">200A</text>\n  <text x="115" y="62" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">3P</text>\n</svg>'
+  },
+  {
+        id: "L2-6", num: "L2-6", layer: "L2", title: "Surge Protective Device (SPD)",
+    ports: ["line_in", "spur_top", "spur_bottom", "spur_left", "spur_right"], placeholder: false, svg: '<svg viewBox="-70 -75 300 220" xmlns="http://www.w3.org/2000/svg">\n  <rect x="49" y="22" width="62" height="26"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="80" y="40" text-anchor="middle"\n        font-family="monospace" font-size="11" font-weight="700"\n        fill="#FFFFFF">SPD</text>\n</svg>'
+  },
+  {
+        id: "L2-7", num: "L2-7", layer: "L2", title: "Spare / Space Breaker",
+    ports: ["bus_out"], placeholder: false, svg: '<svg viewBox="-60 -73 300 220" xmlns="http://www.w3.org/2000/svg">\n  <text x="40" y="8" text-anchor="middle"\n        font-family="monospace" font-size="12" font-weight="600"\n        fill="#FFFFFF">SPARE</text>\n  <circle cx="40" cy="16" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <path d="M40,16 Q27,32 40,48"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="40" cy="48" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <line x1="40" y1="52" x2="40" y2="64"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="40" cy="66" r="2.5"\n          fill="#FF69B4" stroke="#FF69B4" stroke-width="1"/>\n  <text x="140" y="38" text-anchor="middle"\n        font-family="monospace" font-size="12" font-weight="600"\n        fill="#FFFFFF">SPACE</text>\n  <circle cx="140" cy="48" r="4"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <line x1="140" y1="52" x2="140" y2="64"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="140" cy="66" r="2.5"\n          fill="#FF69B4" stroke="#FF69B4" stroke-width="1"/>\n</svg>'
+  },
+  {
+        id: "L2-8", num: "L2-8", layer: "L2", title: "Meter (Branch / Feeder)",
+    ports: ["ct_bi"], placeholder: false, svg: '<svg viewBox="-113.5 -60 300 220" xmlns="http://www.w3.org/2000/svg">\n  <path d="M10.5,50 C5.5,50 -1.5,46 -3.5,41 C-5.5,35 -3.5,29 2.5,25"\n        fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round"/>\n  <path d="M10.5,50 C5.5,50 -1.5,54 -3.5,59 C-5.5,65 -3.5,71 2.5,75"\n        fill="none" stroke="#00FFFF" stroke-width="3" stroke-linecap="round"/>\n  <line x1="10.5" y1="50" x2="78.5" y2="50"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="55" cy="50" r="23.5"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="55" y="45" text-anchor="middle"\n        font-family="monospace" font-size="13" font-weight="600"\n        fill="#FFFFFF">M</text>\n  <text x="55" y="62" text-anchor="middle"\n        font-family="monospace" font-size="13" font-weight="600"\n        fill="#FFFFFF">B</text>\n</svg>'
+  },
+  {
+        id: "L2-9", num: "L2-9", layer: "L2", title: "Bus Plug",
+    ports: ["busway_in", "load_out"], placeholder: true, notes: 'Tap-off device on Busway (R-3). Fusible or breaker protection at busway tap.\nGeometry, reference SVG, and anti-patterns not yet defined.\nPorts: busway_in, load_out. NEC 368.56.', svg: null
+  },
+  {
+        id: "L2-10", num: "L2-10", layer: "L2", title: "UPS",
+    ports: [], placeholder: true, notes: 'Uninterruptible power supply. Inline between normal source and critical load.\nGeometry, reference SVG, and anti-patterns not yet defined.\nPorts: source_in, load_out, bypass_in (optional). NEC 645.11, NFPA 111.', svg: null
+  },
+  {
+        id: "L2-11", num: "L2-11", layer: "L2", title: "Inverter",
+    ports: [], placeholder: true, notes: 'DC-to-AC conversion device. Between PV array / battery and AC distribution.\nGeometry, reference SVG, and anti-patterns not yet defined.\nPorts: dc_in, ac_out. NEC 690.11, NEC 705.12, UL 1741.', svg: null
+  },
+  {
+        id: "L2-12", num: "L2-12", layer: "L2", title: "PV Array",
+    ports: [], placeholder: true, notes: 'Photovoltaic source (behind-the-meter). Feeds inverter (L2-11).\nGeometry, reference SVG, and anti-patterns not yet defined.\nPorts: dc_out. NEC 690, NEC 690.7, NEC 690.8.', svg: null
+  },
+  {
+        id: "L2-13", num: "L2-13", layer: "L2", title: "Meter Stack",
+    ports: [], placeholder: true, notes: 'Multi-meter assembly (CT cabinet + branch meters). Multi-tenant commercial.\nGeometry, reference SVG, and anti-patterns not yet defined.\nPorts: line_in, meter_out_N (indexed). NEC 408.', svg: null
+  },
+  {
+        id: "L3-1", num: "L3-1", layer: "L3", title: "Fire Pump",
+    ports: ["load_in"], placeholder: false, svg: '<svg viewBox="12 -8.5 300 200" xmlns="http://www.w3.org/2000/svg">\n  <line x1="95" y1="59" x2="107" y2="73"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="142" y1="82" x2="152" y2="94"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="123.5" cy="76" r="19"\n          fill="#0a0e17" stroke="#00FFFF" stroke-width="3"/>\n  <text x="123.5" y="81" text-anchor="middle"\n        font-family="monospace" font-size="19" font-weight="700"\n        fill="#FFFFFF">F</text>\n  <rect x="100" y="95" width="47" height="47"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <line x1="100" y1="95" x2="147" y2="142"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="147" y1="95" x2="100" y2="142"\n        stroke="#00FFFF" stroke-width="3"/>\n  <!-- side stack = a device-bound A-8 equipment-label block\n       line 1 bold, later lines normal, steps 20/18/18;\n       fla+lra SHARE one line — the _E_SLD_Equipment-info family has exactly\n       three Line slots after the label -->\n  <text x="168" y="73" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">FP-B-A</text>\n  <text x="168" y="93" font-family="monospace" font-size="12"\n        font-weight="700" fill="#FFFFFF">100HP</text>\n  <text x="168" y="111" font-family="monospace" font-size="12"\n        fill="#FFFFFF">124 FLA / 725 LRA</text>\n  <text x="168" y="129" font-family="monospace" font-size="12"\n        fill="#FFFFFF">480V/3PH</text>\n</svg>'
+  },
+  {
+        id: "L3-2", num: "L3-2", layer: "L3", title: "Motor",
+    ports: ["load_in", "flex_top"], placeholder: false, svg: '<svg viewBox="-26 -67 310 220" xmlns="http://www.w3.org/2000/svg">\n  <line x1="79" y1="13" x2="99" y2="37"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="113" y1="46" x2="130" y2="66"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="105" cy="40" r="19"\n          fill="#0a0e17" stroke="#00FFFF" stroke-width="3"/>\n  <text x="105" y="45" text-anchor="middle"\n        font-family="monospace" font-size="19" font-weight="700"\n        fill="#FFFFFF">M</text>\n  <text x="142" y="33" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">AHU-2-A</text>\n  <text x="142" y="49" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">50HP, 65 FLA</text>\n  <text x="142" y="63" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">480V/3PH</text>\n</svg>'
+  },
+  {
+        id: "L3-3", num: "L3-3", layer: "L3", title: "Equipment Connection",
+    ports: ["load_in"], placeholder: false, svg: '<svg viewBox="-26 -67 310 220" xmlns="http://www.w3.org/2000/svg">\n  <circle cx="83.5" cy="43" r="27"\n          fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <polygon points="62.5,30 104.5,30 83.5,67"\n           fill="none" stroke="#00FFFF" stroke-width="3" stroke-linejoin="miter"/>\n  <text x="124" y="33" font-family="monospace" font-size="12"\n        font-weight="700" text-decoration="underline"\n        fill="#FFFFFF">RTU-1-A</text>\n  <text x="124" y="49" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">15KW</text>\n  <text x="124" y="65" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">480V/3PH</text>\n</svg>'
+  },
+  {
+        id: "R-1", num: "R-1", layer: "R", title: "Feeder (Class B)",
+    ports: ["start", "end"], placeholder: false, classB: true, svg: '<svg viewBox="-50 -37.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <polyline points="15,15 15,70 185,70 185,130"\n            fill="none" stroke="#CCCCCC" stroke-width="1.5"\n            stroke-linejoin="miter"/>\n  <text x="100" y="62" text-anchor="middle"\n        font-family="monospace" font-size="9" font-weight="600"\n        fill="#FFFFFF" opacity="0.5">1.5 pt — single solid line</text>\n</svg>'
+  },
+  {
+        // The pink r=5 dots on this card ARE the bus connection dot (marker_style
+        // bus_dot). the INCOMING feeder × main-bus dot is
+        // exported as geometry.bus_dots (schema §14.10) — on BOTH switchboards
+        // (normal utility tap + emergency generator/EMSB tap) —
+        // and placed in Revit via
+        // the _E_SLD_Conductor-ends E01 / _Connection Dot family (BusDotPlacer).
+        // Not given its own catalog designation — it is a sub-marker of R-2, not a
+        // node type, so a standalone card would fabricate a phantom designation.
+        id: "R-2", num: "R-2", layer: "R", title: "Bus (Class B)",
+    ports: ["bus_splice_left", "bus_splice_right", "bus_tap_bi"], placeholder: false, classB: true, svg: '<svg viewBox="-50 -86.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <line x1="15" y1="20" x2="185" y2="20"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="60" cy="20" r="5" fill="#FF69B4"/>\n  <circle cx="100" cy="20" r="5" fill="#FF69B4"/>\n  <circle cx="140" cy="20" r="5" fill="#FF69B4"/>\n  <text x="100" y="12" text-anchor="middle"\n        font-family="monospace" font-size="9" font-weight="600"\n        fill="#FFFFFF" opacity="0.5">3.0 pt — heavy solid line</text>\n</svg>'
+  },
+  {
+        id: "R-3", num: "R-3", layer: "R", title: "Busway (Class B)",
+    ports: ["feed_start", "feed_end", "tap_01", "tap_02", "tap_03"], placeholder: false, classB: true, svg: '<svg viewBox="-20 -102 400 294" xmlns="http://www.w3.org/2000/svg">\n  <defs>\n    <pattern id="bw-hatch" width="10" height="10"\n             patternUnits="userSpaceOnUse" patternTransform="rotate(45)">\n      <line x1="0" y1="0" x2="0" y2="10"\n            stroke="#FFFFFF" stroke-width="1.5"/>\n    </pattern>\n  </defs>\n  <rect x="15" y="27" width="330" height="16"\n        fill="url(#bw-hatch)" stroke="none"/>\n  <line x1="15" y1="27" x2="345" y2="27"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="15" y1="43" x2="345" y2="43"\n        stroke="#00FFFF" stroke-width="3"/>\n  <circle cx="80" cy="35" r="5" fill="#FF69B4"/>\n  <line x1="80" y1="43" x2="80" y2="63"\n        stroke="#00FFFF" stroke-width="1.5"/>\n  <circle cx="180" cy="35" r="5" fill="#FF69B4"/>\n  <line x1="180" y1="43" x2="180" y2="63"\n        stroke="#00FFFF" stroke-width="1.5"/>\n  <circle cx="280" cy="35" r="5" fill="#FF69B4"/>\n  <line x1="280" y1="43" x2="280" y2="63"\n        stroke="#00FFFF" stroke-width="1.5"/>\n  <text x="180" y="22" text-anchor="middle"\n        font-family="monospace" font-size="9" font-weight="600"\n        fill="#FFFFFF" opacity="0.5">3.0 pt × 2 + 45° hatch</text>\n</svg>'
+  },
+  {
+        id: "A-1", num: "A-1", layer: "A", title: "Feeder Tag",
+    ports: ["anno_attach"], placeholder: false, svg: '<svg viewBox="16 -68 300 220" xmlns="http://www.w3.org/2000/svg">\n  <line x1="30" y1="58" x2="50" y2="42"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="40" y1="50" x2="72" y2="50"\n        stroke="#00FFFF" stroke-width="3"/>\n  <rect x="72" y="35" width="76" height="31" rx="15.5" ry="15.5"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="110" y="55" text-anchor="middle"\n        font-family="monospace" font-size="16" font-weight="700"\n        fill="#FFFFFF">1004</text>\n  <rect x="170" y="35" width="90" height="31" rx="15.5" ry="15.5"\n        fill="none" stroke="#00FFFF" stroke-width="3"/>\n  <text x="215" y="55" text-anchor="middle"\n        font-family="monospace" font-size="16" font-weight="700"\n        fill="#FFFFFF">2254T</text>\n  <line x1="260" y1="50" x2="292" y2="50"\n        stroke="#00FFFF" stroke-width="3"/>\n  <line x1="282" y1="42" x2="302" y2="58"\n        stroke="#00FFFF" stroke-width="3"/>\n</svg>'
+  },
+  {
+        id: "A-2", num: "A-2", layer: "A", title: "Conduit / Wire Callout Tag",
+    ports: ["anno_attach"], placeholder: false, svg: '<svg viewBox="37 -15 300 220" xmlns="http://www.w3.org/2000/svg">\n  <line x1="50" y1="20" x2="50" y2="170"\n        stroke="#4a5568" stroke-width="1.5"/>\n  <g transform="rotate(30, 50, 100)">\n    <path d="M50,90 A10,10 0 0,0 50,110"\n          fill="none" stroke="#FFFFFF" stroke-width="1.2"/>\n    <line x1="50" y1="90" x2="50" y2="110"\n          stroke="#FFFFFF" stroke-width="1.2"/>\n  </g>\n  <line x1="50" y1="100" x2="80" y2="52"\n        stroke="#FFFFFF" stroke-width="1.2"/>\n  <line x1="80" y1="52" x2="96" y2="52"\n        stroke="#FFFFFF" stroke-width="1.2"/>\n  <text x="100" y="56" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">2"C - (4)#4/0 CU + #4 CU GND</text>\n</svg>'
+  },
+  {
+        id: "A-3", num: "A-3", layer: "A", title: "Continuation Squiggle",
+    ports: ["feeder_bi"], placeholder: false, svg: '<svg viewBox="30 -32.5 300 220" xmlns="http://www.w3.org/2000/svg">\n  <path d="M108,70 C108,86 118,86 128,70 C138,54 148,54 148,70"\n        fill="none" stroke="#FF69B4" stroke-width="2.5" stroke-linecap="round"/>\n  <line x1="128" y1="50" x2="128" y2="70"\n        stroke="#00FFFF" stroke-width="3"/>\n  <text x="30" y="72" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">TO UTILITY</text>\n  <text x="30" y="86" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">TRANSFORMER</text>\n  <path d="M260,55 C244,55 244,67 260,80 C276,93 276,105 260,105"\n        fill="none" stroke="#FF69B4" stroke-width="2.5" stroke-linecap="round"/>\n  <line x1="260" y1="80" x2="330" y2="80"\n        stroke="#00FFFF" stroke-width="3"/>\n  <text x="200" y="78" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">TO MV</text>\n  <text x="200" y="92" font-family="monospace" font-size="12"\n        font-weight="600" fill="#FFFFFF">SWITCH</text>\n</svg>'
+  },
+  {
+        id: "A-4", num: "A-4", layer: "A", title: "Fault Current Tag",
+    ports: ["anno_attach"], placeholder: false, svg: '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">\n  <line x1="30" y1="10" x2="30" y2="110"\n        stroke="#CCCCCC" stroke-width="1.5"/>\n  <g transform="translate(30, 60) rotate(-30, 0, 0)">\n    <path d="M0,0 L13,-10.5 L93,-10.5 L93,10.5 L13,10.5 Z"\n          fill="none" stroke="#FF3333" stroke-width="2.5"\n          stroke-linejoin="miter"/>\n    <text x="53" y="4" text-anchor="middle"\n          font-family="monospace" font-size="12" font-weight="700"\n          fill="#FFFFFF">42,385A</text>\n  </g>\n</svg>'
+  },
+  {
+        id: "A-5", num: "A-5", layer: "A", title: "Voltage Drop Tag",
+    ports: ["anno_attach"], placeholder: false, svg: '<svg viewBox="0 0 200 120" xmlns="http://www.w3.org/2000/svg">\n  <line x1="170" y1="10" x2="170" y2="110"\n        stroke="#CCCCCC" stroke-width="1.5"/>\n  <g transform="translate(170, 60) rotate(30, 0, 0)">\n    <path d="M0,0 L-13,-10.5 L-93,-10.5 L-93,10.5 L-13,10.5 Z"\n          fill="none" stroke="#1A5FAA" stroke-width="2.5"\n          stroke-linejoin="miter"/>\n    <text x="-53" y="4" text-anchor="middle"\n          font-family="monospace" font-size="12" font-weight="700"\n          fill="#FFFFFF">2.14%</text>\n  </g>\n</svg>'
+  },
+  {
+        id: "A-6", num: "A-6", layer: "A", title: "Hex Note",
+    ports: ["anno_attach"], placeholder: false, svg: '<svg viewBox="0 0 320 120" xmlns="http://www.w3.org/2000/svg">\n  <line x1="30" y1="10" x2="30" y2="110"\n        stroke="#CCCCCC" stroke-width="1.5"/>\n  <polygon points="28,60 44,57 39,54 40,48"\n           fill="#FFFFFF" stroke="none"/>\n  <line x1="38" y1="53" x2="62" y2="41"\n        stroke="#00FFFF" stroke-width="1.5"/>\n  <line x1="62" y1="41" x2="78" y2="41"\n        stroke="#00FFFF" stroke-width="1.5"/>\n  <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11"\n           fill="none" stroke="#00FFFF" stroke-width="2.5"\n           stroke-linejoin="miter"\n           transform="translate(100, 41) rotate(30, 0, 0)"/>\n  <text x="100" y="46" text-anchor="middle"\n        font-family="monospace" font-size="14" font-weight="700"\n        fill="#FFFFFF">14</text>\n  <text x="100" y="90" text-anchor="middle"\n        font-family="monospace" font-size="9" font-weight="600"\n        fill="#FFFFFF" opacity="0.5">leader mode</text>\n  <rect x="180" y="20" width="70" height="70"\n        fill="none" stroke="#00FFFF" stroke-width="2.5"/>\n  <text x="215" y="60" text-anchor="middle"\n        font-family="monospace" font-size="11" font-weight="700"\n        fill="#FFFFFF">4L-1-A</text>\n  <polygon points="0,-22 19,-11 19,11 0,22 -19,11 -19,-11"\n           fill="none" stroke="#00FFFF" stroke-width="2.5"\n           stroke-linejoin="miter"\n           transform="translate(269, 55) rotate(30, 0, 0)"/>\n  <text x="269" y="60" text-anchor="middle"\n        font-family="monospace" font-size="14" font-weight="700"\n        fill="#FFFFFF">7</text>\n  <text x="250" y="105" text-anchor="middle"\n        font-family="monospace" font-size="9" font-weight="600"\n        fill="#FFFFFF" opacity="0.5">direct mode</text>\n</svg>'
+  },
+  {
+        id: "A-7", num: "A-7", layer: "A", title: "Level Annotation",
+    ports: [], placeholder: false, svg: '<svg viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg">\n  <!-- equipment cluster (context, faint) -->\n  <rect x="40" y="24" width="26" height="36" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.4"/>\n  <rect x="82" y="24" width="26" height="36" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.4"/>\n  <rect x="124" y="24" width="26" height="36" fill="none" stroke="#00FFFF" stroke-width="2" opacity="0.4"/>\n  <!-- level line: dashed boundary below the cluster (normative: dash 24,12 / 1.2 / .55) -->\n  <line x1="24" y1="84" x2="236" y2="84" stroke="#FFFFFF" stroke-width="1.2" stroke-dasharray="24,12" opacity=".55"/>\n  <!-- label: right-edge, end-anchored at lineY+4, past the line end (label allowance) -->\n  <text x="330" y="88" text-anchor="end" font-family="monospace" font-size="13" font-weight="700" fill="#FFFFFF" opacity=".8">LEVEL 2</text>\n</svg>'
+  },
+  {
+        id: "A-8", num: "A-8", layer: "A", title: "Equipment Label",
+    ports: [], placeholder: false, svg: '<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg">\n  <!-- host context (faint): a switchboard assembly, label sits outside-left -->\n  <rect x="212" y="26" width="40" height="96" fill="none" stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.4"/>\n  <rect x="252" y="26" width="40" height="96" fill="none" stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.4"/>\n  <rect x="292" y="26" width="40" height="96" fill="none" stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.4"/>\n  <!-- anchor: first line baseline, right end (schema 14.8) -->\n  <circle cx="180" cy="40" r="2.5" fill="#00FFFF" opacity="0.7"/>\n  <text x="176" y="24" text-anchor="end" font-family="monospace" font-size="9" font-weight="600" fill="#FFFFFF" opacity="0.5">anchor</text>\n  <!-- four lines, right-anchored, steps 20 / 18 / 18 — no aic line;\n       matches the Revit family _E_SLD_Equipment-info E01:\n       Label Panel Name + three Line N Text slots. the\n       block ALSO binds to devices (L1-5 generator, L3-1 fire pump — see the\n       L3-1 card): those blocks are START-anchored, text right of the glyph,\n       anchor at the first line baseline LEFT end, align:"start" -->\n  <text x="180" y="40" text-anchor="end"\n        font-family="monospace" font-size="12" font-weight="700"\n        text-decoration="underline"\n        fill="#FFFFFF">4MDP-1-A</text>\n  <text x="180" y="60" text-anchor="end"\n        font-family="monospace" font-size="12" font-weight="700"\n        fill="#FFFFFF">4000A</text>\n  <text x="180" y="78" text-anchor="end"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">480Y/277V</text>\n  <text x="180" y="96" text-anchor="end"\n        font-family="monospace" font-size="12"\n        fill="#FFFFFF">4W, 3PH</text>\n  <text x="180" y="138" text-anchor="end" font-family="monospace" font-size="9" font-weight="600" fill="#FFFFFF" opacity="0.5">bound_to: switchboard | device</text>\n</svg>'
+  }
+];
+
+const catalog = document.getElementById('catalog');
+
+var layerDescs = {
+  'L0': 'Service Entrance',
+  'L1': 'Main Distribution',
+  'L2': 'Sub-Distribution',
+  'L3': 'Branch / Terminal',
+  'R': 'Routing Elements (Class B)',
+  'A': 'Annotations'
+};
+var lastLayer = null;
+var layerGroup = null;
+
+function toggleLayer(layerId) {
+  var divider = document.getElementById('divider-' + layerId);
+  var group = document.getElementById('layer-' + layerId);
+  if (!divider || !group) return;
+  var collapsed = group.style.display === 'none';
+  group.style.display = collapsed ? 'contents' : 'none';
+  divider.classList.toggle('collapsed', !collapsed);
+}
+
+symbols.forEach(sym => {
+  // Inject layer divider + group wrapper when layer changes
+  if (sym.layer !== lastLayer) {
+    var divider = document.createElement('div');
+    divider.className = 'layer-divider';
+    divider.id = 'divider-' + sym.layer;
+    divider.setAttribute('onclick', "toggleLayer('" + sym.layer + "')");
+    divider.innerHTML =
+      '<span class="layer-divider-chevron">▾</span>' +
+      '<span class="layer-divider-tag">' + sym.layer + '</span>' +
+      '<span class="layer-divider-line"></span>' +
+      '<span class="layer-divider-desc">' + (layerDescs[sym.layer] || '') + '</span>';
+    catalog.appendChild(divider);
+
+    layerGroup = document.createElement('div');
+    layerGroup.id = 'layer-' + sym.layer;
+    layerGroup.style.display = 'contents';
+    catalog.appendChild(layerGroup);
+
+    lastLayer = sym.layer;
+  }
+
+  const card = document.createElement('div');
+  card.className = 'card' + (sym.placeholder ? ' placeholder' : '');
+  card.id = sym.id;
+
+  const portsHTML = sym.ports.length > 0
+    ? sym.ports.map(p => '<span class="port-badge">' + p + '</span>').join('')
+    : '<span class="port-badge" style="opacity:0.4">none (floats)</span>';
+
+  var layerBadge = '<span class="layer-badge" data-layer="' + sym.layer + '">' + sym.layer + '</span>';
+
+  if (sym.placeholder) {
+    card.innerHTML =
+      '<div class="card-header">' +
+        '<div class="card-title-group">' +
+          layerBadge +
+          '<span class="card-number">' + sym.num + '</span>' +
+          '<span class="card-title">' + sym.title + '</span>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-body">' +
+        '<div class="placeholder-note">' + sym.notes.replace(/\n/g, '<br>') + '</div>' +
+      '</div>' +
+      '<div class="card-footer">' + portsHTML + '</div>';
+  } else {
+    // Inject port markers into SVG before closing </svg> tag
+    var svgWithPorts = sym.svg;
+    if (portMarkers[sym.id]) {
+      svgWithPorts = sym.svg.replace('</svg>', portMarkers[sym.id] + '</svg>');
+    }
+    var classBLabel = sym.classB ? '<span class="class-b-badge">CLASS B</span>' : '';
+    card.innerHTML =
+      '<div class="card-header">' +
+        '<div class="card-title-group">' +
+          layerBadge +
+          '<span class="card-number">' + sym.num + '</span>' +
+          '<span class="card-title">' + sym.title + '</span>' +
+          classBLabel +
+        '</div>' +
+      '</div>' +
+      '<div class="card-body">' +
+        '<div class="svg-preview">' + svgWithPorts + '</div>' +
+      '</div>' +
+      '<div class="card-footer">' + portsHTML + '</div>';
+  }
+
+  layerGroup.appendChild(card);
+});
+
+// ─── NAMING LEGEND ───
+document.getElementById('catalog-ref').insertAdjacentHTML('beforeend',
+'<div class="card wide-card" id="legend-naming">' +
+  '<div class="card-header">' +
+    '<div class="card-title-group">' +
+      '<span class="card-number" style="background:rgba(0,229,255,0.15);">REF</span>' +
+      '<span class="card-title">Electrical Equipment Designation</span>' +
+    '</div>' +
+  '</div>' +
+  '<div class="card-body">' +
+    '<div class="legend-panel">' +
+      '<svg viewBox="0 0 1000 1805" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;" preserveAspectRatio="xMidYMin meet">' +
+        '<text x="500" y="50" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="36" font-weight="700" text-decoration="underline">ELECTRICAL EQUIPMENT DESIGNATION</text>' +
+        '<!-- Example characters -->' +
+        '<text x="600" y="110" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">E</text>' +
+        '<text x="660" y="110" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">4</text>' +
+        '<text x="720" y="110" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">L</text>' +
+        '<text x="770" y="110" text-anchor="middle" fill="var(--text-muted)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">-</text>' +
+        '<text x="820" y="110" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">1</text>' +
+        '<text x="870" y="110" text-anchor="middle" fill="var(--text-muted)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">-</text>' +
+        '<text x="920" y="110" text-anchor="middle" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="34" font-weight="700">A</text>' +
+        '<line x1="580" y1="118" x2="945" y2="118" stroke="var(--accent)" stroke-width="1" opacity="0.3"/>' +
+
+        '<!-- Leader: E → POWER TYPE (y=155) -->' +
+        '<line x1="600" y1="120" x2="600" y2="155" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="600" y1="155" x2="80" y2="155" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="80" y1="155" x2="80" y2="170" stroke="var(--text-muted)" stroke-width="1"/>' +
+        '<circle cx="80" cy="170" r="4" fill="var(--text-muted)"/>' +
+
+        '<!-- POWER TYPE -->' +
+        '<text x="50" y="200" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="26" font-weight="700" text-decoration="underline">POWER TYPE:</text>' +
+        '<text x="90" y="240" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">BLANK - NORMAL POWER</text>' +
+        '<text x="90" y="275" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">E - EMERGENCY POWER</text>' +
+        '<text x="90" y="310" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">L - LEGALLY REQUIRED POWER</text>' +
+        '<text x="90" y="345" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">O - OPTIONAL STAND-BY POWER</text>' +
+        '<text x="90" y="380" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">U - UNINTERRUPTIBLE POWER</text>' +
+        '<text x="90" y="415" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">LS - LIFE SAFETY BRANCH</text>' +
+        '<text x="90" y="450" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">C - CRITICAL BRANCH</text>' +
+        '<text x="90" y="485" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">EQ - EQUIPMENT BRANCH</text>' +
+
+        '<!-- Leader: 4 → VOLTAGE (y=525) -->' +
+        '<line x1="660" y1="120" x2="660" y2="525" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="660" y1="525" x2="80" y2="525" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="80" y1="525" x2="80" y2="540" stroke="var(--text-muted)" stroke-width="1"/>' +
+        '<circle cx="80" cy="540" r="4" fill="var(--text-muted)"/>' +
+
+        '<!-- VOLTAGE -->' +
+        '<text x="50" y="570" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="26" font-weight="700" text-decoration="underline">VOLTAGE:</text>' +
+        '<text x="90" y="610" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">2 - 208Y/120V</text>' +
+        '<text x="90" y="645" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">4 - 480Y/277V</text>' +
+        '<text x="90" y="680" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">5 - 4160Y/2400V</text>' +
+        '<text x="90" y="715" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">15 - 12470Y/7200V</text>' +
+
+        '<!-- Leader: L → EQUIPMENT (y=755) -->' +
+        '<line x1="720" y1="120" x2="720" y2="755" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="720" y1="755" x2="80" y2="755" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="80" y1="755" x2="80" y2="770" stroke="var(--text-muted)" stroke-width="1"/>' +
+        '<circle cx="80" cy="770" r="4" fill="var(--text-muted)"/>' +
+
+        '<!-- EQUIPMENT -->' +
+        '<text x="50" y="800" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="26" font-weight="700" text-decoration="underline">EQUIPMENT:</text>' +
+        '<text x="90" y="840" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">MDP - MAIN DISTRIBUTION PANEL</text>' +
+        '<text x="90" y="875" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">S - SUB DISTRIBUTION PANEL</text>' +
+        '<text x="90" y="910" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">B - BRANCH PANEL</text>' +
+        '<text x="90" y="945" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">A - AUTOMATIC TRANSFER SWITCH</text>' +
+        '<text x="90" y="980" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">H - HOTEL UNITS</text>' +
+        '<text x="90" y="1015" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">I - INVERTER</text>' +
+        '<text x="90" y="1050" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">L - LIGHTING PANEL</text>' +
+        '<text x="90" y="1085" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">LRC - LIGHTING RELAY CONTROL PANEL</text>' +
+        '<text x="90" y="1120" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">LB - LOAD BANK</text>' +
+        '<text x="90" y="1155" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">M - MECHANICAL PANEL</text>' +
+        '<text x="90" y="1190" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">P - POWER PANEL</text>' +
+        '<text x="90" y="1225" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">T - TRANSFORMER</text>' +
+        '<text x="90" y="1260" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">U - UPS</text>' +
+
+        '<!-- Leader: 1 → BUILDING LEVEL (y=1300) -->' +
+        '<line x1="820" y1="120" x2="820" y2="1300" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="820" y1="1300" x2="80" y2="1300" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="80" y1="1300" x2="80" y2="1315" stroke="var(--text-muted)" stroke-width="1"/>' +
+        '<circle cx="80" cy="1315" r="4" fill="var(--text-muted)"/>' +
+
+        '<!-- BUILDING LEVEL -->' +
+        '<text x="50" y="1345" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="26" font-weight="700" text-decoration="underline">BUILDING LEVEL:</text>' +
+        '<text x="90" y="1385" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">S - SITE</text>' +
+        '<text x="90" y="1420" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">B - BASEMENT</text>' +
+        '<text x="90" y="1455" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">1 - FIRST LEVEL</text>' +
+        '<text x="90" y="1490" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">2 - SECOND LEVEL</text>' +
+        '<text x="90" y="1525" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">3 - THIRD LEVEL</text>' +
+        '<text x="90" y="1560" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">4 - FOURTH LEVEL</text>' +
+        '<text x="90" y="1595" fill="var(--text-muted)" font-family="JetBrains Mono,monospace" font-size="24" opacity="0.5">ETC.</text>' +
+
+        '<!-- Leader: A → IDENTIFIER (y=1615) -->' +
+        '<line x1="920" y1="120" x2="920" y2="1615" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="920" y1="1615" x2="80" y2="1615" stroke="var(--text-muted)" stroke-width="1" stroke-dasharray="5,3"/>' +
+        '<line x1="80" y1="1615" x2="80" y2="1630" stroke="var(--text-muted)" stroke-width="1"/>' +
+        '<circle cx="80" cy="1630" r="4" fill="var(--text-muted)"/>' +
+
+        '<!-- IDENTIFIER -->' +
+        '<text x="50" y="1660" fill="var(--accent)" font-family="JetBrains Mono,monospace" font-size="26" font-weight="700" text-decoration="underline">IDENTIFIER:</text>' +
+        '<text x="90" y="1700" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">A - FIRST IN SERIES OF EQUIPMENT</text>' +
+        '<text x="90" y="1735" fill="var(--text-primary)" font-family="JetBrains Mono,monospace" font-size="24">B - SECOND IN SERIES OF EQUIPMENT</text>' +
+        '<text x="90" y="1770" fill="var(--text-muted)" font-family="JetBrains Mono,monospace" font-size="24" opacity="0.5">ETC.</text>' +
+      '</svg>' +
+    '</div>' +
+  '</div>' +
+  '<div class="card-footer">' +
+    '<span class="port-badge">naming convention</span>' +
+    '<span class="port-badge">panel schedule</span>' +
+    '<span class="port-badge">project standard</span>' +
+  '</div>' +
+'</div>'
+);
+
+// ─── FEEDER SCHEDULE: 3W ───
+document.getElementById('catalog-ref').insertAdjacentHTML('beforeend',
+'<div class="card wide-card" id="feeder-3w">' +
+  '<div class="card-header">' +
+    '<div class="card-title-group">' +
+      '<span class="card-number" style="background:rgba(0,229,255,0.15);">REF</span>' +
+      '<span class="card-title">Feeder Schedule — 3 Phase, 3 Wire + Ground</span>' +
+    '</div>' +
+  '</div>' +
+  '<div class="card-body">' +
+    '<div class="card-body-table">' +
+      '<table>' +
+        '<caption style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px;letter-spacing:1px;">FEEDER SCHEDULE</caption>' +
+        '<caption style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:12px;">COPPER/ALUMINUM: 3 PHASE, 3 WIRE + GROUND</caption>' +
+        '<thead><tr style="border-bottom:2px solid var(--accent);">' +
+          '<th>NOMINAL<br/>AMPACITY</th><th>TAG</th><th>NUMBER<br/>OF SETS</th><th>CONDUIT<br/>SIZE (MIN)</th><th>PHASE<br/>CONDUCTORS<br/>(AWG or kcmil)</th><th>GROUND<br/>CONDUCTOR<br/>(AWG or kcmil)</th>' +
+        '</tr></thead>' +
+        '<tbody id="feeder-3w-body"></tbody>' +
+      '</table>' +
+      '<div class="feeder-notes">' +
+        '<div class="notes-header">NOTES:</div>' +
+        '<div>1. &nbsp;REFER TO SPECIFICATIONS FOR INSULATION TYPE PER WIRE SIZE.</div>' +
+        '<div>2. &nbsp;MINIMUM CONDUIT SIZES IDENTIFIED MEET MAXIMUM 40% FILL FOR EMT, RMC AND PVC SCHEDULE 40.</div>' +
+        '<div>3. &nbsp;FOR FEEDER RATINGS 100AMPS OR LESS, ACTUAL AMPACITY IS CALCULATED BY THOSE GIVEN IN NEC 310.15(B)(16), 60DEG C.</div>' +
+        '<div>4. &nbsp;FOR FEEDER RATINGS GREATER THAN 100AMPS, ACTUAL AMPACITY IS CALCULATED BY THOSE GIVEN IN NEC 310.15(B)(16), 75DEG C.</div>' +
+        '<div>5. &nbsp;THIS IS A STANDARD FEEDER SCHEDULE. SOME FEEDER TYPES MAY APPEAR IN THIS SCHEDULE THAT ARE NOT USED ON THIS PROJECT.</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<div class="card-footer">' +
+    '<span class="port-badge">NEC 310.15</span>' +
+    '<span class="port-badge">3-wire</span>' +
+    '<span class="port-badge">feeder sizing</span>' +
+    '<span class="port-badge">conduit fill</span>' +
+  '</div>' +
+'</div>'
+);
+
+// ─── FEEDER SCHEDULE: 4W ───
+document.getElementById('catalog-ref').insertAdjacentHTML('beforeend',
+'<div class="card wide-card" id="feeder-4w">' +
+  '<div class="card-header">' +
+    '<div class="card-title-group">' +
+      '<span class="card-number" style="background:rgba(0,229,255,0.15);">REF</span>' +
+      '<span class="card-title">Feeder Schedule — 3 Phase, 4 Wire + Ground</span>' +
+    '</div>' +
+  '</div>' +
+  '<div class="card-body">' +
+    '<div class="card-body-table">' +
+      '<table>' +
+        '<caption style="font-size:14px;font-weight:700;color:var(--accent);margin-bottom:4px;letter-spacing:1px;">FEEDER SCHEDULE</caption>' +
+        '<caption style="font-size:11px;font-weight:600;color:var(--text-muted);margin-bottom:12px;">COPPER/ALUMINUM: 3 PHASE, 4 WIRE + GROUND</caption>' +
+        '<thead><tr style="border-bottom:2px solid var(--accent);">' +
+          '<th>NOMINAL<br/>AMPACITY</th><th>TAG</th><th>NUMBER<br/>OF SETS</th><th>CONDUIT<br/>SIZE (MIN)</th><th>PHASE &amp; NEUTRAL<br/>CONDUCTORS<br/>(AWG or kcmil)</th><th>GROUND<br/>CONDUCTOR<br/>(AWG or kcmil)</th>' +
+        '</tr></thead>' +
+        '<tbody id="feeder-4w-body"></tbody>' +
+      '</table>' +
+      '<div class="feeder-notes">' +
+        '<div class="notes-header">NOTES:</div>' +
+        '<div>1. &nbsp;REFER TO SPECIFICATIONS FOR INSULATION TYPE PER WIRE SIZE.</div>' +
+        '<div>2. &nbsp;MINIMUM CONDUIT SIZES IDENTIFIED MEET MAXIMUM 40% FILL FOR EMT, RMC AND PVC SCHEDULE 40.</div>' +
+        '<div>3. &nbsp;NEUTRAL CONDUCTORS ARE CONSIDERED CURRENT CARRYING, THEREFORE AMPACITY ADJUSTMENTS HAVE BEEN INCLUDED IN ACCORDANCE WITH NEC TABLE 310.15(B)(3)(a) TO ACCOMMODATE FOUR (4) CURRENT CARRYING CONDUCTORS IN A SINGLE RACEWAY.</div>' +
+        '<div>4. &nbsp;ADJUSTED CONDUCTOR AMPACITIES ARE CALCULATED BASED ON THOSE GIVEN FOR 90DEG C CONDUCTORS IN ACCORDANCE WITH NEC 310.15(B) AND TABLE NEC 310.15(B)(16). FOR FEEDER RATINGS 100AMPS OR LESS, KEEP THE ADJUSTED AMPACITY AT OR BELOW THE 60DEG C RATING. FOR FEEDER RATINGS OVER 100AMPS, KEEP THE ACTUAL AMPACITY AT OR BELOW THE 75DEG C RATING.</div>' +
+        '<div>5. &nbsp;THIS IS A STANDARD FEEDER SCHEDULE. SOME FEEDER TYPES MAY APPEAR IN THIS SCHEDULE THAT ARE NOT USED ON THIS PROJECT.</div>' +
+      '</div>' +
+    '</div>' +
+  '</div>' +
+  '<div class="card-footer">' +
+    '<span class="port-badge">NEC 310.15</span>' +
+    '<span class="port-badge">4-wire</span>' +
+    '<span class="port-badge">neutral deration</span>' +
+    '<span class="port-badge">conduit fill</span>' +
+  '</div>' +
+'</div>'
+);
+
+// ─── FEEDER SCHEDULE DATA & BUILDER ───
+const feeder3w = [
+  [20,"203",1,'3/4"',"(3) 12","CU",12,"CU"],
+  [30,"303",1,'3/4"',"(3) 10","CU",10,"CU"],
+  [40,"403",1,'3/4"',"(3) 8","CU",10,"CU"],
+  [50,"503",1,'3/4"',"(3) 6","CU",10,"CU"],
+  [60,"603",1,'1"',"(3) 4","CU",10,"CU"],
+  [70,"703",1,'1"',"(3) 4","CU",8,"CU"],
+  [80,"803",1,'1 1/4"',"(3) 3","CU",8,"CU"],
+  [90,"903",1,'1 1/4"',"(3) 2","CU",8,"CU"],
+  [100,"1003",1,'1 1/2"',"(3) 1/0","AL",8,"CU"],
+  [110,"1103",1,'1 1/2"',"(3) 1/0","AL",6,"CU"],
+  [125,"1253",1,'1 1/2"',"(3) 2/0","AL",6,"CU"],
+  [150,"1503",1,'2"',"(3) 3/0","AL",6,"CU"],
+  [175,"1753",1,'2"',"(3) 4/0","AL",6,"CU"],
+  [200,"2003",1,'2 1/2"',"(3) 250","AL",6,"CU"],
+  [225,"2253",1,'2 1/2"',"(3) 350","AL",4,"CU"],
+  [250,"2503",1,'2 1/2"',"(3) 350","AL",4,"CU"],
+  [300,"3003",2,'2"',"(3) 3/0","AL",4,"CU"],
+  [350,"3503",2,'2"',"(3) 4/0","AL",3,"CU"],
+  [400,"4003",2,'2 1/2"',"(3) 250","AL",3,"CU"],
+  [450,"4503",2,'2 1/2"',"(3) 350","AL",3,"CU"],
+  [500,"5003",2,'2 1/2"',"(3) 350","AL",3,"CU"],
+  [600,"6003",2,'3"',"(3) 500","AL",1,"CU"],
+  [800,"8003",3,'3"',"(3) 500","AL","1/0","CU"],
+  [1000,"10003",4,'3"',"(3) 350","AL","4/0","AL"],
+  [1200,"12003",4,'3"',"(3) 500","AL",250,"AL"],
+  [1600,"16003",6,'3"',"(3) 500","AL",350,"AL"],
+  [2000,"20003",6,'4"',"(3) 750","AL",500,"AL"],
+  [2500,"25003",7,'4"',"(3) 750","AL",500,"AL"],
+  [3000,"30003",8,'4"',"(3) 750","AL",750,"AL"],
+  [4000,"40003",11,'4"',"(3) 750","AL",750,"AL"]
+];
+
+const feeder4w = [
+  [20,"204",1,'3/4"',"(4) 12","CU",12,"CU"],
+  [30,"304",1,'3/4"',"(4) 10","CU",10,"CU"],
+  [40,"404",1,'3/4"',"(4) 8","CU",10,"CU"],
+  [50,"504",1,'1"',"(4) 6","CU",10,"CU"],
+  [60,"604",1,'1 1/4"',"(4) 4","CU",10,"CU"],
+  [70,"704",1,'1 1/4"',"(4) 4","CU",8,"CU"],
+  [80,"804",1,'1 1/4"',"(4) 3","CU",8,"CU"],
+  [90,"904",1,'1 1/4"',"(4) 2","CU",8,"CU"],
+  [100,"1004",1,'2"',"(4) 1/0","AL",6,"CU"],
+  [110,"1104",1,'2"',"(4) 2/0","AL",6,"CU"],
+  [125,"1254",1,'2"',"(4) 3/0","AL",6,"CU"],
+  [150,"1504",1,'2 1/2"',"(4) 4/0","AL",6,"CU"],
+  [175,"1754",1,'2 1/2"',"(4) 250","AL",4,"CU"],
+  [200,"2004",1,'3"',"(4) 350","AL",6,"CU"],
+  [225,"2254",1,'3 1/2"',"(4) 350","AL",6,"CU"],
+  [250,"2504",1,'3 1/2"',"(4) 500","AL",4,"CU"],
+  [300,"3004",2,'2 1/2"',"(4) 4/0","AL",4,"CU"],
+  [350,"3504",2,'2 1/2"',"(4) 250","AL",3,"CU"],
+  [400,"4004",2,'3"',"(4) 350","AL",3,"CU"],
+  [450,"4504",2,'3 1/2"',"(4) 500","AL",3,"CU"],
+  [500,"5004",2,'3 1/2"',"(4) 500","AL",3,"CU"],
+  [600,"6004",3,'3"',"(4) 350","AL",1,"CU"],
+  [800,"8004",3,'3 1/2"',"(4) 500","AL","1/0","CU"],
+  [1000,"10004",4,'3 1/2"',"(4) 500","AL","4/0","AL"],
+  [1200,"12004",5,'3 1/2"',"(4) 500","AL",250,"AL"],
+  [1600,"16004",6,'3 1/2"',"(4) 500","AL",350,"AL"],
+  [2000,"20004",8,'4"',"(4) 500","AL",500,"AL"],
+  [2500,"25004",9,'4"',"(4) 500","AL",500,"AL"],
+  [3000,"30004",11,'4"',"(4) 500","AL",500,"AL"],
+  [4000,"40004",15,'4"',"(4) 500","AL",500,"AL"]
+];
+
+function buildFeederTable(data, tbodyId) {
+  var tbody = document.getElementById(tbodyId);
+  if (!tbody) return;
+  data.forEach(function(r, i) {
+    var tr = document.createElement('tr');
+    tr.style.borderBottom = '1px solid var(--border)';
+    if (i % 2 === 0) tr.style.background = 'var(--accent-dim)';
+    var cells = [r[0], r[1], r[2], r[3], r[4] + ' ' + r[5], r[6] + ' ' + r[7]];
+    cells.forEach(function(c) {
+      var td = document.createElement('td');
+      td.textContent = c;
+      tr.appendChild(td);
+    });
+    tbody.appendChild(tr);
+  });
+}
+buildFeederTable(feeder3w, 'feeder-3w-body');
+buildFeederTable(feeder4w, 'feeder-4w-body');
+
+// ─── PROPORTIONS TAB ───
+(function buildProportions() {
+  // Bounding boxes derived from spec parametric variables (geometry only, no text fields)
+  var propDims = {
+    'L0-1': {w:180,h:180}, 'L0-2': {w:80,h:80,ph:1},
+    'L1-1': {w:36,h:59}, 'L1-2': {w:192,h:192}, 'L1-3': {w:44,h:110},
+    'L1-4': {w:47,h:82}, 'L1-5': {w:50,h:50,ph:1}, 'L1-6': {w:48,h:64,ph:1},
+    'L2-1': {w:8,h:57}, 'L2-2': {w:66,h:78}, 'L2-3': {w:140,h:230},
+    'L2-4': {w:140,h:140}, 'L2-5': {w:66,h:47}, 'L2-6': {w:62,h:26},
+    'L2-7': {w:8,h:57}, 'L2-8': {w:91,h:47}, 'L2-9': {w:40,h:40,ph:1},
+    'L2-10': {w:80,h:80,ph:1}, 'L2-11': {w:60,h:50,ph:1}, 'L2-12': {w:70,h:60,ph:1},
+    'L2-13': {w:60,h:120,ph:1},
+    'L3-1': {w:24,h:32}, 'L3-2': {w:54,h:54}, 'L3-3': {w:54,h:54},
+    'R-1': {w:200,h:3}, 'R-2': {w:200,h:6}, 'R-3': {w:200,h:22},
+    'A-1': {w:166,h:31}, 'A-2': {w:66,h:36}, 'A-3': {w:60,h:30},
+    'A-4': {w:93,h:21}, 'A-5': {w:93,h:21}, 'A-6': {w:38,h:44}, 'A-7': {w:200, h:16},
+    'A-8': {w:120, h:74}
+  };
+
+  var layerOrder = [
+    {id:'L0', label:'L0 — Service Entrance', syms:['L0-1','L0-2']},
+    {id:'L1', label:'L1 — Main Distribution', syms:['L1-1','L1-2','L1-3','L1-4','L1-5','L1-6']},
+    {id:'L2a', label:'L2 — Sub-Distribution (complete)', syms:['L2-1','L2-2','L2-3','L2-4','L2-5','L2-6','L2-7','L2-8']},
+    {id:'L2b', label:'L2 — Sub-Distribution (placeholder)', syms:['L2-9','L2-10','L2-11','L2-12','L2-13']},
+    {id:'L3', label:'L3 — Branch / Terminal', syms:['L3-1','L3-2','L3-3']},
+    {id:'R', label:'R — Routing Elements', syms:['R-1','R-2','R-3']},
+    {id:'A', label:'A — Annotations', syms:['A-1','A-2','A-3','A-4','A-5','A-6','A-7','A-8']}
+  ];
+
+  var gap = 40;
+  var labelW = 10;
+  var rowPadTop = 36;
+  var dimH = 32;
+  var rowGap = 28;
+  var scale = 1;
+
+  // Calculate total SVG height and max row width
+  var totalH = 20;
+  var maxW = 0;
+  var rowMeta = [];
+  layerOrder.forEach(function(layer) {
+    var rowW = labelW;
+    var rowMaxH = 0;
+    layer.syms.forEach(function(sid, i) {
+      var d = propDims[sid];
+      if (i > 0) rowW += gap;
+      rowW += d.w * scale;
+      if (d.h * scale > rowMaxH) rowMaxH = d.h * scale;
+    });
+    var rh = rowPadTop + rowMaxH + dimH;
+    rowMeta.push({y: totalH, h: rh, maxH: rowMaxH, rowW: rowW});
+    totalH += rh + rowGap;
+    if (rowW > maxW) maxW = rowW;
+  });
+
+  var svgW = Math.max(maxW + 60, 900);
+  var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 ' + svgW + ' ' + totalH + '" style="min-width:800px;">';
+
+  var accentColor = 'var(--accent)';
+  var textColor = 'var(--text-primary)';
+  var mutedColor = 'var(--text-muted)';
+  var borderColor = 'var(--border)';
+  var phBorder = 'var(--placeholder-border)';
+  var phText = 'var(--placeholder-text)';
+  var cyan = '#00FFFF';
+
+  layerOrder.forEach(function(layer, li) {
+    var rm = rowMeta[li];
+    var baseY = rm.y;
+    var baseline = baseY + rowPadTop + rm.maxH;
+
+    // Layer label
+    svg += '<text x="' + labelW + '" y="' + (baseY + 14) + '" fill="' + accentColor + '" font-size="13" font-weight="700">' + layer.label + '</text>';
+    svg += '<line x1="' + labelW + '" y1="' + (baseY + 20) + '" x2="' + (svgW - 20) + '" y2="' + (baseY + 20) + '" stroke="' + borderColor + '" stroke-width="0.5"/>';
+
+    var cx = labelW;
+    layer.syms.forEach(function(sid, si) {
+      var d = propDims[sid];
+      var sw = d.w * scale;
+      var sh = d.h * scale;
+      if (si > 0) {
+        // Draw spacing annotation between this and previous symbol
+        var gapX1 = cx - gap;
+        var gapX2 = cx;
+        var gapMid = (gapX1 + gapX2) / 2;
+        var gapY = baseline + 4;
+        svg += '<line x1="' + gapX1 + '" y1="' + gapY + '" x2="' + gapX1 + '" y2="' + (gapY + 10) + '" stroke="' + mutedColor + '" stroke-width="0.5"/>';
+        svg += '<line x1="' + gapX2 + '" y1="' + gapY + '" x2="' + gapX2 + '" y2="' + (gapY + 10) + '" stroke="' + mutedColor + '" stroke-width="0.5"/>';
+        svg += '<line x1="' + gapX1 + '" y1="' + (gapY + 5) + '" x2="' + gapX2 + '" y2="' + (gapY + 5) + '" stroke="' + mutedColor + '" stroke-width="0.5"/>';
+        svg += '<text x="' + gapMid + '" y="' + (gapY + 20) + '" text-anchor="middle" fill="' + mutedColor + '" font-size="8">' + gap + 'px</text>';
+      }
+
+      var rx = cx;
+      var ry = baseline - sh;
+
+      if (d.ph) {
+        // Placeholder: dashed orange box
+        svg += '<rect x="' + rx + '" y="' + ry + '" width="' + sw + '" height="' + sh + '" fill="none" stroke="' + phBorder + '" stroke-width="1" stroke-dasharray="4,3" rx="2"/>';
+        svg += '<text x="' + (rx + sw/2) + '" y="' + (ry + sh/2 - 4) + '" text-anchor="middle" fill="' + phText + '" font-size="8" font-weight="600">' + sid + '</text>';
+        svg += '<text x="' + (rx + sw/2) + '" y="' + (ry + sh/2 + 6) + '" text-anchor="middle" fill="' + phText + '" font-size="7" opacity="0.7">TBD</text>';
+      } else {
+        // Bounding box outline
+        svg += '<rect x="' + rx + '" y="' + ry + '" width="' + sw + '" height="' + sh + '" fill="none" stroke="' + cyan + '" stroke-width="0.8" stroke-dasharray="3,2" opacity="0.4" rx="1"/>';
+
+        // Embed actual symbol SVG
+        var symLookup = null;
+        symbols.forEach(function(s) { if (s.id === sid && s.svg) symLookup = s; });
+
+        var isRoutingLayer = sid.charAt(0) === 'R';
+        if (symLookup && !isRoutingLayer) {
+          var vbMatch = symLookup.svg.match(/viewBox="([^"]+)"/);
+          if (vbMatch) {
+            var innerSvg = symLookup.svg.replace(/<svg[^>]*>/, '').replace(/<\/svg>$/, '');
+            svg += '<svg x="' + rx + '" y="' + ry + '" width="' + sw + '" height="' + sh + '" viewBox="' + vbMatch[1] + '" preserveAspectRatio="xMidYMid meet" overflow="hidden">';
+            svg += innerSvg;
+            svg += '<\/svg>';
+          }
+        } else {
+          var shortLabel = sid;
+          if (sid === 'R-1') shortLabel = '\u2014 feeder \u2014';
+          else if (sid === 'R-2') shortLabel = '\u2501 bus \u2501';
+          else if (sid === 'R-3') shortLabel = '\u254B busway \u254B';
+          svg += '<text x="' + (rx + sw/2) + '" y="' + (ry + sh/2 + 3) + '" text-anchor="middle" fill="' + textColor + '" font-size="9" font-weight="600">' + shortLabel + '</text>';
+        }
+      }
+
+      // Dimension annotation below
+      var dimY = baseline + dimH - 4;
+      svg += '<text x="' + (rx + sw/2) + '" y="' + dimY + '" text-anchor="middle" fill="' + mutedColor + '" font-size="8">' + d.w + ' × ' + d.h + '</text>';
+
+      // Symbol ID below dimension
+      svg += '<text x="' + (rx + sw/2) + '" y="' + (dimY + 11) + '" text-anchor="middle" fill="' + (d.ph ? phText : textColor) + '" font-size="7" font-weight="500">' + sid + '</text>';
+
+      cx += sw + gap;
+    });
+  });
+
+  svg += '</svg>';
+
+  document.getElementById('catalog-prop').innerHTML = svg;
+})();
+
+// ============================================================
+// Headless snapshot hooks (api 1) — additive, DOM-independent.
+// Mirrors 04_renderer's window.__snapshot / window.__audit convention so
+// 02_specs/visual_reference/snapshot_catalog.mjs can boot this file in
+// node:vm and rasterize each symbol for visual back-check. The catalog is
+// the single source of truth: these hooks build a standalone themed SVG per
+// symbol from the symbols[]/portMarkers{} string literals — the frontend
+// tool carries no rendering/palette logic of its own.
+//
+// core(id,{theme,ports}) wraps a symbol's own <svg> with (a) an embedded
+// port-class <style>, (b) a themed background <rect>, and (c) for light
+// theme, an rsvg-safe hex substitution whose dark->light map is PARSED FROM
+// the page's own [data-theme="light"] .svg-preview rules (injected by the
+// frontend as __CATALOG_CSS_TEXT) so it can never drift from what the page
+// shows. Attribute-selector CSS is avoided because librsvg support is spotty.
+// ============================================================
+(function () {
+  var DARK_BG = '#0a0e17', LIGHT_BG = '#f8fafd';
+  var DARK_PORT = '#FFD600', LIGHT_PORT_DIAMOND = '#e5a600', LIGHT_PORT_LABEL = '#b38600';
+  // Fallback light attribute-remap — kept in step with the <style> block;
+  // parseLightMap() overrides it from the injected CSS when available.
+  var FALLBACK = {
+    stroke: { '#00FFFF': '#0077b6', '#CCCCCC': '#000000', '#FF69B4': '#d6336c',
+              '#39FF14': '#1a8f2d', '#FFFFFF': '#1a1f2e', '#4A5568': '#a0aec0',
+              '#FF3333': '#CC2222', '#1A5FAA': '#14478A' },
+    fill:   { '#00FFFF': '#0077b6', '#FF69B4': '#d6336c', '#FFFFFF': '#1a1f2e',
+              '#0A0E17': '#f8fafd' }
+  };
+
+  function css() { try { if (typeof __CATALOG_CSS_TEXT === 'string') return __CATALOG_CSS_TEXT; } catch (e) {} return ''; }
+  function parseLightMap(text) {
+    if (!text) return null;
+    var map = { stroke: {}, fill: {} }, hit = false, m;
+    var re = /\[(stroke|fill)="(#[0-9A-Fa-f]{3,8})"\]\s*\{\s*(stroke|fill)\s*:\s*(#[0-9A-Fa-f]{3,8})/g;
+    while ((m = re.exec(text))) { map[m[1]][m[2].toUpperCase()] = m[4]; hit = true; }
+    var pm;
+    if ((pm = text.match(/\[data-theme="light"\][^{]*\.port-diamond\s*\{\s*fill\s*:\s*(#[0-9A-Fa-f]{3,8})/))) map._portDiamond = pm[1];
+    if ((pm = text.match(/\[data-theme="light"\][^{]*\.port-label\s*\{\s*fill\s*:\s*(#[0-9A-Fa-f]{3,8})/))) map._portLabel = pm[1];
+    if ((pm = text.match(/\[data-theme="light"\]\s*\{[^}]*--svg-bg\s*:\s*(#[0-9A-Fa-f]{3,8})/))) map._bg = pm[1];
+    return hit ? map : null;
+  }
+  function applyLight(svg, map) {
+    ['stroke', 'fill'].forEach(function (attr) {
+      var table = map[attr] || {};
+      Object.keys(table).forEach(function (dark) {
+        var re = new RegExp(attr + '="' + dark.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') + '"', 'gi');
+        svg = svg.replace(re, attr + '="' + table[dark] + '"');
+      });
+    });
+    return svg;
+  }
+  function bySym(id) { for (var i = 0; i < symbols.length; i++) if (symbols[i].id === id) return symbols[i]; return null; }
+  function symbolIds(includePlaceholders) {
+    return symbols.filter(function (s) { return includePlaceholders ? true : (!s.placeholder && s.svg); }).map(function (s) { return s.id; });
+  }
+
+  function core(id, opts) {
+    opts = opts || {};
+    var theme = opts.theme === 'light' ? 'light' : 'dark';
+    var withPorts = opts.ports !== false;
+    var warnings = [];
+    var sym = bySym(id);
+    if (!sym) return { svg: '', viewBox: { x: 0, y: 0, w: 0, h: 0 }, warnings: ['FATAL: unknown symbol id ' + id], coverage: { rendered: 0, total: 0, ok: false } };
+    if (sym.placeholder || !sym.svg)
+      return { svg: '', viewBox: { x: 0, y: 0, w: 0, h: 0 }, placeholder: true, warnings: ['PLACEHOLDER (no art) — intentional skip'], coverage: { rendered: 0, total: 0, ok: true } };
+
+    var art = sym.svg;
+    var vbM = art.match(/viewBox="([^"]+)"/);
+    if (!vbM) warnings.push('FATAL: symbol ' + id + ' has no viewBox');
+    var n = vbM ? vbM[1].trim().split(/[\s,]+/).map(Number) : [0, 0, 0, 0];
+    var vb = { x: n[0], y: n[1], w: n[2], h: n[3] };
+
+    if (withPorts && portMarkers[id]) art = art.replace('</svg>', portMarkers[id] + '</svg>');
+    else if (withPorts && sym.ports && sym.ports.length && !portMarkers[id])
+      warnings.push('no port overlay for ' + id + ' (declares: ' + sym.ports.join(',') + ')');
+
+    var map = parseLightMap(css()) || { stroke: FALLBACK.stroke, fill: FALLBACK.fill };
+    var bg = theme === 'light' ? (map._bg || LIGHT_BG) : DARK_BG;
+    var pd = theme === 'light' ? (map._portDiamond || LIGHT_PORT_DIAMOND) : DARK_PORT;
+    var pl = theme === 'light' ? (map._portLabel || LIGHT_PORT_LABEL) : DARK_PORT;
+    var style = '<style>.port-diamond{fill:' + pd + ';stroke:#000;stroke-width:0.6}.port-label{fill:' + pl + ';font-family:monospace;font-weight:600}</style>';
+    var rect = '<rect x="' + vb.x + '" y="' + vb.y + '" width="' + vb.w + '" height="' + vb.h + '" fill="' + bg + '"/>';
+    art = art.replace(/(<svg[^>]*>)/, '$1' + style + rect);
+    if (theme === 'light') art = applyLight(art, map);
+
+    if (/var\(/.test(art)) warnings.push('FATAL: unresolved var() in output');
+    var ok = warnings.filter(function (w) { return /^FATAL/.test(w); }).length === 0;
+    return { svg: art, viewBox: vb, warnings: warnings, coverage: { rendered: ok ? 1 : 0, total: 1, ok: ok } };
+  }
+
+  // Advisory audit — declared-port vs overlay-marker parity + viewBox sanity.
+  function auditOne(id) {
+    var sym = bySym(id);
+    if (!sym) return { ok: false, id: id, error: 'unknown id', counts: { findings: 1 }, findings: [{ type: 'unknown_id' }] };
+    if (sym.placeholder || !sym.svg) return { ok: true, id: id, placeholder: true, counts: { findings: 0 }, findings: [] };
+    var f = [];
+    var vb = sym.svg.match(/viewBox="([^"]+)"/);
+    if (!vb) f.push({ type: 'no_viewbox' });
+    else { var n = vb[1].trim().split(/[\s,]+/).map(Number); if (n.length !== 4 || !(n[2] > 0) || !(n[3] > 0)) f.push({ type: 'bad_viewbox', viewBox: vb[1] }); }
+    var declared = sym.ports || [], overlay = portMarkers[id] || '';
+    var labels = (overlay.match(/class="port-label"[^>]*>([^<]*)</g) || []).map(function (s) { return s.replace(/^[\s\S]*>/, '').trim(); });
+    if (declared.length && !overlay) f.push({ type: 'no_overlay', declares: declared });
+    else declared.forEach(function (p) { if (!labels.some(function (l) { return l.indexOf(p) !== -1; })) f.push({ type: 'port_no_marker', port: p }); });
+    return { ok: f.length === 0, id: id, counts: { findings: f.length }, findings: f };
+  }
+
+  window.__snapshot = { api: 1, slug: 'sld_catalog', symbolIds: symbolIds, sheetIds: symbolIds, core: core };
+  window.__audit = { api: 1, run: auditOne };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,13 @@
+<svg viewBox="-26 -67 310 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="-26" y="-67" width="310" height="220" fill="#0a0e17"/>
+  <circle cx="83.5" cy="43" r="27"
+          fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <polygon points="62.5,30 104.5,30 83.5,67"
+           fill="none" stroke="#00FFFF" stroke-width="3" stroke-linejoin="miter"/>
+  <text x="124" y="33" font-family="monospace" font-size="12"
+        font-weight="700" text-decoration="underline"
+        fill="#FFFFFF">RTU-1-A</text>
+  <text x="124" y="49" font-family="monospace" font-size="12"
+        font-weight="600" fill="#FFFFFF">15KW</text>
+  <text x="124" y="65" font-family="monospace" font-size="12"
+        font-weight="600" fill="#FFFFFF">480V/3PH</text>
+<g class="port-marker"><polygon points="83.5,65 88.5,70 83.5,75 78.5,70" class="port-diamond"/><text x="83.5" y="82" text-anchor="middle" font-size="8" class="port-label">load_in</text></g></svg>

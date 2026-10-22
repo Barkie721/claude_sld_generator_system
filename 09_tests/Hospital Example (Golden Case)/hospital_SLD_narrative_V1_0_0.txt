@@ -1,0 +1,379 @@
+# ELECTRICAL NARRATIVE — HOSPITAL SLD (PIPELINE-COMPATIBLE)
+# New Hospital — 121,000 SF, 3 Stories + Roof | State of Washington
+# Revision: V1_0_0
+# Target: sld_topology_rules_V1_0_0 pipeline, Stages 1–3 (topology + validation)
+# -----------------------------------------------------------------------------
+# This narrative defines the electrical topology for the hospital SLD at
+# schema_version 1.0.0. Topology counts: 128 devices, 92 routed_elements,
+# 7 cross_sheet_refs, 328 annotations, 2 switchboards, 10 sections,
+# 7 A-6 keynotes (4 on S1, 3 on S2).
+#
+# AHJ / PE review content (grounding details, AIC study caveats, full code
+# reference citations, risk tables) lives in the parent BOD document and is
+# not duplicated here.
+# -----------------------------------------------------------------------------
+
+## SERVICE
+2500 kVA utility pad-mount transformer, 13.2 kV primary → 480Y/277V secondary,
+3-phase, 4-wire, 5.75% Z, delta-wye, utility-owned.
+Utility feeder (F-002, to 4MDP-1-A line side):
+  4 sets, 4"C EMT, 4#750 kcmil CU + #1/0 CU GND, +2 spare conduits.
+
+## BUILDING
+3-story acute-care hospital, 121,000 SF, plus occupied roof level (mechanical
+penthouse). Main service switchboard in L1 electrical room.
+Level lines: Roof (R), Level 3 (3), Level 2 (2), Level 1 (1).
+
+## MAIN SWITCHBOARD — 4MDP-1-A  (sw-001, Sheet S1)
+
+- Bus: 4000 A, 480Y/277V, 3Φ 4W, 65 kAIC, two-level (main + secondary)
+- Construction: UL 891, NEMA 1, front-accessible, service-entrance rated (SER)
+- Integral features: Type 1 SPD on bus (Mode A dedicated CB),
+  arc-flash reduction maintenance switch (ARMS), CT metering cabinet
+
+### Sections (L → R, 6 sections per SEC-1…SEC-6 tagging)
+SEC-1 Incoming | SEC-2 Metering | SEC-3 Fire Pump | SEC-4 Main Breaker (GFP)
+SEC-5 Distribution | SEC-6 Distribution
+
+### Bus model
+- Main bus (r-901, 4000 A): hosts CB-FP only (fire pump tap ahead of main).
+- Secondary bus (r-902, 3000 A): hosts MAIN-GFP and all distribution breakers.
+
+### Main breaker — MAIN-GFP (d-004, on secondary bus)
+- 4000 AF / 3000 AT, electronic-trip LSIG
+- GFP per NEC 230.95: 1200 A pickup, 1.0 s max delay  [NON-NEGOTIABLE]
+
+### Fire pump section
+- CB-FP (d-003) on MAIN bus, ahead of main disconnect per NEC 695.4(B)
+  [NON-NEGOTIABLE]
+- 600 AF / 400 AT, 3P, LSI trip
+- Feeds normal source of fire pump ATS E4A-1-B on S2 via cross-sheet ref
+  cs-007 (feeder r-019-s1 / r-019-s2)
+- TIER 3: EOR confirm 400 AT rating per NEC 695.4(B)(2) locked-rotor basis
+
+### 4MDP-1-A Distribution Breakers (full schedule, secondary bus r-902)
+
+| CB     | Device | AF/AT/Poles | Trip | Feeds                                          |
+|--------|--------|-------------|------|------------------------------------------------|
+| CB-01  | d-015  | 20/20/3P    | LSI  | SPD-MSB (Type 1 SPD, Mode A dedicated)         |
+| CB-02  | d-137  | 400/400/3P  | LSI  | 4M-1-A (L1 mech panel, 400A MLO)               |
+| CB-03  | d-005  | 1200/1200/3P| LSI  | 4M-R-A (rooftop mech distribution, 1200A MLO)  |
+| CB-04  | d-006  | 800/800/3P  | LSI  | 4L-1-A (L1 lighting panel, 800A MLO)           |
+| CB-05  | d-007  | 225/225/3P  | LSI  | SPARE                                          |
+| CB-06  | d-008  | 225/225/3P  | LSI  | SPARE                                          |
+| CB-07  | d-114  | 1600/1600/3P| LSI  | 4S-1-B (consolidated normal sub, 1600A MCB)    |
+| CB-08  | d-009  | 600/600/3P  | LSI  | ATS E4A-1-A normal src (Life Safety, NEC 700)  |
+| CB-09  | d-010  | 1000/1000/3P| LSI  | ATS C4A-1-A normal src (Critical Care, NEC 700)|
+| CB-10  | d-011  | 600/600/3P  | LSI  | ATS EQ4A-1-A normal src (Equipment, NEC 701)   |
+| CB-11  | d-012  | 400/400/3P  | LSI  | ATS EQ4A-1-B normal src (Equipment, NEC 701)   |
+| CB-12  | d-013  | 600/600/3P  | LSI  | ATS O4A-1-A normal src (Optional, NEC 702)     |
+| CB-13  | d-014  | 400/400/3P  | LSI  | ATS EQ4A-1-C normal src (Equipment / Elevator) |
+| CB-14  | d-016  | 225/225/3P  | LSI  | SPARE                                          |
+| CB-15  | d-017  | 225/225/3P  | LSI  | SPARE                                          |
+| SPACE  | d-018  | —           | —    | SPACE only (no equipment)                      |
+
+- Spares: 4 spare (CB-05, CB-06, CB-14, CB-15), 1 space (SPACE-01)
+- N-G bond: NG-BOND (d-019, L1-3, sds=service_entrance) in rightmost
+  distribution section  [NON-NEGOTIABLE]
+- Utility meter: UTIL-MTR (d-002, L1-4) in Metering section [NON-NEGOTIABLE]
+
+### MCC sub-feeds from 4M-R-A (rooftop)
+MCCs modeled as panelboards per V1.0.0 symbol registry (no L2-* MCC symbol).
+Starter, VFD, contactor details live on MCC schedule, not on SLD.
+
+  4M-R-A (1200A MLO) feed_bottom → 4M-R-B (800A MLO, "MCC-HVAC equivalent")
+  4M-R-A (1200A MLO) feed_bottom → 4M-R-C (400A MLO, "MCC-PLMB equivalent")
+
+### L1 Normal Sub-Distribution — 4S-1-B (Consolidated)
+Single 1600A MCB panel fed from CB-07. 8 internal 225A/3P CBs (designations
+4S-1-B-CB-A through 4S-1-B-CB-H), each feeding one step-down transformer.
+
+| Internal CB | Feeds (xfmr)          | xfmr → LP/PP (208Y/120V)       |
+|-------------|-----------------------|--------------------------------|
+| 4S-1-B-CB-A | 4T-1-B (112.5 kVA)    | 2P-1-B (400A MLO)              |
+| 4S-1-B-CB-B | 4T-1-C (112.5 kVA)    | 2P-1-C (400A MLO)              |
+| 4S-1-B-CB-C | 4T-1-D (112.5 kVA)    | 2P-1-D (400A MLO)              |
+| 4S-1-B-CB-D | 4T-2-B (112.5 kVA)    | 2P-2-B (400A MLO)              |
+| 4S-1-B-CB-E | 4T-2-C (112.5 kVA)    | 2P-2-C (400A MLO)              |
+| 4S-1-B-CB-F | 4T-2-D (112.5 kVA)    | 2P-2-D (400A MLO)              |
+| 4S-1-B-CB-G | 4T-3-B (112.5 kVA)    | 2P-3-B (400A MLO)              |
+| 4S-1-B-CB-H | 4T-3-C (112.5 kVA)    | 2P-3-C (400A MLO)              |
+
+- All step-down xfmrs: 112.5 kVA, 480Δ-208Y/120V (K-13 per parent BOD).
+- All 2P-N-* LPs: 400A MLO, 208Y/120V.
+- TIER 2 OVERRIDE confirmed: 225 AT secondary breakers feed 112.5 kVA xfmrs
+  (NOT 250 A schedule default). Per HTML calc_fields.
+
+### Floor-Level Normal Lighting & Mechanical
+- 4L-1-A (800A MLO, 480V, L1) — fed from CB-04
+    feed_bottom → 4L-2-A (225A MLO, L2)
+    feed_bottom → 4L-3-A (225A MLO, L3)
+    Serves: 277V general lighting, branch breakers per panel schedule.
+    1 internal CB present (4L-1-A-CB-A, 225A) — no terminal load defined.
+    1 spare CB each on 4L-2-A and 4L-3-A (225A).
+- 4M-1-A (400A MLO, L1 mechanical) — fed from CB-02; no further distribution
+  modeled on SLD.
+- 4M-2-A, 4M-3-A (225A MLO each) — present as terminal panels; topology
+  shows no incoming feeders from MDP-1-A (likely fed via 4M-R-A → riser,
+  or pending feeder modeling).  [VERIFY against MEP coordination]
+
+## GENERATOR — GEN-1
+
+- 2000 kW / 2500 kVA standby, 480Y/277V, 3Φ 4W
+- NFPA 110 Level 1 / Type 10 / Class X, UL 2200 listed
+- Tier 4 Final per EPA 40 CFR 1039
+- Generator breaker: 3000 AF / 2500 AT LSIG (integral to genset)
+- Generator feeder (F-007, GEN-1 feed_bottom → EMSB-MAIN feed_top):
+    3 sets, 3-1/2"C EMT, 4#500 kcmil AL + #1/0 CU EGC
+  TIER 3 EOR-supplied: conductor, conduit, ground, num_sets — generator
+  feeders exempt from schedule lookup per NEC 445.13. Installed in
+  dedicated 2-hour-rated raceway per NEC 700.10(D)(1).
+
+## EMERGENCY SWITCHBOARD — E4MDP-1-A  (sw-002, Sheet S2)
+
+- Bus: 3000 A, 480Y/277V, 3Φ 4W, 65 kAIC, two-level
+- Construction: UL 891, NEMA 1, front-accessible, service-entrance rated
+  (generator side)
+- Physical segregation per NEC 517.31(C), 700.10(B), 701.10(B) — barriers
+  between NEC class sections
+
+TIER 2 OVERRIDE confirmed: E4MDP-1-A has a MAIN BREAKER (not MLO).
+- Main: EMSB-MAIN (d-053), 3000 AF / 2500 AT LSIG (on secondary bus r-904)
+- Type 1 SPD: SPD-EMSB on emergency bus
+
+### Sections (L → R, 4 sections per SEC-1-EM…SEC-4-EM tagging)
+SEC-1-EM Incoming | SEC-2-EM Main Breaker | SEC-3-EM Distribution
+SEC-4-EM Distribution
+
+Note: V1.0.0 schema collapses NEC 700/701/702 into two distribution sections
+rather than three. NEC class segregation is enforced by ATS-level prefix
+namespacing (E4 / C4 / EQ4 / O4) and physical separation per NEC 517.31(C),
+not by separate SEC tags.
+
+### E4MDP-1-A Distribution Breakers (full schedule, secondary bus r-904)
+
+| CB        | Device | AF/AT/Poles | Trip | Feeds                                       |
+|-----------|--------|-------------|------|---------------------------------------------|
+| CB-01-EM  | d-113  | 20/20/3P    | LSI  | SPD-EMSB (Type 1 SPD)                       |
+| CB-02-EM  | d-057  | 1000/1000/3P| LSI  | ATS C4A-1-A emergency src (Critical, 700)   |
+| CB-03-EM  | d-056  | 600/600/3P  | LSI  | ATS E4A-1-A emergency src (Life Safety, 700)|
+| CB-04-EM  | d-055  | 600/400/3P  | LSI  | ATS E4A-1-B emergency src (Fire Pump, 700)  |
+| CB-05-EM  | d-058  | 600/600/3P  | LSI  | ATS EQ4A-1-A emergency src (Equipment, 701) |
+| CB-06-EM  | d-059  | 400/400/3P  | LSI  | ATS EQ4A-1-B emergency src (Equipment, 701) |
+| CB-07-EM  | d-060  | 400/400/3P  | LSI  | ATS EQ4A-1-C emergency src (Elevator, 701)  |
+| CB-08-EM  | d-061  | 600/600/3P  | LSI  | ATS O4A-1-A emergency src (Optional, 702)   |
+| EM-CB-05  | d-063  | 225A/3P     | —    | SPARE                                       |
+| EM-CB-06  | d-064  | 225A/3P     | —    | SPARE                                       |
+| EM-CB-11  | d-065  | 225A/3P     | —    | SPARE                                       |
+
+- Spares: 3 spare (EM-CB-05, EM-CB-06, EM-CB-11)
+- N-G bond: EM-NG-BOND (L1-3) in rightmost distribution section
+  [NON-NEGOTIABLE]
+
+## ATS INVENTORY (7 transfer devices)
+
+| ATS       | Device | Class            | Poles | Normal Source       | Emergency Source     | Loads                    |
+|-----------|--------|------------------|-------|---------------------|----------------------|--------------------------|
+| E4A-1-A   | d-045  | LIFE SAFETY      | 4P    | 4MDP-1-A CB-08      | E4MDP-1-A CB-03-EM   | → E4S-1-A                |
+| E4A-1-B   | d-051  | LIFE SAFETY (FP) | 4P    | 4MDP-1-A CB-FP      | E4MDP-1-A CB-04-EM   | → E4FP-1-A (fire pump)   |
+| C4A-1-A   | d-046  | CRITICAL         | 4P    | 4MDP-1-A CB-09      | E4MDP-1-A CB-02-EM   | → C4S-1-A                |
+| EQ4A-1-A  | d-047  | EQUIPMENT (701)  | 4P    | 4MDP-1-A CB-10      | E4MDP-1-A CB-05-EM   | → EQ4S-1-A               |
+| EQ4A-1-B  | d-048  | EQUIPMENT (701)  | 4P    | 4MDP-1-A CB-11      | E4MDP-1-A CB-06-EM   | → EQ4S-1-B               |
+| EQ4A-1-C  | d-050  | EQUIPMENT (701)  | 4P    | 4MDP-1-A CB-13      | E4MDP-1-A CB-07-EM   | → ELEV-01 (terminal load)|
+| O4A-1-A   | d-049  | OPTIONAL (702)   | 4P    | 4MDP-1-A CB-12      | E4MDP-1-A CB-08-EM   | → O4S-1-A                |
+
+ATS metadata (calc fields, not rendered):
+- All ATS: withstand_rating = 65 kAIC (DV-5 check) — TIER 3 input
+- ATS continuous ratings: E4A-1-B = 400 A. Other ATSs amps not populated in
+  TOPO data_fields (likely deferred to ATS schedule).
+- ATS type (bypass-isolation, manual, standard) is text-only metadata; all
+  render as standard L2-3 symbol.
+- All 4-pole construction (switched neutral) per separately derived system
+  rules.
+
+### Cross-sheet feeder refs (S1 ↔ S2)
+| cs-id   | Feeder pair        | Bridges                            |
+|---------|--------------------|------------------------------------|
+| cs-001  | r-013-s1/r-013-s2  | CB-08 → E4A-1-A source1            |
+| cs-002  | r-014-s1/r-014-s2  | CB-09 → C4A-1-A source1            |
+| cs-003  | r-015-s1/r-015-s2  | CB-10 → EQ4A-1-A source1           |
+| cs-004  | r-016-s1/r-016-s2  | CB-11 → EQ4A-1-B source1           |
+| cs-005  | r-017-s1/r-017-s2  | CB-12 → O4A-1-A source1            |
+| cs-006  | r-018-s1/r-018-s2  | CB-13 → EQ4A-1-C source1           |
+| cs-007  | r-019-s1/r-019-s2  | CB-FP → E4A-1-B source1 (Pattern 4)|
+
+Each cross-sheet pair renders A-3 squiggle terminations on both sheets.
+
+## EMERGENCY DOWNSTREAM CHAINS
+
+### Life Safety Branch — E4A-1-A → E4S-1-A
+E4A-1-A load_out → E4S-1-A (600A MLO, 480Y/277V)
+  Sub-feeds (Chain G):
+    E4S-1-A feed_bottom → E4B-1-A (225A MCB, L1)
+      └─ E4B-1-A-CB (225A/3P) → E4T-1-A (45 kVA, K-4)
+                                → E2L-1-A (225A MLO, 208Y/120V)
+    E4S-1-A feed_bottom → E4B-3-A (225A MCB, L3)
+      └─ E4B-3-A-CB (225A/3P) → E4T-3-A (45 kVA)
+                                → E2L-3-A (225A MLO)
+
+GAP: E4B-2-A / E4T-2-A / E2L-2-A (Level 2 Life Safety branch) is NOT
+present in the topology. Either:
+  (a) intentionally omitted from this design iteration, or
+  (b) missing — code review required.
+Per NEC 700.12 (general), Life Safety branch must serve egress lighting at
+all occupied levels.  [TIER 3 / EOR REVIEW]
+
+Serves: 277V egress lighting, 120V exit signs, fire alarm, mass notification,
+generator accessories per NEC 700.
+
+### Critical Care Branch — C4A-1-A → C4S-1-A
+C4A-1-A load_out → C4S-1-A (1000A MLO, 480Y/277V)
+  Sub-feeds:
+    C4S-1-A feed_bottom → C4B-1-A (400A MCB, L1)
+      ├─ C4B-1-A-CB-B (225A/3P) → C4T-1-A (75 kVA, K-13)
+      │                          → C2L-1-A (400A MLO, 208Y/120V)
+      └─ C4B-1-A-CB-C (225A/3P) → C4T-1-B (75 kVA, K-13)
+                                 → C2P-1-B (400A MLO, 208Y/120V)
+    C4S-1-A feed_bottom → C4B-3-A (400A MCB, L3)
+      ├─ C4B-3-A-CB-B (225A/3P) → C4T-3-A (75 kVA, K-13)
+      │                          → C2L-3-A (400A MLO)
+      └─ C4B-3-A-CB-C (225A/3P) → C4T-3-B (75 kVA, K-13)
+                                 → C2P-3-B (400A MLO)
+
+GAP: C4B-2-A / C4T-2-A / C4T-2-B / C2L-2-A / C2P-2-B (Level 2 Critical
+Care branch) NOT present in topology. Same Level 2 gap as Life Safety
+branch.  [TIER 3 / EOR REVIEW]
+
+C2L-N-* and C2P-N-* panels serve Critical Care per NEC 517.33 — at least
+one duplex per patient bed, task lighting and selected receptacles in
+OR / ICU / ED / L&D / imaging. Color-coded red.
+
+### Equipment Branch (Delayed) — EQ4A-1-A → EQ4S-1-A
+EQ4A-1-A load_out → EQ4S-1-A (600A MLO, 480Y/277V)
+  Sub-feeds (rooftop equipment only):
+    EQ4S-1-A feed_bottom → EQ4M-1-A (225A MLO, L1 equipment-branch mech)
+    EQ4S-1-A feed_bottom → EQ4M-3-A (225A MLO, L3 equipment-branch mech)
+
+GAP: EQ4M-2-A and EQ4M-R-A device records exist but no incoming feeders
+modeled. Either undocumented sub-feeds from EQ4S-1-A, or unbuilt routing.
+[VERIFY against routed_elements completeness]
+
+Serves: medical vacuum/air compressors, selected AHUs, one elevator per bank
+(see ELEV-01), kitchen hood exhaust, smoke-control fans not on LS.
+
+### Equipment Branch (Manual) — EQ4A-1-B → EQ4S-1-B
+EQ4A-1-B load_out → EQ4S-1-B (400A MLO, 480Y/277V)
+  No downstream sub-feeds in topology (terminal sub).
+
+Serves: heating and select cooling loads, restarted sequentially via EPSS
+load-shed controller. Branch breakers per panel schedule, not on SLD.
+Loads per A-6 keynote #1 on S2: "EQ4S-1-B LOADS — NFPA 110 EQ MANUAL BRANCH."
+
+### Elevator Transfer — EQ4A-1-C → ELEV-01
+EQ4A-1-C load_out → ELEV-01 (terminal L3-3 device, 40 HP / 52 FLA / 480V-3PH)
+  No sub-distribution; direct connection to elevator controller.
+  NEC class: Equipment (701) — per FGI 2.1-7.2.2.5 and 700.10(B)(5)(2)
+  elevator on Equipment branch acceptable.
+
+### Optional Standby Branch — O4A-1-A → O4S-1-A
+O4A-1-A load_out → O4S-1-A (600A MLO, 480Y/277V)
+  Single step-down:
+    O4S-1-A internal CB (O4S-1-A-CB, 125A/3P) → O4T-1-A (75 kVA, K-13)
+                                              → O2B-1-A (400A MLO,
+                                                          208Y/120V)
+
+Serves: MDF/IDF/UPS input, food-service freezers, admin IT, select research.
+
+### Fire Pump Transfer — E4A-1-B → E4FP-1-A
+E4A-1-B (400A continuous, 4P) load_out → E4FP-1-A (fire pump controller,
+  100 HP, 124 FLA, 725 LRA, 480V-3PH)
+  Normal source: 4MDP-1-A CB-FP via cs-007 (tap ahead of main disconnect per
+  NEC 695.4(B), Pattern 4).
+  Emergency source: E4MDP-1-A CB-04-EM (NEC 700 / 695.3(B)).
+  Listed fire pump transfer switch per UL 1008 (FP listing).
+
+## SHEET ASSIGNMENT
+- Sheet S1 (E-501): Normal Power — utility xfmr, 4MDP-1-A, all normal
+  distribution (4S-1-B + 9 xfmrs + 9 LP panels), 4L-N-A, 4M-N-A, 4M-R-A/B/C.
+- Sheet S2 (E-502): Emergency Power — GEN-1, E4MDP-1-A, all 7 ATSs, all
+  emergency distribution and downstream chains, ELEV-01, E4FP-1-A.
+- Cross-sheet refs: 7 total (cs-001…cs-007), all ATS normal sources cross
+  S1→S2 with A-3 squiggle pairs.
+
+## OMITTED FROM TOPOLOGY — Add as A-6 Keynotes on Final SLD
+(7 A-6 keynotes currently present in HTML — 4 on S1, 3 on S2)
+
+S1 keynotes (verified in TOPO):
+  #1 GROUNDING ELECTRODE SYSTEM — SEE DRAWING E-001 SERIES (#2/0 CU GROUND
+     RING, UFER, WATER, ROD ARRAY).
+  #2 TYPE 2 SPD AT EACH DISTRIBUTION PANEL, TYPE 3 AT SENSITIVE LOADS —
+     PER SPD SCHEDULE.
+  #3 AIC COORDINATION & ARC-FLASH STUDY — PER SPEC SECTION 26 05 73.
+  #4 VFD HARMONIC MITIGATION PER IEEE 519 AT PCC — PER EQUIPMENT SCHEDULE.
+
+S2 keynotes (verified in TOPO):
+  #1 EQ4S-1-B LOADS — NFPA 110 EQ MANUAL BRANCH.
+  #2 IPS-OR/CATH/PROC PANELS (10 kVA, 480-120/120V, LIM PER NEC 517.160)
+     FED FROM C4B-N-A. REF IPS SCHEDULE.
+  #3 GENERATOR PARALLELING SWITCHGEAR — N+1 CONFIGURATION PENDING (SINGLE
+     GENSET, v1.0.0).
+
+Items not yet represented as keynotes but referenced in the parent BOD:
+  - SPD Type 2 / Type 3 placement per panel (currently general keynote #2;
+    expand if individual panels require call-outs).
+  - Isolated Power Panels (IPS) — 4 units referenced in parent BOD
+    (IPS-OR-1, IPS-OR-2, IPS-CATH, IPS-PROC). Keynote #2 above is generic.
+  - Grounding electrode detail (covered by keynote #1).
+
+## TIER 3 HALT CHECKLIST
+
+- [x] Generator feeder conductor / conduit / ground (per TOPO calc_fields:
+      3 sets, 3-1/2"C, 4#500 AL + #1/0 CU EGC)
+- [x] Fire pump breaker rating (CB-FP: 600 AF / 400 AT; EOR confirm
+      NEC 695.4(B)(2) locked-rotor basis)
+- [x] All ATS withstand_ratings (65 kAIC to match bus — confirmed via
+      validation)
+- [x] FP-ATS Pattern 4 confirmation — E4A-1-B is fire pump ATS, normal
+      source = CB-FP (main-bus tap), emergency source = CB-04-EM.
+      cs-007 cross-sheet feeder confirms.
+- [ ] Utility available fault current letter (for 65 kAIC adequacy check
+      on SWBD bus — DV-4)
+- [ ] Level 2 emergency branches — Life Safety (E4B-2-A / E4T-2-A / E2L-2-A)
+      and Critical Care (C4B-2-A / C4T-2-A,B / C2L-2-A / C2P-2-B) NOT
+      present in topology. Resolve before AHJ submission.
+- [ ] EQ4M-2-A and EQ4M-R-A panels exist as devices but lack incoming
+      feeders. Confirm intended source and route.
+- [ ] 4M-2-A and 4M-3-A normal mechanical panels exist but lack incoming
+      feeders. Confirm route (likely via 4M-R-A riser, not modeled).
+- [ ] EQ4S-1-B has no downstream — verify intended manual-branch loads are
+      shown on panel schedule, not SLD.
+- [ ] Feeder distances (if VD/FC calc fields will be populated)
+
+## OUTPUT MODE
+Run Stages 1–3: topology generation + validation report. Emit JSON topology
+contract with data_layer_versions pinned. Expected outputs:
+  - 128 devices, 92 routed_elements, 7 cross_sheet_refs, 328 annotations
+  - 2 switchboards (sw-001 4MDP-1-A two-level, sw-002 E4MDP-1-A two-level)
+  - 10 sections (6 normal SEC-1…SEC-6, 4 emergency SEC-1-EM…SEC-4-EM)
+  - 7 A-6 keynotes (4 S1, 3 S2)
+  - Schema version 1.0.0
+
+DO NOT attempt Stages 4–6 (layout + SVG) — complexity exceeds approximate-
+fidelity threshold per §8 Complexity Management. Export validated JSON to
+deterministic layout engine for production SVG geometry.
+
+## DESIGN BASIS (informational, sourced from parent BOD)
+- Code basis: 2023 NEC (WAC 296-46B), NFPA 99 (2021), NFPA 110 (2022),
+  NFPA 101, IBC/WSBC 2021, WSEC-C 2021, IES RP-29, FGI 2022
+- Occupancy: Group I-2 Condition 2
+- Essential Electrical System: Type I (NFPA 99 §6.4)
+- EPSS: Level 1 / Type 10 / Class X (NFPA 110 §4.1)
+- UL listings: UL 891 (SWBD), UL 1558 (LV SWGR), UL 1008 (ATS, including
+  fire pump listing on E4A-1-B), UL 845 (MCC), UL 67 (panelboards),
+  UL 1561/1562 (transformers), UL 1449 (SPD), UL 2200 (gensets)
+
+# -----------------------------------------------------------------------------
+# END OF PIPELINE-COMPATIBLE NARRATIVE — V1_0_0
+# Schema version 1.0.0. Parent BOD remains the record document for AHJ /
+# PE review.
+# -----------------------------------------------------------------------------

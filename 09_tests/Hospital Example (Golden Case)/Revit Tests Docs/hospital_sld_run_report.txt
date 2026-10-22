@@ -1,0 +1,51 @@
+SLD Generator 2A — Run Report
+Project: New Hospital — 121,000 SF
+────────────────────────────────────────────────
+Devices placed:      104 / 128
+Devices aligned:     104 (registered to engine symbol boxes)
+Detail lines drawn:  178
+Annotations placed:  94 / 328
+Level lines placed:  8 / 8
+Equipment labels:    4 / 4
+Sections placed:     10 / 10
+Glyph supplements:   2 / 2 (engine-drawn linework, schema §14.9)
+Bus connection dots: 2 / 2 (feeder×busbar junction dots, schema §14.10)
+Device tags:         27 / 27 (glyph text stacks as TextNotes — L2-3/L2-2/L0-1/L3-3; gen/fire-pump moved to equipment labels)
+Squiggle labels:     14 / 14 (A-3 TO/FROM text as TextNotes, schema §14.1 label)
+Companion instances: 3 / 3 (additional families per sld_companion map entries)
+Not rendered upstream (expected): 28
+
+Preflight gaps:      2 node type(s) had no Revit family.
+
+2 warning(s) — see the results panel for details.
+
+Per-sheet breakdown
+────────────────────────────────────────────────
+E-501 — MAIN SINGLE-LINE DIAGRAM — NORMAL POWER  [S1]
+    devices 47/59  aligned 47  lines 73  annotations 41/116  level lines 4/4  equip labels 1/1  sections 6/6  glyph supp 2/2  bus dots 1/1  device tags 9/9  squiggle labels 7/7
+E-502 — MAIN SINGLE-LINE DIAGRAM — EMERGENCY POWER  [S2]
+    devices 57/69  aligned 57  lines 105  annotations 53/212  level lines 4/4  equip labels 3/3  sections 4/4  bus dots 1/1  device tags 18/18  squiggle labels 7/7
+
+Preflight gaps
+────────────────────────────────────────────────
+  L1-3: no entry in family map (device 'd-019')
+  L3-3: no entry in family map (device 'd-111')
+
+Unplaced — review required (3)
+────────────────────────────────────────────────
+  • NG-BOND [L1-3] — no family-map entry for node type 'L1-3'  (S1)
+  • EM-NG-BOND [L1-3] — no family-map entry for node type 'L1-3'  (S2)
+  • ELEV-01 [L3-3] — no family-map entry for node type 'L3-3'  (S2)
+
+Intentionally skipped (no Revit family yet): 227
+
+Not rendered upstream — expected per schema §14.2 (composite-rendered inside a parent or non-visual): 28
+
+Layout warnings (1)
+────────────────────────────────────────────────
+  • Exported from sld_engine.mjs at 96px/in: 107 devices, 92 routed, 94 annotations.
+
+Warnings (2)
+────────────────────────────────────────────────
+  • Preflight: 2 node type(s) have no loaded Revit family — those devices will be skipped.
+  • 'UTIL-MTR': transducer companion has no hand-flip control — rotated 180° only (jaw handedness may diverge from the viewer).

@@ -1,0 +1,55 @@
+{
+  "html": "C:\\Users\\HRJ72\\_Mayo_Claude_Workspace\\revit_electrical-dedarms_system\\claude_sld_generator_system\\09_tests\\Clinic AI Test - 3000A - One Sheet\\2_build\\clinic1s_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.19",
+  "generated": "2026-10-21T04:39:10.592Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "clinic1s_S1_dark.svg",
+      "png": "clinic1s_S1_dark.png",
+      "png_width": 6000,
+      "raster": {
+        "engine": "resvg",
+        "version": "0.47.0"
+      },
+      "viewBox": {
+        "x": -634,
+        "y": 2093.4067332602635,
+        "w": 6127.385,
+        "h": 2996.5932667397365
+      },
+      "coverage": {
+        "rendered": 161,
+        "total": 161,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "clinic1s_S1_light.svg",
+      "png": "clinic1s_S1_light.png",
+      "png_width": 6000,
+      "raster": {
+        "engine": "resvg",
+        "version": "0.47.0"
+      },
+      "viewBox": {
+        "x": -634,
+        "y": 2093.4067332602635,
+        "w": 6127.385,
+        "h": 2996.5932667397365
+      },
+      "coverage": {
+        "rendered": 161,
+        "total": 161,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

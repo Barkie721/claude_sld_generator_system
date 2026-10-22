@@ -1,0 +1,39 @@
+{
+  "html": "C:\\Users\\HRJ72\\_Mayo_Claude_Workspace\\Revit\\claude_sld_generator_system\\09_tests\\Sprouts Office Building - 2000A\\2_build\\sprouts_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.17",
+  "generated": "2026-10-04T19:34:42.705Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "sprouts_S1_light__page.svg",
+      "png": "sprouts_S1_light__page.png",
+      "png_width": 4032,
+      "raster": {
+        "engine": "resvg",
+        "version": "0.47.0"
+      },
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 123,
+        "total": 123,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.5237,
+        "tx": 1001.97,
+        "ty": 181.18
+      }
+    }
+  ],
+  "mode": "page"
+}

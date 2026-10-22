@@ -1,0 +1,148 @@
+{
+  "$schema": "transformer_impedance/v1",
+  "description": "Dry-type distribution transformer impedance reference data (%Z and X/R ranges by kVA). Eaton-based typical values. Part of the SLD data layer \u2014 used for fault current calculations, arc flash studies, and coordination analysis.",
+  "source_file": "transformer_impedance_V1_0_0.xlsx",
+  "generated": "2026-04-12",
+  "source": "Eaton typical published data & engineering interpolation",
+  "transformer_type": "Dry-Type Distribution",
+  "compliance": [
+    "NEMA TP-1",
+    "DOE 2016"
+  ],
+  "frequency_hz": 60,
+  "default_config": "480\u0394 \u2192 208Y/120V",
+  "references": [
+    "NEC 450",
+    "IEEE Std 141 (Red Book)"
+  ],
+  "usage_note": "Use midpoint values for fault current calculations unless nameplate data is available. Verify against NEC 450 & IEEE Std 141 for arc flash / coordination studies.",
+  "transformers": [
+    {
+      "kva": 15,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 2.5,
+        "high": 3.5,
+        "midpoint": 3.0
+      },
+      "x_over_r": {
+        "low": 1.4,
+        "high": 1.6,
+        "midpoint": 1.5
+      }
+    },
+    {
+      "kva": 30,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 2.3,
+        "high": 3.5,
+        "midpoint": 2.9
+      },
+      "x_over_r": {
+        "low": 0.9,
+        "high": 1.5,
+        "midpoint": 1.2
+      }
+    },
+    {
+      "kva": 45,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 3.4,
+        "high": 3.5,
+        "midpoint": 3.45
+      },
+      "x_over_r": {
+        "low": 1.3,
+        "high": 1.7,
+        "midpoint": 1.5
+      }
+    },
+    {
+      "kva": 75,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 4.4,
+        "high": 4.5,
+        "midpoint": 4.45
+      },
+      "x_over_r": {
+        "low": 2.1,
+        "high": 2.4,
+        "midpoint": 2.25
+      }
+    },
+    {
+      "kva": 112.5,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 3.1,
+        "high": 4.2,
+        "midpoint": 3.65
+      },
+      "x_over_r": {
+        "low": 2.2,
+        "high": 3.4,
+        "midpoint": 2.8
+      }
+    },
+    {
+      "kva": 150,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 4.2,
+        "high": 4.5,
+        "midpoint": 4.35
+      },
+      "x_over_r": {
+        "low": 2.8,
+        "high": 3.1,
+        "midpoint": 2.95
+      }
+    },
+    {
+      "kva": 225,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 5.2,
+        "high": 5.2,
+        "midpoint": 5.2
+      },
+      "x_over_r": {
+        "low": 3.9,
+        "high": 3.9,
+        "midpoint": 3.9
+      }
+    },
+    {
+      "kva": 300,
+      "voltage_config": "480\u0394 \u2192 208Y/120",
+      "percent_z": {
+        "low": 5.2,
+        "high": 5.8,
+        "midpoint": 5.5
+      },
+      "x_over_r": {
+        "low": 4.7,
+        "high": 5.1,
+        "midpoint": 4.9
+      }
+    },
+    {
+      "kva": 500,
+      "voltage_config": "480\u0394 \u2192 208Y/120 or 480\u0394 \u2192 480Y/277",
+      "percent_z": {
+        "low": 5.75,
+        "high": 6.0,
+        "midpoint": 5.875
+      },
+      "x_over_r": {
+        "low": 5.5,
+        "high": 7.0,
+        "midpoint": 6.25
+      }
+    }
+  ],
+  "notes": "%Z and X/R ranges reflect Eaton published impedance bands across product series. Single values indicate tightly controlled specification. Use midpoint values for fault current calculations unless nameplate data is available. Verify against NEC 450 & IEEE Std 141 (Red Book) for arc flash / coordination studies."
+}

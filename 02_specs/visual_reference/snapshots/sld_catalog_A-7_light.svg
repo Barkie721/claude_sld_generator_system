@@ -1,0 +1,10 @@
+<svg viewBox="0 0 340 120" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#e5a600;stroke:#000;stroke-width:0.6}.port-label{fill:#b38600;font-family:monospace;font-weight:600}</style><rect x="0" y="0" width="340" height="120" fill="#f8fafd"/>
+  <!-- equipment cluster (context, faint) -->
+  <rect x="40" y="24" width="26" height="36" fill="none" stroke="#0077b6" stroke-width="2" opacity="0.4"/>
+  <rect x="82" y="24" width="26" height="36" fill="none" stroke="#0077b6" stroke-width="2" opacity="0.4"/>
+  <rect x="124" y="24" width="26" height="36" fill="none" stroke="#0077b6" stroke-width="2" opacity="0.4"/>
+  <!-- level line: dashed boundary below the cluster (normative: dash 24,12 / 1.2 / .55) -->
+  <line x1="24" y1="84" x2="236" y2="84" stroke="#1a1f2e" stroke-width="1.2" stroke-dasharray="24,12" opacity=".55"/>
+  <!-- label: right-edge, end-anchored at lineY+4, past the line end (label allowance) -->
+  <text x="330" y="88" text-anchor="end" font-family="monospace" font-size="13" font-weight="700" fill="#1a1f2e" opacity=".8">LEVEL 2</text>
+</svg>

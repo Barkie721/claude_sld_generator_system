@@ -1,0 +1,361 @@
+sheet_id,kind,id,node_type,designation,family,anchor_x_px,anchor_y_px,target_x_px,target_y_px,placed_x_px,placed_y_px,align_dx_px,align_dy_px,aligned,note
+S1,device,d-001,L0-1,UTILITY-XFMR,_E_SLD_Utility-Service-XFMR E01,-200,4720,-116,4720,-116,4848,84,128,yes,
+S1,device,d-002,L1-4,UTIL-MTR,_E_SLD_Meter V01,537,4600,555,4600,555,4618,18,18,yes,
+S1,companion,d-002#Combined,L1-4,UTIL-MTR,_E_SLD_Transducer V01,537,4600,555,4600,555,4600.050001,0,0.050001,yes,"transducer companion: rotated 180° only, no hand-flip control; jaw feet on the bus at y=4580px (arches above); User Wire Length ← 20px riser gap; jaw band y 4575.47..4579.95px; wire end vs meter top +0.05px"
+S1,device,d-003,L2-1,CB-FP,_E_SLD_Circuit-Breaker V01,770,4580,770,4580,770,4580,0,0,yes,rotated 180° + hand-flipped = y-mirror (flip_vertical); origin pinned to anchor
+S1,device,d-004,L1-1,MAIN-GFP,_E_SLD_GFI E01,985,4580,985,4580,955,4605.555,-30,25.555,yes,
+S1,companion,d-004#CB,L1-1,MAIN-GFP,_E_SLD_Circuit-Breaker V01,985,4580,985,4580,985,4580,0,0,yes,companion breaker glyph: rotated 180° + hand-flipped = y-mirror below the bus dot; origin pinned to anchor
+S1,device,d-005,L2-1,CB-03,_E_SLD_Circuit-Breaker V01,1880,4690,1880,4690,1879.999236,4690,-0.000764,-0,yes,
+S1,device,d-006,L2-1,CB-04,_E_SLD_Circuit-Breaker V01,2280,4690,2280,4690,2279.999236,4690,-0.000764,-0,yes,
+S1,device,d-007,L2-1,CB-05,_E_SLD_Circuit-Breaker V01,2640,4690,2640,4690,2639.999236,4690,-0.000764,-0,yes,
+S1,device,d-008,L2-1,CB-06,_E_SLD_Circuit-Breaker V01,2825,4690,2825,4690,2824.999236,4690,-0.000764,-0,yes,
+S1,device,d-009,L2-1,CB-08,_E_SLD_Circuit-Breaker V01,3610,4690,3610,4690,3609.999236,4690,-0.000764,-0,yes,
+S1,device,d-010,L2-1,CB-09,_E_SLD_Circuit-Breaker V01,3770,4690,3770,4690,3769.999236,4690,-0.000764,-0,yes,
+S1,device,d-011,L2-1,CB-10,_E_SLD_Circuit-Breaker V01,3930,4690,3930,4690,3929.999236,4690,-0.000764,-0,yes,
+S1,device,d-012,L2-1,CB-11,_E_SLD_Circuit-Breaker V01,4090,4690,4090,4690,4089.999236,4690,-0.000764,-0,yes,
+S1,device,d-013,L2-1,CB-12,_E_SLD_Circuit-Breaker V01,4250,4690,4250,4690,4249.999236,4690,-0.000764,-0,yes,
+S1,device,d-014,L2-1,CB-13,_E_SLD_Circuit-Breaker V01,4410,4690,4410,4690,4409.999236,4690,-0.000764,-0,yes,
+S1,device,d-015,L2-1,CB-01,_E_SLD_Circuit-Breaker V01,1200,4690,1200,4690,1199.999236,4690,-0.000764,-0,yes,
+S1,device,d-016,L2-1,CB-14,_E_SLD_Circuit-Breaker V01,4570,4690,4570,4690,4569.999236,4690,-0.000764,-0,yes,
+S1,device,d-017,L2-1,CB-15,_E_SLD_Circuit-Breaker V01,4890,4690,4890,4690,4889.999236,4690,-0.000764,-0,yes,
+S1,device,d-018,L2-7,SPACE-01,_E_SLD_Circuit-Breaker V01,5050,4690,5050,4690,5050,4690,0,-0,yes,
+S1,device,d-020,L2-6,SPD-MSB,_E_SLD_SPD E01,1182,4231,1200,4231,1200,4238.5,18,7.5,yes,
+S1,device,d-021,L2-4,4M-R-A,_E_SLD_panelboard E01,1848,298,1880,298,1848,342,-0,44,yes,
+S1,device,d-022,L2-4,4M-R-B,_E_SLD_panelboard E01,1748,506,1780,506,1748,550,0,44,yes,
+S1,device,d-023,L2-4,4M-R-C,_E_SLD_panelboard E01,1948,506,1980,506,1948,550,-0,44,yes,
+S1,device,d-024,L2-4,4L-1-A,_E_SLD_panelboard E01,2248,4158,2280,4158,2248,4202,-0,44,yes,
+S1,device,d-029,L2-2,4T-1-B,_E_SLD_Transformer E01,2915.42,3763,2940.005,3763,2926.888333,3773.65,11.468333,10.65,yes,
+S1,device,d-030,L2-4,2P-1-B,_E_SLD_panelboard E01,2908,3285,2940,3285,2908,3329,-0,44,yes,
+S1,device,d-031,L2-4,4L-2-A,_E_SLD_panelboard E01,2133,2958,2165,2958,2133,3002,-0,44,yes,
+S1,device,d-036,L2-2,4T-1-C,_E_SLD_Transformer E01,3235.42,3763,3260.005,3763,3246.888333,3773.65,11.468333,10.65,yes,
+S1,device,d-037,L2-4,2P-1-C,_E_SLD_panelboard E01,3228,3285,3260,3285,3228,3329,0,44,yes,
+S1,device,d-038,L2-4,4L-3-A,_E_SLD_panelboard E01,2413,1758,2445,1758,2413,1802,-0,44,yes,
+S1,device,d-043,L2-2,4T-1-D,_E_SLD_Transformer E01,3555.42,3763,3580.005,3763,3566.888333,3773.65,11.468333,10.65,yes,
+S1,device,d-044,L2-4,2P-1-D,_E_SLD_panelboard E01,3548,3285,3580,3285,3548,3329,-0,44,yes,
+S1,device,d-114,L2-1,CB-07,_E_SLD_Circuit-Breaker V01,3260,4690,3260,4690,3259.999236,4690,-0.000764,-0,yes,
+S1,device,d-115,L2-4,4S-1-B,_E_SLD_panelboard E01,3228,4158,3260,4158,3228,4202,0,44,yes,
+S1,device,d-119,L2-2,4T-2-B,_E_SLD_Transformer E01,2915.42,2563,2940.005,2563,2926.888333,2573.65,11.468333,10.65,yes,
+S1,device,d-120,L2-4,2P-2-B,_E_SLD_panelboard E01,2908,2085,2940,2085,2908,2129,-0,44,yes,
+S1,device,d-121,L2-2,4T-2-C,_E_SLD_Transformer E01,3235.42,2563,3260.005,2563,3246.888333,2573.65,11.468333,10.65,yes,
+S1,device,d-122,L2-4,2P-2-C,_E_SLD_panelboard E01,3228,2085,3260,2085,3228,2129,0,44,yes,
+S1,device,d-123,L2-2,4T-2-D,_E_SLD_Transformer E01,3555.42,2563,3580.005,2563,3566.888333,2573.65,11.468333,10.65,yes,
+S1,device,d-124,L2-4,2P-2-D,_E_SLD_panelboard E01,3548,2085,3580,2085,3548,2129,-0,44,yes,
+S1,device,d-125,L2-2,4T-3-B,_E_SLD_Transformer E01,3015.42,1363,3040.005,1363,3026.888333,1373.65,11.468333,10.65,yes,
+S1,device,d-126,L2-4,2P-3-B,_E_SLD_panelboard E01,3008,885,3040,885,3008,929,0,44,yes,
+S1,device,d-127,L2-2,4T-3-C,_E_SLD_Transformer E01,3335.42,1363,3360.005,1363,3346.888333,1373.65,11.468333,10.65,yes,
+S1,device,d-128,L2-4,2P-3-C,_E_SLD_panelboard E01,3328,885,3360,885,3328,929,0,44,yes,
+S1,device,d-137,L2-1,CB-02,_E_SLD_Circuit-Breaker V01,1520,4690,1520,4690,1519.999236,4690,-0.000764,-0,yes,
+S1,device,d-138,L2-4,4M-1-A,_E_SLD_panelboard E01,1488,4158,1520,4158,1488,4202,-0,44,yes,
+S1,device,d-139,L2-4,4M-2-A,_E_SLD_panelboard E01,1388,2958,1420,2958,1388,3002,-0,44,yes,
+S1,device,d-140,L2-4,4M-3-A,_E_SLD_panelboard E01,1668,1758,1700,1758,1668,1802,-0,44,yes,
+S1,routed_element,r-901,R-2,main-bus-4MDP-1-A,,280,4580,985,4580,280,4580,,,no,1 segment(s)
+S1,routed_element,r-902,R-2,sec-bus-4MDP-1-A,,985,4690,5200,4690,985,4690,,,no,1 segment(s)
+S1,routed_element,r-006,R-1,F-006,,1880,4645.63,1880,386,1880,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-005 (L2-1)
+S1,routed_element,r-007,R-1,F-007,,1870,386,1780,506,1870,386,,,no,3 segment(s)
+S1,routed_element,r-038,R-1,F-038,,1890,386,1980,506,1890,386,,,no,3 segment(s)
+S1,routed_element,r-009,R-1,F-009,,2280,4645.63,2280,4246,2280,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-006 (L2-1)
+S1,routed_element,r-020,R-1,F-020,,3250,4158,2940,3798,3250,4158,,,no,3 segment(s); fed-edge extend 5.15px into d-029 (L2-2)
+S1,routed_element,r-021,R-1,F-021,,2940,3763,2940,3373,2940,3763,,,no,1 segment(s); fed-edge extend 3.65px into d-029 (L2-2)
+S1,routed_element,r-010,R-1,F-010,,2270,4246,2165,3046,2270,4246,,,no,3 segment(s)
+S1,routed_element,r-022,R-1,F-022,,3260,4158,3260,3798,3260,4158,,,no,2 segment(s); fed-edge extend 5.15px into d-036 (L2-2)
+S1,routed_element,r-023,R-1,F-023,,3260,3763,3260,3373,3260,3763,,,no,1 segment(s); fed-edge extend 3.65px into d-036 (L2-2)
+S1,routed_element,r-011,R-1,F-011,,2290,4246,2445,1846,2290,4246,,,no,3 segment(s)
+S1,routed_element,r-024,R-1,F-024,,3270,4158,3580,3798,3270,4158,,,no,3 segment(s); fed-edge extend 5.15px into d-043 (L2-2)
+S1,routed_element,r-025,R-1,F-025,,3580,3763,3580,3373,3580,3763,,,no,1 segment(s); fed-edge extend 3.65px into d-043 (L2-2)
+S1,routed_element,r-013-s1,R-1,F-013.S1,,3610,4645.63,3610,4366,3610,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-009 (L2-1)
+S1,routed_element,r-014-s1,R-1,F-014.S1,,3770,4645.63,3770,4366,3770,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-010 (L2-1)
+S1,routed_element,r-015-s1,R-1,F-015.S1,,3930,4645.63,3930,4366,3930,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-011 (L2-1)
+S1,routed_element,r-016-s1,R-1,F-016.S1,,4090,4645.63,4090,4366,4090,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-012 (L2-1)
+S1,routed_element,r-017-s1,R-1,F-017.S1,,4250,4645.63,4250,4366,4250,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-013 (L2-1)
+S1,routed_element,r-018-s1,R-1,F-018.S1,,4410,4645.63,4410,4366,4410,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-014 (L2-1)
+S1,routed_element,r-019-s1,R-1,F-019.S1,,770,4624.37,730,4246,770,4624.37,,,no,3 segment(s); fed-edge extend 3.5px into d-003 (L2-1)
+S1,routed_element,r-086,R-1,F-086,,1200,4645.63,1200,4246,1200,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-015 (L2-1)
+S1,routed_element,r-012,R-1,F-012,,3260,4645.63,3260,4246,3260,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-114 (L2-1)
+S1,routed_element,r-026,R-1,F-026,,2940,2598,3292,4188,2940,2598,,,no,4 segment(s); fed-edge extend 5.15px into d-119 (L2-2)
+S1,routed_element,r-027,R-1,F-027,,2940,2563,2940,2173,2940,2563,,,no,1 segment(s); fed-edge extend 3.65px into d-119 (L2-2)
+S1,routed_element,r-028,R-1,F-028,,3260,2598,3292,4198,3260,2598,,,no,4 segment(s); fed-edge extend 5.15px into d-121 (L2-2)
+S1,routed_element,r-029,R-1,F-029,,3260,2563,3260,2173,3260,2563,,,no,1 segment(s); fed-edge extend 3.65px into d-121 (L2-2)
+S1,routed_element,r-030,R-1,F-030,,3580,2598,3292,4208,3580,2598,,,no,4 segment(s); fed-edge extend 5.15px into d-123 (L2-2)
+S1,routed_element,r-031,R-1,F-031,,3580,2563,3580,2173,3580,2563,,,no,1 segment(s); fed-edge extend 3.65px into d-123 (L2-2)
+S1,routed_element,r-032,R-1,F-032,,3040,1398,3292,4218,3040,1398,,,no,4 segment(s); fed-edge extend 5.15px into d-125 (L2-2)
+S1,routed_element,r-033,R-1,F-033,,3040,1363,3040,973,3040,1363,,,no,1 segment(s); fed-edge extend 3.65px into d-125 (L2-2)
+S1,routed_element,r-034,R-1,F-034,,3360,1398,3292,4228,3360,1398,,,no,4 segment(s); fed-edge extend 5.15px into d-127 (L2-2)
+S1,routed_element,r-035,R-1,F-035,,3360,1363,3360,973,3360,1363,,,no,1 segment(s); fed-edge extend 3.65px into d-127 (L2-2)
+S1,routed_element,r-001,R-1,F-001,,1520,4645.63,1520,4246,1520,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-137 (L2-1)
+S1,routed_element,r-002,R-1,F-002,,-88,4860,345,4585,-88,4860,,,no,3 segment(s)
+S1,routed_element,r-004,R-1,F-004,,1515,4158,1420,3046,1515,4158,,,no,3 segment(s)
+S1,routed_element,r-005,R-1,F-005,,1525,4158,1700,1846,1525,4158,,,no,3 segment(s)
+S1,annotation,a-006,A-1,a-006,_E_SLD_Feeder-Tag E01,1880,4465.63,1880,4465.63,1924,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-007,A-1,a-007,_E_SLD_Feeder-Tag E01,1803,476,1803,476,1803,476,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-008,A-1,a-008,_E_SLD_Feeder-Tag E01,1957,476,1957,476,1957,476,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-009,A-1,a-009,_E_SLD_Feeder-Tag E01,2280,4465.63,2280,4465.63,2324,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-020,A-1,a-020,_E_SLD_Feeder-Tag E01,3095,3958,3095,3958,3095,3958,-0,-0,yes,tick-center pinned to attach
+S1,annotation,a-021,A-1,a-021,_E_SLD_Feeder-Tag E01,2940,3583,2940,3583,2984,3556.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-010,A-1,a-010,_E_SLD_Feeder-Tag E01,2217.5,4336,2217.5,4336,2217.5,4336,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-022,A-1,a-022,_E_SLD_Feeder-Tag E01,3260,3908,3260,3908,3304,3881.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-023,A-1,a-023,_E_SLD_Feeder-Tag E01,3260,3583,3260,3583,3304,3556.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-011,A-1,a-011,_E_SLD_Feeder-Tag E01,2367.5,4336,2367.5,4336,2367.5,4336,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-024,A-1,a-024,_E_SLD_Feeder-Tag E01,3425,3958,3425,3958,3425,3958,-0,-0,yes,tick-center pinned to attach
+S1,annotation,a-025,A-1,a-025,_E_SLD_Feeder-Tag E01,3580,3583,3580,3583,3624,3556.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-013,A-1,a-013,_E_SLD_Feeder-Tag E01,3610,4465.63,3610,4465.63,3654,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-201,A-3,a-201,_E_SLD_Conductor-ends E01,3610,4366,3610,4366,3610,4366,0,-0,yes,
+S1,squiggle_label,a-201#TXT,A-3,TO E4A-1-A,,3610,4366,3610,4338,3610,4338,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-014,A-1,a-014,_E_SLD_Feeder-Tag E01,3770,4465.63,3770,4465.63,3814,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-203,A-3,a-203,_E_SLD_Conductor-ends E01,3770,4366,3770,4366,3770,4366,0,-0,yes,
+S1,squiggle_label,a-203#TXT,A-3,TO C4A-1-A,,3770,4366,3770,4338,3770,4338,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-015,A-1,a-015,_E_SLD_Feeder-Tag E01,3930,4465.63,3930,4465.63,3974,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-205,A-3,a-205,_E_SLD_Conductor-ends E01,3930,4366,3930,4366,3930,4366,0,-0,yes,
+S1,squiggle_label,a-205#TXT,A-3,TO EQ4A-1-A,,3930,4366,3930,4338,3930,4338,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-016,A-1,a-016,_E_SLD_Feeder-Tag E01,4090,4465.63,4090,4465.63,4134,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-207,A-3,a-207,_E_SLD_Conductor-ends E01,4090,4366,4090,4366,4090,4366,0,-0,yes,
+S1,squiggle_label,a-207#TXT,A-3,TO EQ4A-1-B,,4090,4366,4090,4338,4090,4338,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-017,A-1,a-017,_E_SLD_Feeder-Tag E01,4250,4465.63,4250,4465.63,4294,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-209,A-3,a-209,_E_SLD_Conductor-ends E01,4250,4366,4250,4366,4250,4366,0,-0,yes,
+S1,squiggle_label,a-209#TXT,A-3,TO O4A-1-A,,4250,4366,4250,4338,4250,4338,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-018,A-1,a-018,_E_SLD_Feeder-Tag E01,4410,4465.63,4410,4465.63,4454,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-211,A-3,a-211,_E_SLD_Conductor-ends E01,4410,4366,4410,4366,4410,4366,0,-0,yes,
+S1,squiggle_label,a-211#TXT,A-3,TO EQ4A-1-C,,4410,4366,4410,4338,4410,4338,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-019,A-1,a-019,_E_SLD_Feeder-Tag E01,730,4445.18,730,4445.18,774,4418.415083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-213,A-3,a-213,_E_SLD_Conductor-ends E01,730,4246,730,4246,730,4246,0,-0,yes,
+S1,squiggle_label,a-213#TXT,A-3,TO E4A-1-B,,730,4246,730,4218,730,4218,,,yes,"1/8"" TextNote, anchor=middle, drawn box registered"
+S1,annotation,a-086,A-1,a-086,_E_SLD_Feeder-Tag E01,1200,4465.63,1200,4465.63,1244,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-012,A-1,a-012,_E_SLD_Feeder-Tag E01,3260,4465.63,3260,4465.63,3304,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-026,A-1,a-026,_E_SLD_Feeder-Tag E01,3012.59,2850,3012.59,2850,3012.59,2850,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-027,A-1,a-027,_E_SLD_Feeder-Tag E01,2940,2383,2940,2383,2984,2356.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-028,A-1,a-028,_E_SLD_Feeder-Tag E01,3332.59,2818,3332.59,2818,3332.59,2818,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-029,A-1,a-029,_E_SLD_Feeder-Tag E01,3260,2383,3260,2383,3304,2356.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-030,A-1,a-030,_E_SLD_Feeder-Tag E01,3652.59,2786,3652.59,2786,3652.59,2786,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-031,A-1,a-031,_E_SLD_Feeder-Tag E01,3580,2383,3580,2383,3624,2356.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-032,A-1,a-032,_E_SLD_Feeder-Tag E01,3112.59,1650,3112.59,1650,3112.59,1650,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-033,A-1,a-033,_E_SLD_Feeder-Tag E01,3040,1183,3040,1183,3084,1156.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-034,A-1,a-034,_E_SLD_Feeder-Tag E01,3432.59,1618,3432.59,1618,3432.59,1618,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-035,A-1,a-035,_E_SLD_Feeder-Tag E01,3360,1183,3360,1183,3404,1156.235083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-003,A-1,a-003,_E_SLD_Feeder-Tag E01,1520,4465.63,1520,4465.63,1564,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S1,annotation,a-004,A-1,a-004,_E_SLD_Feeder-Tag E01,1489.5,4068,1489.5,4068,1489.5,4068,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,annotation,a-005,A-1,a-005,_E_SLD_Feeder-Tag E01,1612.5,4068,1612.5,4068,1612.5,4068,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S1,device_tag,d-001#TAG,L0-1,UTILITY-XFMR,,-200,4720,-17,4730,-17,4730,,,yes,"4-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-029#TAG,L2-2,4T-1-B,,2915.42,3763,2972.59,3767,2972.59,3767,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-036#TAG,L2-2,4T-1-C,,3235.42,3763,3292.59,3767,3292.59,3767,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-043#TAG,L2-2,4T-1-D,,3555.42,3763,3612.59,3767,3612.59,3767,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-119#TAG,L2-2,4T-2-B,,2915.42,2563,2972.59,2567,2972.59,2567,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-121#TAG,L2-2,4T-2-C,,3235.42,2563,3292.59,2567,3292.59,2567,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-123#TAG,L2-2,4T-2-D,,3555.42,2563,3612.59,2567,3612.59,2567,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-125#TAG,L2-2,4T-3-B,,3015.42,1363,3072.59,1367,3072.59,1367,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,device_tag,d-127#TAG,L2-2,4T-3-C,,3335.42,1363,3392.59,1367,3392.59,1367,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S1,glyph_supplement,gs-S1-util-feed,utility_primary_feed,d-001,,-144,4860,-414,4950,-144,4860,,,no,"polyline, 2 segment(s) at feeder weight"
+S1,glyph_supplement,gs-S1-util-squig,utility_primary_continuation,TO UTILITY,_E_SLD_Conductor-ends E01,-414,4950,-414,4950,-414,4950,,,no,"A-3 squiggle rotated 90° (vertical orient marks a horizontal wire); label as TextNote, 1/8"" type, drawn box registered right-edge + centred on the curl"
+S1,bus_dot,bd-S1-incoming,incoming,sec-001,_E_SLD_Conductor-ends E01,345,4580,345,4580,345,4580,0,-0,yes,drawn annulus centred on the incoming feeder×busbar junction
+S1,level_line,R,A-7,LEVEL ROOF,_E_SLD_level-floor E01,-240,634,5300,634,5300,734,5540,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 5540px span"
+S1,level_line,3,A-7,LEVEL 3,_E_SLD_level-floor E01,-240,1886,5300,1886,5300,1986,5540,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 5540px span"
+S1,level_line,2,A-7,LEVEL 2,_E_SLD_level-floor E01,-240,3086,5300,3086,5300,3186,5540,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 5540px span"
+S1,level_line,1,A-7,LEVEL 1,_E_SLD_level-floor E01,-240,4860,5300,4860,5300,4960,5540,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 5540px span"
+S1,equipment_label,sw-001,A-8,4MDP-1-A,_E_SLD_Equipment-info E01,220,4620,220,4620,225.3,4563.342648,5.3,-56.657352,yes,"hand-flipped + origin-registered (Trip #13, no X measure): text right edge = incoming section left − 20px gutter (origin gap +5.3px, screenshot-calibrated), top edge level with section top"
+S1,section,sec-001,L1-2,SEC-1,_E_SLD_Dist-Panel E01,240,4520,240,4520,345,4660,105,140,yes,sized 210×280px; drawn-box top-left registered
+S1,section,sec-002,L1-2,SEC-2,_E_SLD_Dist-Panel E01,450,4520,450,4520,555,4660,105,140,yes,sized 210×280px; drawn-box top-left registered
+S1,section,sec-003,L1-2,SEC-3,_E_SLD_Dist-Panel E01,660,4520,660,4520,770,4660,110,140,yes,sized 220×280px; drawn-box top-left registered
+S1,section,sec-004,L1-2,SEC-4,_E_SLD_Dist-Panel E01,880,4520,880,4520,985,4660,105,140,yes,sized 210×280px; drawn-box top-left registered
+S1,section,sec-005,L1-2,SEC-5,_E_SLD_Dist-Panel E01,1090,4520,1090,4520,2080,4660,990,140,yes,sized 1980×280px; drawn-box top-left registered
+S1,section,sec-006,L1-2,SEC-6,_E_SLD_Dist-Panel E01,3070,4520,3070,4520,4155,4660,1085,140,yes,sized 2170×280px; drawn-box top-left registered
+S2,device,d-045,L2-3,E4A-1-A,_E_SLD_ATS E01,-518.5,3602,-482.5,3602,-482.5,3638,36,36,yes,
+S2,device,d-046,L2-3,C4A-1-A,_E_SLD_ATS E01,621.5,3602,657.5,3602,657.5,3638,36,36,yes,
+S2,device,d-047,L2-3,EQ4A-1-A,_E_SLD_ATS E01,1396.5,3602,1432.5,3602,1432.5,3638,36,36,yes,
+S2,device,d-048,L2-3,EQ4A-1-B,_E_SLD_ATS E01,1816.5,3602,1852.5,3602,1852.5,3638,36,36,yes,
+S2,device,d-049,L2-3,O4A-1-A,_E_SLD_ATS E01,2656.5,3602,2692.5,3602,2692.5,3638,36,36,yes,
+S2,device,d-050,L2-3,EQ4A-1-C,_E_SLD_ATS E01,2236.5,3602,2272.5,3602,2272.5,3638,36,36,yes,
+S2,device,d-051,L2-3,E4A-1-B,_E_SLD_ATS E01,-38.5,3602,-2.5,3602,-2.5,3638,36,36,yes,
+S2,device,d-052,L1-5,GEN-1,_E_SLD_Gen E01,-260,4605,-205,4605,-205,4672,55,67,yes,
+S2,device,d-053,L1-1,EMSB-MAIN,_E_SLD_GFI E01,555,4580,555,4580,525,4605.555,-30,25.555,yes,
+S2,companion,d-053#CB,L1-1,EMSB-MAIN,_E_SLD_Circuit-Breaker V01,555,4580,555,4580,555,4580,0,0,yes,companion breaker glyph: rotated 180° + hand-flipped = y-mirror below the bus dot; origin pinned to anchor
+S2,device,d-054,L2-6,SPD-EMSB,_E_SLD_SPD E01,752,4231,770,4231,770,4238.5,18,7.5,yes,
+S2,device,d-055,L2-1,CB-04-EM,_E_SLD_Circuit-Breaker V01,1090,4690,1090,4690,1089.999236,4690,-0.000764,-0,yes,
+S2,device,d-056,L2-1,CB-03-EM,_E_SLD_Circuit-Breaker V01,930,4690,930,4690,929.999236,4690,-0.000764,-0,yes,
+S2,device,d-057,L2-1,CB-02-EM,_E_SLD_Circuit-Breaker V01,1250,4690,1250,4690,1249.999236,4690,-0.000764,-0,yes,
+S2,device,d-058,L2-1,CB-05-EM,_E_SLD_Circuit-Breaker V01,1790,4690,1790,4690,1789.999236,4690,-0.000764,-0,yes,
+S2,device,d-059,L2-1,CB-06-EM,_E_SLD_Circuit-Breaker V01,1950,4690,1950,4690,1949.999236,4690,-0.000764,-0,yes,
+S2,device,d-060,L2-1,CB-07-EM,_E_SLD_Circuit-Breaker V01,2110,4690,2110,4690,2109.999236,4690,-0.000764,-0,yes,
+S2,device,d-061,L2-1,CB-08-EM,_E_SLD_Circuit-Breaker V01,2270,4690,2270,4690,2269.999236,4690,-0.000764,-0,yes,
+S2,device,d-063,L2-7,EM-CB-05,_E_SLD_Circuit-Breaker V01,1410,4690,1410,4690,1409.999236,4690,-0.000764,-0,yes,
+S2,device,d-064,L2-7,EM-CB-06,_E_SLD_Circuit-Breaker V01,1570,4690,1570,4690,1569.999236,4690,-0.000764,-0,yes,
+S2,device,d-065,L2-7,EM-CB-11,_E_SLD_Circuit-Breaker V01,2430,4690,2430,4690,2429.999236,4690,-0.000764,-0,yes,
+S2,device,d-066,L2-4,E4S-1-A,_E_SLD_panelboard E01,-514.5,3124,-482.5,3124,-514.5,3168,-0,44,yes,
+S2,device,d-067,L2-4,E4B-1-A,_E_SLD_panelboard E01,-729.5,3332,-697.5,3332,-729.5,3376,-0,44,yes,
+S2,device,d-069,L2-2,E4T-1-A,_E_SLD_Transformer E01,-732.08,2937,-707.495,2937,-720.611667,2947.65,11.468333,10.65,yes,
+S2,device,d-070,L2-4,E2L-1-A,_E_SLD_panelboard E01,-739.5,2459,-707.5,2459,-739.5,2503,-0,44,yes,
+S2,device,d-071,L2-4,E4B-2-A,_E_SLD_panelboard E01,-514.5,1860,-482.5,1860,-514.5,1904,-0,44,yes,
+S2,device,d-073,L2-2,E4T-2-A,_E_SLD_Transformer E01,-507.08,1465,-482.495,1465,-495.611667,1475.65,11.468333,10.65,yes,
+S2,device,d-074,L2-4,E2L-2-A,_E_SLD_panelboard E01,-514.5,987,-482.5,987,-514.5,1031,-0,44,yes,
+S2,device,d-075,L2-4,E4B-3-A,_E_SLD_panelboard E01,-329.5,610,-297.5,610,-329.5,654,-0,44,yes,
+S2,device,d-077,L2-2,E4T-3-A,_E_SLD_Transformer E01,-322.08,215,-297.495,215,-310.611667,225.65,11.468333,10.65,yes,
+S2,device,d-078,L2-4,E2L-3-A,_E_SLD_panelboard E01,-329.5,-263,-297.5,-263,-329.5,-219,-0,44,yes,
+S2,device,d-079,L2-4,C4S-1-A,_E_SLD_panelboard E01,625.5,3124,657.5,3124,625.5,3168,-0,44,yes,
+S2,device,d-080,L2-4,C4B-1-A,_E_SLD_panelboard E01,200.5,3332,232.5,3332,200.5,3376,-0,44,yes,
+S2,device,d-082,L2-2,C4T-1-A,_E_SLD_Transformer E01,97.92,2937,122.505,2937,109.388333,2947.65,11.468333,10.65,yes,
+S2,device,d-083,L2-4,C2L-1-A,_E_SLD_panelboard E01,90.5,2459,122.5,2459,90.5,2503,-0,44,yes,
+S2,device,d-085,L2-2,C4T-1-B,_E_SLD_Transformer E01,342.92,2937,367.505,2937,354.388333,2947.65,11.468333,10.65,yes,
+S2,device,d-086,L2-4,C2P-1-B,_E_SLD_panelboard E01,335.5,2459,367.5,2459,335.5,2503,-0,44,yes,
+S2,device,d-087,L2-4,C4B-2-A,_E_SLD_panelboard E01,625.5,1860,657.5,1860,625.5,1904,-0,44,yes,
+S2,device,d-089,L2-2,C4T-2-A,_E_SLD_Transformer E01,522.92,1465,547.505,1465,534.388333,1475.65,11.468333,10.65,yes,
+S2,device,d-090,L2-4,C2L-2-A,_E_SLD_panelboard E01,515.5,987,547.5,987,515.5,1031,-0,44,yes,
+S2,device,d-092,L2-2,C4T-2-B,_E_SLD_Transformer E01,767.92,1465,792.505,1465,779.388333,1475.65,11.468333,10.65,yes,
+S2,device,d-093,L2-4,C2P-2-B,_E_SLD_panelboard E01,760.5,987,792.5,987,760.5,1031,0,44,yes,
+S2,device,d-094,L2-4,C4B-3-A,_E_SLD_panelboard E01,1020.5,610,1052.5,610,1020.5,654,-0,44,yes,
+S2,device,d-096,L2-2,C4T-3-A,_E_SLD_Transformer E01,917.92,215,942.505,215,929.388333,225.65,11.468333,10.65,yes,
+S2,device,d-097,L2-4,C2L-3-A,_E_SLD_panelboard E01,910.5,-263,942.5,-263,910.5,-219,0,44,yes,
+S2,device,d-099,L2-2,C4T-3-B,_E_SLD_Transformer E01,1162.92,215,1187.505,215,1174.388333,225.65,11.468333,10.65,yes,
+S2,device,d-100,L2-4,C2P-3-B,_E_SLD_panelboard E01,1155.5,-263,1187.5,-263,1155.5,-219,-0,44,yes,
+S2,device,d-101,L2-4,EQ4S-1-A,_E_SLD_panelboard E01,1400.5,3124,1432.5,3124,1400.5,3168,0,44,yes,
+S2,device,d-102,L2-4,EQ4M-R-A,_E_SLD_panelboard E01,1500.5,-640,1532.5,-640,1500.5,-596,-0,44,yes,
+S2,device,d-103,L2-4,EQ4M-1-A,_E_SLD_panelboard E01,1300.5,3332,1332.5,3332,1300.5,3376,0,44,yes,
+S2,device,d-104,L2-4,EQ4M-2-A,_E_SLD_panelboard E01,1100.5,1860,1132.5,1860,1100.5,1904,0,44,yes,
+S2,device,d-105,L2-4,EQ4M-3-A,_E_SLD_panelboard E01,1700.5,610,1732.5,610,1700.5,654,0,44,yes,
+S2,device,d-106,L2-4,EQ4S-1-B,_E_SLD_panelboard E01,1820.5,3124,1852.5,3124,1820.5,3168,0,44,yes,
+S2,device,d-107,L2-4,O4S-1-A,_E_SLD_panelboard E01,2660.5,3124,2692.5,3124,2660.5,3168,0,44,yes,
+S2,device,d-109,L2-2,O4T-1-A,_E_SLD_Transformer E01,2667.92,2729,2692.505,2729,2679.388333,2739.65,11.468333,10.65,yes,
+S2,device,d-110,L2-4,O2B-1-A,_E_SLD_panelboard E01,2660.5,2251,2692.5,2251,2660.5,2295,0,44,yes,
+S2,device,d-112,L3-1,E4FP-1-A,_E_SLD_Motor V02,-14.5,3180,-2.5,3180,-2.5,3187,12,7,yes,
+S2,device,d-113,L2-1,CB-01-EM,_E_SLD_Circuit-Breaker V01,770,4690,770,4690,769.999236,4690,-0.000764,-0,yes,
+S2,routed_element,r-013-s2,R-1,F-013.S2,,-509,3674,-509,3706,-509,3674,,,no,1 segment(s)
+S2,routed_element,r-014-s2,R-1,F-014.S2,,631,3674,631,3706,631,3674,,,no,1 segment(s)
+S2,routed_element,r-015-s2,R-1,F-015.S2,,1406,3674,1406,3706,1406,3674,,,no,1 segment(s)
+S2,routed_element,r-016-s2,R-1,F-016.S2,,1826,3674,1826,3706,1826,3674,,,no,1 segment(s)
+S2,routed_element,r-017-s2,R-1,F-017.S2,,2666,3674,2666,3706,2666,3674,,,no,1 segment(s)
+S2,routed_element,r-018-s2,R-1,F-018.S2,,2246,3674,2246,3706,2246,3674,,,no,1 segment(s)
+S2,routed_element,r-019-s2,R-1,F-019.S2,,-29,3674,-29,3706,-29,3674,,,no,1 segment(s)
+S2,routed_element,r-903,R-2,main-bus-E4MDP-1-A,,280,4580,555,4580,280,4580,,,no,1 segment(s)
+S2,routed_element,r-904,R-2,sec-bus-E4MDP-1-A,,555,4690,2500,4690,555,4690,,,no,1 segment(s)
+S2,routed_element,r-040,R-1,F-040,,-205,4735,345,4580,-205,4735,,,no,"3 segment(s); fed-edge extend 22.63px into d-052 (L1-5, self-measured arc)"
+S2,routed_element,r-052,R-1,F-052,,1090,4645.63,24,3674,1090,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-055 (L2-1)
+S2,routed_element,r-047,R-1,F-047,,930,4645.63,-456,3674,930,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-056 (L2-1)
+S2,routed_element,r-042,R-1,F-042,,1250,4645.63,684,3674,1250,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-057 (L2-1)
+S2,routed_element,r-054,R-1,F-054,,1790,4645.63,1459,3674,1790,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-058 (L2-1)
+S2,routed_element,r-060,R-1,F-060,,1950,4645.63,1879,3674,1950,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-059 (L2-1)
+S2,routed_element,r-062,R-1,F-062,,2110,4645.63,2299,3674,2110,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-060 (L2-1)
+S2,routed_element,r-064,R-1,F-064,,2270,4645.63,2719,3674,2270,4645.63,,,no,3 segment(s); fed-edge extend 3.5px into d-061 (L2-1)
+S2,routed_element,r-048,R-1,F-048,,-482.5,3602,-482.5,3212,-482.5,3602,,,no,1 segment(s)
+S2,routed_element,r-049,R-1,F-049,,-492.5,3212,-697.5,3332,-492.5,3212,,,no,3 segment(s)
+S2,routed_element,r-066,R-1,F-066,,-707.5,3332,-707.5,2972,-707.5,3332,,,no,2 segment(s); fed-edge extend 5.15px into d-069 (L2-2)
+S2,routed_element,r-067,R-1,F-067,,-707.5,2937,-707.5,2547,-707.5,2937,,,no,1 segment(s); fed-edge extend 3.65px into d-069 (L2-2)
+S2,routed_element,r-050,R-1,F-050,,-482.5,3124,-482.5,1948,-482.5,3124,,,no,2 segment(s)
+S2,routed_element,r-068,R-1,F-068,,-482.5,1860,-482.5,1500,-482.5,1860,,,no,2 segment(s); fed-edge extend 5.15px into d-073 (L2-2)
+S2,routed_element,r-069,R-1,F-069,,-482.5,1465,-482.5,1075,-482.5,1465,,,no,1 segment(s); fed-edge extend 3.65px into d-073 (L2-2)
+S2,routed_element,r-051,R-1,F-051,,-472.5,3212,-297.5,698,-472.5,3212,,,no,3 segment(s)
+S2,routed_element,r-070,R-1,F-070,,-297.5,610,-297.5,250,-297.5,610,,,no,2 segment(s); fed-edge extend 5.15px into d-077 (L2-2)
+S2,routed_element,r-071,R-1,F-071,,-297.5,215,-297.5,-175,-297.5,215,,,no,1 segment(s); fed-edge extend 3.65px into d-077 (L2-2)
+S2,routed_element,r-043,R-1,F-043,,657.5,3602,657.5,3212,657.5,3602,,,no,1 segment(s)
+S2,routed_element,r-044,R-1,F-044,,647.5,3212,247.5,3332,647.5,3212,,,no,3 segment(s)
+S2,routed_element,r-072,R-1,F-072,,227.5,3332,122.5,2972,227.5,3332,,,no,3 segment(s); fed-edge extend 5.15px into d-082 (L2-2)
+S2,routed_element,r-073,R-1,F-073,,122.5,2937,122.5,2547,122.5,2937,,,no,1 segment(s); fed-edge extend 3.65px into d-082 (L2-2)
+S2,routed_element,r-074,R-1,F-074,,237.5,3332,367.5,2972,237.5,3332,,,no,3 segment(s); fed-edge extend 5.15px into d-085 (L2-2)
+S2,routed_element,r-075,R-1,F-075,,367.5,2937,367.5,2547,367.5,2937,,,no,1 segment(s); fed-edge extend 3.65px into d-085 (L2-2)
+S2,routed_element,r-045,R-1,F-045,,657.5,3124,657.5,1948,657.5,3124,,,no,2 segment(s)
+S2,routed_element,r-076,R-1,F-076,,652.5,1860,547.5,1500,652.5,1860,,,no,3 segment(s); fed-edge extend 5.15px into d-089 (L2-2)
+S2,routed_element,r-077,R-1,F-077,,547.5,1465,547.5,1075,547.5,1465,,,no,1 segment(s); fed-edge extend 3.65px into d-089 (L2-2)
+S2,routed_element,r-078,R-1,F-078,,662.5,1860,792.5,1500,662.5,1860,,,no,3 segment(s); fed-edge extend 5.15px into d-092 (L2-2)
+S2,routed_element,r-079,R-1,F-079,,792.5,1465,792.5,1075,792.5,1465,,,no,1 segment(s); fed-edge extend 3.65px into d-092 (L2-2)
+S2,routed_element,r-046,R-1,F-046,,667.5,3212,1052.5,698,667.5,3212,,,no,3 segment(s)
+S2,routed_element,r-080,R-1,F-080,,1047.5,610,942.5,250,1047.5,610,,,no,3 segment(s); fed-edge extend 5.15px into d-096 (L2-2)
+S2,routed_element,r-081,R-1,F-081,,942.5,215,942.5,-175,942.5,215,,,no,1 segment(s); fed-edge extend 3.65px into d-096 (L2-2)
+S2,routed_element,r-082,R-1,F-082,,1057.5,610,1187.5,250,1057.5,610,,,no,3 segment(s); fed-edge extend 5.15px into d-099 (L2-2)
+S2,routed_element,r-083,R-1,F-083,,1187.5,215,1187.5,-175,1187.5,215,,,no,1 segment(s); fed-edge extend 3.65px into d-099 (L2-2)
+S2,routed_element,r-055,R-1,F-055,,1432.5,3602,1432.5,3212,1432.5,3602,,,no,1 segment(s)
+S2,routed_element,r-058,R-1,F-058,,1432.5,3124,1132.5,1948,1432.5,3124,,,no,3 segment(s)
+S2,routed_element,r-057,R-1,F-057,,1422.5,3212,1332.5,3332,1422.5,3212,,,no,3 segment(s)
+S2,routed_element,r-056,R-1,F-056,,1442.5,3124,1532.5,-552,1442.5,3124,,,no,3 segment(s)
+S2,routed_element,r-059,R-1,F-059,,1442.5,3212,1732.5,698,1442.5,3212,,,no,3 segment(s)
+S2,routed_element,r-061,R-1,F-061,,1852.5,3602,1852.5,3212,1852.5,3602,,,no,1 segment(s)
+S2,routed_element,r-065,R-1,F-065,,2692.5,3602,2692.5,3212,2692.5,3602,,,no,1 segment(s)
+S2,routed_element,r-084,R-1,F-084,,2692.5,3124,2692.5,2764,2692.5,3124,,,no,2 segment(s); fed-edge extend 5.15px into d-109 (L2-2)
+S2,routed_element,r-085,R-1,F-085,,2692.5,2729,2692.5,2339,2692.5,2729,,,no,1 segment(s); fed-edge extend 3.65px into d-109 (L2-2)
+S2,routed_element,r-063,R-1,F-063,,2272.5,3602,2272.5,3212,2272.5,3602,,,no,1 segment(s)
+S2,routed_element,r-053,R-1,F-053,,-2.5,3602,-2.5,3212,-2.5,3602,,,no,1 segment(s)
+S2,routed_element,r-041,R-1,F-041,,770,4645.63,770,4246,770,4645.63,,,no,1 segment(s); fed-edge extend 3.5px into d-113 (L2-1)
+S2,annotation,a-202,A-3,a-202,_E_SLD_Conductor-ends E01,-509,3706,-509,3706,-509,3706,0,-0,yes,
+S2,squiggle_label,a-202#TXT,A-3,FROM 4MDP-1-A,,-509,3706,-537,3706,-537,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-204,A-3,a-204,_E_SLD_Conductor-ends E01,631,3706,631,3706,631,3706,0,-0,yes,
+S2,squiggle_label,a-204#TXT,A-3,FROM 4MDP-1-A,,631,3706,603,3706,603,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-206,A-3,a-206,_E_SLD_Conductor-ends E01,1406,3706,1406,3706,1406,3706,0,-0,yes,
+S2,squiggle_label,a-206#TXT,A-3,FROM 4MDP-1-A,,1406,3706,1378,3706,1378,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-208,A-3,a-208,_E_SLD_Conductor-ends E01,1826,3706,1826,3706,1826,3706,0,-0,yes,
+S2,squiggle_label,a-208#TXT,A-3,FROM 4MDP-1-A,,1826,3706,1798,3706,1798,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-210,A-3,a-210,_E_SLD_Conductor-ends E01,2666,3706,2666,3706,2666,3706,0,-0,yes,
+S2,squiggle_label,a-210#TXT,A-3,FROM 4MDP-1-A,,2666,3706,2638,3706,2638,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-212,A-3,a-212,_E_SLD_Conductor-ends E01,2246,3706,2246,3706,2246,3706,0,-0,yes,
+S2,squiggle_label,a-212#TXT,A-3,FROM 4MDP-1-A,,2246,3706,2218,3706,2218,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-214,A-3,a-214,_E_SLD_Conductor-ends E01,-29,3706,-29,3706,-29,3706,0,-0,yes,
+S2,squiggle_label,a-214#TXT,A-3,FROM 4MDP-1-A,,-29,3706,-57,3706,-57,3706,,,yes,"1/8"" TextNote, anchor=end, drawn box registered"
+S2,annotation,a-040,A-1,a-040,_E_SLD_Feeder-Tag E01,-205,4775,-205,4775,-161,4748.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-052,A-1,a-052,_E_SLD_Feeder-Tag E01,1090,4465.63,1090,4465.63,1134,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-047,A-1,a-047,_E_SLD_Feeder-Tag E01,930,4465.63,930,4465.63,974,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-042,A-1,a-042,_E_SLD_Feeder-Tag E01,1250,4465.63,1250,4465.63,1294,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-054,A-1,a-054,_E_SLD_Feeder-Tag E01,1790,4465.63,1790,4465.63,1834,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-060,A-1,a-060,_E_SLD_Feeder-Tag E01,1950,4465.63,1950,4465.63,1994,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-062,A-1,a-062,_E_SLD_Feeder-Tag E01,2110,4465.63,2110,4465.63,2154,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-064,A-1,a-064,_E_SLD_Feeder-Tag E01,2270,4465.63,2270,4465.63,2314,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-048,A-1,a-048,_E_SLD_Feeder-Tag E01,-482.5,3422,-482.5,3422,-438.5,3395.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-049,A-1,a-049,_E_SLD_Feeder-Tag E01,-595,3302,-595,3302,-595,3302,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-066,A-1,a-066,_E_SLD_Feeder-Tag E01,-707.5,3132,-707.5,3132,-663.5,3105.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-067,A-1,a-067,_E_SLD_Feeder-Tag E01,-707.5,2757,-707.5,2757,-663.5,2730.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-050,A-1,a-050,_E_SLD_Feeder-Tag E01,-482.5,3034,-482.5,3034,-438.5,3007.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-068,A-1,a-068,_E_SLD_Feeder-Tag E01,-482.5,1660,-482.5,1660,-438.5,1633.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-069,A-1,a-069,_E_SLD_Feeder-Tag E01,-482.5,1285,-482.5,1285,-438.5,1258.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-051,A-1,a-051,_E_SLD_Feeder-Tag E01,-385,3302,-385,3302,-385,3302,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-070,A-1,a-070,_E_SLD_Feeder-Tag E01,-297.5,410,-297.5,410,-253.5,383.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-071,A-1,a-071,_E_SLD_Feeder-Tag E01,-297.5,35,-297.5,35,-253.5,8.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-043,A-1,a-043,_E_SLD_Feeder-Tag E01,657.5,3422,657.5,3422,701.5,3395.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-044,A-1,a-044,_E_SLD_Feeder-Tag E01,447.5,3302,447.5,3302,447.5,3302,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-072,A-1,a-072,_E_SLD_Feeder-Tag E01,175,3132,175,3132,175,3132,-0,0,yes,tick-center pinned to attach
+S2,annotation,a-073,A-1,a-073,_E_SLD_Feeder-Tag E01,122.5,2757,122.5,2757,166.5,2730.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-074,A-1,a-074,_E_SLD_Feeder-Tag E01,302.5,3132,302.5,3132,302.5,3132,-0,0,yes,tick-center pinned to attach
+S2,annotation,a-075,A-1,a-075,_E_SLD_Feeder-Tag E01,367.5,2757,367.5,2757,411.5,2730.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-045,A-1,a-045,_E_SLD_Feeder-Tag E01,657.5,3034,657.5,3034,701.5,3007.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-076,A-1,a-076,_E_SLD_Feeder-Tag E01,600,1660,600,1660,600,1660,-0,0,yes,tick-center pinned to attach
+S2,annotation,a-077,A-1,a-077,_E_SLD_Feeder-Tag E01,547.5,1285,547.5,1285,591.5,1258.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-078,A-1,a-078,_E_SLD_Feeder-Tag E01,727.5,1660,727.5,1660,727.5,1660,-0,0,yes,tick-center pinned to attach
+S2,annotation,a-079,A-1,a-079,_E_SLD_Feeder-Tag E01,792.5,1285,792.5,1285,836.5,1258.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-046,A-1,a-046,_E_SLD_Feeder-Tag E01,860,3302,860,3302,860,3302,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-080,A-1,a-080,_E_SLD_Feeder-Tag E01,995,410,995,410,995,410,-0,0,yes,tick-center pinned to attach
+S2,annotation,a-081,A-1,a-081,_E_SLD_Feeder-Tag E01,942.5,35,942.5,35,986.5,8.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-082,A-1,a-082,_E_SLD_Feeder-Tag E01,1122.5,410,1122.5,410,1122.5,410,-0,0,yes,tick-center pinned to attach
+S2,annotation,a-083,A-1,a-083,_E_SLD_Feeder-Tag E01,1187.5,35,1187.5,35,1231.5,8.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-055,A-1,a-055,_E_SLD_Feeder-Tag E01,1432.5,3422,1432.5,3422,1476.5,3395.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-056,A-1,a-056,_E_SLD_Feeder-Tag E01,1487.5,3034,1487.5,3034,1487.5,3034,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-057,A-1,a-057,_E_SLD_Feeder-Tag E01,1377.5,3302,1377.5,3302,1377.5,3302,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-058,A-1,a-058,_E_SLD_Feeder-Tag E01,1282.5,3034,1282.5,3034,1282.5,3034,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-059,A-1,a-059,_E_SLD_Feeder-Tag E01,1587.5,3302,1587.5,3302,1587.5,3302,0,0,yes,leader flipped 180°; tick-center pinned to attach
+S2,annotation,a-061,A-1,a-061,_E_SLD_Feeder-Tag E01,1852.5,3422,1852.5,3422,1896.5,3395.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-065,A-1,a-065,_E_SLD_Feeder-Tag E01,2692.5,3422,2692.5,3422,2736.5,3395.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-084,A-1,a-084,_E_SLD_Feeder-Tag E01,2692.5,2924,2692.5,2924,2736.5,2897.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-085,A-1,a-085,_E_SLD_Feeder-Tag E01,2692.5,2549,2692.5,2549,2736.5,2522.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-063,A-1,a-063,_E_SLD_Feeder-Tag E01,2272.5,3422,2272.5,3422,2316.5,3395.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-053,A-1,a-053,_E_SLD_Feeder-Tag E01,-2.5,3462,-2.5,3462,41.5,3435.235083,44,-26.764917,yes,tick-center pinned to attach
+S2,annotation,a-041,A-1,a-041,_E_SLD_Feeder-Tag E01,770,4465.63,770,4465.63,814,4438.865083,44,-26.764917,yes,tick-center pinned to attach
+S2,device_tag,d-045#TAG,L2-3,E4A-1-A,,-518.5,3602,-438.5,3612,-438.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-046#TAG,L2-3,C4A-1-A,,621.5,3602,701.5,3612,701.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-047#TAG,L2-3,EQ4A-1-A,,1396.5,3602,1476.5,3612,1476.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-048#TAG,L2-3,EQ4A-1-B,,1816.5,3602,1896.5,3612,1896.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-049#TAG,L2-3,O4A-1-A,,2656.5,3602,2736.5,3612,2736.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-050#TAG,L2-3,EQ4A-1-C,,2236.5,3602,2316.5,3612,2316.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-051#TAG,L2-3,E4A-1-B,,-38.5,3602,41.5,3612,41.5,3612,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-069#TAG,L2-2,E4T-1-A,,-732.08,2937,-674.91,2941,-674.91,2941,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-073#TAG,L2-2,E4T-2-A,,-507.08,1465,-449.91,1469,-449.91,1469,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-077#TAG,L2-2,E4T-3-A,,-322.08,215,-264.91,219,-264.91,219,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-082#TAG,L2-2,C4T-1-A,,97.92,2937,155.09,2941,155.09,2941,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-085#TAG,L2-2,C4T-1-B,,342.92,2937,400.09,2941,400.09,2941,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-089#TAG,L2-2,C4T-2-A,,522.92,1465,580.09,1469,580.09,1469,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-092#TAG,L2-2,C4T-2-B,,767.92,1465,825.09,1469,825.09,1469,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-096#TAG,L2-2,C4T-3-A,,917.92,215,975.09,219,975.09,219,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-099#TAG,L2-2,C4T-3-B,,1162.92,215,1220.09,219,1220.09,219,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-109#TAG,L2-2,O4T-1-A,,2667.92,2729,2725.09,2733,2725.09,2733,,,yes,"3-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left"
+S2,device_tag,d-111#TAG,L3-3,ELEV-01,,2245.5,3158,2312.5,3167,2312.5,3167,,,yes,"4-line TextNote, 1/8"" type, line 1 underlined, drawn box registered top-left, host glyph unmapped (no L3-3 family)"
+S2,bus_dot,bd-S2-incoming,incoming,sec-007,_E_SLD_Conductor-ends E01,345,4580,345,4580,345,4580,0,-0,yes,drawn annulus centred on the incoming feeder×busbar junction
+S2,level_line,R,A-7,LEVEL ROOF,_E_SLD_level-floor E01,-779.5,-460,2768.5,-460,2768.5,-360,3548,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 3548px span"
+S2,level_line,3,A-7,LEVEL 3,_E_SLD_level-floor E01,-779.5,790,2768.5,790,2768.5,890,3548,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 3548px span"
+S2,level_line,2,A-7,LEVEL 2,_E_SLD_level-floor E01,-779.5,2040,2768.5,2040,2768.5,2140,3548,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 3548px span"
+S2,level_line,1,A-7,LEVEL 1,_E_SLD_level-floor E01,-779.5,4840,2768.5,4840,2768.5,4940,3548,100,yes,"family-placed (Trip #9), left end on x_start; Length ← 3548px span"
+S2,equipment_label,sw-002,A-8,E4MDP-1-A,_E_SLD_Equipment-info E01,220,4620,220,4620,225.3,4563.342648,5.3,-56.657352,yes,"hand-flipped + origin-registered (Trip #13, no X measure): text right edge = incoming section left − 20px gutter (origin gap +5.3px, screenshot-calibrated), top edge level with section top"
+S2,equipment_label,d-052,A-8,GEN-1,_E_SLD_Equipment-info E01,-140,4638,-140,4638,-145.3,4638,-5.3,-0,yes,"device-bound: UNFLIPPED, origin-registered on the raw anchor (align:""start"", origin −5.3px = family origin→text-start offset); first-live — expect a trip CSV fine-tune"
+S2,equipment_label,d-112,A-8,E4FP-1-A,_E_SLD_Equipment-info E01,12.33,3188,12.33,3188,7.03,3188,-5.3,-0,yes,"device-bound: UNFLIPPED, origin-registered on the raw anchor (align:""start"", origin −5.3px = family origin→text-start offset); first-live — expect a trip CSV fine-tune"
+S2,section,sec-007,L1-2,SEC-1-EM,_E_SLD_Dist-Panel E01,240,4520,240,4520,345,4660,105,140,yes,sized 210×280px; drawn-box top-left registered
+S2,section,sec-008,L1-2,SEC-2-EM,_E_SLD_Dist-Panel E01,450,4520,450,4520,555,4660,105,140,yes,sized 210×280px; drawn-box top-left registered
+S2,section,sec-009,L1-2,SEC-3-EM,_E_SLD_Dist-Panel E01,660,4520,660,4520,1170,4660,510,140,yes,sized 1020×280px; drawn-box top-left registered
+S2,section,sec-010,L1-2,SEC-4-EM,_E_SLD_Dist-Panel E01,1680,4520,1680,4520,2110,4660,430,140,yes,sized 860×280px; drawn-box top-left registered

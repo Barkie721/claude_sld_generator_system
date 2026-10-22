@@ -1,0 +1,52 @@
+{
+  "html": "/home/user/revit_electrical-dedarms_system/claude_sld_generator_system/04_renderer/sld_viewer_engine_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-21T22:05:33.079Z",
+  "sheets": [
+    {
+      "ok": true,
+      "sheetId": "S1",
+      "counts": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 0,
+        "dropped_entity": 0
+      },
+      "findings": []
+    },
+    {
+      "ok": true,
+      "sheetId": "S2",
+      "counts": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 2,
+        "dropped_entity": 0
+      },
+      "findings": [
+        {
+          "type": "layout_warning",
+          "severity": "info",
+          "ids": [
+            "S2"
+          ],
+          "bbox": null,
+          "note": "LEVEL_LINE_FIXED_PITCH: Fixed-pitch level-line stack; per-floor pitch subtracted bottom-up from L1 (authoritative values in the pitches field)."
+        },
+        {
+          "type": "layout_warning",
+          "severity": "info",
+          "ids": [
+            "S2"
+          ],
+          "bbox": null,
+          "note": "VERTICAL_OVERFLOW_WARNING: S2 level-line stack pushed topmost line above content area (y<0). Mitigation: relax L1 anchor, reduce px_per_inch, or reduce pitches."
+        }
+      ]
+    }
+  ]
+}

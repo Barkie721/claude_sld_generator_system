@@ -1,0 +1,161 @@
+{
+  "_metadata": {
+    "description": "Point-to-point 3-phase bolted fault current calculation",
+    "method": "IEEE Point-to-Point Method",
+    "standard_references": [
+      "IEEE Std 241-1990 (IEEE Recommended Practice for Electric Power Systems in Commercial Buildings)",
+      "IEEE Std 242-1986 (IEEE Recommended Practice for Protection and Coordination of Industrial and Commercial Power Systems)"
+    ],
+    "source_file": "Point-To-Point_Fault_Current_Recreated.xlsx",
+    "source_sheet": "Fault Current Calc",
+    "formulas": {
+      "f": {
+        "expression": "f = L \u00d7 I_sc_from \u00d7 1.732 / (C_total \u00d7 V)",
+        "description": "Fault current ratio factor. L = feeder length (ft), I_sc_from = available fault current at source (A), 1.732 = sqrt(3) for 3-phase, C_total = total C value (C_per_feeder \u00d7 conductors_per_phase), V = system voltage (V)"
+      },
+      "M": {
+        "expression": "M = 1 / (1 + f)",
+        "description": "Multiplier applied to source fault current to get downstream fault current"
+      },
+      "I_sc_sym_rms": {
+        "expression": "I_sc_sym_rms = I_sc_from \u00d7 M",
+        "description": "Symmetrical RMS fault current at the downstream end of the feeder (A)"
+      },
+      "C_total": {
+        "expression": "C_total = C_per_feeder \u00d7 conductors_per_phase",
+        "description": "Total C value accounts for parallel conductors per phase"
+      },
+      "C_per_feeder_lookup": {
+        "expression": "VLOOKUP(wire_size, C_Table, column_index)",
+        "description": "C value per feeder looked up from IEEE table based on wire_size, material (CU/AL), cable_config (Single/3C), and conduit_type (Steel/PVC)",
+        "lookup_file": "c_values_lookup.json",
+        "lookup_path": "cable[wire_size][material][cable_config][conduit_type]"
+      }
+    },
+    "aic_rating_logic": {
+      "description": "AIC rating is determined by the next standard rating above I_sc_sym_rms, with a 95% safety factor applied to each threshold",
+      "safety_factor": 0.95,
+      "thresholds_A": [
+        10000,
+        22000,
+        42000,
+        65000,
+        100000,
+        150000
+      ],
+      "rule": "Select lowest threshold T where I_sc_sym_rms < T \u00d7 0.95. If I_sc_sym_rms >= 150000 \u00d7 0.95, value is 'OVER 150K'."
+    }
+  },
+  "project": {
+    "project_name": "xxx",
+    "project_number": "xxx",
+    "created_by": "xxx",
+    "created_date": "xxx",
+    "checked_by": "xxx",
+    "revised_date": "xxx"
+  },
+  "global_parameters": {
+    "available_fault_current_A": 101000,
+    "system_voltage_V": 480,
+    "system_type": "3-phase",
+    "safety_factor_label": "Safety Factor - 95%"
+  },
+  "feeder_segments": [
+    {
+      "segment_id": 1,
+      "from": "PANEL A (replace)",
+      "to": "PANEL B (replace)",
+      "inputs": {
+        "length_ft": 20,
+        "conductors_per_phase": 11,
+        "conduit_type": "Steel",
+        "conductor_material": "CU",
+        "cable_config": "3C",
+        "wire_size": "500",
+        "busway_type": null,
+        "busway_size": null
+      },
+      "looked_up_values": {
+        "C_per_feeder": 26980,
+        "C_per_feeder_source": "c_values_lookup.cable.500.CU.3C.Steel"
+      },
+      "computed": {
+        "I_sc_from_A": 101000,
+        "I_sc_from_source": "global_parameters.available_fault_current_A",
+        "C_total": 296780,
+        "f": 0.0245597187591257,
+        "M": 0.976029002205093,
+        "I_sc_sym_rms_A": 98578.9292227144
+      },
+      "result": {
+        "aic_rating_A": 150000
+      },
+      "notes": null
+    },
+    {
+      "segment_id": 2,
+      "from": "PANEL B (replace)",
+      "to": "PANEL C (replace)",
+      "inputs": {
+        "length_ft": 30,
+        "conductors_per_phase": 2,
+        "conduit_type": "Steel",
+        "conductor_material": "AL",
+        "cable_config": "3C",
+        "wire_size": "750",
+        "busway_type": null,
+        "busway_size": null
+      },
+      "looked_up_values": {
+        "C_per_feeder": 26432,
+        "C_per_feeder_source": "c_values_lookup.cable.750.AL.3C.Steel"
+      },
+      "computed": {
+        "I_sc_from_A": 98578.9292227144,
+        "I_sc_from_source": "feeder_segments[0].computed.I_sc_sym_rms_A",
+        "C_total": 52864,
+        "f": 0.201860795406304,
+        "M": 0.832043114994809,
+        "I_sc_sym_rms_A": 82021.9193433201
+      },
+      "result": {
+        "aic_rating_A": 100000
+      },
+      "notes": null
+    },
+    {
+      "segment_id": 3,
+      "from": "PANEL C (replace)",
+      "to": "AHU-1 (replace)",
+      "inputs": {
+        "length_ft": 30,
+        "conductors_per_phase": 2,
+        "conduit_type": "Steel",
+        "conductor_material": "AL",
+        "cable_config": "3C",
+        "wire_size": "750",
+        "busway_type": null,
+        "busway_size": null
+      },
+      "looked_up_values": {
+        "C_per_feeder": 26432,
+        "C_per_feeder_source": "c_values_lookup.cable.750.AL.3C.Steel"
+      },
+      "computed": {
+        "I_sc_from_A": 82021.9193433201,
+        "I_sc_from_source": "feeder_segments[1].computed.I_sc_sym_rms_A",
+        "C_total": 52864,
+        "f": 0.167956885005191,
+        "M": 0.856195988771928,
+        "I_sc_sym_rms_A": 70226.8383331253
+      },
+      "result": {
+        "aic_rating_A": 100000
+      },
+      "notes": null
+    }
+  ],
+  "notes": [
+    "1. Minimum cable length required to stay with 10000AIC panel rating."
+  ]
+}

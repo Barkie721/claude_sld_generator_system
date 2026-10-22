@@ -1,0 +1,77 @@
+{
+  "$comment": "Sidecar layout_config for the default 2500 kVA composition. Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19), which would point floor anchors and the level map at devices that do not exist here. Single-level composition: no level lines.",
+  "sheet_roles": {
+    "S1": "normal"
+  },
+  "sheet_skips": {},
+  "floor_order": {
+    "S1": [
+      "3",
+      "2",
+      "1"
+    ]
+  },
+  "floor_anchors": {
+    "1": "2P-1-A",
+    "2": "2P-2-A",
+    "3": "2P-3-A"
+  },
+  "floor_anchors_mechanical": {
+    "1": "4M-1-A",
+    "2": "4M-2-A",
+    "3": "4M-3-A"
+  },
+  "level_map": {
+    "2P-1-A": "1",
+    "2P-2-A": "2",
+    "2P-3-A": "3",
+    "4M-1-A": "1",
+    "4M-2-A": "2",
+    "4M-3-A": "3"
+  },
+  "level_order": [
+    "3",
+    "2",
+    "1"
+  ],
+  "ats_xoffset_overrides": {},
+  "riser_step_standard": 650,
+  "subfeed_max_depth": 3,
+  "subfeed_start_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_src_types": [
+    "L2-4"
+  ],
+  "subfeed_dst_types": [
+    "L2-4"
+  ],
+  "subfeed_straighten": [
+    "F-307",
+    "F-310",
+    "F-308",
+    "F-309"
+  ],
+  "s2_level_line_pitch": {},
+  "s2_shift_delta": {},
+  "subfeed_midy_nudge": {},
+  "a1_tag_placement": {
+    "F-307": {
+      "side": "right",
+      "pill_dx": 20
+    },
+    "F-310": {
+      "side": "right"
+    },
+    "F-308": {
+      "side": "right"
+    },
+    "F-309": {
+      "side": "right"
+    }
+  },
+  "a3_text_placement": {},
+  "fc_pennant_placement": {},
+  "fc_pennant_y_nudges": {}
+}

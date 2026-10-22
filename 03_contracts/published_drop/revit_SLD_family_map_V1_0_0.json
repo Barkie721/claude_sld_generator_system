@@ -1,0 +1,923 @@
+{
+  "$schema": "revit_family_map/v1.0",
+  "description": "Maps Revit detail-item families to SLD system model node types. Contract file for the SLD capability pipeline. Includes coverage matrix for gap analysis.",
+  "source_file": "revit_SLD_family_map_V1_0_0.xlsx",
+  "generated": "2026-07-24",
+  "variant_selectors": {
+    "L2-1": "data_fields.kind",
+    "L2-7": "data_fields.kind"
+  },
+  "title_block": {
+    "family_name": "Titleblock Do Not Use 30x42 V04",
+    "type_name": "Titleblock Do Not Use 30x42 V04"
+  },
+  "families": [
+    {
+      "family_name": "_E_SLD_ATS E01",
+      "type_name": "AUTOMATIC SWITCH",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": "Automatic Transfer Switch",
+      "sld_node_type": "L2-3",
+      "sld_node_name": "Automatic Transfer Switch"
+    },
+    {
+      "family_name": "_E_SLD_Bus E01",
+      "type_name": "Bus",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "R-2",
+      "sld_node_name": "Bus",
+      "mapping_notes": "Revit family for bus bar element; routed element in SLD model"
+    },
+    {
+      "family_name": "_E_SLD_CB-draw-out E01",
+      "type_name": "_E_SLD_CB-draw-out",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Line 1 Text",
+        "Line 2 Text"
+      ],
+      "notes": "Draw-out circuit breaker",
+      "sld_node_type": "L1-6",
+      "parameters": [
+        {
+          "name": "Line 1 Text",
+          "sample_value": "XXXAT",
+          "data_type": "Text (string)",
+          "notes": "Ampere trip rating; 'XXX' is placeholder \u2013 populated per instance"
+        },
+        {
+          "name": "Line 2 Text",
+          "sample_value": "800AF",
+          "data_type": "Text (string)",
+          "notes": "Ampere frame rating for draw-out breaker"
+        }
+      ],
+      "sld_node_name": "Draw-Out Circuit Breaker",
+      "mapping_notes": "Placeholder in SLD model; Revit family exists"
+    },
+    {
+      "drawn_center_x_corr_px": 4.07,
+      "drawn_center_y_corr_px": 3.0,
+      "family_name": "_E_SLD_Circuit-Breaker V01",
+      "type_name": "Spare",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Amps-Underlined-Text",
+        "Poles-Text"
+      ],
+      "notes": "Spare breaker \u2014 drawn with contact arc",
+      "sld_node_type": "L2-7",
+      "sld_node_name": "Spare / Space Breaker",
+      "sld_node_variant": "spare"
+    },
+    {
+      "drawn_center_x_corr_px": 0.0,
+      "drawn_center_y_corr_px": 3.0,
+      "family_name": "_E_SLD_Circuit-Breaker V01",
+      "type_name": "Space",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Amps-Underlined-Text",
+        "Poles-Text"
+      ],
+      "notes": "Space breaker \u2014 no contact arc; drawn ~half the height of Spare",
+      "sld_node_type": "L2-7",
+      "sld_node_name": "Spare / Space Breaker",
+      "sld_node_variant": "space"
+    },
+    {
+      "drawn_center_x_corr_px": 4.07,
+      "drawn_center_y_corr_px": 3.0,
+      "family_name": "_E_SLD_Circuit-Breaker V01",
+      "type_name": "Spare",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Amps-Underlined-Text",
+        "Poles-Text"
+      ],
+      "notes": "L2-1 breaker marked kind:'spare' (E-501 CB-05/06/14/15 pattern) — same Spare type the L2-7 spare variant uses; the SPARE word is authored into the type, values still come from at/poles",
+      "sld_node_type": "L2-1",
+      "sld_node_name": "Circuit Breaker",
+      "sld_node_variant": "spare"
+    },
+    {
+      "drawn_center_x_corr_px": 4.07,
+      "drawn_center_y_corr_px": 3.0,
+      "visible_edge_top_inset_px": -0.5,
+      "visible_edge_bot_inset_px": 0.0,
+      "family_name": "_E_SLD_Circuit-Breaker V01",
+      "type_name": "CB",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Amps-Underlined-Text",
+        "Poles-Text"
+      ],
+      "notes": null,
+      "sld_node_type": "L2-1",
+      "parameters": [
+        {
+          "name": "Amps-Underlined-Text",
+          "sample_value": "100AT",
+          "data_type": "Text (string)",
+          "notes": "Ampere trip rating displayed underlined on SLD"
+        },
+        {
+          "name": "Poles-Text",
+          "sample_value": "100AF",
+          "data_type": "Text (string)",
+          "notes": "Ampere frame rating; 'AF' suffix convention"
+        }
+      ],
+      "sld_node_name": "Circuit Breaker",
+      "mapping_notes": "Cross-layer: also instantiated at L1 (main breaker) and L3 (branch) per Cross-Layer Instantiation table"
+    },
+    {
+      "family_name": "_E_SLD_Conductor-ends E01",
+      "type_name": "_Connection Dot",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "R-2",
+      "sld_node_name": "Bus (dot marker)",
+      "mapping_notes": "Bus tee connection dot \u2014 visual component of R-2 bus_tap_bi port marker"
+    },
+    {
+      "family_name": "_E_SLD_Conductor-ends E01",
+      "type_name": "Continuation squiggle - large",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "A-3",
+      "sld_node_name": "Continuation Squiggle"
+    },
+    {
+      "family_name": "_E_SLD_Conductor-ends E01",
+      "type_name": "Stub or End cap",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": null,
+      "sld_node_name": null,
+      "mapping_notes": "Feeder termination detail; may be part of R-1 rendering or stub endpoint"
+    },
+    {
+      "family_name": "_E_SLD_Disconnect E01",
+      "type_name": "Standard",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L2-5",
+      "sld_node_name": "Disconnect Switch"
+    },
+    {
+      "family_name": "_E_SLD_Dist-Panel E01",
+      "type_name": "_E_SLD_Dist-Panel",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Length",
+        "Width"
+      ],
+      "notes": "Switchboard section outline",
+      "sld_node_type": "L1-2",
+      "sld_node_name": "Switchboard Section",
+      "mapping_notes": "Detail family. Same family+type as the L2-4 Panelboard entry; not a collision \u2014 _nodeTypeMap is keyed by sld_node_type, the (family,type) tuple is only the Revit symbol-cache lookup."
+    },
+    {
+      "family_name": "_E_SLD_Dist-Panel E01",
+      "type_name": "_E_SLD_Dist-Panel",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L2-4",
+      "sld_node_name": "Panelboard",
+      "mapping_notes": "Distribution panel variant \u2014 same SLD node type as _E_SLD_panelboard E01"
+    },
+    {
+      "flipped_text_right_gap_px": 5.3,
+      "family_name": "_E_SLD_Equipment-info E01",
+      "type_name": "Standard",
+      "category": "SLD Annotation",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 4,
+      "parameter_names": [
+        "Label Panel Name",
+        "Line 1 Text",
+        "Line 2 Text",
+        "Line 3 Text"
+      ],
+      "notes": "Equipment info tag/label",
+      "sld_node_type": "A-8",
+      "parameters": [
+        {
+          "name": "Label Panel Name",
+          "sample_value": "E4MDP-B-A",
+          "data_type": "Text (string)",
+          "notes": "Equipment/switchgear designation"
+        },
+        {
+          "name": "Line 1 Text",
+          "sample_value": "2000A",
+          "data_type": "Text (string)",
+          "notes": "Main breaker / bus ampacity"
+        },
+        {
+          "name": "Line 2 Text",
+          "sample_value": "480Y/277V",
+          "data_type": "Text (string)",
+          "notes": "System voltage \u2013 wye configuration"
+        },
+        {
+          "name": "Line 3 Text",
+          "sample_value": "3PH, 4W",
+          "data_type": "Text (string)",
+          "notes": "Phase/wire configuration"
+        }
+      ],
+      "sld_node_name": "A-8 \u2014 Equipment Label",
+      "mapping_notes": "Equipment label block. Four parameters are 1:1 with the four A-8 lines: Label Panel Name = label, Line 1..3 Text = lines[0..2] (POST-COMPACTION; see system model \u00a7A-8). There is no 'Line 4 Text'/'Line 4 References' parameter \u2014 the A-8 block is four lines."
+    },
+    {
+      "family_name": "_E_SLD_Feeder-Tag E01",
+      "type_name": "Wire Tag",
+      "category": "SLD Annotation",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 1,
+      "parameter_names": [
+        "Annotation"
+      ],
+      "notes": "Feeder labeling",
+      "sld_node_type": "A-1",
+      "parameters": [
+        {
+          "name": "Annotation",
+          "sample_value": "1004",
+          "data_type": "Text (string)",
+          "notes": "Wire/circuit ID annotation on feeder line"
+        }
+      ],
+      "sld_node_name": "Feeder Tag"
+    },
+    {
+      "family_name": "_E_SLD_Gen E01",
+      "type_name": "_E_SLD_Gen",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Line 1 Text",
+        "Line 2 Text"
+      ],
+      "notes": "Generator symbol",
+      "sld_node_type": "L1-5",
+      "parameters": [
+        {
+          "name": "Line 1 Text",
+          "sample_value": "1800AT",
+          "data_type": "Text (string)",
+          "notes": "Generator breaker trip rating"
+        },
+        {
+          "name": "Line 2 Text",
+          "sample_value": "2000AF",
+          "data_type": "Text (string)",
+          "notes": "Generator breaker frame rating"
+        }
+      ],
+      "sld_node_name": "Generator",
+      "mapping_notes": "Placeholder in SLD model; Revit family exists"
+    },
+    {
+      "drawn_center_x_corr_px": 30.0,
+      "drawn_center_y_corr_px": 18.055,
+      "family_name": "_E_SLD_GFI E01",
+      "type_name": "GFI",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": "Ground Fault Interrupter",
+      "sld_node_type": "L1-1",
+      "sld_node_name": "GFP Circuit Breaker",
+      "mapping_notes": "Revit family name is legacy \"GFI\"; functionally this is the GFP symbol. A COMPANION breaker instance (_E_SLD_Circuit-Breaker V01/CB, next entry) is placed alongside this box — the engine glyph is breaker ladder + GFP box, and this family carries only the box."
+    },
+    {
+      "family_name": "_E_SLD_Circuit-Breaker V01",
+      "type_name": "CB",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Amps-Underlined-Text",
+        "Poles-Text"
+      ],
+      "notes": "Companion breaker glyph for the GFP",
+      "sld_node_type": "L1-1",
+      "sld_companion": true,
+      "sld_node_name": "GFP Circuit Breaker",
+      "mapping_notes": "COMPANION entry (sld_companion: true): placed IN ADDITION to the primary L1-1 entry, never instead of it. The engine's L1-1 glyph draws a full breaker ladder (below-bus, arc LEFT — the flipped-CB-FP orientation) plus the GFP box; the GFI family carries only the box, so the add-in places this breaker at the same bus-dot anchor with the rotate-180 + flipHand y-mirror composition and writes at/poles via the L2-1 breaker parameter path. Companion entries are loaded into their own resolver collection — they MUST NOT enter the node-type dictionary, where last-wins would clobber the GFI primary."
+    },
+    {
+      "family_name": "_E_SLD_Inverter E01",
+      "type_name": "standard",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L2-11",
+      "sld_node_name": "Inverter",
+      "mapping_notes": "Placeholder in SLD model; Revit family exists"
+    },
+    {
+      "family_name": "_E_SLD_level-floor E01",
+      "type_name": "LEVEL",
+      "category": "SLD Annotation",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 3,
+      "parameter_names": ["Level Name", "Length", "Level Elevation"],
+      "notes": "Floor level annotation",
+      "sld_node_type": "A-7",
+      "sld_node_name": "Level Line",
+      "mapping_notes": "Floor level line. The family carries usable params (Level Name / Length / Level Elevation), so the add-in places the family (LevelLinePlacer) rather than a detail line + TextNote. The add-in writes Level Name (label) and Length (x_end-x_start span); Level Elevation stays user-controlled (no elevation source in the topology/geometry)."
+    },
+    {
+      "family_name": "_E_SLD_Meter V01",
+      "type_name": "Basic Meter",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L2-8",
+      "sld_node_name": "Meter (Branch / Feeder)",
+      "mapping_notes": "Same family as Utility Meter; type name disambiguates. A COMPANION transducer instance (_E_SLD_Transducer V01/Combined, see that entry) is placed alongside this box — the engine glyph is meter box + stem + CT jaws, and this family carries only the box."
+    },
+    {
+      "family_name": "_E_SLD_Transducer V01",
+      "type_name": "Combined",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Existing",
+        "User Wire Length"
+      ],
+      "notes": "Companion CT/transducer glyph for the branch/feeder meter",
+      "sld_node_type": "L2-8",
+      "sld_companion": true,
+      "sld_node_name": "Meter (Branch / Feeder)",
+      "mapping_notes": "COMPANION entry (sld_companion: true): placed IN ADDITION to the primary L2-8 meter entry, never instead of it. The engine's meter glyphs draw stem + CT jaws + riser INSIDE the glyph (plus a viewer-extension riser to the bus) — none of it exported, none of it in the meter family — so Revit showed a floating meter box. This family carries the jaws + wire; User Wire Length (Dimensions, feet) spans the variable riser. Mayo's design: 'the utility as well as the basic meter — 1 claude family controlling two revit families, similar to the gfp breaker'. Companion entries live in their own resolver collection — they MUST NOT enter the node-type dictionary, where last-wins would clobber the meter primary."
+    },
+    {
+      "family_name": "_E_SLD_Meter V01",
+      "type_name": "Utility Meter",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L1-4",
+      "sld_node_name": "Utility Grade Meter",
+      "mapping_notes": "Same family as Basic Meter; type name disambiguates. A COMPANION transducer instance (_E_SLD_Transducer V01/Combined, see that entry) is placed alongside this box — see the L2-8 twin note."
+    },
+    {
+      "family_name": "_E_SLD_Transducer V01",
+      "type_name": "Combined",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 2,
+      "parameter_names": [
+        "Existing",
+        "User Wire Length"
+      ],
+      "notes": "Companion CT/transducer glyph for the utility meter",
+      "sld_node_type": "L1-4",
+      "sld_companion": true,
+      "sld_node_name": "Utility Grade Meter",
+      "mapping_notes": "COMPANION entry (sld_companion: true): placed IN ADDITION to the primary L1-4 meter entry, never instead of it — see the L2-8 companion twin for the full rationale. Family strings from the '09_tests/Revit Additional families to map/current transformer for utility_basic meters' Properties screenshot (family _E_SLD_Transducer V01, type Combined; params Existing, Wire Length (read-only), User Wire Length)."
+    },
+    {
+      "family_name": "_E_SLD_Motor V02",
+      "type_name": "Motor with Starter",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L3-1",
+      "sld_node_name": "Fire Pump",
+      "mapping_notes": "Fire pump motor \u2014 combination-starter symbol. Same _E_SLD_Motor V02 family as L3-2 but a DISTINCT type: L3-1 = Motor with Starter, L3-2 = Motor Only."
+    },
+    {
+      "family_name": "_E_SLD_Motor V02",
+      "type_name": "Motor Only",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L3-2",
+      "sld_node_name": "Motor",
+      "mapping_notes": "Plain motor load \u2014 motor-only symbol. Type is 'Motor Only'; the starter variant belongs to L3-1 Fire Pump."
+    },
+    {
+      "family_name": "_E_SLD_panelboard E01",
+      "type_name": "Standard",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 4,
+      "parameter_names": [
+        "Label Panel Name",
+        "Line 1 Text",
+        "Line 2 Text",
+        "Line 3 Text"
+      ],
+      "notes": "Panelboard symbol",
+      "sld_node_type": "L2-4",
+      "parameters": [
+        {
+          "name": "Label Panel Name",
+          "sample_value": "4EV-B-A",
+          "data_type": "Text (string)",
+          "notes": "Panel designation label \u2013 primary identifier on SLD symbol"
+        },
+        {
+          "name": "Line 1 Text",
+          "sample_value": null,
+          "data_type": "Text (string)",
+          "notes": "First line of supplemental annotation (blank in sample)"
+        },
+        {
+          "name": "Line 2 Text",
+          "sample_value": "MLO",
+          "data_type": "Text (string)",
+          "notes": "Main Lugs Only / breaker config notation"
+        },
+        {
+          "name": "Line 3 Text",
+          "sample_value": "1200A",
+          "data_type": "Text (string)",
+          "notes": "Main ampacity or bus rating"
+        }
+      ],
+      "sld_node_name": "Panelboard"
+    },
+    {
+      "family_name": "_E_SLD_SPD E01",
+      "type_name": "SPD",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": "Surge Protective Device",
+      "sld_node_type": "L2-6",
+      "sld_node_name": "Surge Protective Device"
+    },
+    {
+      "family_name": "_E_SLD_Transducer V01",
+      "type_name": "Combined",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": null,
+      "sld_node_name": null,
+      "mapping_notes": "Placeholder: power quality / metering transducer. Part of metering section composition for now"
+    },
+    {
+      "drawn_center_x_corr_px": 11.7,
+      "drawn_center_y_corr_px": 4.15,
+      "visible_edge_top_inset_px": -1.5,
+      "visible_edge_bot_inset_px": 8.3,
+      "family_name": "_E_SLD_Transformer E01",
+      "type_name": "Standard",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": null,
+      "sld_node_type": "L2-2",
+      "sld_node_name": "LV Transformer"
+    },
+    {
+      "drawn_center_y_corr_px": 48.0,
+      "family_name": "_E_SLD_Utility-Service-XFMR E01",
+      "type_name": "_E_SLD_Utility-Service-XFMR",
+      "category": "SLD Components",
+      "revit_category": "Detail Items",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": "Utility-side transformer",
+      "sld_node_type": "L0-1",
+      "sld_node_name": "Utility Transformer"
+    },
+    {
+      "family_name": "Hex Note V1",
+      "type_name": "Arrow",
+      "category": "Generic Annotation",
+      "revit_category": "Generic Annotation",
+      "usable_parameter_count": 0,
+      "parameter_names": [],
+      "notes": "General note with arrow leader",
+      "sld_node_type": "A-6",
+      "sld_node_name": "Hex Note",
+      "mapping_notes": "Generic annotation family with arrow leader"
+    }
+  ],
+  "_mapping_notes": {
+    "sld_node_type": "Populated \u2014 maps each Revit family/type to the corresponding node_type in sld_system_model.md Symbol Registry (e.g., 'L2-1', 'A-3'). 'TBD' indicates items needing a new SLD node type. null indicates no applicable mapping.",
+    "sld_node_variant": "Optional per-entry variant discriminator. When present, the entry is keyed (sld_node_type, sld_node_variant) in the resolver's variant dictionary instead of the node-type dictionary, letting one node type map to several families/types (e.g. L2-7 spare vs. space). The two L2-7 entries (spare/space) carry variants; every other lookup falls through to the node-type dictionary.",
+    "sld_companion": "Optional per-entry boolean. When true, the entry is an ADDITIONAL family placed alongside whatever the (node_type, variant) lookup resolves — loaded into the resolver's companion collection, never the node-type dictionary (last-wins there would clobber the primary). One live use: L1-1 GFP places the GFI box (primary) plus a Circuit-Breaker/CB glyph (companion). Companion instances are counted and reported separately from devices and are invisible to compare_placement's geometry join (their placement-CSV kind is 'companion').",
+    "sld_node_name": "Human-readable name from the Symbol Registry, provided for cross-reference verification.",
+    "coverage_summary": {
+      "mapped": 20,
+      "placeholder_family_exists": 3,
+      "no_family": 11,
+      "generic_linework": 1,
+      "total_sld_nodes": 35
+    },
+    "variant_selectors": "Root table: sld_node_type \u2192 dotted path naming WHERE on the topology object the variant value is read from (e.g. 'data_fields.kind'). Putting the discriminator's source path in the contract rather than in C# keeps the resolver generic \u2014 variant-ising a second node type later is a pure data change with no recompile. Semantics: dotted path, stringified, trimmed, matched case-insensitively; a missing or unmatched value falls back to the node_type-only entry."
+  },
+  "coverage_matrix": [
+    {
+      "sld_node_id": "L0-1",
+      "sld_node_name": "Utility Transformer",
+      "layer": "L0",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Utility-Service-XFMR E01",
+      "revit_type": "_E_SLD_Utility-Service-XFMR",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "L0-2",
+      "sld_node_name": "MV Transformer",
+      "layer": "L0",
+      "sld_status": "Placeholder",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "SLD symbol and Revit family both needed"
+    },
+    {
+      "sld_node_id": "L1-1",
+      "sld_node_name": "GFP Circuit Breaker",
+      "layer": "L1",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_GFI E01",
+      "revit_type": "GFI",
+      "coverage": "Mapped",
+      "gap_notes": "Family name is legacy 'GFI'. Also places a COMPANION _E_SLD_Circuit-Breaker V01/CB instance (sld_companion entry)"
+    },
+    {
+      "sld_node_id": "L1-2",
+      "sld_node_name": "Switchboard Section",
+      "layer": "L1",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Dist-Panel E01",
+      "revit_type": "_E_SLD_Dist-Panel",
+      "coverage": "Mapped",
+      "gap_notes": "Detail family; placed by SectionPlacer (Length=w drawn horizontal / Width=h, drawn-box top-left registered)"
+    },
+    {
+      "sld_node_id": "L1-3",
+      "sld_node_name": "Neutral-Ground Bond",
+      "layer": "L1",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 future Revit family needed"
+    },
+    {
+      "sld_node_id": "L1-4",
+      "sld_node_name": "Utility Grade Meter",
+      "layer": "L1",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Meter V01",
+      "revit_type": "Utility Meter",
+      "coverage": "Mapped",
+      "gap_notes": "Also places a COMPANION _E_SLD_Transducer V01/Combined instance (sld_companion entry) — the CT jaws + wire the meter family does not carry"
+    },
+    {
+      "sld_node_id": "L1-5",
+      "sld_node_name": "Generator",
+      "layer": "L1",
+      "sld_status": "Placeholder",
+      "revit_family": "_E_SLD_Gen E01",
+      "revit_type": "_E_SLD_Gen",
+      "coverage": "Placeholder \u2014 Family Exists",
+      "gap_notes": "SLD symbol definition incomplete; Revit family available"
+    },
+    {
+      "sld_node_id": "L1-6",
+      "sld_node_name": "Draw-Out Circuit Breaker",
+      "layer": "L1",
+      "sld_status": "Placeholder",
+      "revit_family": "_E_SLD_CB-draw-out E01",
+      "revit_type": "_E_SLD_CB-draw-out",
+      "coverage": "Placeholder \u2014 Family Exists",
+      "gap_notes": "SLD symbol definition incomplete; Revit family available"
+    },
+    {
+      "sld_node_id": "L2-1",
+      "sld_node_name": "Circuit Breaker",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Circuit-Breaker V01",
+      "revit_type": "CB",
+      "coverage": "Mapped",
+      "gap_notes": "Cross-layer instantiation at L1, L2, L3"
+    },
+    {
+      "sld_node_id": "L2-2",
+      "sld_node_name": "LV Transformer",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Transformer E01",
+      "revit_type": "Standard",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "L2-3",
+      "sld_node_name": "Automatic Transfer Switch",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_ATS E01",
+      "revit_type": "AUTOMATIC SWITCH",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "L2-4",
+      "sld_node_name": "Panelboard",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_panelboard E01",
+      "revit_type": "Standard",
+      "coverage": "Mapped",
+      "gap_notes": "Also covered by _E_SLD_Dist-Panel E01 (same node type)"
+    },
+    {
+      "sld_node_id": "L2-5",
+      "sld_node_name": "Disconnect Switch",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Disconnect E01",
+      "revit_type": "Standard",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "L2-6",
+      "sld_node_name": "Surge Protective Device",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_SPD E01",
+      "revit_type": "SPD",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "L2-7",
+      "sld_node_name": "Spare / Space Breaker",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Circuit-Breaker V01",
+      "revit_type": "Spare / Space",
+      "coverage": "Mapped",
+      "gap_notes": "Variant-keyed: data_fields.kind -> 'spare' | 'space'"
+    },
+    {
+      "sld_node_id": "L2-8",
+      "sld_node_name": "Meter (Branch / Feeder)",
+      "layer": "L2",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Meter V01",
+      "revit_type": "Basic Meter",
+      "coverage": "Mapped",
+      "gap_notes": "Also places a COMPANION _E_SLD_Transducer V01/Combined instance (sld_companion entry) — the CT jaws + wire the meter family does not carry"
+    },
+    {
+      "sld_node_id": "L2-9",
+      "sld_node_name": "Bus Plug",
+      "layer": "L2",
+      "sld_status": "Placeholder",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 SLD symbol and Revit family both needed"
+    },
+    {
+      "sld_node_id": "L2-10",
+      "sld_node_name": "UPS",
+      "layer": "L2",
+      "sld_status": "Placeholder",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 SLD symbol and Revit family both needed"
+    },
+    {
+      "sld_node_id": "L2-11",
+      "sld_node_name": "Inverter",
+      "layer": "L2",
+      "sld_status": "Placeholder",
+      "revit_family": "_E_SLD_Inverter E01",
+      "revit_type": "standard",
+      "coverage": "Placeholder \u2014 Family Exists",
+      "gap_notes": "SLD symbol definition incomplete; Revit family available"
+    },
+    {
+      "sld_node_id": "L2-12",
+      "sld_node_name": "PV Array",
+      "layer": "L2",
+      "sld_status": "Placeholder",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 SLD symbol and Revit family both needed"
+    },
+    {
+      "sld_node_id": "L2-13",
+      "sld_node_name": "Meter Stack",
+      "layer": "L2",
+      "sld_status": "Placeholder",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 SLD symbol and Revit family both needed"
+    },
+    {
+      "sld_node_id": "L3-1",
+      "sld_node_name": "Fire Pump",
+      "layer": "L3",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Motor V02",
+      "revit_type": "Motor with Starter",
+      "coverage": "Mapped",
+      "gap_notes": "Shares _E_SLD_Motor V02 family with L3-2 Motor; DISTINCT type Motor with Starter"
+    },
+    {
+      "sld_node_id": "L3-2",
+      "sld_node_name": "Motor",
+      "layer": "L3",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Motor V02",
+      "revit_type": "Motor Only",
+      "coverage": "Mapped",
+      "gap_notes": "Shares _E_SLD_Motor V02 family with L3-1 Fire Pump; DISTINCT type Motor Only (corrected from Motor with Starter)"
+    },
+    {
+      "sld_node_id": "L3-3",
+      "sld_node_name": "Equipment Connection",
+      "layer": "L3",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 future Revit family needed"
+    },
+    {
+      "sld_node_id": "R-1",
+      "sld_node_name": "Feeder",
+      "layer": "R",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "Generic Linework",
+      "gap_notes": "Drawn as Revit detail lines \u2014 not a family"
+    },
+    {
+      "sld_node_id": "R-2",
+      "sld_node_name": "Bus",
+      "layer": "R",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Bus E01",
+      "revit_type": "Bus",
+      "coverage": "Mapped",
+      "gap_notes": "Connection dots via _E_SLD_Conductor-ends E01 / _Connection Dot"
+    },
+    {
+      "sld_node_id": "R-3",
+      "sld_node_name": "Busway",
+      "layer": "R",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 future Revit family needed"
+    },
+    {
+      "sld_node_id": "A-1",
+      "sld_node_name": "Feeder Tag",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Feeder-Tag E01",
+      "revit_type": "Wire Tag",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "A-2",
+      "sld_node_name": "Conduit / Wire Callout Tag",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 currently manual text/linework in Revit"
+    },
+    {
+      "sld_node_id": "A-3",
+      "sld_node_name": "Continuation Squiggle",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Conductor-ends E01",
+      "revit_type": "Continuation squiggle - large",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "A-4",
+      "sld_node_name": "Fault Current Tag",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 currently manual annotation in Revit"
+    },
+    {
+      "sld_node_id": "A-5",
+      "sld_node_name": "Voltage Drop Tag",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": null,
+      "revit_type": null,
+      "coverage": "No Family",
+      "gap_notes": "Placeholder \u2014 currently manual annotation in Revit"
+    },
+    {
+      "sld_node_id": "A-6",
+      "sld_node_name": "Hex Note",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": "Hex Note V1",
+      "revit_type": "Arrow",
+      "coverage": "Mapped",
+      "gap_notes": null
+    },
+    {
+      "sld_node_id": "A-7",
+      "sld_node_name": "Level Line",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_level-floor E01",
+      "revit_type": "LEVEL",
+      "coverage": "Mapped",
+      "gap_notes": "Family-placed: the family carries usable params (Level Name / Length / Level Elevation); LevelLinePlacer writes Level Name + Length, Level Elevation stays user-controlled."
+    },
+    {
+      "sld_node_id": "A-8",
+      "sld_node_name": "Equipment Label",
+      "layer": "A",
+      "sld_status": "Complete",
+      "revit_family": "_E_SLD_Equipment-info E01",
+      "revit_type": "Standard",
+      "coverage": "Mapped",
+      "gap_notes": null
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+# Every gate in this repository hashes RAW BYTES off disk and compares them to a
+# pin derived from LF content. Git's default on Windows (core.autocrlf=true)
+# rewrites those bytes on checkout, so on a default clone every pinned file
+# inflates and the gate reports that an imported contract has been TAMPERED WITH
+# -- a false accusation, pointing at the operator, for a fault in the checkout.
+#
+# Measured 2026-09-19 on a default Windows clone at 46cc2ab. ALL FOUR files
+# pinned by 03_contracts/published_drop/drop_manifest.json differed from their
+# pin on disk while matching it LF-normalised:
+#
+#   revit_SLD_family_map_V1_0_0.json      34,174 +    922 CRLFs =  35,096
+#   sld_topology_schema_V1_0_0.md         88,173 +    894 CRLFs =  89,067
+#   sld_replay_package_V1_0_0.md          21,498 +    397 CRLFs =  21,895
+#   hospital_golden_WITH_GEOMETRY.json   250,745 + 12,017 CRLFs = 262,762
+#
+# Not one of the pins was wrong. The same LF-derived hashes are pinned on the
+# consumer side too (toolkit_manifest.json in revit_dedarms_toolkit_system), so
+# both halves of the cross-repo drop gate had the same latent failure.
+#
+# `-text` disables end-of-line conversion entirely, so the working tree is
+# byte-identical to what is stored. Do NOT narrow this to `text=auto` or to
+# per-extension rules: the gates hash every file they pin, not a known list of
+# extensions, and a rule that misses one restores exactly this failure for it.
+* -text

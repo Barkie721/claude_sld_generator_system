@@ -1,0 +1,21 @@
+<svg viewBox="-40 0 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="-40" y="0" width="300" height="220" fill="#0a0e17"/>
+  <path d="M40,100 L40,20 L180,20 L180,100"
+        fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <text x="110" y="72" text-anchor="middle"
+        font-family="monospace" font-size="36" font-weight="700"
+        fill="#FFFFFF">T</text>
+  <rect x="20" y="100" width="180" height="40"
+        fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <path d="M20,140 L20,200 L200,200 L200,140"
+        fill="none" stroke="#39FF14" stroke-width="1.5"
+        stroke-dasharray="12,6"/>
+  <text x="210" y="38" font-family="monospace" font-size="12"
+        font-weight="700" text-decoration="underline"
+        fill="#FFFFFF">UTILITY TRANSFORMER</text>
+  <text x="210" y="58" font-family="monospace" font-size="12"
+        font-weight="600" fill="#FFFFFF">2500KVA</text>
+  <text x="210" y="76" font-family="monospace" font-size="12"
+        font-weight="600" fill="#FFFFFF">480Y/277V</text>
+  <text x="210" y="94" font-family="monospace" font-size="12"
+        font-weight="600" fill="#FFFFFF">4W, 3PH</text>
+<g class="port-marker"><polygon points="80,135 85,140 80,145 75,140" class="port-diamond"/><text x="80" y="155" text-anchor="middle" font-size="8" class="port-label">primary_in</text><polygon points="140,135 145,140 140,145 135,140" class="port-diamond"/><text x="140" y="155" text-anchor="middle" font-size="8" class="port-label">secondary_out</text></g></svg>

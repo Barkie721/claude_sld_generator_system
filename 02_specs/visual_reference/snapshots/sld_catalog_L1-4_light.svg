@@ -1,0 +1,15 @@
+<svg viewBox="-86.5 -62.5 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#e5a600;stroke:#000;stroke-width:0.6}.port-label{fill:#b38600;font-family:monospace;font-weight:600}</style><rect x="-86.5" y="-62.5" width="300" height="220" fill="#f8fafd"/>
+  <line x1="63.5" y1="35" x2="63.5" y2="22"
+        stroke="#0077b6" stroke-width="3"/>
+  <path d="M63.5,22 C63.5,19 60.5,15 57.5,13 C54.5,11 50.5,13 48.5,17"
+        fill="none" stroke="#0077b6" stroke-width="3" stroke-linecap="round"/>
+  <path d="M63.5,22 C63.5,19 66.5,15 69.5,13 C72.5,11 76.5,13 78.5,17"
+        fill="none" stroke="#0077b6" stroke-width="3" stroke-linecap="round"/>
+  <rect x="40" y="35" width="47" height="47"
+        fill="none" stroke="#0077b6" stroke-width="3"/>
+  <circle cx="63.5" cy="58.5" r="14"
+          fill="none" stroke="#0077b6" stroke-width="3"/>
+  <text x="63.5" y="63" text-anchor="middle"
+        font-family="monospace" font-size="12" font-weight="700"
+        fill="#1a1f2e">M</text>
+<g class="port-marker"><polygon points="63.5,17 68.5,22 63.5,27 58.5,22" class="port-diamond"/><text x="72" y="25" font-size="8" class="port-label">ct_bi</text></g></svg>

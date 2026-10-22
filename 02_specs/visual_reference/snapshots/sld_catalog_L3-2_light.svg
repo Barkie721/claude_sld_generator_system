@@ -1,0 +1,18 @@
+<svg viewBox="-26 -67 310 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#e5a600;stroke:#000;stroke-width:0.6}.port-label{fill:#b38600;font-family:monospace;font-weight:600}</style><rect x="-26" y="-67" width="310" height="220" fill="#f8fafd"/>
+  <line x1="79" y1="13" x2="99" y2="37"
+        stroke="#0077b6" stroke-width="3"/>
+  <line x1="113" y1="46" x2="130" y2="66"
+        stroke="#0077b6" stroke-width="3"/>
+  <circle cx="105" cy="40" r="19"
+          fill="#f8fafd" stroke="#0077b6" stroke-width="3"/>
+  <text x="105" y="45" text-anchor="middle"
+        font-family="monospace" font-size="19" font-weight="700"
+        fill="#1a1f2e">M</text>
+  <text x="142" y="33" font-family="monospace" font-size="12"
+        font-weight="700" text-decoration="underline"
+        fill="#1a1f2e">AHU-2-A</text>
+  <text x="142" y="49" font-family="monospace" font-size="12"
+        font-weight="600" fill="#1a1f2e">50HP, 65 FLA</text>
+  <text x="142" y="63" font-family="monospace" font-size="12"
+        font-weight="600" fill="#1a1f2e">480V/3PH</text>
+<g class="port-marker"><polygon points="105,54 110,59 105,64 100,59" class="port-diamond"/><text x="105" y="74" text-anchor="middle" font-size="8" class="port-label">load_in</text><polygon points="105,16 110,21 105,26 100,21" class="port-diamond"/><text x="105" y="12" text-anchor="middle" font-size="8" class="port-label">flex_top</text></g></svg>

@@ -1,0 +1,21 @@
+<svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="0" y="0" width="420" height="260" fill="#0a0e17"/>
+  <rect x="140" y="30" width="192" height="192"
+        fill="none" stroke="#39FF14" stroke-width="1.2"
+        stroke-dasharray="8,5"/>
+  <line x1="188" y1="186" x2="284" y2="186"
+        stroke="#00FFFF" stroke-width="3"/>
+  <circle cx="236" cy="186" r="5" fill="#FF69B4"/>
+  <text x="125" y="78" text-anchor="end"
+        font-family="monospace" font-size="12" font-weight="700"
+        text-decoration="underline"
+        fill="#FFFFFF">4MSB-B-A</text>
+  <text x="125" y="98" text-anchor="end"
+        font-family="monospace" font-size="12" font-weight="700"
+        fill="#FFFFFF">3000A</text>
+  <text x="125" y="116" text-anchor="end"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">480Y/277V</text>
+  <text x="125" y="134" text-anchor="end"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">4W, 3PH</text>
+<g class="port-marker"><text x="236" y="201" text-anchor="middle" font-size="8" class="port-label" font-style="italic">ports via Bus R-2</text></g></svg>

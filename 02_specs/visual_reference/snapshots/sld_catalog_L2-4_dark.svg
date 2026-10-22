@@ -1,0 +1,17 @@
+<svg viewBox="-30 0 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="-30" y="0" width="300" height="220" fill="#0a0e17"/>
+  <rect x="50" y="40" width="140" height="140"
+        fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <text x="120" y="72" text-anchor="middle"
+        font-family="monospace" font-size="12" font-weight="700"
+        text-decoration="underline"
+        fill="#FFFFFF">4B-2-A</text>
+  <text x="120" y="100" text-anchor="middle"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">480/277V 3Ø</text>
+  <text x="120" y="122" text-anchor="middle"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">MLO</text>
+  <text x="120" y="144" text-anchor="middle"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">225A</text>
+<g class="port-marker"><polygon points="120,35 125,40 120,45 115,40" class="port-diamond"/><text x="120" y="30" text-anchor="middle" font-size="8" class="port-label">feed_top</text><polygon points="120,175 125,180 120,185 115,180" class="port-diamond"/><text x="120" y="195" text-anchor="middle" font-size="8" class="port-label">feed_bottom</text><polygon points="45,105 50,110 45,115 40,110" class="port-diamond"/><text x="36" y="113" text-anchor="end" font-size="8" class="port-label">feed_left</text><polygon points="195,105 190,110 195,115 200,110" class="port-diamond"/><text x="204" y="113" font-size="8" class="port-label">feed_right</text></g></svg>

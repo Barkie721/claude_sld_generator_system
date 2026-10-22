@@ -1,0 +1,20 @@
+<svg viewBox="16 -68 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="16" y="-68" width="300" height="220" fill="#0a0e17"/>
+  <line x1="30" y1="58" x2="50" y2="42"
+        stroke="#00FFFF" stroke-width="3"/>
+  <line x1="40" y1="50" x2="72" y2="50"
+        stroke="#00FFFF" stroke-width="3"/>
+  <rect x="72" y="35" width="76" height="31" rx="15.5" ry="15.5"
+        fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <text x="110" y="55" text-anchor="middle"
+        font-family="monospace" font-size="16" font-weight="700"
+        fill="#FFFFFF">1004</text>
+  <rect x="170" y="35" width="90" height="31" rx="15.5" ry="15.5"
+        fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <text x="215" y="55" text-anchor="middle"
+        font-family="monospace" font-size="16" font-weight="700"
+        fill="#FFFFFF">2254T</text>
+  <line x1="260" y1="50" x2="292" y2="50"
+        stroke="#00FFFF" stroke-width="3"/>
+  <line x1="282" y1="42" x2="302" y2="58"
+        stroke="#00FFFF" stroke-width="3"/>
+<g class="port-marker"><polygon points="40,45 45,50 40,55 35,50" class="port-diamond"/><text x="40" y="65" text-anchor="middle" font-size="8" class="port-label">anno_attach</text><polygon points="292,45 297,50 292,55 287,50" class="port-diamond"/><text x="292" y="65" text-anchor="middle" font-size="8" class="port-label">anno_attach</text></g></svg>

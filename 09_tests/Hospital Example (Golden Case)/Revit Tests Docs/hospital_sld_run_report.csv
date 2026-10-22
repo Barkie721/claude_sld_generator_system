@@ -1,0 +1,3 @@
+sheet_id,sheet_number,title,devices_placed,devices_skipped,devices_aligned,lines_drawn,annotations_placed,annotations_skipped,level_lines_placed,level_lines_skipped,equipment_labels_placed,equipment_labels_skipped,sections_placed,sections_skipped,glyph_supplements_placed,glyph_supplements_skipped,bus_dots_placed,bus_dots_skipped,device_tags_placed,device_tags_skipped,squiggle_labels_placed,squiggle_labels_skipped
+S1,E-501,MAIN SINGLE-LINE DIAGRAM — NORMAL POWER,47,12,47,73,41,75,4,0,1,0,6,0,2,0,1,0,9,0,7,0
+S2,E-502,MAIN SINGLE-LINE DIAGRAM — EMERGENCY POWER,57,12,57,105,53,159,4,0,3,0,4,0,0,0,1,0,18,0,7,0

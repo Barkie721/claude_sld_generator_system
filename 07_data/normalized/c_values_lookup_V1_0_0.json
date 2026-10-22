@@ -1,0 +1,636 @@
+{
+  "_metadata": {
+    "description": "C values for conductors used in IEEE point-to-point fault current calculations",
+    "standard": "IEEE Std 241-1990, IEEE Std 242-1986",
+    "units": "Dimensionless (used in f = L \u00d7 Isc \u00d7 1.732 / (C \u00d7 V))",
+    "source_file": "Point-To-Point_Fault_Current_Recreated.xlsx",
+    "source_sheet": "\"C\" Conductors Values",
+    "notes": [
+      "Cable C-values are keyed by wire_size \u2192 material (CU/AL) \u2192 cable_config (Single/3C) \u2192 conduit_type (Steel/PVC)",
+      "Busway C-values are keyed by ampacity (A) \u2192 busway_type (Plug-In/Feeder/High Impedance) \u2192 material (Copper/Aluminum)",
+      "null indicates value not available for that configuration"
+    ]
+  },
+  "cable": {
+    "14": {
+      "CU": {
+        "Single": {
+          "Steel": 389,
+          "PVC": 389
+        },
+        "3C": {
+          "Steel": 389,
+          "PVC": 389
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 237,
+          "PVC": 237
+        },
+        "3C": {
+          "Steel": 237,
+          "PVC": 237
+        }
+      }
+    },
+    "12": {
+      "CU": {
+        "Single": {
+          "Steel": 617,
+          "PVC": 617
+        },
+        "3C": {
+          "Steel": 617,
+          "PVC": 617
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 376,
+          "PVC": 376
+        },
+        "3C": {
+          "Steel": 376,
+          "PVC": 376
+        }
+      }
+    },
+    "10": {
+      "CU": {
+        "Single": {
+          "Steel": 981,
+          "PVC": 982
+        },
+        "3C": {
+          "Steel": 982,
+          "PVC": 982
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 599,
+          "PVC": 599
+        },
+        "3C": {
+          "Steel": 599,
+          "PVC": 599
+        }
+      }
+    },
+    "8": {
+      "CU": {
+        "Single": {
+          "Steel": 1557,
+          "PVC": 1559
+        },
+        "3C": {
+          "Steel": 1559,
+          "PVC": 1560
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 951,
+          "PVC": 952
+        },
+        "3C": {
+          "Steel": 952,
+          "PVC": 952
+        }
+      }
+    },
+    "6": {
+      "CU": {
+        "Single": {
+          "Steel": 2425,
+          "PVC": 2430
+        },
+        "3C": {
+          "Steel": 2431,
+          "PVC": 2433
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 1481,
+          "PVC": 1482
+        },
+        "3C": {
+          "Steel": 1482,
+          "PVC": 1482
+        }
+      }
+    },
+    "4": {
+      "CU": {
+        "Single": {
+          "Steel": 3806,
+          "PVC": 3826
+        },
+        "3C": {
+          "Steel": 3830,
+          "PVC": 3838
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 2346,
+          "PVC": 2350
+        },
+        "3C": {
+          "Steel": 2351,
+          "PVC": 2353
+        }
+      }
+    },
+    "3": {
+      "CU": {
+        "Single": {
+          "Steel": 4774,
+          "PVC": 4811
+        },
+        "3C": {
+          "Steel": 4820,
+          "PVC": 4833
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 2952,
+          "PVC": 2961
+        },
+        "3C": {
+          "Steel": 2963,
+          "PVC": 2966
+        }
+      }
+    },
+    "2": {
+      "CU": {
+        "Single": {
+          "Steel": 5907,
+          "PVC": 6044
+        },
+        "3C": {
+          "Steel": 5989,
+          "PVC": 6087
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 3713,
+          "PVC": 3730
+        },
+        "3C": {
+          "Steel": 3734,
+          "PVC": 3740
+        }
+      }
+    },
+    "1": {
+      "CU": {
+        "Single": {
+          "Steel": 7293,
+          "PVC": 7493
+        },
+        "3C": {
+          "Steel": 7454,
+          "PVC": 7579
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 4645,
+          "PVC": 4678
+        },
+        "3C": {
+          "Steel": 4686,
+          "PVC": 4699
+        }
+      }
+    },
+    "1/0": {
+      "CU": {
+        "Single": {
+          "Steel": 8925,
+          "PVC": 9317
+        },
+        "3C": {
+          "Steel": 9210,
+          "PVC": 9473
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 5777,
+          "PVC": 5838
+        },
+        "3C": {
+          "Steel": 5852,
+          "PVC": 5876
+        }
+      }
+    },
+    "2/0": {
+      "CU": {
+        "Single": {
+          "Steel": 10755,
+          "PVC": 11424
+        },
+        "3C": {
+          "Steel": 11245,
+          "PVC": 11703
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 7187,
+          "PVC": 7301
+        },
+        "3C": {
+          "Steel": 7327,
+          "PVC": 7373
+        }
+      }
+    },
+    "3/0": {
+      "CU": {
+        "Single": {
+          "Steel": 12844,
+          "PVC": 13923
+        },
+        "3C": {
+          "Steel": 13656,
+          "PVC": 14410
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 8826,
+          "PVC": 9110
+        },
+        "3C": {
+          "Steel": 9077,
+          "PVC": 9243
+        }
+      }
+    },
+    "4/0": {
+      "CU": {
+        "Single": {
+          "Steel": 15082,
+          "PVC": 16673
+        },
+        "3C": {
+          "Steel": 16392,
+          "PVC": 17483
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 10741,
+          "PVC": 11174
+        },
+        "3C": {
+          "Steel": 11185,
+          "PVC": 11409
+        }
+      }
+    },
+    "250": {
+      "CU": {
+        "Single": {
+          "Steel": 16483,
+          "PVC": 18594
+        },
+        "3C": {
+          "Steel": 18311,
+          "PVC": 19779
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 12122,
+          "PVC": 12862
+        },
+        "3C": {
+          "Steel": 12797,
+          "PVC": 13236
+        }
+      }
+    },
+    "300": {
+      "CU": {
+        "Single": {
+          "Steel": 18177,
+          "PVC": 20868
+        },
+        "3C": {
+          "Steel": 20617,
+          "PVC": 22525
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 13910,
+          "PVC": 14923
+        },
+        "3C": {
+          "Steel": 14917,
+          "PVC": 15495
+        }
+      }
+    },
+    "350": {
+      "CU": {
+        "Single": {
+          "Steel": 19704,
+          "PVC": 22737
+        },
+        "3C": {
+          "Steel": 22646,
+          "PVC": 24904
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 15484,
+          "PVC": 16813
+        },
+        "3C": {
+          "Steel": 16795,
+          "PVC": 17635
+        }
+      }
+    },
+    "400": {
+      "CU": {
+        "Single": {
+          "Steel": 20566,
+          "PVC": 24297
+        },
+        "3C": {
+          "Steel": 24253,
+          "PVC": 26916
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 16671,
+          "PVC": 18506
+        },
+        "3C": {
+          "Steel": 18462,
+          "PVC": 19588
+        }
+      }
+    },
+    "500": {
+      "CU": {
+        "Single": {
+          "Steel": 22185,
+          "PVC": 26706
+        },
+        "3C": {
+          "Steel": 26980,
+          "PVC": 30096
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 18756,
+          "PVC": 21391
+        },
+        "3C": {
+          "Steel": 21395,
+          "PVC": 23018
+        }
+      }
+    },
+    "600": {
+      "CU": {
+        "Single": {
+          "Steel": 22965,
+          "PVC": 28033
+        },
+        "3C": {
+          "Steel": 28752,
+          "PVC": 32154
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 20093,
+          "PVC": 23451
+        },
+        "3C": {
+          "Steel": 23633,
+          "PVC": 25708
+        }
+      }
+    },
+    "750": {
+      "CU": {
+        "Single": {
+          "Steel": 24137,
+          "PVC": 29735
+        },
+        "3C": {
+          "Steel": 31051,
+          "PVC": 34605
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 21766,
+          "PVC": 25976
+        },
+        "3C": {
+          "Steel": 26432,
+          "PVC": 29036
+        }
+      }
+    },
+    "1000": {
+      "CU": {
+        "Single": {
+          "Steel": 25278,
+          "PVC": 31491
+        },
+        "3C": {
+          "Steel": 33864,
+          "PVC": 37197
+        }
+      },
+      "AL": {
+        "Single": {
+          "Steel": 23478,
+          "PVC": 28779
+        },
+        "3C": {
+          "Steel": 29865,
+          "PVC": 32938
+        }
+      }
+    }
+  },
+  "busway": {
+    "225": {
+      "Plug-In": {
+        "Copper": 28700,
+        "Aluminum": 23000
+      },
+      "Feeder": {
+        "Copper": 18700,
+        "Aluminum": 12000
+      },
+      "High Impedance": {
+        "Copper": null
+      }
+    },
+    "400": {
+      "Plug-In": {
+        "Copper": 38900,
+        "Aluminum": 34700
+      },
+      "Feeder": {
+        "Copper": 23900,
+        "Aluminum": 21300
+      },
+      "High Impedance": {
+        "Copper": null
+      }
+    },
+    "600": {
+      "Plug-In": {
+        "Copper": 41000,
+        "Aluminum": 38300
+      },
+      "Feeder": {
+        "Copper": 36500,
+        "Aluminum": 31300
+      },
+      "High Impedance": {
+        "Copper": null
+      }
+    },
+    "800": {
+      "Plug-In": {
+        "Copper": 46100,
+        "Aluminum": 57500
+      },
+      "Feeder": {
+        "Copper": 49300,
+        "Aluminum": 44100
+      },
+      "High Impedance": {
+        "Copper": null
+      }
+    },
+    "1000": {
+      "Plug-In": {
+        "Copper": 69400,
+        "Aluminum": 89300
+      },
+      "Feeder": {
+        "Copper": 62900,
+        "Aluminum": 56200
+      },
+      "High Impedance": {
+        "Copper": 15600
+      }
+    },
+    "1200": {
+      "Plug-In": {
+        "Copper": 94300,
+        "Aluminum": 97100
+      },
+      "Feeder": {
+        "Copper": 76900,
+        "Aluminum": 69900
+      },
+      "High Impedance": {
+        "Copper": 16100
+      }
+    },
+    "1350": {
+      "Plug-In": {
+        "Copper": 119000,
+        "Aluminum": 104200
+      },
+      "Feeder": {
+        "Copper": 90100,
+        "Aluminum": 84000
+      },
+      "High Impedance": {
+        "Copper": 17500
+      }
+    },
+    "1600": {
+      "Plug-In": {
+        "Copper": 129900,
+        "Aluminum": 120500
+      },
+      "Feeder": {
+        "Copper": 101000,
+        "Aluminum": 90900
+      },
+      "High Impedance": {
+        "Copper": 19200
+      }
+    },
+    "2000": {
+      "Plug-In": {
+        "Copper": 142900,
+        "Aluminum": 135100
+      },
+      "Feeder": {
+        "Copper": 134200,
+        "Aluminum": 125000
+      },
+      "High Impedance": {
+        "Copper": 20400
+      }
+    },
+    "2500": {
+      "Plug-In": {
+        "Copper": 143800,
+        "Aluminum": 156300
+      },
+      "Feeder": {
+        "Copper": 180500,
+        "Aluminum": 166700
+      },
+      "High Impedance": {
+        "Copper": 21700
+      }
+    },
+    "3000": {
+      "Plug-In": {
+        "Copper": 144900,
+        "Aluminum": 175400
+      },
+      "Feeder": {
+        "Copper": 204100,
+        "Aluminum": 188700
+      },
+      "High Impedance": {
+        "Copper": 23800
+      }
+    },
+    "4000": {
+      "Plug-In": {
+        "Copper": null,
+        "Aluminum": null
+      },
+      "Feeder": {
+        "Copper": 277800,
+        "Aluminum": 256400
+      },
+      "High Impedance": {
+        "Copper": null
+      }
+    }
+  }
+}

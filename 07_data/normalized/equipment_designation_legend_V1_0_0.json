@@ -1,0 +1,406 @@
+{
+  "$schema": "equipment_designation_legend/v1",
+  "description": "Equipment designation naming convention for electrical SLD systems. Defines the structured format for panel/equipment tags used across the SLD pipeline. Part of the data layer. It adds NEC-517 essential-electrical-system coverage that the segment grammar previously could not express (closing the 32 TI-4 designation gaps recorded in 02_specs/drafting/sld_topology_rules_V1_0_0.md §7). Additions: power_type codes C (Critical Branch) and EQ (Equipment Branch); equipment codes MSB (Main Switchboard), G (Generator), FP (Fire Pump); and a new top-level special_designations section for tags that fall outside the [PowerType][Voltage][Equipment]-[Level]-[Identifier] grammar (an exact-match allowlist and a documented FUT future/spare infix rule), consumed data-driven by validator TI-4. All additions are real NEC-517 / distribution concepts (source: hospital narrative branches), not fabrications. The additive level_code_labels / level_code_pattern keys (per A-7 WI-5(b)) are carried forward UNCHANGED — the renderer engine mirrors only those two keys. The value tables remain a faithful mirror of the source xlsx (no R row added; the level table is declared extensible). Owner addition 2026-10-20: equipment code K (Kitchen Panel), added to this JSON and to the source xlsx together.",
+  "source_file": "equipment_designation_legend_V1_0_0.xlsx",
+  "generated": "2026-07-08",
+  "format": {
+    "pattern": "[Power Type][Voltage][Equipment] – [Level] – [Identifier]",
+    "example": "E4L – 1 – A",
+    "segments": [
+      {
+        "position": 1,
+        "field": "power_type",
+        "description": "Power source classification"
+      },
+      {
+        "position": 2,
+        "field": "voltage",
+        "description": "System voltage tier"
+      },
+      {
+        "position": 3,
+        "field": "equipment",
+        "description": "Equipment type abbreviation"
+      },
+      {
+        "position": 4,
+        "field": "level",
+        "separator": " – ",
+        "description": "Building level / floor"
+      },
+      {
+        "position": 5,
+        "field": "identifier",
+        "separator": " – ",
+        "description": "Sequential instance identifier"
+      }
+    ]
+  },
+  "level_code_labels": {
+    "1": "LEVEL 1",
+    "2": "LEVEL 2",
+    "3": "LEVEL 3",
+    "4": "LEVEL 4",
+    "S": "LEVEL S",
+    "B": "LEVEL B",
+    "R": "LEVEL ROOF"
+  },
+  "level_code_pattern": "LEVEL {code}",
+  "power_type": {
+    "description": "Power source classification. Blank = Normal Power. Codes LS, C and EQ are the NEC 517 essential electrical system branches (Life Safety / Critical / Equipment) used on hospital SLDs, completing the three-branch set on the A-7 designation card.",
+    "values": [
+      {
+        "code": "",
+        "description": "Normal Power",
+        "notes": "Default when no prefix is present"
+      },
+      {
+        "code": "E",
+        "description": "Emergency Power"
+      },
+      {
+        "code": "L",
+        "description": "Legally Required Power"
+      },
+      {
+        "code": "O",
+        "description": "Optional Stand-By Power"
+      },
+      {
+        "code": "U",
+        "description": "Uninterruptible Power"
+      },
+      {
+        "code": "LS",
+        "description": "Life Safety Branch",
+        "notes": "NEC 517 essential electrical system — life safety branch (illumination of means of egress, exit signs, alarm/alerting, emergency communication, generator-set loads per NEC 517.32). Two-character code; TI-4 matches longest-code-first, so LS is distinguished from L (Legally Required Power)."
+      },
+      {
+        "code": "C",
+        "description": "Critical Branch",
+        "notes": "NEC 517 essential electrical system — critical branch (life-safety-adjacent patient-care loads). Covers hospital C… designations."
+      },
+      {
+        "code": "EQ",
+        "description": "Equipment Branch",
+        "notes": "NEC 517 essential electrical system — equipment branch (delayed-automatic-connection equipment loads). Covers hospital EQ… designations."
+      }
+    ]
+  },
+  "voltage": {
+    "description": "System voltage tier encoded as single-digit or two-digit code.",
+    "values": [
+      {
+        "code": "2",
+        "voltage": "208Y/120V"
+      },
+      {
+        "code": "4",
+        "voltage": "480Y/277V"
+      },
+      {
+        "code": "5",
+        "voltage": "4160Y/2400V"
+      },
+      {
+        "code": "15",
+        "voltage": "12470Y/7200V"
+      }
+    ]
+  },
+  "equipment": {
+    "description": "Equipment type abbreviation. Codes MSB, G and FP cover main-switchboard, generator and fire-pump equipment present on the golden cases.",
+    "values": [
+      {
+        "code": "MDP",
+        "description": "Main Distribution Panel"
+      },
+      {
+        "code": "S",
+        "description": "Sub Distribution Panel"
+      },
+      {
+        "code": "B",
+        "description": "Branch Panel"
+      },
+      {
+        "code": "A",
+        "description": "Automatic Transfer Switch"
+      },
+      {
+        "code": "H",
+        "description": "Hotel Units"
+      },
+      {
+        "code": "I",
+        "description": "Inverter"
+      },
+      {
+        "code": "L",
+        "description": "Lighting Panel"
+      },
+      {
+        "code": "LRC",
+        "description": "Lighting Relay Control Panel"
+      },
+      {
+        "code": "LB",
+        "description": "Load Bank"
+      },
+      {
+        "code": "M",
+        "description": "Mechanical Panel"
+      },
+      {
+        "code": "P",
+        "description": "Power Panel"
+      },
+      {
+        "code": "T",
+        "description": "Transformer"
+      },
+      {
+        "code": "U",
+        "description": "UPS"
+      },
+      {
+        "code": "K",
+        "description": "Kitchen Panel",
+        "notes": "Owner addition 2026-10-20 (Clinic AI Test, 2K-1-A = 208V kitchen panel, Level 1, instance A). Single-letter code; no other equipment code is K or starts with K, so the longest-code-first TI-4 match is unaffected."
+      },
+      {
+        "code": "MSB",
+        "description": "Main Switchboard",
+        "notes": "Service-entrance / main switchboard. Covers office 4MSB… / E4MSB… designations (legend previously had MDP only)."
+      },
+      {
+        "code": "G",
+        "description": "Generator",
+        "notes": "Generator equipment when tagged inside the segment grammar (e.g. E4G…). The two-segment generator source tag GEN-1 is handled by special_designations.exact_match."
+      },
+      {
+        "code": "FP",
+        "description": "Fire Pump",
+        "notes": "Fire-pump controller / feed (e.g. E4FP…). Covers the hospital fire-pump designation."
+      }
+    ]
+  },
+  "special_designations": {
+    "description": "Valid as-built designations that do NOT fit the [PowerType][Voltage][Equipment] – [Level] – [Identifier] segment grammar. Consumed data-driven by validator TI-4 (08_validation/rules/ti_rules_V1_0_0.mjs) so that acceptance of these tags is declared here in the data layer, not hardcoded in the rule. Separator normalization (spaced en-dash ≡ compact hyphen) is applied by the consumer before matching. Source: hospital narrative branches.",
+    "exact_match": [
+      {
+        "designation": "GEN-1",
+        "description": "Generator, first in series",
+        "notes": "NEC 517 essential electrical system source. Two-segment tag (equipment abbreviation + sequential number); the generator source is drawn without a Power Type/Voltage prefix and without a Level segment, so it cannot be expressed by the segment grammar. Additional in-series generators (GEN-2, …) would be added here as exact matches."
+      },
+      {
+        "designation": "SDPA",
+        "description": "Sub-distribution panel A, fed from the 1200 A main-switchboard breaker",
+        "notes": "Owner-assigned lineup tag drawn as its own switchboard lineup (own bus + breakers). Two-to-four-character owner tag with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "SDPB",
+        "description": "Sub-distribution panel B, fed from the 800 A main-switchboard breaker",
+        "notes": "Owner-assigned lineup tag drawn as its own switchboard lineup (own bus + breakers). Two-to-four-character owner tag with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "P6",
+        "description": "Power panel 6, fed from a 200 A SDPA breaker and itself carrying branch breakers",
+        "notes": "Owner-assigned lineup tag drawn as its own switchboard lineup (own bus + breakers). Two-to-four-character owner tag with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "T1",
+        "description": "45 kVA transformer fed from a 150 A SDPA breaker, feeding panel L",
+        "notes": "Owner-assigned dry-type transformer tag. Equipment abbreviation + sequential number only, with no Power Type / Voltage / Level segments. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "T2",
+        "description": "500 kVA 208-480 V step-up transformer feeding chiller CH-01",
+        "notes": "Owner-assigned dry-type transformer tag. Equipment abbreviation + sequential number only, with no Power Type / Voltage / Level segments. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "A-B",
+        "description": "Branch panel A-B, 200 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "G",
+        "description": "Branch panel G, 200 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "C",
+        "description": "Branch panel C, 200 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "P1-P1aB",
+        "description": "Branch panel P1-P1aB, 200 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "H",
+        "description": "Branch panel H, 200 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "W",
+        "description": "Branch panel W, 100 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "S",
+        "description": "Branch panel S, 100 A from SDPA; sub-feeds panel P5",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "MA1",
+        "description": "Branch panel MA1, 225 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "MA2",
+        "description": "Branch panel MA2, 225 A from SDPA",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "P5",
+        "description": "Branch panel P5, 60 A sub-fed from panel S",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "L",
+        "description": "Branch panel L, fed from the T1 secondary",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "P2-P",
+        "description": "Branch panel P2-P, 200 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "2K2",
+        "description": "Branch panel 2K2, 200 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "2K1",
+        "description": "Branch panel 2K1, 100 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "M",
+        "description": "Branch panel M, 200 A from SDPB; sub-feeds panel P4",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "J",
+        "description": "Branch panel J, 800 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "D",
+        "description": "Branch panel D, 100 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "F",
+        "description": "Branch panel F, 200 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "P31-P32",
+        "description": "Branch panel P31-P32, 200 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "MB1",
+        "description": "Branch panel MB1, 225 A from SDPB",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "P4",
+        "description": "Branch panel P4, 200 A sub-fed from panel M",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "N",
+        "description": "Branch panel N, 100 A from P6",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "R",
+        "description": "Branch panel R, 100 A from P6; sub-feeds panel V",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "E",
+        "description": "Branch panel E, 60 A from P6",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "T",
+        "description": "Branch panel T, 100 A from P6",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      },
+      {
+        "designation": "V",
+        "description": "Branch panel V, 70 A sub-fed from panel R",
+        "notes": "Owner-assigned branch panel tag. Free-form owner nomenclature (single letter, letter+digit, or hyphenated pair) with no Power Type / Voltage / Level segments, so the segment grammar cannot express it. Source: 3000 A / 208 V service narrative (09_tests/3000A 208V Service)."
+      }
+    ],
+    "infix_rules": [
+      {
+        "code": "FUT",
+        "name": "Future / Spare",
+        "description": "Reserved-for-future (spare) equipment. FUT appears as an INFIX between the Equipment segment and the Level segment: [PowerType][Voltage][Equipment]-FUT-[Level]-[Identifier]. The base tag otherwise follows the normal segment grammar.",
+        "example": "4S-FUT-1-A",
+        "notes": "Marks a provisioned-but-unequipped position (a spare tap left for future build-out). Covers the office 4S-FUT… designation. Consumers permit the infix optionally between equipment and level; because no level code equals an infix code, the extension only adds acceptance for FUT-tagged spares and changes no other tag's parse."
+      }
+    ]
+  },
+  "level": {
+    "description": "Building level / floor. Extensible beyond listed values.",
+    "extensible": true,
+    "values": [
+      {
+        "code": "S",
+        "description": "Site"
+      },
+      {
+        "code": "B",
+        "description": "Basement"
+      },
+      {
+        "code": "1",
+        "description": "First Level"
+      },
+      {
+        "code": "2",
+        "description": "Second Level"
+      },
+      {
+        "code": "3",
+        "description": "Third Level"
+      },
+      {
+        "code": "4",
+        "description": "Fourth Level"
+      }
+    ]
+  },
+  "identifier": {
+    "description": "Sequential alphabetic identifier for multiple instances of the same equipment type at the same level. Extensible.",
+    "extensible": true,
+    "values": [
+      {
+        "code": "A",
+        "description": "First in Series of Equipment"
+      },
+      {
+        "code": "B",
+        "description": "Second in Series of Equipment"
+      }
+    ]
+  }
+}

@@ -1,0 +1,135 @@
+{
+  "$comment": "THE CONTRACT DROP — the seam between the SLD Generator (publisher) and the DEDARMS Revit Toolkit (consumer). Created 2026-07-31 by separation Phase 7a, per plan §7. THIS FILE IS AUTHORED HERE AND COPIED THERE: this directory is the master, the toolkit's 01_contracts/ is the copy. ⚠️ PROVENANCE ONLY, DELIBERATELY (errata E9). The drop records WHAT WAS PUBLISHED AND WHEN. It is NOT a second home for an assertion that already has one — in particular it does NOT restate the DLL<->map lockstep, which sync_gate asserts from two manifest fields in current_state_manifest.json and which must keep exactly one home. A third copy of a sha in a JSON beside the field it duplicates, with no stated check that the two agree, is how this repo has produced a false green four times. The one exception is drift_coverage below, and that is not a duplicated VALUE — it is a derived RELATION that exists nowhere else.",
+
+  "schema_version": "1.0.0",
+  "drop_version": "V1_0_0",
+  "published": "2026-07-31",
+  "published_by": "separation Phase 7a",
+
+  "publisher": {
+    "repo": "Claude Revit SLD Generator/claude_sld_generator_system",
+    "role": "sole source of truth for every file listed in `files` below",
+    "master_path": "03_contracts/published_drop/"
+  },
+  "consumer": {
+    "repo": "DEDARMS Revit Toolkit",
+    "role": "holds a COPY plus this manifest of shas. May never edit a dropped file.",
+    "import_path": "01_contracts/"
+  },
+
+  "$comment_staleness": "TWO STALENESS CHECKS, DELIBERATELY IN DIFFERENT REPOS (plan §7). TOOLKIT SIDE (gate T1): each file in 01_contracts/ hashes to its entry below — catches local tampering. SLD SIDE (sync_gate): the shas below equal the LIVE upstream files at `source` — catches 'upstream moved, consumer didn't'. The second MUST live in the SLD repo because that is where the truth is; a check that reads the sibling repo would soft-skip on exactly the machine where the sibling is absent, which is the disease it was prescribed for. ON MISMATCH: WARN LOUDLY, NEVER AUTO-SYNC. An auto-sync would silently re-bless a family-map change into a DLL that was never rebuilt — FL-0001's exact class.",
+
+  "files": {
+    "revit_SLD_family_map_V1_0_0.json": {
+      "sha256": "df7cfc4fc535d6ed2b1c7fb8c9ca8e08520d0abf437025ca504681d8d8aaf136",
+      "short": "df7cfc4f",
+      "bytes": 34174,
+      "source": "07_data/normalized/revit_SLD_family_map_V1_0_0.json",
+      "why": "the map the shipping DLL embeds. The toolkit's copy under src/DEDARMS/Sld/Resources/ is byte-identical to this one and is the file the <EmbeddedResource> reads.",
+      "note": "⚠️ THIS FILE HAS THREE LIVE COPIES ACROSS TWO REPOS — the canonical one at `source`, this drop copy, and the toolkit's embedded-resource copy. The SLD repo's own family-map check asserts its copies agree; the drop check asserts this one tracks `source`; the toolkit's T1 asserts its import tracks this one. Adding a fourth copy without a check that names it is how a lockstep proof dissolves into green lines."
+    },
+    "sld_topology_schema_V1_0_0.md": {
+      "sha256": "b72edd8baff98adc9861e98b6c148a5c186f8418c52aa0953e341fa28d755801",
+      "short": "b72edd8b",
+      "bytes": 88173,
+      "source": "03_contracts/sld_topology_schema_V1_0_0.md",
+      "why": "the JSON contract the add-in reads at runtime — §14 is the geometry block it depends on. The add-in never authors a topology; it consumes one."
+    },
+    "hospital_golden_WITH_GEOMETRY.json": {
+      "sha256": "85b57c19cb041507d25426f4183a0e5996423615aa5e0a9ccae5c7eb6baf00f0",
+      "short": "85b57c19",
+      "bytes": 250745,
+      "source": "09_tests/Hospital Example (Golden Case)/hospital_SLD_topology_V1_0_0__WITH_GEOMETRY.json",
+      "why": "THE FIXTURE, AND THE REASON THE DROP CARRIES A TEST FILE AT ALL (plan §6.9). DEDARMS.Tests pinned this by a relative climb OUT of the add-in tree, so the test project could not build in a copied tree (MSB3030) — and, worse, a mutant lab at the wrong depth silently read the REAL golden and scored a full green (FL-0019 item e). The toolkit's copy at tests/fixtures/ ends both.",
+      "note": "⚠️ THE CLIMB DEPTH WAS STRUCTURAL, AND ITS REPLACEMENT IS A SHA. Once the fixture is local, nothing about the path can be wrong-but-green — but nothing about the path can prove freshness either. That is what this entry is for: the toolkit gate asserts tests/fixtures/hospital_golden.json == this sha."
+    },
+    "clinic1s_SLD_topology_V1_0_0__WITH_GEOMETRY.json": {
+      "sha256": "4a77b1bd5ae719b532ae5fa8f9eba5f1ebf216177df3621c762f82c596a9592e",
+      "short": "4a77b1bd",
+      "bytes": 101953,
+      "source": "09_tests/04_Clinic AI Test - 3000A - One Sheet/2_build/clinic1s_SLD_topology_V1_0_0__WITH_GEOMETRY.json",
+      "why": "the clinic's SLD, published 2026-10-20 for the pyDEDARMS dedarms-clinic kit, which pins it in place of the hospital stand-in (issue #52; the tool repository's DEC-048). Not a fixture of the DEDARMS toolkit, which imports nothing new.",
+      "republished": "2026-10-20, under the tool repository's DEC-113 (issue #55): devices[i] and switchboards[i] gain the upstream placement{} — {level: \"1\"} on 28 placed nodes, {not_placed: {reason}} on UTILITY-XFMR and GEN-1, none on the 27 line-up components. Additive: with placement stripped the file is byte-identical to 566d0084, and the clinic's geometry block and sheet SVGs are unchanged. equipment{} is not yet written. Re-published again 2026-10-20 (1c974817 -> 4a77b1bd) by the owner's ruling on issue #55: the transformers 4T-2-A and 4T-3-A are renamed 4T-1-B and 4T-1-C, since the legend reads the middle field as the level and both stand on level 1 of a one-storey building. The rename is the only change: with the two names mapped back, the file is byte-identical to 1c974817."
+    }
+  },
+
+  "$comment_drift": "D4a's COVERAGE GATE — the machine-readable half of the drift surfaces. The PROSE lives in exactly one place, the SLD repo's 00_Docs/drift_surfaces_V1_0_0.md; the toolkit carries a stub that restates no values. Prose cannot live in two repos; data can live in one and be read by both. EVERY VALUE BELOW WAS DERIVED BY COMMAND FROM SOURCE ON 2026-07-31 — from the C# tables and from the map itself — not transcribed from the prose. THE RELATION IS COVERAGE, NOT EQUALITY: the code is a `?? fallback` pair and THE MAP WINS PER FIELD, so an equality gate would go red every time the map is legitimately tuned, and a gate that punishes correct work is disabled within a week. What is assertable: for every key the C# static fallback table holds, AND FOR EVERY FIELD IT SUPPLIES FOR THAT KEY, the map must carry the corresponding field — at the granularity the LOOKUP actually uses. Then the fallback is unreachable and drift cannot bite.",
+
+  "drift_coverage": {
+    "derived": "2026-07-31, by command, from the C# sources and the published map",
+    "$comment_granularity": "⚠️ THE GRANULARITY IS PER SURFACE AND IT IS NOT A DETAIL. Surface 1's lookup is variant-aware (AlignTables.Corr: an exact (node,variant) row wins, else the (node,\"\") row), so its relation is per (node,variant). Surfaces 2 and 3 look the map up with NO variant — DetailLinePlacer builds insetOverrides with `GetMapEntry(nt)` and EquipmentLabelPlacer calls `GetMapEntry(NodeType)` — so their relation is per node, and asserting them per-variant would invent obligations the code cannot consult. Checked by reading the call sites 2026-07-31, not inferred from the table shapes.",
+
+    "surface_1": {
+      "name": "per-family drawn-centre corrections",
+      "cs_file": "Sld/Services/AlignTables.cs",
+      "cs_tables": ["DrawnCenterXCorrPx", "DrawnCenterYCorrPx"],
+      "map_fields": ["drawn_center_x_corr_px", "drawn_center_y_corr_px"],
+      "granularity": "per (node, variant), per field",
+      "consumed_at": "Sld/Services/DevicePlacer.cs — `mapEntry?.DrawnCenterXCorrPx ?? AlignTables.DrawnXCorrPx(...)`, per field",
+      "cs_keys": {
+        "drawn_center_x_corr_px": [["L1-1", ""], ["L2-1", ""], ["L2-2", ""], ["L2-7", ""], ["L2-7", "space"]],
+        "drawn_center_y_corr_px": [["L0-1", ""], ["L1-1", ""], ["L2-1", ""], ["L2-2", ""], ["L2-7", ""]]
+      },
+      "map_keys": {
+        "drawn_center_x_corr_px": [["L1-1", ""], ["L2-1", ""], ["L2-1", "spare"], ["L2-2", ""], ["L2-7", "spare"], ["L2-7", "space"]],
+        "drawn_center_y_corr_px": [["L0-1", ""], ["L1-1", ""], ["L2-1", ""], ["L2-1", "spare"], ["L2-2", ""], ["L2-7", "spare"], ["L2-7", "space"]]
+      },
+      "covered": true,
+      "waivers": ["W1"],
+      "$comment_L0_1_x": "📌 NOT A WAIVER, AND THE DISTINCTION WAS FORCED BY THE GATE. The map carries L0-1's Y correction but not its X, and the C# X table has NO L0-1 row either — so the effective X correction is AlignTables' hardcoded 0.0 default, reached through the same per-field `??` fallthrough. This was first written here AS a waiver `W2`, and the coverage check rejected it on the first run: a waiver exempts a key the C# table HOLDS, and the C# table holds nothing for L0-1's X, so there was no obligation to waive. Forgiving a violation that does not exist is how a waiver list rots into a place where real holes hide. Recorded as a NOTE instead, because the mechanism is still worth knowing: it is the same per-field `??` reaching past both sources to a literal, and it is harmless only because 0.0 is the no-op. If L0-1 ever needs a non-zero X correction it belongs in the MAP, not in the C# table."
+    },
+
+    "surface_2": {
+      "name": "fed-edge visible insets",
+      "cs_file": "Sld/Services/FedEdgeExtender.cs",
+      "cs_tables": ["VisibleEdgeInsetPx"],
+      "map_fields": ["visible_edge_top_inset_px", "visible_edge_bot_inset_px"],
+      "granularity": "per node, per field",
+      "consumed_at": "Sld/Services/FedEdgeExtender.cs — `mTop ?? tableInset.TopInsetPx`, a UNION with per-field fallback, not an override",
+      "cs_keys": {
+        "visible_edge_top_inset_px": ["L2-1", "L2-2"],
+        "visible_edge_bot_inset_px": ["L2-1", "L2-2"]
+      },
+      "map_keys": {
+        "visible_edge_top_inset_px": ["L2-1", "L2-2"],
+        "visible_edge_bot_inset_px": ["L2-1", "L2-2"]
+      },
+      "covered": true,
+      "waivers": [],
+      "variant_bearing_must_be_empty": true,
+      "$comment_variant_trap": "🚩 A LATENT TRAP, FOUND 2026-07-31 WHILE DERIVING THIS BLOCK, AND THE REASON FOR THE FLAG ABOVE. `insetOverrides` is built with `GetMapEntry(nt)` — no variant — and FamilyResolver puts variant-BEARING entries ONLY in its variant map, so `GetMapEntry` returns null for a node whose every entry carries a variant. CONSEQUENCE: a visible-edge inset written onto a variant-bearing map entry is SILENTLY UNREACHABLE. It would look like a correct map tuning, change nothing, and produce no error anywhere. No such entry exists today (verified: the three variant-bearing entries carry only the surface-1 corr fields), and `variant_bearing_must_be_empty` asserts it stays that way. This is the mirror image of waiver W1 and it is not in the prose document — it was derived here."
+    },
+
+    "surface_3": {
+      "name": "A-8 flipped-text right gap",
+      "cs_file": "Sld/Services/EquipmentLabelPlacer.cs",
+      "cs_tables": ["A8FlippedTextRightGapPx"],
+      "map_fields": ["flipped_text_right_gap_px"],
+      "granularity": "per node, per field",
+      "consumed_at": "Sld/Services/EquipmentLabelPlacer.cs — `GetMapEntry(NodeType)?.FlippedTextRightGapPx ?? A8FlippedTextRightGapPx`",
+      "cs_keys": { "flipped_text_right_gap_px": ["A-8"] },
+      "map_keys": { "flipped_text_right_gap_px": ["A-8"] },
+      "covered": true,
+      "waivers": [],
+      "variant_bearing_must_be_empty": true
+    },
+
+    "$comment_waivers": "DECLARED, NOT OMITTED. Both holes below are real and both are benign TODAY for reasons that have nothing to do with the coverage rule. Omitting a known hole so that a fresh gate is green on arrival is the vacuous-pass shape this repo has already met four times; a waiver with a stated reason and a stated trigger is a gate, an omission is a lie the gate tells for you.",
+    "waivers": {
+      "W1": {
+        "surface": 1,
+        "key": ["L2-7", ""],
+        "fields": ["drawn_center_x_corr_px", "drawn_center_y_corr_px"],
+        "reason": "The map carries L2-7 ONLY as `spare` and `space`; it has no variant-less L2-7 entry at all, so both C# rows are uncovered. An L2-7 device whose `data_fields.kind` is neither DOES reach the C# fallback — but it also resolves to no family, so it becomes a preflight skip and is never placed. Re-derived from source: FamilyResolver puts variant-bearing entries only in the variant map, so GetMapEntry returns null for an unmatched variant, and DevicePlacer records the skip and RETURNS before the correction is read. The rows are live but unreachable-in-practice.",
+        "premise": { "no_variant_less_entry_for_node": "L2-7" },
+        "$comment_premise": "⚠️ THE `premise` FIELD IS WHAT MAKES THIS A WAIVER RATHER THAN A HOLE WITH A COMMENT ON IT, and it was added because the gate's own mutant walked straight through the gap. The prose reason below says these rows are unreachable BECAUSE the map has no variant-less L2-7 entry. Add one carrying neither corr field — precisely the event `trigger` names — and the hole is still 'open' by the coverage test, so the waiver went on forgiving it and the gate stayed GREEN through the one change it exists to catch. A waiver that survives the falsification of its own reason is worthless. The premise is now asserted from the map on every run.",
+        "trigger": "🚩 ADDING A VARIANT-LESS L2-7 FAMILY MAKES BOTH ROWS LIVE. It must carry BOTH corr fields in the same change-set. Removing this waiver is a deliberate act.",
+        "expires": "when a variant-less L2-7 map entry exists"
+      }
+    },
+
+    "$comment_the_rule": "⚠️ PER-FIELD IS NOT ENOUGH ON ITS OWN, AND THIS IS THE CORRECTION THAT MADE THE GATE WORTH BUILDING. Because the `??` is per FIELD and AlignTables.Corr falls back from an unmatched variant to the (node,\"\") row, the C# value becomes the live source the moment an EXISTING map entry drops ONE field — a one-line map edit, no new family, no new variant, no code change. A gate keyed on 'does a variant-less entry exist' would never see it. That is why `map_keys` above enumerates the (node,variant) pairs the map ACTUALLY CARRIES per field, and why the assertion is a set relation rather than a count."
+  },
+
+  "$comment_not_here": "WHAT THIS MANIFEST DELIBERATELY DOES NOT CARRY, so that a later session does not add it back as an oversight: (1) NO DLL SHA. The shipping assemblies are the toolkit's artifacts and are pinned in the toolkit's manifest; a copy here would be a third home for a fact with two already. (2) NO `embeds_map_sha256`. The DLL<->map lockstep is asserted by sync_gate from two fields of current_state_manifest.json and it keeps exactly one home (E9). (3) NO RUNTIME CLAIM. Nothing in this file says any assembly has run in Revit, because none has."
+}

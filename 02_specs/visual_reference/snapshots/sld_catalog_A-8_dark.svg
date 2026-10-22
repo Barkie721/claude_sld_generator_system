@@ -1,0 +1,29 @@
+<svg viewBox="0 0 340 150" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="0" y="0" width="340" height="150" fill="#0a0e17"/>
+  <!-- host context (faint): a switchboard assembly, label sits outside-left -->
+  <rect x="212" y="26" width="40" height="96" fill="none" stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.4"/>
+  <rect x="252" y="26" width="40" height="96" fill="none" stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.4"/>
+  <rect x="292" y="26" width="40" height="96" fill="none" stroke="#00FFFF" stroke-width="1.2" stroke-dasharray="8,5" opacity="0.4"/>
+  <!-- anchor: first line baseline, right end (schema 14.8) -->
+  <circle cx="180" cy="40" r="2.5" fill="#00FFFF" opacity="0.7"/>
+  <text x="176" y="24" text-anchor="end" font-family="monospace" font-size="9" font-weight="600" fill="#FFFFFF" opacity="0.5">anchor</text>
+  <!-- four lines, right-anchored, steps 20 / 18 / 18 — aic line removed
+       (Trip #6, Mayo); matches the Revit family _E_SLD_Equipment-info E01:
+       Label Panel Name + three Line N Text slots. the
+       block ALSO binds to devices (L1-5 generator, L3-1 fire pump — see the
+       L3-1 card): those blocks are START-anchored, text right of the glyph,
+       anchor at the first line baseline LEFT end, align:"start" -->
+  <text x="180" y="40" text-anchor="end"
+        font-family="monospace" font-size="12" font-weight="700"
+        text-decoration="underline"
+        fill="#FFFFFF">4MDP-1-A</text>
+  <text x="180" y="60" text-anchor="end"
+        font-family="monospace" font-size="12" font-weight="700"
+        fill="#FFFFFF">4000A</text>
+  <text x="180" y="78" text-anchor="end"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">480Y/277V</text>
+  <text x="180" y="96" text-anchor="end"
+        font-family="monospace" font-size="12"
+        fill="#FFFFFF">4W, 3PH</text>
+  <text x="180" y="138" text-anchor="end" font-family="monospace" font-size="9" font-weight="600" fill="#FFFFFF" opacity="0.5">bound_to: switchboard | device</text>
+</svg>

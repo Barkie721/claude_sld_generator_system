@@ -1,0 +1,1002 @@
+{
+  "$schema": "feeder_schedule/v1",
+  "description": "General low-voltage feeder schedule defining conductor sizing, conduit, and grounding per ampacity tier for 3-wire and 4-wire configurations. Part of the SLD data layer \u2014 consumed by the topology contract for feeder edge attributes, by the transformer feeder schedule for cross-referencing, and by the validation layer for conductor/conduit checks.",
+  "source_file": "feeder_schedule_V1_0_0.xlsx",
+  "generated": "2026-04-12",
+  "conductor_material": "Copper/Aluminum (phase conductors transition to AL at higher ampacities)",
+  "conduit_fill_basis": "40% max fill for EMT, RMC, and PVC Schedule 40",
+  "ampacity_basis": {
+    "at_or_below_100a": "NEC 310.15(B)(16), 60\u00b0C column",
+    "above_100a": "NEC 310.15(B)(16), 75\u00b0C column"
+  },
+  "configurations": [
+    {
+      "system_config": "COPPER/ALUMINUM: 3 PHASE, 3 WIRE + GROUND",
+      "wire_count": 3,
+      "phase_conductor_label": "PHASE CONDUCTORS (AWG or kcmil)",
+      "feeders": [
+        {
+          "nominal_ampacity": 20,
+          "tag": "203",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "12",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "12",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 30,
+          "tag": "303",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "10",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 40,
+          "tag": "403",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "8",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 50,
+          "tag": "503",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "6",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 60,
+          "tag": "603",
+          "number_of_sets": 1,
+          "conduit_size_min": "1\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "4",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 70,
+          "tag": "703",
+          "number_of_sets": 1,
+          "conduit_size_min": "1\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "4",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 80,
+          "tag": "803",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "3",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 90,
+          "tag": "903",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "2",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 100,
+          "tag": "1003",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "1/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 110,
+          "tag": "1103",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "1/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 125,
+          "tag": "1253",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "2/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 150,
+          "tag": "1503",
+          "number_of_sets": 1,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "3/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 175,
+          "tag": "1753",
+          "number_of_sets": 1,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "4/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 200,
+          "tag": "2003",
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "250",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 225,
+          "tag": "2253",
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 250,
+          "tag": "2503",
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 300,
+          "tag": "3003",
+          "number_of_sets": 2,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "3/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 350,
+          "tag": "3503",
+          "number_of_sets": 2,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "4/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 400,
+          "tag": "4003",
+          "number_of_sets": 2,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "250",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 450,
+          "tag": "4503",
+          "number_of_sets": 2,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 500,
+          "tag": "5003",
+          "number_of_sets": 2,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 600,
+          "tag": "6003",
+          "number_of_sets": 2,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "1",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 800,
+          "tag": "8003",
+          "number_of_sets": 3,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "1/0",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 1000,
+          "tag": "10003",
+          "number_of_sets": 4,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4/0",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 1200,
+          "tag": "12003",
+          "number_of_sets": 4,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "250",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 1600,
+          "tag": "16003",
+          "number_of_sets": 6,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "350",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 2000,
+          "tag": "20003",
+          "number_of_sets": 6,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "750",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "500",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 2500,
+          "tag": "25003",
+          "number_of_sets": 7,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "750",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "500",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 3000,
+          "tag": "30003",
+          "number_of_sets": 8,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "750",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "750",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 4000,
+          "tag": "40003",
+          "number_of_sets": 11,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "750",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "750",
+            "material": "AL"
+          }
+        }
+      ],
+      "notes": [
+        "REFER TO SPECIFICATIONS FOR INSULATION TYPE PER WIRE SIZE.",
+        "MINIMUM CONDUIT SIZES IDENTIFIED MEET MAXIMUM 40% FILL FOR EMT, RMC AND PVC SCHEDULE 40.",
+        "FOR FEEDER RATINGS 100AMPS OR LESS, ACTUAL AMPACITY IS CALCULATED BY THOSE GIVEN IN NEC 310.15(B)(16), 60DEG C.",
+        "FOR FEEDER RATINGS GREATER THAN 100AMPS, ACTUAL AMPACITY IS CALCULATED BY THOSE GIVEN IN NEC 310.15(B)(16), 75DEG C.",
+        "THIS IS A STANDARD FEEDER SCHEDULE. SOME FEEDER TYPES MAY APPEAR IN THIS SCHEDULE THAT ARE NOT USED ON THIS PROJECT."
+      ]
+    },
+    {
+      "system_config": "COPPER/ALUMINUM: 3 PHASE, 4 WIRE + GROUND",
+      "wire_count": 4,
+      "phase_conductor_label": "PHASE & NEUTRAL CONDUCTORS (AWG or kcmil)",
+      "feeders": [
+        {
+          "nominal_ampacity": 20,
+          "tag": "204",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "12",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "12",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 30,
+          "tag": "304",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "10",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 40,
+          "tag": "404",
+          "number_of_sets": 1,
+          "conduit_size_min": "3/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "8",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 50,
+          "tag": "504",
+          "number_of_sets": 1,
+          "conduit_size_min": "1\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "6",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 60,
+          "tag": "604",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "4",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "10",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 70,
+          "tag": "704",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "4",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 80,
+          "tag": "804",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "3",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 90,
+          "tag": "904",
+          "number_of_sets": 1,
+          "conduit_size_min": "1 1/4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "2",
+            "material": "CU"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "8",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 100,
+          "tag": "1004",
+          "number_of_sets": 1,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "1/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 110,
+          "tag": "1104",
+          "number_of_sets": 1,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "2/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 125,
+          "tag": "1254",
+          "number_of_sets": 1,
+          "conduit_size_min": "2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "3/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 150,
+          "tag": "1504",
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "4/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 175,
+          "tag": "1754",
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "250",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 200,
+          "tag": "2004",
+          "number_of_sets": 1,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 225,
+          "tag": "2254",
+          "number_of_sets": 1,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 250,
+          "tag": "2504",
+          "number_of_sets": 1,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 300,
+          "tag": "3004",
+          "number_of_sets": 2,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "4/0",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 350,
+          "tag": "3504",
+          "number_of_sets": 2,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "250",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 400,
+          "tag": "4004",
+          "number_of_sets": 2,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 450,
+          "tag": "4504",
+          "number_of_sets": 2,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 500,
+          "tag": "5004",
+          "number_of_sets": 2,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "3",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 600,
+          "tag": "6004",
+          "number_of_sets": 3,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "350",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "1",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 800,
+          "tag": "8004",
+          "number_of_sets": 3,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "1/0",
+            "material": "CU"
+          }
+        },
+        {
+          "nominal_ampacity": 1000,
+          "tag": "10004",
+          "number_of_sets": 4,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4/0",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 1200,
+          "tag": "12004",
+          "number_of_sets": 5,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "250",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 1600,
+          "tag": "16004",
+          "number_of_sets": 6,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "350",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 2000,
+          "tag": "20004",
+          "number_of_sets": 8,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "500",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 2500,
+          "tag": "25004",
+          "number_of_sets": 9,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "500",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 3000,
+          "tag": "30004",
+          "number_of_sets": 11,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "500",
+            "material": "AL"
+          }
+        },
+        {
+          "nominal_ampacity": 4000,
+          "tag": "40004",
+          "number_of_sets": 15,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 4,
+            "size": "500",
+            "material": "AL"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "500",
+            "material": "AL"
+          }
+        }
+      ],
+      "notes": [
+        "REFER TO SPECIFICATIONS FOR INSULATION TYPE PER WIRE SIZE.",
+        "MINIMUM CONDUIT SIZES IDENTIFIED MEET MAXIMUM 40% FILL FOR EMT, RMC AND PVC SCHEDULE 40.",
+        "NEUTRAL CONDUCTORS ARE CONSIDERED CURRENT CARRYING, THEREFORE AMPACITY ADJUSTMENTS HAVE BEEN INCLUDED IN ACCORDANCE WITH NEC TABLE 310.15(B)(3)(a) TO ACCOMMODATE FOUR (4) CURRENT CARRYING CONDUCTORS IN A SINGLE RACEWAY.",
+        "ADJUSTED CONDUCTOR AMPACITIES ARE CALCULATED BASED ON THOSE GIVEN FOR 90DEG C CONDUCTORS IN ACCORDANCE WITH NEC 310.15(B) AND TABLE NEC 310.15(B)(16). FOR FEEDER RATINGS 100AMPS OR LESS, KEEP THE ADJUSTED AMPACITY AT OR BELOW THE 60DEG C RATING. FOR FEEDER RATINGS OVER 100AMPS, KEEP THE ACTUAL AMPACITY AT OR BELOW THE 75DEG C RATING.",
+        "THIS IS A STANDARD FEEDER SCHEDULE. SOME FEEDER TYPES MAY APPEAR IN THIS SCHEDULE THAT ARE NOT USED ON THIS PROJECT."
+      ]
+    }
+  ]
+}

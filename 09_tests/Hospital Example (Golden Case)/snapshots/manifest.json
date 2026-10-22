@@ -1,0 +1,85 @@
+{
+  "html": "/mnt/sdcard/Mayo_Claude_Workspace/Claude Revit SLD Generator/claude_sld_generator_system/09_tests/Hospital Example (Golden Case)/hospital_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.15",
+  "generated": "2026-08-01T00:17:57.404Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "hospital_S1_dark.svg",
+      "png": "hospital_S1_dark.png",
+      "png_width": 6000,
+      "viewBox": {
+        "x": -634,
+        "y": 140.40673326026342,
+        "w": 6174,
+        "h": 4949.5932667397365
+      },
+      "coverage": {
+        "rendered": 210,
+        "total": 210,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "hospital_S1_light.svg",
+      "png": "hospital_S1_light.png",
+      "png_width": 6000,
+      "viewBox": {
+        "x": -634,
+        "y": 140.40673326026342,
+        "w": 6174,
+        "h": 4949.5932667397365
+      },
+      "coverage": {
+        "rendered": 210,
+        "total": 210,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S2",
+      "theme": "dark",
+      "svg": "hospital_S2_dark.svg",
+      "png": "hospital_S2_dark.png",
+      "png_width": 3964,
+      "viewBox": {
+        "x": -955.1467690125038,
+        "y": -801.5932667397366,
+        "w": 3963.6467690125037,
+        "h": 5791.5932667397365
+      },
+      "coverage": {
+        "rendered": 208,
+        "total": 208,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S2",
+      "theme": "light",
+      "svg": "hospital_S2_light.svg",
+      "png": "hospital_S2_light.png",
+      "png_width": 3964,
+      "viewBox": {
+        "x": -955.1467690125038,
+        "y": -801.5932667397366,
+        "w": 3963.6467690125037,
+        "h": 5791.5932667397365
+      },
+      "coverage": {
+        "rendered": 208,
+        "total": 208,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

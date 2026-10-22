@@ -1,0 +1,20 @@
+{
+  "html": "/home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/2_build/lcc_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-21T22:05:47.723Z",
+  "sheets": [
+    {
+      "ok": true,
+      "sheetId": "S1",
+      "counts": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 0,
+        "dropped_entity": 0
+      },
+      "findings": []
+    }
+  ]
+}

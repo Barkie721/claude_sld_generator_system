@@ -1,0 +1,37 @@
+{
+  "$schema": "sld_titleblock_instance/v1",
+  "description": "Hospital title-block instance data, extracted verbatim from the design of record hospital_titleblock_30x42_V1_0_0.html (frozen, Ramiro-approved 2026-07-04). Overlays TOPO.metadata at compose time (shallow merge, overlay wins per key) — the frozen hospital topology carries no metadata.title_block. With this file + the canonical 01_inputs template code (ported into the 04_renderer engine), the hospital HTML twin is no longer hand-maintained; the derivation gate 04_renderer/check_titleblock_derivation.mjs proves byte-equal reproduction. project_name casing intentionally differs from the topology ('New Hospital — 121,000 SF') — the printed block matches the design of record byte-for-byte. The engine's compose layer prepends the auto NEC note ('DESIGNED PER NEC <nec_edition>.') when nec_edition is present, so that derivable string is not duplicated here.",
+  "source_file": "09_tests/Hospital Example (Golden Case)/hospital_titleblock_30x42_V1_0_0.html",
+  "generated": "2026-07-06",
+  "applies_to": "hospital_SLD_topology_V1_0_0.json",
+  "metadata_overlay": {
+    "project_name": "NEW HOSPITAL — 121,000 SF",
+    "project_number": "2026-HOSP-001",
+    "created_by": "R. MAYO",
+    "checked_by": null,
+    "created_date": "2026-07-04",
+    "nec_edition": "2023",
+    "sheet_template": "30x42",
+    "px_per_inch": 96,
+    "title_block": {
+      "firm_name": "MAYO ENGINEERING",
+      "firm_tagline": "CONSULTING ELECTRICAL ENGINEERS",
+      "firm_address_lines": ["1234 PLACEHOLDER AVE, SUITE 500", "SAN ANTONIO, TX 78201"],
+      "firm_phone": "(210) 555-0142",
+      "client": "PLACEHOLDER HEALTH SYSTEM",
+      "project_address_lines": ["4500 MEDICAL CENTER DR", "SAN ANTONIO, TX 78229"],
+      "drawn_by": "R. MAYO",
+      "approved_by": null,
+      "issue_date": "2026-07-04",
+      "scale": "NONE",
+      "notes": [
+        "ALL WORK SHALL COMPLY WITH THE NEC AND ALL APPLICABLE LOCAL CODES AND ORDINANCES.",
+        "FIELD VERIFY ALL EXISTING CONDITIONS PRIOR TO ROUGH-IN.",
+        "REFER TO PANEL SCHEDULES FOR BRANCH CIRCUIT INFORMATION."
+      ],
+      "revisions": [
+        { "no": 1, "date": "2026-07-04", "description": "ISSUED FOR REVIEW" }
+      ]
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "html": "/storage/emulated/0/Mayo_Claude_Workspace/Claude Revit SLD Generator/claude_sld_generator_system/09_tests/Sprouts Office Building - 2000A/2_build/sprouts_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.14",
+  "generated": "2026-07-29T03:02:41.573Z",
+  "width": "native-1x (cap 6000)",
+  "region": {
+    "x": 560,
+    "y": 4120,
+    "w": 520,
+    "h": 450
+  },
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "sprouts_S1_light__r560,4120,520x450.svg",
+      "png": "sprouts_S1_light__r560,4120,520x450.png",
+      "png_width": 520,
+      "viewBox": {
+        "x": 560,
+        "y": 4120,
+        "w": 520,
+        "h": 450
+      },
+      "coverage": {
+        "rendered": 123,
+        "total": 123,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+<svg viewBox="-50 -86.5 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#e5a600;stroke:#000;stroke-width:0.6}.port-label{fill:#b38600;font-family:monospace;font-weight:600}</style><rect x="-50" y="-86.5" width="300" height="220" fill="#f8fafd"/>
+  <line x1="15" y1="20" x2="185" y2="20"
+        stroke="#0077b6" stroke-width="3"/>
+  <circle cx="60" cy="20" r="5" fill="#d6336c"/>
+  <circle cx="100" cy="20" r="5" fill="#d6336c"/>
+  <circle cx="140" cy="20" r="5" fill="#d6336c"/>
+  <text x="100" y="12" text-anchor="middle"
+        font-family="monospace" font-size="9" font-weight="600"
+        fill="#1a1f2e" opacity="0.5">3.0 pt — heavy solid line</text>
+<g class="port-marker"><polygon points="15,15 20,20 15,25 10,20" class="port-diamond"/><text x="15" y="11" text-anchor="middle" font-size="8" class="port-label">bus_splice_left</text><polygon points="185,15 190,20 185,25 180,20" class="port-diamond"/><text x="185" y="11" text-anchor="middle" font-size="8" class="port-label">bus_splice_right</text><polygon points="100,15 105,20 100,25 95,20" class="port-diamond"/><text x="100" y="35" text-anchor="middle" font-size="8" class="port-label">bus_tap_bi</text></g></svg>

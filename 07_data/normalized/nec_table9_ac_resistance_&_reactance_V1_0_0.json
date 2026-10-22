@@ -1,0 +1,1482 @@
+{
+  "$schema": "nec_table9/v1",
+  "description": "NEC Chapter 9, Table 9 \u2014 AC resistance, reactance, and effective impedance for 600V cables, 3-phase, 60 Hz, 75\u00b0C. Three single conductors in conduit. Dual-unit (\u03a9/km and \u03a9/1000ft). Part of the SLD data layer \u2014 used for voltage drop calculations and conductor impedance lookups.",
+  "source_file": "nec_table9_ac_resistance_&_reactance_V1_0_0.xlsx",
+  "generated": "2026-04-11",
+  "nec_reference": "NEC 2023 Chapter 9, Table 9",
+  "conditions": {
+    "voltage_rating": "600V",
+    "phases": 3,
+    "frequency_hz": 60,
+    "temperature_c": 75,
+    "configuration": "Three single conductors in conduit"
+  },
+  "units": {
+    "ohm_per_km": "Ohms to neutral per kilometer",
+    "ohm_per_kft": "Ohms to neutral per 1000 feet"
+  },
+  "conduit_types": {
+    "pvc": "PVC conduit (non-magnetic)",
+    "aluminum": "Aluminum conduit (non-magnetic)",
+    "pvc_aluminum": "PVC or Aluminum conduit (non-magnetic) \u2014 for reactance",
+    "steel": "Steel conduit (magnetic)"
+  },
+  "data_categories": {
+    "reactance_xl": "Inductive reactance (Xl) for all wire types",
+    "ac_resistance_copper": "AC resistance for uncoated copper wires",
+    "ac_resistance_aluminum": "AC resistance for aluminum wires",
+    "effective_z_085pf_copper": "Effective impedance at 0.85 PF for uncoated copper wires",
+    "effective_z_085pf_aluminum": "Effective impedance at 0.85 PF for aluminum wires"
+  },
+  "conductors": [
+    {
+      "size": "14",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.19,
+          "ohm_per_kft": 0.058
+        },
+        "steel": {
+          "ohm_per_km": 0.24,
+          "ohm_per_kft": 0.073
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 10.2,
+          "ohm_per_kft": 3.1
+        },
+        "aluminum": {
+          "ohm_per_km": 10.2,
+          "ohm_per_kft": 3.1
+        },
+        "steel": {
+          "ohm_per_km": 10.2,
+          "ohm_per_kft": 3.1
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": null,
+          "ohm_per_kft": null
+        },
+        "aluminum": {
+          "ohm_per_km": null,
+          "ohm_per_kft": null
+        },
+        "steel": {
+          "ohm_per_km": null,
+          "ohm_per_kft": null
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 8.9,
+          "ohm_per_kft": 2.7
+        },
+        "aluminum": {
+          "ohm_per_km": 8.9,
+          "ohm_per_kft": 2.7
+        },
+        "steel": {
+          "ohm_per_km": 8.9,
+          "ohm_per_kft": 2.7
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": null,
+          "ohm_per_kft": null
+        },
+        "aluminum": {
+          "ohm_per_km": null,
+          "ohm_per_kft": null
+        },
+        "steel": {
+          "ohm_per_km": null,
+          "ohm_per_kft": null
+        }
+      }
+    },
+    {
+      "size": "12",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.177,
+          "ohm_per_kft": 0.054
+        },
+        "steel": {
+          "ohm_per_km": 0.223,
+          "ohm_per_kft": 0.068
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 6.6,
+          "ohm_per_kft": 2.0
+        },
+        "aluminum": {
+          "ohm_per_km": 6.6,
+          "ohm_per_kft": 2.0
+        },
+        "steel": {
+          "ohm_per_km": 6.6,
+          "ohm_per_kft": 2.0
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 10.5,
+          "ohm_per_kft": 3.2
+        },
+        "aluminum": {
+          "ohm_per_km": 10.5,
+          "ohm_per_kft": 3.2
+        },
+        "steel": {
+          "ohm_per_km": 10.5,
+          "ohm_per_kft": 3.2
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 5.6,
+          "ohm_per_kft": 1.7
+        },
+        "aluminum": {
+          "ohm_per_km": 5.6,
+          "ohm_per_kft": 1.7
+        },
+        "steel": {
+          "ohm_per_km": 5.6,
+          "ohm_per_kft": 1.7
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 9.2,
+          "ohm_per_kft": 2.8
+        },
+        "aluminum": {
+          "ohm_per_km": 9.2,
+          "ohm_per_kft": 2.8
+        },
+        "steel": {
+          "ohm_per_km": 9.2,
+          "ohm_per_kft": 2.8
+        }
+      }
+    },
+    {
+      "size": "10",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.164,
+          "ohm_per_kft": 0.05
+        },
+        "steel": {
+          "ohm_per_km": 0.207,
+          "ohm_per_kft": 0.063
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 3.9,
+          "ohm_per_kft": 1.2
+        },
+        "aluminum": {
+          "ohm_per_km": 3.9,
+          "ohm_per_kft": 1.2
+        },
+        "steel": {
+          "ohm_per_km": 3.9,
+          "ohm_per_kft": 1.2
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 6.6,
+          "ohm_per_kft": 2.0
+        },
+        "aluminum": {
+          "ohm_per_km": 6.6,
+          "ohm_per_kft": 2.0
+        },
+        "steel": {
+          "ohm_per_km": 6.6,
+          "ohm_per_kft": 2.0
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 3.6,
+          "ohm_per_kft": 1.1
+        },
+        "aluminum": {
+          "ohm_per_km": 3.6,
+          "ohm_per_kft": 1.1
+        },
+        "steel": {
+          "ohm_per_km": 3.6,
+          "ohm_per_kft": 1.1
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 5.9,
+          "ohm_per_kft": 1.8
+        },
+        "aluminum": {
+          "ohm_per_km": 5.9,
+          "ohm_per_kft": 1.8
+        },
+        "steel": {
+          "ohm_per_km": 5.9,
+          "ohm_per_kft": 1.8
+        }
+      }
+    },
+    {
+      "size": "8",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.171,
+          "ohm_per_kft": 0.052
+        },
+        "steel": {
+          "ohm_per_km": 0.213,
+          "ohm_per_kft": 0.065
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 2.56,
+          "ohm_per_kft": 0.78
+        },
+        "aluminum": {
+          "ohm_per_km": 2.56,
+          "ohm_per_kft": 0.78
+        },
+        "steel": {
+          "ohm_per_km": 2.56,
+          "ohm_per_kft": 0.78
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 4.3,
+          "ohm_per_kft": 1.3
+        },
+        "aluminum": {
+          "ohm_per_km": 4.3,
+          "ohm_per_kft": 1.3
+        },
+        "steel": {
+          "ohm_per_km": 4.3,
+          "ohm_per_kft": 1.3
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 2.26,
+          "ohm_per_kft": 0.69
+        },
+        "aluminum": {
+          "ohm_per_km": 2.26,
+          "ohm_per_kft": 0.69
+        },
+        "steel": {
+          "ohm_per_km": 2.3,
+          "ohm_per_kft": 0.7
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 3.6,
+          "ohm_per_kft": 1.1
+        },
+        "aluminum": {
+          "ohm_per_km": 3.6,
+          "ohm_per_kft": 1.1
+        },
+        "steel": {
+          "ohm_per_km": 3.6,
+          "ohm_per_kft": 1.1
+        }
+      }
+    },
+    {
+      "size": "6",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.167,
+          "ohm_per_kft": 0.051
+        },
+        "steel": {
+          "ohm_per_km": 0.21,
+          "ohm_per_kft": 0.064
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 1.61,
+          "ohm_per_kft": 0.49
+        },
+        "aluminum": {
+          "ohm_per_km": 1.61,
+          "ohm_per_kft": 0.49
+        },
+        "steel": {
+          "ohm_per_km": 1.61,
+          "ohm_per_kft": 0.49
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 2.66,
+          "ohm_per_kft": 0.81
+        },
+        "aluminum": {
+          "ohm_per_km": 2.66,
+          "ohm_per_kft": 0.81
+        },
+        "steel": {
+          "ohm_per_km": 2.66,
+          "ohm_per_kft": 0.81
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 1.44,
+          "ohm_per_kft": 0.44
+        },
+        "aluminum": {
+          "ohm_per_km": 1.48,
+          "ohm_per_kft": 0.45
+        },
+        "steel": {
+          "ohm_per_km": 1.48,
+          "ohm_per_kft": 0.45
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 2.33,
+          "ohm_per_kft": 0.71
+        },
+        "aluminum": {
+          "ohm_per_km": 2.36,
+          "ohm_per_kft": 0.72
+        },
+        "steel": {
+          "ohm_per_km": 2.36,
+          "ohm_per_kft": 0.72
+        }
+      }
+    },
+    {
+      "size": "4",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.157,
+          "ohm_per_kft": 0.048
+        },
+        "steel": {
+          "ohm_per_km": 0.197,
+          "ohm_per_kft": 0.06
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 1.02,
+          "ohm_per_kft": 0.31
+        },
+        "aluminum": {
+          "ohm_per_km": 1.02,
+          "ohm_per_kft": 0.31
+        },
+        "steel": {
+          "ohm_per_km": 1.02,
+          "ohm_per_kft": 0.31
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 1.67,
+          "ohm_per_kft": 0.51
+        },
+        "aluminum": {
+          "ohm_per_km": 1.67,
+          "ohm_per_kft": 0.51
+        },
+        "steel": {
+          "ohm_per_km": 1.67,
+          "ohm_per_kft": 0.51
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.95,
+          "ohm_per_kft": 0.29
+        },
+        "aluminum": {
+          "ohm_per_km": 0.95,
+          "ohm_per_kft": 0.29
+        },
+        "steel": {
+          "ohm_per_km": 0.98,
+          "ohm_per_kft": 0.3
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 1.51,
+          "ohm_per_kft": 0.46
+        },
+        "aluminum": {
+          "ohm_per_km": 1.51,
+          "ohm_per_kft": 0.46
+        },
+        "steel": {
+          "ohm_per_km": 1.51,
+          "ohm_per_kft": 0.46
+        }
+      }
+    },
+    {
+      "size": "3",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.154,
+          "ohm_per_kft": 0.047
+        },
+        "steel": {
+          "ohm_per_km": 0.194,
+          "ohm_per_kft": 0.059
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.82,
+          "ohm_per_kft": 0.25
+        },
+        "aluminum": {
+          "ohm_per_km": 0.82,
+          "ohm_per_kft": 0.25
+        },
+        "steel": {
+          "ohm_per_km": 0.82,
+          "ohm_per_kft": 0.25
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 1.31,
+          "ohm_per_kft": 0.4
+        },
+        "aluminum": {
+          "ohm_per_km": 1.35,
+          "ohm_per_kft": 0.41
+        },
+        "steel": {
+          "ohm_per_km": 1.31,
+          "ohm_per_kft": 0.4
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.75,
+          "ohm_per_kft": 0.23
+        },
+        "aluminum": {
+          "ohm_per_km": 0.79,
+          "ohm_per_kft": 0.24
+        },
+        "steel": {
+          "ohm_per_km": 0.79,
+          "ohm_per_kft": 0.24
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 1.21,
+          "ohm_per_kft": 0.37
+        },
+        "aluminum": {
+          "ohm_per_km": 1.21,
+          "ohm_per_kft": 0.37
+        },
+        "steel": {
+          "ohm_per_km": 1.21,
+          "ohm_per_kft": 0.37
+        }
+      }
+    },
+    {
+      "size": "2",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.148,
+          "ohm_per_kft": 0.045
+        },
+        "steel": {
+          "ohm_per_km": 0.187,
+          "ohm_per_kft": 0.057
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.62,
+          "ohm_per_kft": 0.19
+        },
+        "aluminum": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        },
+        "steel": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 1.05,
+          "ohm_per_kft": 0.32
+        },
+        "aluminum": {
+          "ohm_per_km": 1.05,
+          "ohm_per_kft": 0.32
+        },
+        "steel": {
+          "ohm_per_km": 1.05,
+          "ohm_per_kft": 0.32
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.62,
+          "ohm_per_kft": 0.19
+        },
+        "aluminum": {
+          "ohm_per_km": 0.62,
+          "ohm_per_kft": 0.19
+        },
+        "steel": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.98,
+          "ohm_per_kft": 0.3
+        },
+        "aluminum": {
+          "ohm_per_km": 0.98,
+          "ohm_per_kft": 0.3
+        },
+        "steel": {
+          "ohm_per_km": 0.98,
+          "ohm_per_kft": 0.3
+        }
+      }
+    },
+    {
+      "size": "1",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.151,
+          "ohm_per_kft": 0.046
+        },
+        "steel": {
+          "ohm_per_km": 0.187,
+          "ohm_per_kft": 0.057
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.49,
+          "ohm_per_kft": 0.15
+        },
+        "aluminum": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "steel": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.82,
+          "ohm_per_kft": 0.25
+        },
+        "aluminum": {
+          "ohm_per_km": 0.85,
+          "ohm_per_kft": 0.26
+        },
+        "steel": {
+          "ohm_per_km": 0.82,
+          "ohm_per_kft": 0.25
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "aluminum": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "steel": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.79,
+          "ohm_per_kft": 0.24
+        },
+        "aluminum": {
+          "ohm_per_km": 0.79,
+          "ohm_per_kft": 0.24
+        },
+        "steel": {
+          "ohm_per_km": 0.82,
+          "ohm_per_kft": 0.25
+        }
+      }
+    },
+    {
+      "size": "1/0",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.144,
+          "ohm_per_kft": 0.044
+        },
+        "steel": {
+          "ohm_per_km": 0.18,
+          "ohm_per_kft": 0.055
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.39,
+          "ohm_per_kft": 0.12
+        },
+        "aluminum": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "steel": {
+          "ohm_per_km": 0.39,
+          "ohm_per_kft": 0.12
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        },
+        "aluminum": {
+          "ohm_per_km": 0.69,
+          "ohm_per_kft": 0.21
+        },
+        "steel": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "aluminum": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "steel": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.62,
+          "ohm_per_kft": 0.19
+        },
+        "aluminum": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        },
+        "steel": {
+          "ohm_per_km": 0.66,
+          "ohm_per_kft": 0.2
+        }
+      }
+    },
+    {
+      "size": "2/0",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.141,
+          "ohm_per_kft": 0.043
+        },
+        "steel": {
+          "ohm_per_km": 0.177,
+          "ohm_per_kft": 0.054
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.33,
+          "ohm_per_kft": 0.1
+        },
+        "aluminum": {
+          "ohm_per_km": 0.33,
+          "ohm_per_kft": 0.1
+        },
+        "steel": {
+          "ohm_per_km": 0.33,
+          "ohm_per_kft": 0.1
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "aluminum": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "steel": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        },
+        "aluminum": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        },
+        "steel": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "aluminum": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        },
+        "steel": {
+          "ohm_per_km": 0.52,
+          "ohm_per_kft": 0.16
+        }
+      }
+    },
+    {
+      "size": "3/0",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.138,
+          "ohm_per_kft": 0.042
+        },
+        "steel": {
+          "ohm_per_km": 0.171,
+          "ohm_per_kft": 0.052
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.253,
+          "ohm_per_kft": 0.077
+        },
+        "aluminum": {
+          "ohm_per_km": 0.269,
+          "ohm_per_kft": 0.082
+        },
+        "steel": {
+          "ohm_per_km": 0.259,
+          "ohm_per_kft": 0.079
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "aluminum": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "steel": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.289,
+          "ohm_per_kft": 0.088
+        },
+        "aluminum": {
+          "ohm_per_km": 0.302,
+          "ohm_per_kft": 0.092
+        },
+        "steel": {
+          "ohm_per_km": 0.308,
+          "ohm_per_kft": 0.094
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "aluminum": {
+          "ohm_per_km": 0.43,
+          "ohm_per_kft": 0.13
+        },
+        "steel": {
+          "ohm_per_km": 0.46,
+          "ohm_per_kft": 0.14
+        }
+      }
+    },
+    {
+      "size": "4/0",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.135,
+          "ohm_per_kft": 0.041
+        },
+        "steel": {
+          "ohm_per_km": 0.167,
+          "ohm_per_kft": 0.051
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.203,
+          "ohm_per_kft": 0.062
+        },
+        "aluminum": {
+          "ohm_per_km": 0.22,
+          "ohm_per_kft": 0.067
+        },
+        "steel": {
+          "ohm_per_km": 0.207,
+          "ohm_per_kft": 0.063
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.33,
+          "ohm_per_kft": 0.1
+        },
+        "aluminum": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        },
+        "steel": {
+          "ohm_per_km": 0.33,
+          "ohm_per_kft": 0.1
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.243,
+          "ohm_per_kft": 0.074
+        },
+        "aluminum": {
+          "ohm_per_km": 0.256,
+          "ohm_per_kft": 0.078
+        },
+        "steel": {
+          "ohm_per_km": 0.262,
+          "ohm_per_kft": 0.08
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        },
+        "aluminum": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        },
+        "steel": {
+          "ohm_per_km": 0.36,
+          "ohm_per_kft": 0.11
+        }
+      }
+    },
+    {
+      "size": "250",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.135,
+          "ohm_per_kft": 0.041
+        },
+        "steel": {
+          "ohm_per_km": 0.171,
+          "ohm_per_kft": 0.052
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.171,
+          "ohm_per_kft": 0.052
+        },
+        "aluminum": {
+          "ohm_per_km": 0.187,
+          "ohm_per_kft": 0.057
+        },
+        "steel": {
+          "ohm_per_km": 0.177,
+          "ohm_per_kft": 0.054
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.279,
+          "ohm_per_kft": 0.085
+        },
+        "aluminum": {
+          "ohm_per_km": 0.295,
+          "ohm_per_kft": 0.09
+        },
+        "steel": {
+          "ohm_per_km": 0.282,
+          "ohm_per_kft": 0.086
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.217,
+          "ohm_per_kft": 0.066
+        },
+        "aluminum": {
+          "ohm_per_km": 0.23,
+          "ohm_per_kft": 0.07
+        },
+        "steel": {
+          "ohm_per_km": 0.24,
+          "ohm_per_kft": 0.073
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.308,
+          "ohm_per_kft": 0.094
+        },
+        "aluminum": {
+          "ohm_per_km": 0.322,
+          "ohm_per_kft": 0.098
+        },
+        "steel": {
+          "ohm_per_km": 0.33,
+          "ohm_per_kft": 0.1
+        }
+      }
+    },
+    {
+      "size": "300",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.135,
+          "ohm_per_kft": 0.041
+        },
+        "steel": {
+          "ohm_per_km": 0.167,
+          "ohm_per_kft": 0.051
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.144,
+          "ohm_per_kft": 0.044
+        },
+        "aluminum": {
+          "ohm_per_km": 0.161,
+          "ohm_per_kft": 0.049
+        },
+        "steel": {
+          "ohm_per_km": 0.148,
+          "ohm_per_kft": 0.045
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.233,
+          "ohm_per_kft": 0.071
+        },
+        "aluminum": {
+          "ohm_per_km": 0.249,
+          "ohm_per_kft": 0.076
+        },
+        "steel": {
+          "ohm_per_km": 0.236,
+          "ohm_per_kft": 0.072
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.194,
+          "ohm_per_kft": 0.059
+        },
+        "aluminum": {
+          "ohm_per_km": 0.207,
+          "ohm_per_kft": 0.063
+        },
+        "steel": {
+          "ohm_per_km": 0.213,
+          "ohm_per_kft": 0.064
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.269,
+          "ohm_per_kft": 0.082
+        },
+        "aluminum": {
+          "ohm_per_km": 0.282,
+          "ohm_per_kft": 0.086
+        },
+        "steel": {
+          "ohm_per_km": 0.289,
+          "ohm_per_kft": 0.088
+        }
+      }
+    },
+    {
+      "size": "350",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.131,
+          "ohm_per_kft": 0.04
+        },
+        "steel": {
+          "ohm_per_km": 0.164,
+          "ohm_per_kft": 0.05
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.125,
+          "ohm_per_kft": 0.038
+        },
+        "aluminum": {
+          "ohm_per_km": 0.141,
+          "ohm_per_kft": 0.043
+        },
+        "steel": {
+          "ohm_per_km": 0.128,
+          "ohm_per_kft": 0.039
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.2,
+          "ohm_per_kft": 0.061
+        },
+        "aluminum": {
+          "ohm_per_km": 0.217,
+          "ohm_per_kft": 0.066
+        },
+        "steel": {
+          "ohm_per_km": 0.207,
+          "ohm_per_kft": 0.063
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.174,
+          "ohm_per_kft": 0.053
+        },
+        "aluminum": {
+          "ohm_per_km": 0.19,
+          "ohm_per_kft": 0.058
+        },
+        "steel": {
+          "ohm_per_km": 0.197,
+          "ohm_per_kft": 0.06
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.24,
+          "ohm_per_kft": 0.073
+        },
+        "aluminum": {
+          "ohm_per_km": 0.253,
+          "ohm_per_kft": 0.077
+        },
+        "steel": {
+          "ohm_per_km": 0.262,
+          "ohm_per_kft": 0.08
+        }
+      }
+    },
+    {
+      "size": "400",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.131,
+          "ohm_per_kft": 0.04
+        },
+        "steel": {
+          "ohm_per_km": 0.161,
+          "ohm_per_kft": 0.049
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.108,
+          "ohm_per_kft": 0.033
+        },
+        "aluminum": {
+          "ohm_per_km": 0.125,
+          "ohm_per_kft": 0.038
+        },
+        "steel": {
+          "ohm_per_km": 0.115,
+          "ohm_per_kft": 0.035
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.177,
+          "ohm_per_kft": 0.054
+        },
+        "aluminum": {
+          "ohm_per_km": 0.194,
+          "ohm_per_kft": 0.059
+        },
+        "steel": {
+          "ohm_per_km": 0.18,
+          "ohm_per_kft": 0.055
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.161,
+          "ohm_per_kft": 0.049
+        },
+        "aluminum": {
+          "ohm_per_km": 0.174,
+          "ohm_per_kft": 0.053
+        },
+        "steel": {
+          "ohm_per_km": 0.184,
+          "ohm_per_kft": 0.056
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.217,
+          "ohm_per_kft": 0.066
+        },
+        "aluminum": {
+          "ohm_per_km": 0.233,
+          "ohm_per_kft": 0.071
+        },
+        "steel": {
+          "ohm_per_km": 0.24,
+          "ohm_per_kft": 0.073
+        }
+      }
+    },
+    {
+      "size": "500",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.128,
+          "ohm_per_kft": 0.039
+        },
+        "steel": {
+          "ohm_per_km": 0.157,
+          "ohm_per_kft": 0.048
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.089,
+          "ohm_per_kft": 0.027
+        },
+        "aluminum": {
+          "ohm_per_km": 0.105,
+          "ohm_per_kft": 0.032
+        },
+        "steel": {
+          "ohm_per_km": 0.095,
+          "ohm_per_kft": 0.029
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.141,
+          "ohm_per_kft": 0.043
+        },
+        "aluminum": {
+          "ohm_per_km": 0.157,
+          "ohm_per_kft": 0.048
+        },
+        "steel": {
+          "ohm_per_km": 0.148,
+          "ohm_per_kft": 0.045
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.141,
+          "ohm_per_kft": 0.043
+        },
+        "aluminum": {
+          "ohm_per_km": 0.157,
+          "ohm_per_kft": 0.048
+        },
+        "steel": {
+          "ohm_per_km": 0.164,
+          "ohm_per_kft": 0.05
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.187,
+          "ohm_per_kft": 0.057
+        },
+        "aluminum": {
+          "ohm_per_km": 0.2,
+          "ohm_per_kft": 0.061
+        },
+        "steel": {
+          "ohm_per_km": 0.21,
+          "ohm_per_kft": 0.064
+        }
+      }
+    },
+    {
+      "size": "600",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.128,
+          "ohm_per_kft": 0.039
+        },
+        "steel": {
+          "ohm_per_km": 0.157,
+          "ohm_per_kft": 0.048
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.075,
+          "ohm_per_kft": 0.023
+        },
+        "aluminum": {
+          "ohm_per_km": 0.092,
+          "ohm_per_kft": 0.028
+        },
+        "steel": {
+          "ohm_per_km": 0.082,
+          "ohm_per_kft": 0.025
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.118,
+          "ohm_per_kft": 0.036
+        },
+        "aluminum": {
+          "ohm_per_km": 0.135,
+          "ohm_per_kft": 0.041
+        },
+        "steel": {
+          "ohm_per_km": 0.125,
+          "ohm_per_kft": 0.038
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.131,
+          "ohm_per_kft": 0.04
+        },
+        "aluminum": {
+          "ohm_per_km": 0.144,
+          "ohm_per_kft": 0.044
+        },
+        "steel": {
+          "ohm_per_km": 0.154,
+          "ohm_per_kft": 0.047
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.167,
+          "ohm_per_kft": 0.051
+        },
+        "aluminum": {
+          "ohm_per_km": 0.18,
+          "ohm_per_kft": 0.055
+        },
+        "steel": {
+          "ohm_per_km": 0.19,
+          "ohm_per_kft": 0.058
+        }
+      }
+    },
+    {
+      "size": "750",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.125,
+          "ohm_per_kft": 0.038
+        },
+        "steel": {
+          "ohm_per_km": 0.157,
+          "ohm_per_kft": 0.048
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.062,
+          "ohm_per_kft": 0.019
+        },
+        "aluminum": {
+          "ohm_per_km": 0.079,
+          "ohm_per_kft": 0.024
+        },
+        "steel": {
+          "ohm_per_km": 0.069,
+          "ohm_per_kft": 0.021
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.095,
+          "ohm_per_kft": 0.029
+        },
+        "aluminum": {
+          "ohm_per_km": 0.112,
+          "ohm_per_kft": 0.034
+        },
+        "steel": {
+          "ohm_per_km": 0.102,
+          "ohm_per_kft": 0.031
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.118,
+          "ohm_per_kft": 0.036
+        },
+        "aluminum": {
+          "ohm_per_km": 0.131,
+          "ohm_per_kft": 0.04
+        },
+        "steel": {
+          "ohm_per_km": 0.141,
+          "ohm_per_kft": 0.043
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.148,
+          "ohm_per_kft": 0.045
+        },
+        "aluminum": {
+          "ohm_per_km": 0.161,
+          "ohm_per_kft": 0.049
+        },
+        "steel": {
+          "ohm_per_km": 0.171,
+          "ohm_per_kft": 0.052
+        }
+      }
+    },
+    {
+      "size": "1000",
+      "reactance_xl": {
+        "pvc_aluminum": {
+          "ohm_per_km": 0.121,
+          "ohm_per_kft": 0.037
+        },
+        "steel": {
+          "ohm_per_km": 0.151,
+          "ohm_per_kft": 0.046
+        }
+      },
+      "ac_resistance_copper": {
+        "pvc": {
+          "ohm_per_km": 0.049,
+          "ohm_per_kft": 0.015
+        },
+        "aluminum": {
+          "ohm_per_km": 0.062,
+          "ohm_per_kft": 0.019
+        },
+        "steel": {
+          "ohm_per_km": 0.059,
+          "ohm_per_kft": 0.018
+        }
+      },
+      "ac_resistance_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.075,
+          "ohm_per_kft": 0.023
+        },
+        "aluminum": {
+          "ohm_per_km": 0.089,
+          "ohm_per_kft": 0.027
+        },
+        "steel": {
+          "ohm_per_km": 0.082,
+          "ohm_per_kft": 0.025
+        }
+      },
+      "effective_z_085pf_copper": {
+        "pvc": {
+          "ohm_per_km": 0.105,
+          "ohm_per_kft": 0.032
+        },
+        "aluminum": {
+          "ohm_per_km": 0.118,
+          "ohm_per_kft": 0.036
+        },
+        "steel": {
+          "ohm_per_km": 0.131,
+          "ohm_per_kft": 0.04
+        }
+      },
+      "effective_z_085pf_aluminum": {
+        "pvc": {
+          "ohm_per_km": 0.128,
+          "ohm_per_kft": 0.039
+        },
+        "aluminum": {
+          "ohm_per_km": 0.138,
+          "ohm_per_kft": 0.042
+        },
+        "steel": {
+          "ohm_per_km": 0.151,
+          "ohm_per_kft": 0.046
+        }
+      }
+    }
+  ]
+}

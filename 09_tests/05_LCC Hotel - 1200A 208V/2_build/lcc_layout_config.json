@@ -1,0 +1,156 @@
+{
+  "$comment": "Sidecar layout_config for LCC Hotel Works. Every hospital-golden default is explicitly cleared; no storeys were stated, so no level lines.",
+  "sheet_roles": {
+    "S1": "normal"
+  },
+  "sheet_skips": {},
+  "floor_order": {
+    "S1": [
+      "3",
+      "2",
+      "1"
+    ]
+  },
+  "floor_anchors": {},
+  "floor_anchors_mechanical": {},
+  "level_map": {
+    "P4": "2",
+    "P4AA": "3",
+    "P1A": "2",
+    "P1B": "2",
+    "P1C": "2",
+    "P1D": "2",
+    "P1E": "2",
+    "P1F": "2",
+    "P1G": "2",
+    "P2A": "2",
+    "P3A": "2",
+    "P3B": "2",
+    "LIGHT.": "3",
+    "S1": "2",
+    "P4A": "2",
+    "P4B": "2"
+  },
+  "level_order": [],
+  "floor_band_designations": [
+    "P4",
+    "P4AA",
+    "P1A",
+    "P1B",
+    "P1C",
+    "P1D",
+    "P1E",
+    "P1F",
+    "P1G",
+    "P2A",
+    "P3A",
+    "P3B",
+    "LIGHT.",
+    "S1",
+    "P4A",
+    "P4B"
+  ],
+  "ats_xoffset_overrides": {},
+  "subfeed_max_depth": 3,
+  "subfeed_start_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_src_types": [
+    "L2-4"
+  ],
+  "subfeed_dst_types": [
+    "L2-4"
+  ],
+  "subfeed_straighten": [
+    "F-321",
+    "F-325"
+  ],
+  "s2_level_line_pitch": {},
+  "s2_shift_delta": {},
+  "subfeed_exit_pitch": {
+    "P1": 8,
+    "P3": 20
+  },
+  "subfeed_midy_nudge": {
+    "F-310": 0,
+    "F-316": 0,
+    "F-311": -50,
+    "F-315": -50,
+    "F-312": -100,
+    "F-314": -100
+  },
+  "a1_long_run_midpoint": {
+    "F-310": 60,
+    "F-311": 60,
+    "F-312": 60,
+    "F-313": 60,
+    "F-314": 60,
+    "F-315": 60,
+    "F-316": 60,
+    "F-324": 60,
+    "F-327": 60,
+    "F-328": 60,
+    "F-321": 60,
+    "F-325": 60
+  },
+  "riser_step_standard": 420,
+  "chain_dst_x_offset": {
+    "F-304": {
+      "dx": 740,
+      "jog_y": 4300
+    },
+    "F-305": {
+      "dx": 780,
+      "jog_y": 4340
+    },
+    "F-306": {
+      "dx": 920,
+      "jog_y": 4380
+    },
+    "F-307": {
+      "dx": 1260,
+      "jog_y": 4420
+    }
+  },
+  "a2_callout_feeders": [
+    "F-301"
+  ],
+  "a1_tag_placement": {
+    "F-311": {
+      "dy": 25
+    },
+    "F-315": {
+      "dy": 25
+    },
+    "F-312": {
+      "dy": 50
+    },
+    "F-314": {
+      "dy": 50
+    },
+    "F-304": {
+      "side": "right",
+      "dx": -740,
+      "dy": 192.63
+    },
+    "F-305": {
+      "side": "right",
+      "dx": -780,
+      "dy": 172.63
+    },
+    "F-306": {
+      "side": "right",
+      "dx": -920,
+      "dy": 152.63
+    },
+    "F-307": {
+      "side": "right",
+      "dx": -1260,
+      "dy": 132.63
+    }
+  },
+  "a3_text_placement": {},
+  "fc_pennant_placement": {},
+  "fc_pennant_y_nudges": {}
+}

@@ -1,0 +1,263 @@
+{
+  "$schema": "mv_feeder_schedule/v1",
+  "description": "Medium-voltage feeder schedule defining conductor sizing, conduit, and grounding per ampacity tier. Part of the SLD data layer \u2014 consumed by the topology contract for feeder edge attributes and by the validation layer for conductor/conduit cross-checks.",
+  "source_file": "mv_feeder_schedule_V1_0_0.xlsx",
+  "generated": "2026-04-11",
+  "conductor_type": "Copper",
+  "system_config": "3 Phase, 3 Wire + Ground",
+  "installation": "Single circuit, three single-insulated conductors in isolated underground electrical duct",
+  "nec_reference": "NEC Table 315.60(C)(11)",
+  "conductor_temp_rating": "90\u00b0C (194\u00b0F)",
+  "conduit_type": "PVC",
+  "conduit_fill_basis": "40% max fill for EMT, RMC, and PVC Schedule 40",
+  "voltage_classes": [
+    {
+      "title": "MEDIUM-VOLTAGE FEEDER SCHEDULE (2001-5000V)",
+      "voltage_range": {
+        "min_v": 2001,
+        "max_v": 5000
+      },
+      "conductor_material": "COPPER: 3 PHASE, 3 WIRE + GROUND",
+      "installation_method": "FOR SINGLE CIRCUIT, THREE SINGLE-INSULATED COPPER CONDUCTORS IN ISOLATED UNDERGROUND ELECTRICAL DUCT",
+      "nec_basis": "BASED ON NEC TABLE 315.60(C)(11), SINGLE CIRCUIT, CONDUCTOR TEMPERATURE OF 90\u00b0C (194\u00b0F), IN PVC CONDUIT",
+      "feeders": [
+        {
+          "tag": "5K703",
+          "nominal_ampacity": 70,
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "6"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6"
+          }
+        },
+        {
+          "tag": "5K1003",
+          "nominal_ampacity": 100,
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "4"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6"
+          }
+        },
+        {
+          "tag": "5K1253",
+          "nominal_ampacity": 125,
+          "number_of_sets": 1,
+          "conduit_size_min": "2 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "2"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6"
+          }
+        },
+        {
+          "tag": "5K1503",
+          "nominal_ampacity": 150,
+          "number_of_sets": 1,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "1"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6"
+          }
+        },
+        {
+          "tag": "5K2003",
+          "nominal_ampacity": 200,
+          "number_of_sets": 1,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "2/0"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "6"
+          }
+        },
+        {
+          "tag": "5K2503",
+          "nominal_ampacity": 250,
+          "number_of_sets": 1,
+          "conduit_size_min": "3\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "3/0"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4"
+          }
+        },
+        {
+          "tag": "5K3003",
+          "nominal_ampacity": 300,
+          "number_of_sets": 1,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "250"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "4"
+          }
+        },
+        {
+          "tag": "5K4003",
+          "nominal_ampacity": 400,
+          "number_of_sets": 1,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "500"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "2"
+          }
+        },
+        {
+          "tag": "5K6003",
+          "nominal_ampacity": 600,
+          "number_of_sets": 1,
+          "conduit_size_min": "5\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "1000"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "1"
+          }
+        }
+      ],
+      "notes": [
+        "REFER TO SPECIFICATIONS FOR INSULATION TYPE PER WIRE SIZE.",
+        "MINIMUM CONDUIT SIZES IDENTIFIED MEET MAXIMUM 40% FILL FOR EMT, RMC AND PVC SCHEDULE 40.",
+        "THIS IS A STANDARD FEEDER SCHEDULE. SOME FEEDER TYPES MAY APPEAR IN THIS SCHEDULE THAT ARE NOT USED ON THIS PROJECT.",
+        "CONDUIT SIZES NOTED ON SINGLE-LINE DIAGRAM OR ON PLANS SUPERSEDE SIZES NOTED ABOVE IF LARGER. REFER TO SPECIFICATIONS FOR INFORMATION ON CONDUIT TYPE, FITTINGS AND ELBOWS, AND DUCT BANK CONSTRUCTION.",
+        "PROVIDE THERMAL CALCULATIONS AND VOLTAGE DROP CALCULATIONS FOR UNDERGROUND FEEDERS. PROVIDE TO OWNER FOR APPROVAL PRIOR TO PROCUREMENT AND INSTALLATION."
+      ]
+    },
+    {
+      "title": "MEDIUM-VOLTAGE FEEDER SCHEDULE (5001-15000V)",
+      "voltage_range": {
+        "min_v": 5001,
+        "max_v": 15000
+      },
+      "conductor_material": "COPPER: 3 PHASE, 3 WIRE + GROUND",
+      "installation_method": "FOR SINGLE CIRCUIT, THREE SINGLE-INSULATED COPPER CONDUCTORS IN ISOLATED UNDERGROUND ELECTRICAL DUCT",
+      "nec_basis": "BASED ON NEC TABLE 315.60(C)(11), SINGLE CIRCUIT, CONDUCTOR TEMPERATURE OF 90\u00b0C (194\u00b0F), IN PVC CONDUIT",
+      "feeders": [
+        {
+          "tag": "15K1503",
+          "nominal_ampacity": 150,
+          "number_of_sets": 1,
+          "conduit_size_min": "3 1/2\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "2"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "2"
+          }
+        },
+        {
+          "tag": "15K2003",
+          "nominal_ampacity": 200,
+          "number_of_sets": 1,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "1/0"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "2"
+          }
+        },
+        {
+          "tag": "15K2503",
+          "nominal_ampacity": 250,
+          "number_of_sets": 1,
+          "conduit_size_min": "4\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "3/0"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "2"
+          }
+        },
+        {
+          "tag": "15K3003",
+          "nominal_ampacity": 300,
+          "number_of_sets": 1,
+          "conduit_size_min": "5\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "250"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "2"
+          }
+        },
+        {
+          "tag": "15K4003",
+          "nominal_ampacity": 400,
+          "number_of_sets": 1,
+          "conduit_size_min": "5\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "500"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "2"
+          }
+        },
+        {
+          "tag": "15K6003",
+          "nominal_ampacity": 600,
+          "number_of_sets": 1,
+          "conduit_size_min": "6\"",
+          "phase_conductors": {
+            "quantity": 3,
+            "size": "1000"
+          },
+          "ground_conductor": {
+            "quantity": 1,
+            "size": "1"
+          }
+        }
+      ],
+      "notes": [
+        "REFER TO SPECIFICATIONS FOR INSULATION TYPE PER WIRE SIZE.",
+        "MINIMUM CONDUIT SIZES IDENTIFIED MEET MAXIMUM 40% FILL FOR EMT, RMC AND PVC SCHEDULE 40.",
+        "THIS IS A STANDARD FEEDER SCHEDULE. SOME FEEDER TYPES MAY APPEAR IN THIS SCHEDULE THAT ARE NOT USED ON THIS PROJECT.",
+        "CONDUIT SIZES NOTED ON SINGLE-LINE DIAGRAM OR ON PLANS SUPERSEDE SIZES NOTED ABOVE IF LARGER. REFER TO SPECIFICATIONS FOR INFORMATION ON CONDUIT TYPE, FITTINGS AND ELBOWS, AND DUCT BANK CONSTRUCTION.",
+        "PROVIDE THERMAL CALCULATIONS AND VOLTAGE DROP CALCULATIONS FOR UNDERGROUND FEEDERS. PROVIDE TO OWNER FOR APPROVAL PRIOR TO PROCUREMENT AND INSTALLATION."
+      ]
+    }
+  ]
+}

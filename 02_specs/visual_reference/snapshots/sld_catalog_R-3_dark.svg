@@ -1,0 +1,27 @@
+<svg viewBox="-20 -102 400 294" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="-20" y="-102" width="400" height="294" fill="#0a0e17"/>
+  <defs>
+    <pattern id="bw-hatch" width="10" height="10"
+             patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <line x1="0" y1="0" x2="0" y2="10"
+            stroke="#FFFFFF" stroke-width="1.5"/>
+    </pattern>
+  </defs>
+  <rect x="15" y="27" width="330" height="16"
+        fill="url(#bw-hatch)" stroke="none"/>
+  <line x1="15" y1="27" x2="345" y2="27"
+        stroke="#00FFFF" stroke-width="3"/>
+  <line x1="15" y1="43" x2="345" y2="43"
+        stroke="#00FFFF" stroke-width="3"/>
+  <circle cx="80" cy="35" r="5" fill="#FF69B4"/>
+  <line x1="80" y1="43" x2="80" y2="63"
+        stroke="#00FFFF" stroke-width="1.5"/>
+  <circle cx="180" cy="35" r="5" fill="#FF69B4"/>
+  <line x1="180" y1="43" x2="180" y2="63"
+        stroke="#00FFFF" stroke-width="1.5"/>
+  <circle cx="280" cy="35" r="5" fill="#FF69B4"/>
+  <line x1="280" y1="43" x2="280" y2="63"
+        stroke="#00FFFF" stroke-width="1.5"/>
+  <text x="180" y="22" text-anchor="middle"
+        font-family="monospace" font-size="9" font-weight="600"
+        fill="#FFFFFF" opacity="0.5">3.0 pt × 2 + 45° hatch</text>
+<g class="port-marker"><polygon points="15,30 20,35 15,40 10,35" class="port-diamond"/><text x="15" y="55" text-anchor="middle" font-size="8" class="port-label">feed_start</text><polygon points="345,30 350,35 345,40 340,35" class="port-diamond"/><text x="345" y="55" text-anchor="middle" font-size="8" class="port-label">feed_end</text><polygon points="80,30 85,35 80,40 75,35" class="port-diamond"/><text x="80" y="22" text-anchor="middle" font-size="8" class="port-label">tap_01</text><polygon points="180,30 185,35 180,40 175,35" class="port-diamond"/><text x="180" y="22" text-anchor="middle" font-size="8" class="port-label">tap_02</text><polygon points="280,30 285,35 280,40 275,35" class="port-diamond"/><text x="280" y="22" text-anchor="middle" font-size="8" class="port-label">tap_03</text></g></svg>

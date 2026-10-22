@@ -1,0 +1,8 @@
+<svg viewBox="-50 -37.5 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="-50" y="-37.5" width="300" height="220" fill="#0a0e17"/>
+  <polyline points="15,15 15,70 185,70 185,130"
+            fill="none" stroke="#CCCCCC" stroke-width="1.5"
+            stroke-linejoin="miter"/>
+  <text x="100" y="62" text-anchor="middle"
+        font-family="monospace" font-size="9" font-weight="600"
+        fill="#FFFFFF" opacity="0.5">1.5 pt — single solid line</text>
+<g class="port-marker"><polygon points="15,10 20,15 15,20 10,15" class="port-diamond"/><text x="24" y="18" font-size="8" class="port-label">start</text><polygon points="185,125 190,130 185,135 180,130" class="port-diamond"/><text x="194" y="133" font-size="8" class="port-label">end</text></g></svg>

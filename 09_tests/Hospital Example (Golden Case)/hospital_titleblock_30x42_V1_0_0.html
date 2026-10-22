@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="revision" content="1.0.0">
+<title>Hospital Title Block — Arch E1 30x42</title>
+<style>
+:root{
+  /* Dark palette. Var names match the house viewers so the same markup
+     resolves under either theme at snapshot time. */
+  --bg:#161c2e;--bg-panel:#1d2638;--bg-card:#243049;--border:#324666;
+  --text:#d4dce8;--text-dim:#7d8fab;--accent:#00e5ff;
+  --canvas-bg:#1c2438;
+  --sld-line:#00FFFF;--sld-feeder:#8899aa;--sld-text:#FFFFFF;
+  --sld-section:#39FF14;--sld-em:#FFAA00;
+}
+:root[data-theme="light"]{
+  --canvas-bg:#eef2f8;
+  --sld-line:#0a1424;--sld-feeder:#5a6680;--sld-text:#0a1424;
+  --sld-section:#2a8a2f;--sld-em:#b25900;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Courier New',monospace;background:var(--bg);color:var(--text);height:100vh;overflow:hidden}
+#app{display:flex;flex-direction:column;height:100vh}
+#topbar{display:flex;align-items:center;gap:8px;padding:8px 12px;background:var(--bg-panel);border-bottom:1px solid var(--border);flex-wrap:wrap}
+#topbar h1{font-size:13px;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-right:8px}
+.ver-tag{font-size:10px;color:var(--text-dim)}
+.sheet-btn,.ctrl-btn{padding:6px 12px;background:var(--bg-card);border:1px solid var(--border);border-radius:4px;color:var(--text);font:11px 'Courier New',monospace;cursor:pointer}
+.sheet-btn.active{border-color:var(--accent);color:var(--accent);background:rgba(0,229,255,.08)}
+.sh-num{font-weight:700}
+#canvas-wrap{flex:1;position:relative;overflow:auto;background:var(--canvas-bg)}
+#sld-svg{display:block;width:100%;height:auto;max-width:1600px;margin:0 auto}
+</style>
+</head>
+<body>
+<div id="app">
+  <div id="topbar">
+    <h1>Hospital Title Block</h1><span class="ver-tag">v1.0.0 · Arch E1 30×42</span>
+    <button class="sheet-btn active" data-sheet="S1" id="btn-S1"><span class="sh-num">E-501</span></button>
+    <button class="sheet-btn" data-sheet="S2" id="btn-S2"><span class="sh-num">E-502</span></button>
+    <button class="ctrl-btn" id="btn-theme">Theme</button>
+  </div>
+  <div id="canvas-wrap"><svg id="sld-svg" xmlns="http://www.w3.org/2000/svg"></svg></div>
+</div>
+<script>
+// ============================================================
+// hospital_titleblock_30x42_V1_0_0 — Arch E1 (30x42) sheet frame + title block
+// ------------------------------------------------------------
+// Design of record. Features:
+// - 0.5in border, 8x6 ASME Y14.1 zone ticks, 5in right-side title strip
+// - REVISIONS table: caption band + header + 6 rows, filled bottom-up
+//   (rev 1 in the bottom row)
+// - firm / seal / project / sheet-number stacks vertically centered
+// - major cell separators 2.5, internal rules 1.2 (weight hierarchy)
+// - optional metadata.title_block.show_placeholders (false renders
+//   missing fields blank instead of '---')
+// - plot stamp in the bottom zone band (fit-capped at 180px so it
+//   clears the zone-8 digit at x=252)
+// buildTitleBlock() + computeTB() are the units that graduate into a
+// viewer/engine when page-mode integration happens (TB.drawingArea =
+// 72,72 3408x2736 is the box future SLDs compose into).
+//
+// House constraints honored (see hospital_sld_viewer_V1_0_0.html):
+// - markup built by string concat; measured by regex, never getBBox
+// - exact monospace text math ('Courier New' advance = 0.6em)
+// - theme colors as CSS var() refs, substituted at snapshot time from
+//   this file's own <style> block (parseThemeVars)
+// - deterministic: no Date.now/randomness in layout
+// - every browser API guarded so node:vm boots this file headlessly
+// ============================================================
+
+// ---- Sheet template (mirrors 07_data/normalized/sld_sheet_templates_V1_1_0.json) ----
+const TPL = {
+  name: 'Arch E1 — 30×42 (42in w × 30in h, landscape)',
+  paper_w_in: 42.0, paper_h_in: 30.0, orientation: 'landscape',
+  border_in: 0.5, content_margin_in: 0.25,
+  title_block: { width_in: 5.0, side: 'right', includes_revision_block: true },
+  zones: { cols: 8, rows: 6, convention: 'ASME_Y14.1' }
+};
+
+// ---- Demo topology metadata (hospital identity + placeholder firm data).
+// metadata.title_block is the proposed additive schema extension; every
+// field is optional — buildTitleBlock falls back to '---' (or blank when
+// show_placeholders is false). ----
+const TOPO = {
+  metadata: {
+    schema_version: '1.0.0',
+    project_name: 'NEW HOSPITAL — 121,000 SF',
+    project_number: '2026-HOSP-001',
+    created_by: 'R. MAYO',
+    checked_by: null,
+    created_date: '2026-07-04',
+    nec_edition: '2023',
+    sheet_template: '30x42',
+    px_per_inch: 96,
+    title_block: {
+      firm_name: 'MAYO ENGINEERING',
+      firm_tagline: 'CONSULTING ELECTRICAL ENGINEERS',
+      firm_address_lines: ['1234 PLACEHOLDER AVE, SUITE 500', 'SAN ANTONIO, TX 78201'],
+      firm_phone: '(210) 555-0142',
+      client: 'PLACEHOLDER HEALTH SYSTEM',
+      project_address_lines: ['4500 MEDICAL CENTER DR', 'SAN ANTONIO, TX 78229'],
+      drawn_by: 'R. MAYO',
+      approved_by: null,
+      issue_date: '2026-07-04',
+      scale: 'NONE',
+      notes: [
+        'ALL WORK SHALL COMPLY WITH THE NEC AND ALL APPLICABLE LOCAL CODES AND ORDINANCES.',
+        'FIELD VERIFY ALL EXISTING CONDITIONS PRIOR TO ROUGH-IN.',
+        'REFER TO PANEL SCHEDULES FOR BRANCH CIRCUIT INFORMATION.'
+      ],
+      revisions: [
+        { no: 1, date: '2026-07-04', description: 'ISSUED FOR REVIEW' }
+      ]
+    }
+  },
+  sheets: [
+    { sheet_id: 'S1', sheet_number: 'E-501', title: 'MAIN SINGLE-LINE DIAGRAM — NORMAL POWER' },
+    { sheet_id: 'S2', sheet_number: 'E-502', title: 'MAIN SINGLE-LINE DIAGRAM — EMERGENCY POWER' }
+  ]
+};
+
+// ---- TB geometry: every px constant derived from TPL at px_per_inch.
+// Phase 2 layout code composes diagrams into TB.drawingArea. ----
+function computeTB(tpl, ppi) {
+  const W = tpl.paper_w_in * ppi, H = tpl.paper_h_in * ppi;
+  const B = tpl.border_in * ppi;              // border inset band (zone band)
+  const M = tpl.content_margin_in * ppi;      // content margin inside border
+  const TBW = tpl.title_block.width_in * ppi; // title strip width
+  const strip = { x: W - B - TBW, y: B, w: TBW, h: H - 2 * B };
+  return {
+    page: { w: W, h: H },
+    band: B,
+    border: { x: B, y: B, w: W - 2 * B, h: H - 2 * B },
+    strip,
+    drawingArea: { x: B + M, y: B + M, w: strip.x - M - (B + M), h: H - 2 * B - 2 * M }
+  };
+}
+const TB = computeTB(TPL, TOPO.metadata.px_per_inch);
+
+// ---- helpers ----
+function esc(s) {
+  return String(s).replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;');
+}
+const r2 = v => Math.round(v * 100) / 100;
+
+// Deterministic monospace fit: shrink in 2px steps to minFs, then
+// ellipsize. Width math must match measureMarkupExtent (0.6em advance).
+function tbFit(text, maxW, fs, minFs) {
+  const s = String(text == null || text === '' ? '---' : text);
+  let f = fs;
+  while (f - 2 >= (minFs || fs) && s.length * f * 0.6 > maxW) f -= 2;
+  const maxChars = Math.max(1, Math.floor(maxW / (f * 0.6)));
+  const out = s.length <= maxChars ? s : s.slice(0, maxChars - 1) + '…';
+  return { text: out, fs: f };
+}
+
+// Word-wrap to maxLines at fixed fs; last line ellipsized on overflow.
+function tbWrap(text, maxW, fs, maxLines) {
+  const maxChars = Math.max(1, Math.floor(maxW / (fs * 0.6)));
+  const words = String(text == null || text === '' ? '---' : text).split(/\s+/);
+  const lines = [];
+  let cur = '';
+  for (const w of words) {
+    const t = cur ? cur + ' ' + w : w;
+    if (t.length <= maxChars) cur = t;
+    else { if (cur) lines.push(cur); cur = w; }
+  }
+  if (cur) lines.push(cur);
+  if (lines.length > maxLines) {
+    lines.length = maxLines;
+    lines[maxLines - 1] = lines[maxLines - 1].slice(0, maxChars - 1) + '…';
+  }
+  return lines.map(l => l.length <= maxChars ? l : l.slice(0, maxChars - 1) + '…');
+}
+
+function tbText(x, y, str, fs, o) {
+  o = o || {};
+  return `<text x="${r2(x)}" y="${r2(y)}" font-size="${fs}" fill="${o.fill || 'var(--sld-text)'}"`
+    + (o.anchor ? ` text-anchor="${o.anchor}"` : '')
+    + (o.weight ? ` font-weight="${o.weight}"` : '')
+    + `>${esc(str)}</text>`;
+}
+function tbLine(x1, y1, x2, y2, sw, o) {
+  o = o || {};
+  return `<line x1="${r2(x1)}" y1="${r2(y1)}" x2="${r2(x2)}" y2="${r2(y2)}" stroke="${o.stroke || 'var(--sld-line)'}" stroke-width="${sw}"`
+    + (o.dash ? ` stroke-dasharray="${o.dash}"` : '') + `/>`;
+}
+function tbRect(x, y, w, h, sw, o) {
+  o = o || {};
+  return `<rect x="${r2(x)}" y="${r2(y)}" width="${r2(w)}" height="${r2(h)}" fill="${o.fill || 'none'}" stroke="${o.stroke || 'var(--sld-line)'}" stroke-width="${sw}"`
+    + (o.dash ? ` stroke-dasharray="${o.dash}"` : '') + (o.opacity ? ` opacity="${o.opacity}"` : '') + `/>`;
+}
+
+// ============================================================
+// buildTitleBlock(tpl, meta, sheetMeta, opts) -> '<g class="sheet-frame">…</g>'
+// sheetMeta: { sheet_number, title, index (1-based), count }
+// This function (plus computeTB) is the Phase 2 graduation unit.
+// ============================================================
+function buildTitleBlock(tpl, meta, sheetMeta, opts) {
+  const tb = computeTB(tpl, meta.px_per_inch || 96);
+  const d = (meta.title_block || {});
+  // show_placeholders=false renders missing fields blank (production
+  // sheets); the default '---' flags missing data during review.
+  const ph = d.show_placeholders !== false;
+  const val = v => (v == null || v === '') ? (ph ? '---' : '') : String(v);
+  let s = `<g class="sheet-frame">`;
+
+  // Page-extent sentinel: invisible full-page rect so measureMarkupExtent
+  // reports exactly 0,0 -> page.w,page.h and pad-0 snapshots are the page.
+  s += `<rect x="0" y="0" width="${tb.page.w}" height="${tb.page.h}" fill="none" stroke="none"/>`;
+
+  // Trim edge (inset 2px so its stroke isn't clipped by the viewBox) + border
+  s += tbRect(2, 2, tb.page.w - 4, tb.page.h - 4, 1.2, { stroke: 'var(--sld-feeder)' });
+  s += tbRect(tb.border.x, tb.border.y, tb.border.w, tb.border.h, 3);
+
+  // ---- Zone ticks (ASME Y14.1): numbers right-to-left top/bottom,
+  // letters bottom-to-top left/right, drawn in the border band ----
+  const zc = (tpl.zones && tpl.zones.cols) || 8, zr = (tpl.zones && tpl.zones.rows) || 6;
+  const zw = tb.page.w / zc, zh = tb.page.h / zr;
+  for (let i = 1; i < zc; i++) {
+    const x = i * zw;
+    s += tbLine(x, 0, x, tb.band, 1.5, { stroke: 'var(--sld-feeder)' });
+    s += tbLine(x, tb.page.h - tb.band, x, tb.page.h, 1.5, { stroke: 'var(--sld-feeder)' });
+  }
+  for (let i = 0; i < zc; i++) {
+    const cx = i * zw + zw / 2, label = String(zc - i);
+    s += tbText(cx, 30, label, 16, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+    s += tbText(cx, tb.page.h - 18, label, 16, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+  }
+  const rowLetters = 'ABCDEFGHIJ';
+  for (let j = 1; j < zr; j++) {
+    const y = j * zh;
+    s += tbLine(0, y, tb.band, y, 1.5, { stroke: 'var(--sld-feeder)' });
+    s += tbLine(tb.page.w - tb.band, y, tb.page.w, y, 1.5, { stroke: 'var(--sld-feeder)' });
+  }
+  for (let j = 0; j < zr; j++) {
+    const cy = j * zh + zh / 2 + 6, label = rowLetters[zr - 1 - j];
+    s += tbText(tb.band / 2, cy, label, 16, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+    s += tbText(tb.page.w - tb.band / 2, cy, label, 16, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+  }
+
+  // ---- Plot stamp, bottom zone band. Width-capped at 180px so it always
+  // clears the zone-8 digit centered at x=252. ----
+  {
+    const stampSrc = d.plot_stamp || (val(sheetMeta.sheet_number) + ' · ' + val(d.issue_date || meta.created_date));
+    const stamp = tbFit(stampSrc, 180, 10, 10);
+    s += tbText(56, tb.page.h - tb.band / 2 + 4, stamp.text, 10, { fill: 'var(--sld-feeder)' });
+  }
+
+  // ---- Title strip frame. Cell y-boundaries (fixed heights; the general
+  // notes cell flexes to absorb the remainder so edits self-balance). ----
+  const X = tb.strip.x, W = tb.strip.w, Y0 = tb.strip.y, Y1 = Y0 + tb.strip.h;
+  const CX = X + W / 2, LX = X + 16, RX = X + W - 16;
+  const hFirm = 240, hSeal = 336, hRev = 368, hProj = 480, hMgmt = 288, hTitle = 192, hNum = 240;
+  const hNotes = tb.strip.h - (hFirm + hSeal + hRev + hProj + hMgmt + hTitle + hNum);
+  const yFirm = Y0, ySeal = yFirm + hFirm, yRev = ySeal + hSeal, yNotes = yRev + hRev,
+        yProj = yNotes + hNotes, yMgmt = yProj + hProj, yTitle = yMgmt + hMgmt, yNum = yTitle + hTitle;
+  s += tbLine(X, Y0, X, Y1, 3);   // strip left edge (heavy, like the border)
+  // Major cell separators: heavier than internal rules for hierarchy.
+  [ySeal, yRev, yNotes, yProj, yMgmt, yTitle, yNum].forEach(y => { s += tbLine(X, y, X + W, y, 2.5); });
+
+  // ---- Cell 1: firm / logo (stack vertically centered) ----
+  {
+    const name = tbFit(val(d.firm_name), W - 32, 24, 18);
+    const addrs = (d.firm_address_lines || []).slice(0, 3);
+    const lines = [];
+    lines.push({ off: 0, t: name.text, fs: name.fs, o: { anchor: 'middle', weight: 700 } });
+    lines.push({ off: 30, t: tbFit(val(d.firm_tagline), W - 32, 12, 12).text, fs: 12, o: { anchor: 'middle', fill: 'var(--sld-feeder)' } });
+    let off = 74;
+    addrs.forEach(a => { lines.push({ off, t: tbFit(a, W - 32, 13, 13).text, fs: 13, o: { anchor: 'middle' } }); off += 24; });
+    if (d.firm_phone) { lines.push({ off, t: tbFit(d.firm_phone, W - 32, 13, 13).text, fs: 13, o: { anchor: 'middle' } }); off += 24; }
+    const lastOff = lines[lines.length - 1].off;
+    const stackH = lastOff + 23;               // 19 first-line ascent + ~4 last-line descent
+    const b0 = yFirm + (hFirm - stackH) / 2 + 19;
+    lines.forEach(l => { s += tbText(CX, b0 + l.off, l.t, l.fs, l.o); });
+  }
+
+  // ---- Cell 2: PE seal (square + caption centered as one group) ----
+  {
+    const sq = 240, capGap = 34;
+    const groupH = sq + capGap + 3;
+    const sy = ySeal + (hSeal - groupH) / 2, sx = CX - sq / 2;
+    s += tbRect(sx, sy, sq, sq, 1.2, { stroke: 'var(--sld-feeder)', dash: '6,4' });
+    s += tbText(CX, sy + sq / 2 - 12, 'NOT FOR', 20, { anchor: 'middle', weight: 700, fill: 'var(--sld-em)' });
+    s += tbText(CX, sy + sq / 2 + 20, 'CONSTRUCTION', 20, { anchor: 'middle', weight: 700, fill: 'var(--sld-em)' });
+    s += tbText(CX, sy + sq + capGap, 'PROFESSIONAL ENGINEER SEAL', 12, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+  }
+
+  // ---- Cell 3: revision table — REVISIONS caption band, header row,
+  // 6 ruled rows filled bottom-up (rev 1 in the bottom row) ----
+  {
+    const yCap = yRev, yHead = yRev + 40, yRows = yRev + 80;
+    const cNo = X + 48, cDate = X + 144;   // col edges: NO 48px, DATE 96px, DESC 336px
+    s += tbText(CX, yCap + 27, 'REVISIONS', 14, { anchor: 'middle', weight: 700 });
+    s += tbLine(X, yHead, X + W, yHead, 1.2);
+    s += tbText(X + 24, yHead + 27, 'NO', 14, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+    s += tbText((cNo + cDate) / 2, yHead + 27, 'DATE', 14, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+    s += tbText((cDate + X + W) / 2, yHead + 27, 'DESCRIPTION', 14, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+    s += tbLine(X, yRows, X + W, yRows, 1.2);
+    for (let i = 1; i < 6; i++) s += tbLine(X, yRows + i * 48, X + W, yRows + i * 48, 1.2);
+    // Column rules span header + rows only (caption band stays clear).
+    s += tbLine(cNo, yHead, cNo, yNotes, 1.2);
+    s += tbLine(cDate, yHead, cDate, yNotes, 1.2);
+    (d.revisions || []).slice(0, 6).forEach((rv, i) => {
+      const ry = yRows + (5 - i) * 48 + 31;   // bottom-up: rev 1 in the bottom row
+      s += tbText(X + 24, ry, val(rv.no), 14, { anchor: 'middle' });
+      s += tbText((cNo + cDate) / 2, ry, tbFit(val(rv.date), 88, 12, 12).text, 12, { anchor: 'middle' });
+      s += tbText(cDate + 8, ry, tbFit(val(rv.description), W - 152, 12, 12).text, 12);
+    });
+  }
+
+  // ---- Cell 4: general notes (flex height) ----
+  {
+    s += tbText(LX, yNotes + 32, 'GENERAL NOTES', 14, { weight: 700 });
+    const notes = ['DESIGNED PER NEC ' + val(meta.nec_edition) + '.'].concat(d.notes || []);
+    let ny = yNotes + 64;
+    const maxY = yProj - 14;
+    notes.forEach((n, i) => {
+      const lines = tbWrap(n, W - 60, 13, 4);
+      lines.forEach((l, k) => {
+        if (ny > maxY) return;
+        s += tbText(LX + (k === 0 ? 0 : 28), ny, (k === 0 ? (i + 1) + '. ' : '') + l, 13);
+        ny += 22;
+      });
+      ny += 6;
+    });
+  }
+
+  // ---- Cell 5: project block (stack vertically centered) ----
+  {
+    const nameLines = tbWrap(val(meta.project_name), W - 32, 20, 3);
+    const addrs = (d.project_address_lines || []).slice(0, 3);
+    const lines = [];
+    lines.push({ off: 0, t: 'CLIENT', fs: 12, o: { fill: 'var(--sld-feeder)' } });
+    lines.push({ off: 30, t: tbFit(val(d.client), W - 32, 16, 12).text, fs: 16, o: { weight: 700 } });
+    lines.push({ off: 74, t: 'PROJECT', fs: 12, o: { fill: 'var(--sld-feeder)' } });
+    let off = 106;
+    nameLines.forEach(l => { lines.push({ off, t: l, fs: 20, o: { weight: 700 } }); off += 28; });
+    off += 6;
+    addrs.forEach(a => { lines.push({ off, t: tbFit(a, W - 32, 13, 13).text, fs: 13, o: {} }); off += 22; });
+    const lastOff = lines[lines.length - 1].off;
+    const stackH = lastOff + 14;               // 10 first-line ascent + ~4 last-line descent
+    const b0 = yProj + (hProj - stackH) / 2 + 10;
+    lines.forEach(l => { s += tbText(LX, b0 + l.off, l.t, l.fs, l.o); });
+  }
+
+  // ---- Cell 6: management grid (6 label/value rows) ----
+  {
+    const cMid = X + 176;
+    s += tbLine(cMid, yMgmt, cMid, yTitle, 1.2);
+    for (let i = 1; i < 6; i++) s += tbLine(X, yMgmt + i * 48, X + W, yMgmt + i * 48, 1.2);
+    const rows = [
+      ['DRAWN BY', val(d.drawn_by || meta.created_by)],
+      ['CHECKED BY', val(meta.checked_by)],
+      ['APPROVED BY', val(d.approved_by)],
+      ['ISSUE DATE', val(d.issue_date || meta.created_date)],
+      ['PROJECT NO', val(meta.project_number)],
+      ['SCALE', val(d.scale || 'NONE')]
+    ];
+    rows.forEach((rw, i) => {
+      const ry = yMgmt + i * 48 + 30;
+      s += tbText(LX, ry, rw[0], 12, { fill: 'var(--sld-feeder)' });
+      s += tbText(cMid + 12, ry, tbFit(rw[1], W - 192 - 24, 14, 12).text, 14);
+    });
+  }
+
+  // ---- Cell 7: sheet title ----
+  {
+    const lines = tbWrap(String(val(sheetMeta.title)).toUpperCase(), W - 32, 20, 3);
+    const lineH = 30, blockTop = yTitle + hTitle / 2 - (lines.length - 1) * lineH / 2 + 7;
+    lines.forEach((l, i) => { s += tbText(CX, blockTop + i * lineH, l, 20, { anchor: 'middle', weight: 700 }); });
+  }
+
+  // ---- Cell 8: sheet number (pair nudged up for optical centering) ----
+  {
+    const num = tbFit(val(sheetMeta.sheet_number), W - 48, 96, 56);
+    s += tbText(CX, yNum + 134, num.text, num.fs, { anchor: 'middle', weight: 700, fill: 'var(--sld-line)' });
+    if (sheetMeta.index && sheetMeta.count) {
+      s += tbText(CX, yNum + 190, 'SHEET ' + sheetMeta.index + ' OF ' + sheetMeta.count, 16, { anchor: 'middle', fill: 'var(--sld-feeder)' });
+    }
+  }
+
+  s += `</g>`;
+  return s;
+}
+
+// Demo-only: dashed marker + crosshair proving the drawing area bounds.
+function buildDrawingAreaMarker(tb) {
+  const a = tb.drawingArea, cx = a.x + a.w / 2, cy = a.y + a.h / 2;
+  let s = `<g class="drawing-area-marker">`;
+  s += tbRect(a.x, a.y, a.w, a.h, 1.2, { stroke: 'var(--sld-section)', dash: '8,5', opacity: 0.6 });
+  s += tbLine(cx - 40, cy, cx + 40, cy, 1.2, { stroke: 'var(--sld-section)' });
+  s += tbLine(cx, cy - 40, cx, cy + 40, 1.2, { stroke: 'var(--sld-section)' });
+  s += tbText(cx, cy + 72, 'DRAWING AREA 35.5" × 28.5" — 3408 × 2736 PX @ 96 PPI', 18, { anchor: 'middle', fill: 'var(--sld-section)' });
+  s += `</g>`;
+  return s;
+}
+
+// ---- sheet assembly ----
+function buildSheet(sheetId) {
+  const idx = TOPO.sheets.findIndex(sh => sh.sheet_id === sheetId);
+  if (idx === -1) return '';
+  const sh = TOPO.sheets[idx];
+  const sheetMeta = { sheet_number: sh.sheet_number, title: sh.title, index: idx + 1, count: TOPO.sheets.length };
+  let s = `<title>${esc(sh.title)}</title>`;
+  s += `<desc>Arch E1 30x42 title block demo, sheet ${esc(sh.sheet_number)}.</desc>`;
+  s += buildTitleBlock(TPL, TOPO.metadata, sheetMeta, {});
+  s += buildDrawingAreaMarker(TB);
+  return s;
+}
+
+// ============================================================
+// SNAPSHOT CORE — slim copy of the V2 viewer's snapshot block
+// (parseThemeVars / measureMarkupExtent / SVG assembly), same
+// window.__snapshot api:1 contract for 04_renderer/snapshot_html.mjs.
+// SNAPSHOT_PAD is 0 here: the sheet frame IS the page, so a default
+// capture is exactly 0 0 4032 2880.
+// ============================================================
+const SNAPSHOT_PAD = 0;
+
+function _snapCssText() {
+  if (typeof window !== 'undefined' && window.__SLD_CSS_TEXT) return window.__SLD_CSS_TEXT;
+  const st = document.querySelector && document.querySelector('style');
+  return st ? st.textContent : '';
+}
+
+function parseThemeVars(cssText) {
+  const themes = { dark: {}, light: {} };
+  const blockRe = /:root(\[data-theme="light"\])?\s*\{([^}]*)\}/g;
+  let m;
+  while ((m = blockRe.exec(cssText))) {
+    const target = m[1] ? themes.light : themes.dark;
+    const body = m[2].replace(/\/\*[\s\S]*?\*\//g, '');
+    const varRe = /--([\w-]+)\s*:\s*([^;}]+)/g;
+    let v;
+    while ((v = varRe.exec(body))) target['--' + v[1]] = v[2].trim();
+  }
+  themes.light = Object.assign({}, themes.dark, themes.light);
+  return themes;
+}
+
+function _snapAttrs(attrStr) {
+  const out = {};
+  const re = /([a-zA-Z_:][\w:-]*)="([^"]*)"/g;
+  let m;
+  while ((m = re.exec(attrStr))) out[m[1]] = m[2];
+  return out;
+}
+
+function _snapTextLen(content) {
+  return content.replace(/<[^>]*>/g, '').replace(/&[a-z]+;|&#\d+;/gi, 'x').length;
+}
+
+// Bounds without getBBox — same scan as the V2 viewer minus the G[]
+// device-anchor step (this demo has no layout globals).
+function measureMarkupExtent(markup) {
+  let minX = Infinity, minY = Infinity, maxX = -Infinity, maxY = -Infinity;
+  const ext = (x, y) => {
+    if (!isFinite(x) || !isFinite(y)) return;
+    if (x < minX) minX = x; if (x > maxX) maxX = x;
+    if (y < minY) minY = y; if (y > maxY) maxY = y;
+  };
+  let rest = markup.replace(
+    /<g\b[^>]*transform="translate\((-?[\d.]+),\s*(-?[\d.]+)\)[^"]*"[^>]*>([\s\S]*?)<\/g>/g,
+    (whole, tx, ty, inner) => {
+      const ax = parseFloat(tx), ay = parseFloat(ty);
+      let r = 0;
+      (inner.match(/-?\d+(?:\.\d+)?/g) || []).forEach(n => {
+        const a = Math.abs(parseFloat(n));
+        if (a < 10000 && a > r) r = a;
+      });
+      ext(ax - r, ay - r); ext(ax + r, ay + r);
+      return '';
+    });
+  rest = rest.replace(/<text\b([^>]*)>([\s\S]*?)<\/text>/g, (whole, attrs, content) => {
+    const at = _snapAttrs(attrs);
+    const x = parseFloat(at.x || 0), y = parseFloat(at.y || 0);
+    const fs = parseFloat(at['font-size'] || 10);
+    const w = _snapTextLen(content) * fs * 0.6;
+    const anchor = at['text-anchor'] || 'start';
+    const x0 = anchor === 'middle' ? x - w / 2 : (anchor === 'end' ? x - w : x);
+    ext(x0, y - fs * 0.8); ext(x0 + w, y + fs * 0.25);
+    return '';
+  });
+  const tagRe = /<(rect|circle|ellipse|line|polyline|polygon|path)\b([^>]*)>/g;
+  let t;
+  while ((t = tagRe.exec(rest))) {
+    const tag = t[1], at = _snapAttrs(t[2]);
+    if (tag === 'rect') {
+      const x = parseFloat(at.x || 0), y = parseFloat(at.y || 0);
+      ext(x, y); ext(x + parseFloat(at.width || 0), y + parseFloat(at.height || 0));
+    } else if (tag === 'circle' || tag === 'ellipse') {
+      const cx = parseFloat(at.cx || 0), cy = parseFloat(at.cy || 0);
+      const rx = parseFloat(at.rx || at.r || 0), ry = parseFloat(at.ry || at.r || 0);
+      ext(cx - rx, cy - ry); ext(cx + rx, cy + ry);
+    } else if (tag === 'line') {
+      ext(parseFloat(at.x1 || 0), parseFloat(at.y1 || 0));
+      ext(parseFloat(at.x2 || 0), parseFloat(at.y2 || 0));
+    } else if (tag === 'polyline' || tag === 'polygon') {
+      const nums = (at.points || '').match(/-?\d+(?:\.\d+)?/g) || [];
+      for (let i = 0; i + 1 < nums.length; i += 2) ext(parseFloat(nums[i]), parseFloat(nums[i + 1]));
+    } else if (tag === 'path') {
+      const pairRe = /(-?\d+(?:\.\d+)?),(-?\d+(?:\.\d+)?)/g;
+      let p;
+      while ((p = pairRe.exec(at.d || ''))) ext(parseFloat(p[1]), parseFloat(p[2]));
+    }
+  }
+  if (minX === Infinity) return null;
+  return { minX, minY, maxX, maxY };
+}
+
+function snapshotCore(sheetId, opts) {
+  opts = opts || {};
+  const theme = opts.theme ||
+    ((document.documentElement.getAttribute && document.documentElement.getAttribute('data-theme')) === 'light' ? 'light' : 'dark');
+  const pad = (opts.pad != null) ? opts.pad : SNAPSHOT_PAD;
+  const warnings = [];
+  const markup = buildSheet(sheetId);
+  if (!markup) warnings.push('FATAL: unknown sheet ' + sheetId);
+
+  const extent = markup ? measureMarkupExtent(markup) : null;
+  let vb;
+  if (opts.region) {
+    vb = { x: opts.region.x, y: opts.region.y, w: opts.region.w, h: opts.region.h };
+  } else if (extent) {
+    vb = { x: extent.minX - pad, y: extent.minY - pad,
+           w: (extent.maxX - extent.minX) + pad * 2, h: (extent.maxY - extent.minY) + pad * 2 };
+  } else {
+    warnings.push('FATAL: empty markup — no extent computable');
+    vb = { x: 0, y: 0, w: 100, h: 100 };
+  }
+
+  const vars = parseThemeVars(_snapCssText())[theme] || {};
+  let body = markup.replace(/var\((--[\w-]+)\)/g, (mm, name) => (vars[name] !== undefined ? vars[name] : mm));
+  if (/var\(/.test(body)) {
+    const left = [...new Set(body.match(/var\((--[\w-]+)\)/g) || [])];
+    warnings.push('FATAL: unresolved CSS variables: ' + left.join(', '));
+  }
+
+  const bg = vars['--canvas-bg'] || '#1c2438';
+  const svg =
+    `<svg xmlns="http://www.w3.org/2000/svg" viewBox="${r2(vb.x)} ${r2(vb.y)} ${r2(vb.w)} ${r2(vb.h)}"`
+    + ` width="${Math.ceil(vb.w)}" height="${Math.ceil(vb.h)}" font-family="'Courier New',monospace">`
+    + `<rect x="${r2(vb.x)}" y="${r2(vb.y)}" width="${r2(vb.w)}" height="${r2(vb.h)}" fill="${bg}"/>`
+    + body + `</svg>`;
+  return { svg, viewBox: vb, coverage: null, warnings, theme, sheetId };
+}
+
+window.__snapshot = {
+  api: 1,
+  slug: 'titleblock',
+  core: snapshotCore,
+  sheetIds: () => TOPO.sheets.map(sh => sh.sheet_id)
+};
+
+// ---- minimal live preview (all DOM access guarded for node:vm boot) ----
+(function init() {
+  try {
+    let cur = 'S1';
+    const svg = document.getElementById('sld-svg');
+    function render() {
+      if (!svg) return;
+      svg.innerHTML = buildSheet(cur);
+      svg.setAttribute('viewBox', '0 0 ' + TB.page.w + ' ' + TB.page.h);
+      const btns = document.querySelectorAll('.sheet-btn') || [];
+      for (const b of btns) {
+        if (b.classList && b.dataset) b.classList.toggle('active', b.dataset.sheet === cur);
+      }
+      const sh = TOPO.sheets.find(x => x.sheet_id === cur);
+      if (sh) document.title = sh.sheet_number + ' — Hospital Title Block';
+    }
+    const btns = document.querySelectorAll('.sheet-btn') || [];
+    for (const b of btns) {
+      b.onclick = () => { if (b.dataset && b.dataset.sheet) { cur = b.dataset.sheet; render(); } };
+    }
+    const tbtn = document.getElementById('btn-theme');
+    if (tbtn) tbtn.onclick = () => {
+      const de = document.documentElement;
+      const light = de.getAttribute && de.getAttribute('data-theme') === 'light';
+      if (light) { de.removeAttribute('data-theme'); } else { de.setAttribute('data-theme', 'light'); }
+    };
+    render();
+  } catch (e) {
+    try { console.error('[titleblock] init failed:', e); } catch (_) {}
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+{
+  "$schema": "sld_sheet_templates/v1",
+  "description": "Sheet template definitions for SLD composition. Defines physical paper dimensions, border, title block, content margins, and zone graduations for each supported sheet size. Part of the SLD data layer.",
+  "source_file": null,
+  "generated": "2026-07-04",
+  "default_template": "30x42",
+  "templates": {
+    "30x42": {
+      "name": "Arch E1 — 30×42 (42in w × 30in h, landscape)",
+      "paper_w_in": 42.0,
+      "paper_h_in": 30.0,
+      "orientation": "landscape",
+      "border_in": 0.5,
+      "title_block": {
+        "width_in": 5.0,
+        "side": "right",
+        "includes_revision_block": true
+      },
+      "content_margin_in": 0.25,
+      "zones": {
+        "cols": 8,
+        "rows": 6,
+        "convention": "ASME_Y14.1"
+      },
+      "notes": "Standard large-format engineering sheet (Arch E1; V1_0_0 mislabeled this size ARCH D / ANSI D). Zone numbers run right-to-left on top/bottom edges, zone letters bottom-to-top on left/right edges. Drawing area at 96 px/in: x 72-3480, y 72-2808 (3408x2736 px = 35.5x28.5 in)."
+    }
+  }
+}

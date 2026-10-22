@@ -1,0 +1,188 @@
+  wrote lcc_layout_config.json
+  wrote lcc_SLD_topology_V1_0_0.json
+  sheets=1 devices=30 routed=25 annotations=46 switchboards=1 sections=2 halts=8
+=== /home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/2_build/lcc_SLD_topology_V1_0_0.json (schema 1.0.0, 1 sheets, 30 devices, 25 routed) ===
+ERROR TI-3       devices[id=d-330].designation
+      duplicate designation "P4" (device d-330, device d-316)   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TI-3; schema V1.1 §15 amendment 7]
+ERROR TI-4       devices
+      20 designation(s) do not match the legend pattern: d-331:P4AA, d-320:P1A, d-321:P1B, d-322:P1C, d-323:P1D, d-324:P1E, d-325:P1F, d-326:P1G, d-332:P2A, d-333:P3A, d-334:P3B, d-335:LIGHT., d-336:S1, d-337:P4A, d-338:P4B, d-312:P1, d-313:P2, d-314:P1AA, d-315:P3, sw-201:HOTEL SWITCHGEAR   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TI-4; 07_data equipment_designation_legend]
+RESULT: 2 errors, 0 migration items, 0 warnings, 0 info | rules run: 55, vacuous: 2 | skipped: SH-2a (missing geometry), SH-5a (missing geometry), SH-2b (missing geometry), SH-4 (missing geometry), SH-5b (missing geometry), SH-3 (missing geometry), SH-3-A7 (missing geometry), SH-6 (missing geometry)
+  wrote OPEN_ITEMS.md — 8 halts, 8 notes, 0 placeholders
+  !! 8 UNRESOLVED TIER-3 HALTS — this project is `unreviewed` by definition and cannot graduate.
+     HALT-001  T1 impedance (%Z, X/R) and the MPB1 primary breaker  — blocks: Fault-current study · T1 primary protection
+     HALT-002  Available fault current  — blocks: A-4 tags · AIC ratings · bus bracing
+     HALT-003  Ratings and feeders for P4 (upper), P4AA, P2A, P3A, P3B, LIGHT., S1  — blocks: Feeder tags + conduit callouts for seven feeders · panel ratings
+     HALT-004  S1 single-phase feeder configuration  — blocks: S1 feeder sizing
+     HALT-005  UPS rating and downstream  — blocks: UPS nameplate · output distribution
+     HALT-006  Feeder distances  — blocks: Voltage-drop calculation
+     HALT-007  Two panels designated P4  — blocks: TI-3 · panel schedules · Revit electrical-system naming
+     HALT-008  Legacy designations outside the office designation legend  — blocks: TI-4 · run_pipeline.sh stage 2
+RESULT open_items halts=8 notes=8 placeholders=0
+[run_layout] wrote /home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/2_build/lcc_geom_block.json
+[run_layout] devices=30 routed=25 annotations=22 content=2720x4910
+  merged. layout_warnings: 1 | drops: 0
+=== /home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/2_build/lcc_SLD_topology_V1_0_0__WITH_GEOMETRY.json (schema 1.0.0, 1 sheets, 30 devices, 25 routed) ===
+ERROR TI-3       devices[id=d-330].designation
+      duplicate designation "P4" (device d-330, device d-316)   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TI-3; schema V1.1 §15 amendment 7]
+ERROR TI-4       devices
+      20 designation(s) do not match the legend pattern: d-331:P4AA, d-320:P1A, d-321:P1B, d-322:P1C, d-323:P1D, d-324:P1E, d-325:P1F, d-326:P1G, d-332:P2A, d-333:P3A, d-334:P3B, d-335:LIGHT., d-336:S1, d-337:P4A, d-338:P4B, d-312:P1, d-313:P2, d-314:P1AA, d-315:P3, sw-201:HOTEL SWITCHGEAR   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TI-4; 07_data equipment_designation_legend]
+INFO  SCHEMA-14  geometry
+      partial coverage: devices 30/30, routed 25/25, annotations 22/46 (defined semantics §14.2)   [03_contracts/sld_topology_schema_V1_0_0.md §14]
+RESULT: 2 errors, 0 migration items, 0 warnings, 1 info | rules run: 63, vacuous: 2
+PREFLIGHT: s_pred { S1=1 } | calibration {"s_pred_min":0.2,"sh4_inflate_px":1000,"sh5_inflate_px":500,"sh3_overlap_px2":25}
+  viewer rebuilt
+[snapshot]  ok  lcc_S1_dark  coverage 99/99
+[snapshot]  ok  lcc_S1_light  coverage 99/99
+[snapshot] wrote 2 capture(s) → /home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/3_output/sheets
+[snapshot] audit S1: ok  label_overlap 0 · glyph_collision 0 · out_of_frame 0 · feeder_crossing 0 · layout_warnings 0
+[snapshot] audit → audit.json (advisory)
+[snapshot]  ok  lcc_S1_light__page  coverage 99/99
+[snapshot] wrote 1 capture(s) → /home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/3_output/pages
+segments: 16 horizontal, 43 vertical
+
+=== COLLINEAR HORIZONTAL OVERLAPS: 0 ===
+
+=== COLLINEAR VERTICAL OVERLAPS: 0 ===
+
+=== EXITS OUTSIDE THE PARENT BOX (half-width 32) ===
+  0 exits outside the box across 0 parents
+  affected parents: none
+RESULT feeder_overlaps collinear_h=0 collinear_v=0 exits_outside=0
+==============================================================================
+FEEDERS BY SOURCE PANEL
+==============================================================================
+
+S1  CB-01   (1 feeder out)
+   F-302    r-302   line_in       -> UPS        load_in       2 pts
+
+S1  CB-02   (1 feeder out)
+   F-303    r-303   line_in       -> P1         feed_top      2 pts
+
+S1  CB-03   (1 feeder out)
+   F-304    r-304   line_in       -> P2         feed_top      4 pts
+
+S1  CB-04   (1 feeder out)
+   F-305    r-305   line_in       -> P1AA       feed_top      4 pts
+
+S1  CB-05   (1 feeder out)
+   F-306    r-306   line_in       -> P3         feed_top      4 pts
+
+S1  CB-06   (1 feeder out)
+   F-307    r-307   line_in       -> P4         feed_top      4 pts
+
+S1  P1   (7 feeders out)
+   F-310    r-310   feed_top      -> P1A        feed_bottom   4 pts
+   F-311    r-311   feed_top      -> P1B        feed_bottom   4 pts
+   F-312    r-312   feed_top      -> P1C        feed_bottom   4 pts
+   F-313    r-313   feed_top      -> P1D        feed_bottom   4 pts
+   F-314    r-314   feed_top      -> P1E        feed_bottom   4 pts
+   F-315    r-315   feed_top      -> P1F        feed_bottom   4 pts
+   F-316    r-316   feed_top      -> P1G        feed_bottom   4 pts
+
+S1  P1AA   (1 feeder out)
+   F-322    r-322   feed_top      -> P2A        feed_bottom   4 pts
+
+S1  P2   (1 feeder out)
+   F-320    r-320   feed_top      -> P4         feed_bottom   4 pts
+
+S1  P3   (3 feeders out)
+   F-323    r-323   feed_top      -> P3A        feed_bottom   4 pts
+   F-324    r-324   feed_top      -> P3B        feed_bottom   4 pts
+   F-326    r-326   feed_top      -> S1         feed_bottom   4 pts
+
+S1  P3B   (1 feeder out)
+   F-325    r-325   feed_top      -> LIGHT.     feed_bottom   4 pts
+
+S1  P4   (3 feeders out)
+   F-321    r-321   feed_top      -> P4AA       feed_bottom   4 pts
+   F-327    r-327   feed_top      -> P4A        feed_bottom   4 pts
+   F-328    r-328   feed_top      -> P4B        feed_bottom   4 pts
+
+S1  T1   (1 feeder out)
+   F-301    r-301   secondary_out -> MAIN       line_in       2 pts
+
+==============================================================================
+FEEDER x FEEDER TRUE CROSSINGS: 0 (each listed once per direction)
+==============================================================================
+  none
+
+==============================================================================
+FEEDER x DEVICE BOX: 0
+==============================================================================
+  none
+
+RESULT trace_feeders feeder_x_feeder=0 feeder_x_feeder_directed=0 feeder_x_device=0
+==============================================================================
+A. FEEDER THROUGH A DEVICE INTERIOR (own parent/child included)
+==============================================================================
+  none
+
+==============================================================================
+B. TAG / PILL OVERLAPPING A DEVICE BOX
+==============================================================================
+  none
+
+==============================================================================
+C. FEEDER THROUGH EQUIPMENT TEXT (A-8 label blocks)
+==============================================================================
+  none
+
+TOTAL: 0 feeder-through-symbol, 0 tag-on-symbol, 0 feeder-through-text
+RESULT symbol_clash through_symbol=0 tag_on_symbol=0 through_text=0
+scraped: 59 feeder segments, 24 tag boxes (A-1 pill 22, A-2 callout 1, A-3 label 1, A-4 pennant 0), 47 leader segments, 4 bus/level segments
+tolerance: HARD = ink gap <= 0, TIGHT = ink gap < 6 px
+
+=== TAG x FEEDER — HARD: 0, TIGHT: 2 ===
+  tight  S1  A-1 pill    "904"                @ (590,3947)             x  F-312     OWN      gap 4.2 px   [seg 712,3968 -> 520,3968]
+  tight  S1  A-1 pill    "904"                @ (790,3947)             x  F-314     FOREIGN  gap 4.2 px   [seg 728,3968 -> 920,3968]
+
+--- ADVISORY: leader arm x foreign feeder ---
+  (none)
+
+--- ADVISORY: tag x bus / level-line ---
+  (none)
+
+--- FL-0003: vertical-orient A-1 pills ---
+  18 of 22 pills are side-anchored (pill centre y == attach y by construction)
+  findings among them: 0 HARD, 2 tight
+
+RESULT tag_feeder_clash tag_feeder_hard=0 tag_feeder_tight=2 leader_foreign_hard=0 advisory_rule_hard=0
+!! geometry.level_lines is empty — nothing to check. Re-run the layout + merge.
+RESULT level_bands band_outside=0 band_total=0 line_through_device=0 out_of_band=0 orphan=0
+scraped: 22 A-1 ticks across 1 sheets, 23 feeders
+tolerance: a tick is DETACHED when its centre is > 2 px from its own run
+
+=== A-1 TICK OFF ITS OWN FEEDER — 0 ===
+  (none)
+
+  distinct feeders: 0   [acceptance: 0]
+RESULT tick_detach tick_detached=0 tick_total=22 tick_feeders=0
+==============================================================================
+COMPOSED PAGE SCALE   (printable area 3360 x 2688 px, 120 px margin per side, 96 px/in)
+==============================================================================
+  sheet  number   viewBox w x h        s_width  s_height  ->  s        bind     11px on paper
+  S1     E-501      3349 x   1948   1.0807   1.5738   ->  1.0000   width    0.1146 in  <==
+
+  set range   1.0000 .. 1.0000      spread 1.00x   [acceptance: every sheet 0.35-0.46, spread <= 1.25x]
+  on paper    0.1146 .. 0.1146 in   [acceptance: 0.0400-0.0490 in; golden S2 = 0.0455 in at s 0.3972]
+  golden reference: S1 0.5662, S2 0.4841, spread 1.17x — S1 WIDTH-bound, S2 height-bound
+                    (was S1 0.4454 / S2 0.3972 / 1.12x / both height-bound through rev
+                     1.0.14 — those numbers were phantom-inflated, FL-0007. S1 flipping
+                     to width-bound is a REAL change of bind, not a rounding artifact:
+                     honest S1 is 6174 x 4949.59, so s_width 0.5662 < s_height 0.5707.)
+  !! WIDTH-BOUND: S1 — the "H = base + sum(steps); s = 2688/H"
+     sheet-height planning arithmetic does NOT apply to these sheets.
+
+VERDICT: 1 of 1 sheet(s) outside 0.35-0.46: S1 1.0000; spread 1.00x OK
+RESULT page_scale sheets=1 out_of_band=1 s_min=1.0000 s_max=1.0000 spread=1.0000 all_height_bound=false
+
+==============================================================================
+FRAME HONESTY   (viewBox minus the 120px pad vs true ink extent, tol ±2px)
+==============================================================================
+  sheet   worst side   L / T / R / B slack        verdict
+  S1           0.00       0.0 /    0.0 /    0.0 /    0.0    honest
+
+RESULT frame_honesty frame_sheets=1 frame_dishonest=0 frame_worst_px=0.00 frame_tol_px=2
+  wrote 3_output/RESULTS.json — run 23
+  engine 1.0.22 · sheets 1 · P3 2 errors / 63 rules
+  checks non-zero: tag_feeder_tight=2 frame_sheets=1 frame_tol_px=2

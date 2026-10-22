@@ -1,0 +1,1035 @@
+{
+  "html": "/mnt/sdcard/Mayo_Claude_Workspace/Claude Revit SLD Generator/claude_sld_generator_system/02_specs/visual_reference/sld_catalog_V1_0_0.html",
+  "viewer_revision": "sld_catalog_V1_0_0",
+  "generated": "2026-07-24T18:22:52.227Z",
+  "width": 500,
+  "ports": true,
+  "captures": [
+    {
+      "id": "L0-1",
+      "theme": "dark",
+      "svg": "sld_catalog_L0-1_dark.svg",
+      "png": "sld_catalog_L0-1_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -40,
+        "y": 0,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L0-1",
+      "theme": "light",
+      "svg": "sld_catalog_L0-1_light.svg",
+      "png": "sld_catalog_L0-1_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -40,
+        "y": 0,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-1",
+      "theme": "dark",
+      "svg": "sld_catalog_L1-1_dark.svg",
+      "png": "sld_catalog_L1-1_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -95.5,
+        "y": -74,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-1",
+      "theme": "light",
+      "svg": "sld_catalog_L1-1_light.svg",
+      "png": "sld_catalog_L1-1_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -95.5,
+        "y": -74,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-2",
+      "theme": "dark",
+      "svg": "sld_catalog_L1-2_dark.svg",
+      "png": "sld_catalog_L1-2_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 420,
+        "h": 260
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-2",
+      "theme": "light",
+      "svg": "sld_catalog_L1-2_light.svg",
+      "png": "sld_catalog_L1-2_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 420,
+        "h": 260
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-3",
+      "theme": "dark",
+      "svg": "sld_catalog_L1-3_dark.svg",
+      "png": "sld_catalog_L1-3_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -20,
+        "y": -16.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-3",
+      "theme": "light",
+      "svg": "sld_catalog_L1-3_light.svg",
+      "png": "sld_catalog_L1-3_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -20,
+        "y": -16.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-4",
+      "theme": "dark",
+      "svg": "sld_catalog_L1-4_dark.svg",
+      "png": "sld_catalog_L1-4_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -86.5,
+        "y": -62.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L1-4",
+      "theme": "light",
+      "svg": "sld_catalog_L1-4_light.svg",
+      "png": "sld_catalog_L1-4_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -86.5,
+        "y": -62.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-1",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-1_dark.svg",
+      "png": "sld_catalog_L2-1_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -107.5,
+        "y": -74,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-1",
+      "theme": "light",
+      "svg": "sld_catalog_L2-1_light.svg",
+      "png": "sld_catalog_L2-1_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -107.5,
+        "y": -74,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-2",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-2_dark.svg",
+      "png": "sld_catalog_L2-2_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -76.5,
+        "y": -54.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-2",
+      "theme": "light",
+      "svg": "sld_catalog_L2-2_light.svg",
+      "png": "sld_catalog_L2-2_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -76.5,
+        "y": -54.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-3",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-3_dark.svg",
+      "png": "sld_catalog_L2-3_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -44.75,
+        "y": -4.15,
+        "w": 379.5,
+        "h": 278.3
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-3",
+      "theme": "light",
+      "svg": "sld_catalog_L2-3_light.svg",
+      "png": "sld_catalog_L2-3_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -44.75,
+        "y": -4.15,
+        "w": 379.5,
+        "h": 278.3
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-4",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-4_dark.svg",
+      "png": "sld_catalog_L2-4_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -30,
+        "y": 0,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-4",
+      "theme": "light",
+      "svg": "sld_catalog_L2-4_light.svg",
+      "png": "sld_catalog_L2-4_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -30,
+        "y": 0,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-5",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-5_dark.svg",
+      "png": "sld_catalog_L2-5_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -50,
+        "y": -66.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-5",
+      "theme": "light",
+      "svg": "sld_catalog_L2-5_light.svg",
+      "png": "sld_catalog_L2-5_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -50,
+        "y": -66.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-6",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-6_dark.svg",
+      "png": "sld_catalog_L2-6_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -70,
+        "y": -75,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-6",
+      "theme": "light",
+      "svg": "sld_catalog_L2-6_light.svg",
+      "png": "sld_catalog_L2-6_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -70,
+        "y": -75,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-7",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-7_dark.svg",
+      "png": "sld_catalog_L2-7_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -60,
+        "y": -73,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-7",
+      "theme": "light",
+      "svg": "sld_catalog_L2-7_light.svg",
+      "png": "sld_catalog_L2-7_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -60,
+        "y": -73,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-8",
+      "theme": "dark",
+      "svg": "sld_catalog_L2-8_dark.svg",
+      "png": "sld_catalog_L2-8_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -113.5,
+        "y": -60,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L2-8",
+      "theme": "light",
+      "svg": "sld_catalog_L2-8_light.svg",
+      "png": "sld_catalog_L2-8_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -113.5,
+        "y": -60,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L3-1",
+      "theme": "dark",
+      "svg": "sld_catalog_L3-1_dark.svg",
+      "png": "sld_catalog_L3-1_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 12,
+        "y": -8.5,
+        "w": 300,
+        "h": 200
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L3-1",
+      "theme": "light",
+      "svg": "sld_catalog_L3-1_light.svg",
+      "png": "sld_catalog_L3-1_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 12,
+        "y": -8.5,
+        "w": 300,
+        "h": 200
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L3-2",
+      "theme": "dark",
+      "svg": "sld_catalog_L3-2_dark.svg",
+      "png": "sld_catalog_L3-2_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -26,
+        "y": -67,
+        "w": 310,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L3-2",
+      "theme": "light",
+      "svg": "sld_catalog_L3-2_light.svg",
+      "png": "sld_catalog_L3-2_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -26,
+        "y": -67,
+        "w": 310,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L3-3",
+      "theme": "dark",
+      "svg": "sld_catalog_L3-3_dark.svg",
+      "png": "sld_catalog_L3-3_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -26,
+        "y": -67,
+        "w": 310,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "L3-3",
+      "theme": "light",
+      "svg": "sld_catalog_L3-3_light.svg",
+      "png": "sld_catalog_L3-3_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -26,
+        "y": -67,
+        "w": 310,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "R-1",
+      "theme": "dark",
+      "svg": "sld_catalog_R-1_dark.svg",
+      "png": "sld_catalog_R-1_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -50,
+        "y": -37.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "R-1",
+      "theme": "light",
+      "svg": "sld_catalog_R-1_light.svg",
+      "png": "sld_catalog_R-1_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -50,
+        "y": -37.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "R-2",
+      "theme": "dark",
+      "svg": "sld_catalog_R-2_dark.svg",
+      "png": "sld_catalog_R-2_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -50,
+        "y": -86.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "R-2",
+      "theme": "light",
+      "svg": "sld_catalog_R-2_light.svg",
+      "png": "sld_catalog_R-2_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -50,
+        "y": -86.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "R-3",
+      "theme": "dark",
+      "svg": "sld_catalog_R-3_dark.svg",
+      "png": "sld_catalog_R-3_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -20,
+        "y": -102,
+        "w": 400,
+        "h": 294
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "R-3",
+      "theme": "light",
+      "svg": "sld_catalog_R-3_light.svg",
+      "png": "sld_catalog_R-3_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": -20,
+        "y": -102,
+        "w": 400,
+        "h": 294
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-1",
+      "theme": "dark",
+      "svg": "sld_catalog_A-1_dark.svg",
+      "png": "sld_catalog_A-1_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 16,
+        "y": -68,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-1",
+      "theme": "light",
+      "svg": "sld_catalog_A-1_light.svg",
+      "png": "sld_catalog_A-1_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 16,
+        "y": -68,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-2",
+      "theme": "dark",
+      "svg": "sld_catalog_A-2_dark.svg",
+      "png": "sld_catalog_A-2_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 37,
+        "y": -15,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-2",
+      "theme": "light",
+      "svg": "sld_catalog_A-2_light.svg",
+      "png": "sld_catalog_A-2_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 37,
+        "y": -15,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-3",
+      "theme": "dark",
+      "svg": "sld_catalog_A-3_dark.svg",
+      "png": "sld_catalog_A-3_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 30,
+        "y": -32.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-3",
+      "theme": "light",
+      "svg": "sld_catalog_A-3_light.svg",
+      "png": "sld_catalog_A-3_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 30,
+        "y": -32.5,
+        "w": 300,
+        "h": 220
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-4",
+      "theme": "dark",
+      "svg": "sld_catalog_A-4_dark.svg",
+      "png": "sld_catalog_A-4_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-4",
+      "theme": "light",
+      "svg": "sld_catalog_A-4_light.svg",
+      "png": "sld_catalog_A-4_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-5",
+      "theme": "dark",
+      "svg": "sld_catalog_A-5_dark.svg",
+      "png": "sld_catalog_A-5_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-5",
+      "theme": "light",
+      "svg": "sld_catalog_A-5_light.svg",
+      "png": "sld_catalog_A-5_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 200,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-6",
+      "theme": "dark",
+      "svg": "sld_catalog_A-6_dark.svg",
+      "png": "sld_catalog_A-6_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-6",
+      "theme": "light",
+      "svg": "sld_catalog_A-6_light.svg",
+      "png": "sld_catalog_A-6_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 320,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-7",
+      "theme": "dark",
+      "svg": "sld_catalog_A-7_dark.svg",
+      "png": "sld_catalog_A-7_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 340,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-7",
+      "theme": "light",
+      "svg": "sld_catalog_A-7_light.svg",
+      "png": "sld_catalog_A-7_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 340,
+        "h": 120
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-8",
+      "theme": "dark",
+      "svg": "sld_catalog_A-8_dark.svg",
+      "png": "sld_catalog_A-8_dark.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 340,
+        "h": 150
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "id": "A-8",
+      "theme": "light",
+      "svg": "sld_catalog_A-8_light.svg",
+      "png": "sld_catalog_A-8_light.png",
+      "png_width": 500,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 340,
+        "h": 150
+      },
+      "coverage": {
+        "rendered": 1,
+        "total": 1,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

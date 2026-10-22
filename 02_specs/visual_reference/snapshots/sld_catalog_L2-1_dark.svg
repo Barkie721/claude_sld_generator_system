@@ -1,0 +1,17 @@
+<svg viewBox="-107.5 -74 300 220" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#FFD600;stroke:#000;stroke-width:0.6}.port-label{fill:#FFD600;font-family:monospace;font-weight:600}</style><rect x="-107.5" y="-74" width="300" height="220" fill="#0a0e17"/>
+  <circle cx="30" cy="10" r="4"
+          fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <path d="M30,10 Q17,26 30,42"
+        fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <circle cx="30" cy="42" r="4"
+          fill="none" stroke="#00FFFF" stroke-width="3"/>
+  <line x1="30" y1="46" x2="30" y2="58"
+        stroke="#00FFFF" stroke-width="3"/>
+  <circle cx="30" cy="60" r="2.5"
+          fill="#FF69B4" stroke="#FF69B4" stroke-width="1"/>
+  <text x="42" y="23" font-family="monospace" font-size="12"
+        font-weight="700" text-decoration="underline"
+        fill="#FFFFFF">400A</text>
+  <text x="42" y="33" font-family="monospace" font-size="12"
+        font-weight="700" fill="#FFFFFF">3P</text>
+<g class="port-marker"><polygon points="30,1 35,6 30,11 25,6" class="port-diamond"/><text x="21" y="9" text-anchor="end" font-size="8" class="port-label">line_in</text><polygon points="30,55 35,60 30,65 25,60" class="port-diamond"/><text x="39" y="63" font-size="8" class="port-label">bus_out</text></g></svg>

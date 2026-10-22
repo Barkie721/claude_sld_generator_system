@@ -1,0 +1,35 @@
+# sync_gate check-NAME baseline — D7. Blessed by: bash 08_validation/checkname_diff.sh --bless
+# NAMES ONLY. The text after ' — ' is deliberately absent: it carries shas and counts
+# and churns on every legitimate re-bless, which would make this file noise.
+# Order is execution order and is significant — a reordered check is a real change.
+# Re-bless ONLY when you have deliberately added or removed a check, and say which in
+# the same change-set. Re-blessing to clear a red you did not intend is the failure
+# this file exists to prevent.
+# --- FULL (14) ---
+[P1] family map ×2 byte-identical + matches manifest
+[P1] viewer == golden viewer byte-copy + matches manifest
+[P1] DLL embed == current family map (map<->DLL lockstep)
+[P1] published_drop shas == the LIVE upstream files (publisher-side staleness)
+[P2] standalone topology == WITH_GEOMETRY topology (exact, minus geometry)
+[P2] embedded viewer TOPO structurally == standalone (excl metadata/layout_config)
+[P3] sld_engine.mjs == regenerate(viewer), byte-identical + matches manifest
+[P4] snapshots_page/audit.json viewer_revision == manifest engine rev
+[P4] family map provenance stamp present + ISO date
+[P5] viewer <meta revision> == manifest rev
+[P5] README_engine header "internal rev X" == manifest rev
+[P5] CLAUDE.md "sld_engine.mjs rev **X**" == manifest rev
+[P6] golden PNG baselines (baseline_sha256.txt) match on disk
+[P6] composed PNG baselines (baseline_composed_sha256.txt) match on disk
+# --- QUICK (12) ---
+[P1] family map ×2 byte-identical + matches manifest
+[P1] viewer == golden viewer byte-copy + matches manifest
+[P1] DLL embed == current family map (map<->DLL lockstep)
+[P1] published_drop shas == the LIVE upstream files (publisher-side staleness)
+[P2] standalone topology == WITH_GEOMETRY topology (exact, minus geometry)
+[P2] embedded viewer TOPO structurally == standalone (excl metadata/layout_config)
+[P3] sld_engine.mjs == regenerate(viewer), byte-identical + matches manifest
+[P4] snapshots_page/audit.json viewer_revision == manifest engine rev
+[P4] family map provenance stamp present + ISO date
+[P5] viewer <meta revision> == manifest rev
+[P5] README_engine header "internal rev X" == manifest rev
+[P5] CLAUDE.md "sld_engine.mjs rev **X**" == manifest rev

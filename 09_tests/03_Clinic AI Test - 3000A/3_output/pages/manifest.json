@@ -1,0 +1,68 @@
+{
+  "html": "/home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/Clinic AI Test - 3000A/2_build/clinic_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.19",
+  "generated": "2026-10-20T06:21:38.500Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "clinic_S1_light__page.svg",
+      "png": "clinic_S1_light__page.png",
+      "png_width": 4032,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 73,
+        "total": 73,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 1,
+        "tx": 643,
+        "ty": -2668.7
+      }
+    },
+    {
+      "sheet": "S2",
+      "theme": "light",
+      "svg": "clinic_S2_light__page.svg",
+      "png": "clinic_S2_light__page.png",
+      "png_width": 4032,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 97,
+        "total": 97,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 1,
+        "tx": 939.31,
+        "ty": -2101.7
+      }
+    }
+  ],
+  "mode": "page"
+}

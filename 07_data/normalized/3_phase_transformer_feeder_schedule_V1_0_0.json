@@ -1,0 +1,312 @@
+{
+  "$schema": "transformer_feeder_schedule/v1",
+  "description": "3-phase distribution transformer feeder schedule. Maps transformer kVA to primary/secondary OCPD ratings, one-line tags, feeder types, bonding jumpers, and grounding electrode conductors. Part of the SLD data layer.",
+  "source_file": "3_phase_transformer_feeder_schedule_V1_0_0.xlsx",
+  "generated": "2026-04-11",
+  "nec_reference": [
+    "NEC Table 250.102(C)(1)",
+    "NEC Table 250.66",
+    "NEC Table 450.3(A)"
+  ],
+  "primary": {
+    "voltage": "480V",
+    "phases": 3,
+    "wires": 3
+  },
+  "secondary": {
+    "voltage": "208Y/120V",
+    "phases": 3,
+    "wires": 4
+  },
+  "transformers": [
+    {
+      "kva": 3,
+      "primary": {
+        "ocpd": {
+          "rating_a": 15,
+          "poles": 3
+        },
+        "one_line_tag": "203"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 15,
+          "poles": 3
+        },
+        "one_line_tag": "204T",
+        "feeder_type": "204"
+      },
+      "bonding_jumper": "#8 AWG",
+      "grounding_electrode_conductor": "#8 AWG"
+    },
+    {
+      "kva": 6,
+      "primary": {
+        "ocpd": {
+          "rating_a": 15,
+          "poles": 3
+        },
+        "one_line_tag": "203"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 20,
+          "poles": 3
+        },
+        "one_line_tag": "204T",
+        "feeder_type": "204"
+      },
+      "bonding_jumper": "#8 AWG",
+      "grounding_electrode_conductor": "#8 AWG"
+    },
+    {
+      "kva": 9,
+      "primary": {
+        "ocpd": {
+          "rating_a": 20,
+          "poles": 3
+        },
+        "one_line_tag": "203"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 30,
+          "poles": 3
+        },
+        "one_line_tag": "304T",
+        "feeder_type": "304"
+      },
+      "bonding_jumper": "#8 AWG",
+      "grounding_electrode_conductor": "#8 AWG"
+    },
+    {
+      "kva": 15,
+      "primary": {
+        "ocpd": {
+          "rating_a": 30,
+          "poles": 3
+        },
+        "one_line_tag": "303"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 50,
+          "poles": 3
+        },
+        "one_line_tag": "504T",
+        "feeder_type": "504"
+      },
+      "bonding_jumper": "#8 AWG",
+      "grounding_electrode_conductor": "#8 AWG"
+    },
+    {
+      "kva": 30,
+      "primary": {
+        "ocpd": {
+          "rating_a": 50,
+          "poles": 3
+        },
+        "one_line_tag": "503"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 100,
+          "poles": 3
+        },
+        "one_line_tag": "1004T",
+        "feeder_type": "1004"
+      },
+      "bonding_jumper": "#6 AWG",
+      "grounding_electrode_conductor": "#6 AWG"
+    },
+    {
+      "kva": 45,
+      "primary": {
+        "ocpd": {
+          "rating_a": 70,
+          "poles": 3
+        },
+        "one_line_tag": "703"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 150,
+          "poles": 3
+        },
+        "one_line_tag": "1504T",
+        "feeder_type": "1504"
+      },
+      "bonding_jumper": "#4 AWG",
+      "grounding_electrode_conductor": "#4 AWG"
+    },
+    {
+      "kva": 75,
+      "primary": {
+        "ocpd": {
+          "rating_a": 125,
+          "poles": 3
+        },
+        "one_line_tag": "1253"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 250,
+          "poles": 3
+        },
+        "one_line_tag": "2504T",
+        "feeder_type": "2504"
+      },
+      "bonding_jumper": "#2 AWG",
+      "grounding_electrode_conductor": "#2 AWG"
+    },
+    {
+      "kva": 112.5,
+      "primary": {
+        "ocpd": {
+          "rating_a": 175,
+          "poles": 3
+        },
+        "one_line_tag": "1753"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 400,
+          "poles": 3
+        },
+        "one_line_tag": "4004T",
+        "feeder_type": "4004"
+      },
+      "bonding_jumper": "#2 AWG",
+      "grounding_electrode_conductor": "#1/0 AWG"
+    },
+    {
+      "kva": 150,
+      "primary": {
+        "ocpd": {
+          "rating_a": 250,
+          "poles": 3
+        },
+        "one_line_tag": "2503"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 500,
+          "poles": 3
+        },
+        "one_line_tag": "5004T",
+        "feeder_type": "5004"
+      },
+      "bonding_jumper": "#2 AWG",
+      "grounding_electrode_conductor": "#2/0 AWG"
+    },
+    {
+      "kva": 225,
+      "primary": {
+        "ocpd": {
+          "rating_a": 350,
+          "poles": 3
+        },
+        "one_line_tag": "3503"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 800,
+          "poles": 3
+        },
+        "one_line_tag": "8004T",
+        "feeder_type": "8004"
+      },
+      "bonding_jumper": "#2 AWG",
+      "grounding_electrode_conductor": "#3/0 AWG"
+    },
+    {
+      "kva": 300,
+      "primary": {
+        "ocpd": {
+          "rating_a": 500,
+          "poles": 3
+        },
+        "one_line_tag": "5003"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 1000,
+          "poles": 3
+        },
+        "one_line_tag": "10004T",
+        "feeder_type": "10004"
+      },
+      "bonding_jumper": "#1/0 AWG",
+      "grounding_electrode_conductor": "#3/0 AWG"
+    },
+    {
+      "kva": 500,
+      "primary": {
+        "ocpd": {
+          "rating_a": 800,
+          "poles": 3
+        },
+        "one_line_tag": "8003"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 1600,
+          "poles": 3
+        },
+        "one_line_tag": "16004T",
+        "feeder_type": "16004"
+      },
+      "bonding_jumper": "#1/0 AWG",
+      "grounding_electrode_conductor": "#3/0 AWG"
+    },
+    {
+      "kva": 750,
+      "primary": {
+        "ocpd": {
+          "rating_a": 1200,
+          "poles": 3
+        },
+        "one_line_tag": "12003"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 2000,
+          "poles": 3
+        },
+        "one_line_tag": "20004T",
+        "feeder_type": "20004"
+      },
+      "bonding_jumper": "#1/0 AWG",
+      "grounding_electrode_conductor": "#3/0 AWG"
+    },
+    {
+      "kva": 1000,
+      "primary": {
+        "ocpd": {
+          "rating_a": 1600,
+          "poles": 3
+        },
+        "one_line_tag": "16003"
+      },
+      "secondary": {
+        "ocpd": {
+          "rating_a": 3000,
+          "poles": 3
+        },
+        "one_line_tag": "30004T",
+        "feeder_type": "30004"
+      },
+      "bonding_jumper": "#1/0 AWG",
+      "grounding_electrode_conductor": "#3/0 AWG"
+    }
+  ],
+  "notes": [
+    "REFER TO GENERAL FEEDER SCHEDULES FOR SPECIFICATION OF FEEDER TYPES. PROVIDE COPPER SUPPLY-SIDE BONDING JUMPER AS SPECIFIED IN THIS TABLE, IN LIEU OF THE EQUIPMENT GROUNDING CONDUCTOR SPECIFIED IN FEEDER SCHEDULES.",
+    "PROVIDE (1) SUPPLY-SIDE BONDING JUMPER IN EACH PARALLEL RACEWAY OF THE SECONDARY FEEDER. REFER TO QUANTITY OF PARALLEL RACEWAYS SPECIFIED IN THE GENERAL FEEDER SCHEDULES. WHERE SECONDARY FEEDERS ARE INSTALLED IN A SINGLE RACEWAY OR WIREWAY, PROVIDE BONDING JUMPER SIZED PER NEC 250.102(C)(1)."
+  ],
+  "design_notes": [
+    "CIRCUIT BREAKERS ARE SIZED ACCORDING TO NEC TABLE 450.3(A). PRIMARY CIRCUIT BREAKERS ARE TYPICALLY SIZED TO APPROXIMATELY 125% OF THE NEC MAXIMUM AMPACITY. SECONDARY CIRCUIT BREAKERS ARE TYPICALLY SIZED TO 125% OF THE NEC MAXIMUM AMPACITY, ROUNDED DOWN TO THE NEXT STANDARD CIRCUIT BREAKER SIZE. EXCEPTIONS ARE:\n  \u2022 3 KVA: SECONDARY BREAKER MUST BE ROUNDED UP TO 15A; THIS IS THE SMALLEST STANDARD BREAKER SIZE PER NEC 240.6.\n  \u2022 112.5 KVA AND 225 KVA: MAXIMUM SECONDARY CURRENT IS VERY CLOSE TO NEXT STANDARD BREAKER SIZE. HENCE, THE SECONDARY BREAKER IS ROUNDED UP.\n  \u2022 750 KVA: ROUNDED DOWN TO 2000A. AT ELECTRICAL ENGINEER OF RECORD'S (EOR'S) DISCRETION, THE SECONDARY CAN BE CHANGED TO 2500A FOR MAXIMUM CAPACITY, BUT NOTE THAT THIS TYPICALLY REQUIRES A 3000A BUS RATING. CONSIDER WHETHER THE INCREASED COST IS JUSTIFIED.",
+    "75 KVA TRANSFORMERS MOST COMMONLY FEED A 225A PANEL. THIS SCHEDULE INDICATES 250A TO PROVIDE MAXIMUM CAPACITY, BUT AT THE ELECTRICAL ENGINEER OF RECORD'S (EOR'S) DISCRETION, THIS CAN BE REDUCED TO 225A TO SPECIFY A MORE COMMONLY-USED SIZE; AND/OR TO ALIGN WITH PANELBOARD SCHEDULES AND THE SINGLE-LINE DIAGRAM. IF 225A IS TO BE USED, REVISE SECONDARY OCPD RATING COLUMN TO 225/3, REVISE ONE-LINE TAG COLUMN TO 2254T, AND REVISE FEEDER TYPE COLUMN TO 2254.",
+    "FOR SIZING FEEDERS ON SINGLE-LINE DIAGRAMS: ENSURE THAT FEEDER TAGS MATCH THE 'ONE-LINE TAG' COLUMNS. NOTE THAT PRIMARY FEEDERS ARE TO BE TAGGED WITH STANDARD FEEDER SCHEDULE TAGS (E.G. '303'). BUT TAG SECONDARY FEEDERS USING THE SPECIAL 'T' TAGS (E.G. '304T'), DUE TO THE SUPPLY-SIDE / SYSTEM BONDING JUMPER SIZING SPECIFIC TO TRANSFORMER SECONDARY FEEDERS."
+  ]
+}

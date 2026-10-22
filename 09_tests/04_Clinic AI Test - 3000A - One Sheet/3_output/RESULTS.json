@@ -1,0 +1,348 @@
+{
+  "$comment": "Per-run results for this project. Appended by run_pipeline.sh stage 14 from the RESULT lines in 2_build/run.log plus 3_output/sheets/{audit,manifest}.json. Diff two runs to answer 'did that change help?' without re-reading a phase doc. Generated — do not hand-edit. NOTE: validate_p3.rules_run is the canary — 63 means the merge worked and the SH geometry rules ran; 55 means layout_config went sidecar-only and every SH rule silently skipped.",
+  "schema_version": "1.0.0",
+  "project": "Clinic AI Test — 3000 A Service",
+  "slug": "clinic1s",
+  "runs": [
+    {
+      "generated": "2026-10-20T06:19:38.865Z",
+      "engine_rev": "1.0.19",
+      "sheets": 1,
+      "validate_p12": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 4,
+        "rules_run": 55,
+        "vacuous": 2
+      },
+      "layout": {
+        "devices": 48,
+        "routed": 34,
+        "annotations": 29,
+        "content": "5240x4950",
+        "layout_warnings": 1,
+        "drops": 0
+      },
+      "validate_p3": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 5,
+        "rules_run": 63,
+        "vacuous": 2
+      },
+      "audit": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 1,
+        "layout_warnings": 1,
+        "dropped_entity": 0
+      },
+      "render": {
+        "captures": 2,
+        "warnings": 0,
+        "coverage_ok": true,
+        "rendered": 322,
+        "total": 322,
+        "sheets_short": 0
+      },
+      "checks": {
+        "collinear_h": 0,
+        "collinear_v": 0,
+        "exits_outside": 0,
+        "feeder_x_feeder": 5,
+        "feeder_x_feeder_directed": 5,
+        "feeder_x_device": 1,
+        "through_symbol": 1,
+        "tag_on_symbol": 0,
+        "through_text": 0,
+        "tag_feeder_hard": 1,
+        "tag_feeder_tight": 4,
+        "leader_foreign_hard": 0,
+        "advisory_rule_hard": 0,
+        "band_outside": 0,
+        "band_total": 0,
+        "line_through_device": 0,
+        "out_of_band": 0,
+        "orphan": 0,
+        "tick_detached": 0,
+        "tick_total": 29,
+        "tick_feeders": 0,
+        "frame_sheets": 1,
+        "frame_dishonest": 0,
+        "frame_worst_px": 0.01,
+        "frame_tol_px": 2
+      },
+      "page_scale": {
+        "sheets": 1,
+        "out_of_band": 1,
+        "s_min": 0.5707,
+        "s_max": 0.5707,
+        "spread": 1,
+        "all_height_bound": false
+      },
+      "open_items": {
+        "halts": 5,
+        "notes": 10,
+        "placeholders": 0
+      }
+    },
+    {
+      "generated": "2026-10-20T06:20:26.596Z",
+      "engine_rev": "1.0.19",
+      "sheets": 1,
+      "validate_p12": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 4,
+        "rules_run": 55,
+        "vacuous": 2
+      },
+      "layout": {
+        "devices": 48,
+        "routed": 34,
+        "annotations": 29,
+        "content": "5240x4950",
+        "layout_warnings": 1,
+        "drops": 0
+      },
+      "validate_p3": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 5,
+        "rules_run": 63,
+        "vacuous": 2
+      },
+      "audit": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 1,
+        "dropped_entity": 0
+      },
+      "render": {
+        "captures": 2,
+        "warnings": 0,
+        "coverage_ok": true,
+        "rendered": 322,
+        "total": 322,
+        "sheets_short": 0
+      },
+      "checks": {
+        "collinear_h": 0,
+        "collinear_v": 0,
+        "exits_outside": 0,
+        "feeder_x_feeder": 5,
+        "feeder_x_feeder_directed": 5,
+        "feeder_x_device": 0,
+        "through_symbol": 0,
+        "tag_on_symbol": 0,
+        "through_text": 0,
+        "tag_feeder_hard": 1,
+        "tag_feeder_tight": 3,
+        "leader_foreign_hard": 0,
+        "advisory_rule_hard": 0,
+        "band_outside": 0,
+        "band_total": 0,
+        "line_through_device": 0,
+        "out_of_band": 0,
+        "orphan": 0,
+        "tick_detached": 0,
+        "tick_total": 29,
+        "tick_feeders": 0,
+        "frame_sheets": 1,
+        "frame_dishonest": 0,
+        "frame_worst_px": 0.01,
+        "frame_tol_px": 2
+      },
+      "page_scale": {
+        "sheets": 1,
+        "out_of_band": 1,
+        "s_min": 0.5707,
+        "s_max": 0.5707,
+        "spread": 1,
+        "all_height_bound": false
+      },
+      "open_items": {
+        "halts": 5,
+        "notes": 10,
+        "placeholders": 0
+      }
+    },
+    {
+      "generated": "2026-10-20T06:21:03.657Z",
+      "engine_rev": "1.0.19",
+      "sheets": 1,
+      "validate_p12": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 4,
+        "rules_run": 55,
+        "vacuous": 2
+      },
+      "layout": {
+        "devices": 48,
+        "routed": 34,
+        "annotations": 29,
+        "content": "5240x4950",
+        "layout_warnings": 1,
+        "drops": 0
+      },
+      "validate_p3": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 5,
+        "rules_run": 63,
+        "vacuous": 2
+      },
+      "audit": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 1,
+        "dropped_entity": 0
+      },
+      "render": {
+        "captures": 2,
+        "warnings": 0,
+        "coverage_ok": true,
+        "rendered": 322,
+        "total": 322,
+        "sheets_short": 0
+      },
+      "checks": {
+        "collinear_h": 0,
+        "collinear_v": 0,
+        "exits_outside": 0,
+        "feeder_x_feeder": 3,
+        "feeder_x_feeder_directed": 3,
+        "feeder_x_device": 0,
+        "through_symbol": 0,
+        "tag_on_symbol": 0,
+        "through_text": 0,
+        "tag_feeder_hard": 1,
+        "tag_feeder_tight": 3,
+        "leader_foreign_hard": 0,
+        "advisory_rule_hard": 0,
+        "band_outside": 0,
+        "band_total": 0,
+        "line_through_device": 0,
+        "out_of_band": 0,
+        "orphan": 0,
+        "tick_detached": 0,
+        "tick_total": 29,
+        "tick_feeders": 0,
+        "frame_sheets": 1,
+        "frame_dishonest": 0,
+        "frame_worst_px": 0.01,
+        "frame_tol_px": 2
+      },
+      "page_scale": {
+        "sheets": 1,
+        "out_of_band": 1,
+        "s_min": 0.5707,
+        "s_max": 0.5707,
+        "spread": 1,
+        "all_height_bound": false
+      },
+      "open_items": {
+        "halts": 5,
+        "notes": 10,
+        "placeholders": 0
+      }
+    },
+    {
+      "generated": "2026-10-21T04:39:14.132Z",
+      "engine_rev": "1.0.19",
+      "sheets": 1,
+      "validate_p12": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 4,
+        "rules_run": 55,
+        "vacuous": 2
+      },
+      "layout": {
+        "devices": 48,
+        "routed": 34,
+        "annotations": 29,
+        "content": "5240x4950",
+        "layout_warnings": 1,
+        "drops": 0
+      },
+      "validate_p3": {
+        "errors": 0,
+        "migration": 0,
+        "warnings": 0,
+        "info": 5,
+        "rules_run": 63,
+        "vacuous": 2
+      },
+      "audit": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 1,
+        "dropped_entity": 0
+      },
+      "render": {
+        "captures": 2,
+        "warnings": 0,
+        "coverage_ok": true,
+        "rendered": 322,
+        "total": 322,
+        "sheets_short": 0
+      },
+      "checks": {
+        "collinear_h": 0,
+        "collinear_v": 0,
+        "exits_outside": 0,
+        "feeder_x_feeder": 3,
+        "feeder_x_feeder_directed": 3,
+        "feeder_x_device": 0,
+        "through_symbol": 0,
+        "tag_on_symbol": 0,
+        "through_text": 0,
+        "tag_feeder_hard": 1,
+        "tag_feeder_tight": 3,
+        "leader_foreign_hard": 0,
+        "advisory_rule_hard": 0,
+        "band_outside": 0,
+        "band_total": 0,
+        "line_through_device": 0,
+        "out_of_band": 0,
+        "orphan": 0,
+        "tick_detached": 0,
+        "tick_total": 29,
+        "tick_feeders": 0,
+        "frame_sheets": 1,
+        "frame_dishonest": 0,
+        "frame_worst_px": 0.01,
+        "frame_tol_px": 2
+      },
+      "page_scale": {
+        "sheets": 1,
+        "out_of_band": 1,
+        "s_min": 0.5707,
+        "s_max": 0.5707,
+        "spread": 1,
+        "all_height_bound": false
+      },
+      "open_items": {
+        "halts": 5,
+        "notes": 10,
+        "placeholders": 0
+      }
+    }
+  ]
+}

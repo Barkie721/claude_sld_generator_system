@@ -1,0 +1,75 @@
+{
+  "$comment": "Sidecar layout_config for the Clinic AI Test (3000 A, one storey). S1 normal power, S2 emergency (NEC 517 EES). Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19).",
+  "sheet_roles": {
+    "S1": "normal",
+    "S2": "emergency"
+  },
+  "sheet_skips": {},
+  "floor_order": {
+    "S1": [
+      "1"
+    ],
+    "S2": [
+      "1"
+    ]
+  },
+  "floor_anchors": {},
+  "floor_anchors_mechanical": {},
+  "floor_band_designations": [],
+  "level_map": {},
+  "level_order": [],
+  "ats_xoffset_overrides": {},
+  "riser_step_standard": 650,
+  "riser_step_roof": 1460,
+  "subfeed_max_depth": 1,
+  "subfeed_start_ports": [
+    "feed_bottom",
+    "feed_top",
+    "feed_left",
+    "secondary_out"
+  ],
+  "subfeed_src_types": [
+    "L2-4",
+    "L2-2"
+  ],
+  "subfeed_dst_types": [
+    "L2-4",
+    "L2-2"
+  ],
+  "ats_extent_subfeed_ports": [
+    "feed_bottom",
+    "feed_top",
+    "secondary_out"
+  ],
+  "subfeed_straighten": [],
+  "subfeed_exit_x_nudge": {},
+  "chain_dst_x_offset": {},
+  "s2_level_line_pitch": {},
+  "s2_shift_delta": {},
+  "subfeed_midy_nudge": {},
+  "feed_through_panels": {
+    "2P-1-B": "left"
+  },
+  "a1_tag_placement": {
+    "F-303": {
+      "side": "right"
+    },
+    "F-307": {
+      "side": "right"
+    },
+    "F-325": {
+      "side": "right"
+    },
+    "F-328": {
+      "side": "right"
+    },
+    "F-333": {
+      "force_orient": "vertical",
+      "side": "right",
+      "dy": -120
+    }
+  },
+  "a3_text_placement": {},
+  "fc_pennant_placement": {},
+  "fc_pennant_y_nudges": {}
+}

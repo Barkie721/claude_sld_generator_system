@@ -1,0 +1,39 @@
+{
+  "html": "/mnt/sdcard/Mayo_Claude_Workspace/Claude Revit SLD Generator/claude_sld_generator_system/01_inputs/templates/titleblock_template_30x42_V1_0_0.html",
+  "viewer_revision": "1.0.0",
+  "generated": "2026-07-10T06:03:49.171Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "titleblock_template_S1_dark.svg",
+      "png": "titleblock_template_S1_dark.png",
+      "png_width": 4032,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": null,
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "titleblock_template_S1_light.svg",
+      "png": "titleblock_template_S1_light.png",
+      "png_width": 4032,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": null,
+      "warnings": []
+    }
+  ]
+}

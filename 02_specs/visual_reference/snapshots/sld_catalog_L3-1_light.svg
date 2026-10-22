@@ -1,0 +1,30 @@
+<svg viewBox="12 -8.5 300 200" xmlns="http://www.w3.org/2000/svg"><style>.port-diamond{fill:#e5a600;stroke:#000;stroke-width:0.6}.port-label{fill:#b38600;font-family:monospace;font-weight:600}</style><rect x="12" y="-8.5" width="300" height="200" fill="#f8fafd"/>
+  <line x1="95" y1="59" x2="107" y2="73"
+        stroke="#0077b6" stroke-width="3"/>
+  <line x1="142" y1="82" x2="152" y2="94"
+        stroke="#0077b6" stroke-width="3"/>
+  <circle cx="123.5" cy="76" r="19"
+          fill="#f8fafd" stroke="#0077b6" stroke-width="3"/>
+  <text x="123.5" y="81" text-anchor="middle"
+        font-family="monospace" font-size="19" font-weight="700"
+        fill="#1a1f2e">F</text>
+  <rect x="100" y="95" width="47" height="47"
+        fill="none" stroke="#0077b6" stroke-width="3"/>
+  <line x1="100" y1="95" x2="147" y2="142"
+        stroke="#0077b6" stroke-width="3"/>
+  <line x1="147" y1="95" x2="100" y2="142"
+        stroke="#0077b6" stroke-width="3"/>
+  <!-- side stack = a device-bound A-8 equipment-label block
+       (Mayo 2026-07-22): line 1 bold, later lines normal, steps 20/18/18;
+       fla+lra SHARE one line — the _E_SLD_Equipment-info family has exactly
+       three Line slots after the label -->
+  <text x="168" y="73" font-family="monospace" font-size="12"
+        font-weight="700" text-decoration="underline"
+        fill="#1a1f2e">FP-B-A</text>
+  <text x="168" y="93" font-family="monospace" font-size="12"
+        font-weight="700" fill="#1a1f2e">100HP</text>
+  <text x="168" y="111" font-family="monospace" font-size="12"
+        fill="#1a1f2e">124 FLA / 725 LRA</text>
+  <text x="168" y="129" font-family="monospace" font-size="12"
+        fill="#1a1f2e">480V/3PH</text>
+<g class="port-marker"><polygon points="123.5,137 128.5,142 123.5,147 118.5,142" class="port-diamond"/><text x="123.5" y="157" text-anchor="middle" font-size="8" class="port-label">load_in</text></g></svg>

@@ -1,0 +1,403 @@
+{
+  "$schema": "nec_motor_fla/v1",
+  "description": "NEC Table 430.250 \u2014 Full-load current for three-phase AC motors. Provides FLA values by HP for induction-type (squirrel cage and wound rotor) and synchronous-type (unity power factor) motors at standard voltage levels. Part of the SLD data layer \u2014 used for motor branch circuit sizing, OCPD selection, and conductor sizing.",
+  "source_file": "nec_motor_fla_V1_0_0.xlsx",
+  "generated": "2026-04-11",
+  "nec_reference": "NEC Table 430.250",
+  "motor_types": {
+    "induction": {
+      "description": "Induction-Type Squirrel Cage and Wound Rotor",
+      "voltages_available": [
+        115,
+        200,
+        208,
+        230,
+        460,
+        575,
+        2300
+      ]
+    },
+    "synchronous": {
+      "description": "Synchronous-Type Unity Power Factor",
+      "voltages_available": [
+        230,
+        460,
+        575,
+        2300
+      ],
+      "notes": "Synchronous FLA values available for 25 HP and above only"
+    }
+  },
+  "system_voltages_note": "System voltage ranges: 110-120V, 220-240V, 440-480V, 550-600V",
+  "motors": [
+    {
+      "hp": 0.5,
+      "hp_display": "1/2",
+      "induction_fla": {
+        "115": 4.4,
+        "200": 2.5,
+        "208": 2.4,
+        "230": 2.2,
+        "460": 1.1,
+        "575": 0.9
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 0.75,
+      "hp_display": "3/4",
+      "induction_fla": {
+        "115": 6.4,
+        "200": 3.7,
+        "208": 3.5,
+        "230": 3.2,
+        "460": 1.6,
+        "575": 1.3
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 1,
+      "hp_display": "1",
+      "induction_fla": {
+        "115": 8.4,
+        "200": 4.8,
+        "208": 4.6,
+        "230": 4.2,
+        "460": 2.1,
+        "575": 1.7
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 1.5,
+      "hp_display": "1-1/2",
+      "induction_fla": {
+        "115": 12.0,
+        "200": 6.9,
+        "208": 6.6,
+        "230": 6.0,
+        "460": 3.0,
+        "575": 2.4
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 2,
+      "hp_display": "2",
+      "induction_fla": {
+        "115": 13.6,
+        "200": 7.8,
+        "208": 7.5,
+        "230": 6.8,
+        "460": 3.4,
+        "575": 2.7
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 3,
+      "hp_display": "3",
+      "induction_fla": {
+        "200": 11.0,
+        "208": 10.6,
+        "230": 9.6,
+        "460": 4.8,
+        "575": 3.9
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 5,
+      "hp_display": "5",
+      "induction_fla": {
+        "200": 17.5,
+        "208": 16.7,
+        "230": 15.2,
+        "460": 7.6,
+        "575": 6.1
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 7.5,
+      "hp_display": "7-1/2",
+      "induction_fla": {
+        "200": 25.3,
+        "208": 24.2,
+        "230": 22.0,
+        "460": 11.0,
+        "575": 9.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 10,
+      "hp_display": "10",
+      "induction_fla": {
+        "200": 32.2,
+        "208": 30.8,
+        "230": 28.0,
+        "460": 14.0,
+        "575": 11.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 15,
+      "hp_display": "15",
+      "induction_fla": {
+        "200": 48.3,
+        "208": 46.2,
+        "230": 42.0,
+        "460": 21.0,
+        "575": 17.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 20,
+      "hp_display": "20",
+      "induction_fla": {
+        "200": 62.1,
+        "208": 59.4,
+        "230": 54.0,
+        "460": 27.0,
+        "575": 22.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 25,
+      "hp_display": "25",
+      "induction_fla": {
+        "200": 78.2,
+        "208": 74.8,
+        "230": 68.0,
+        "460": 34.0,
+        "575": 27.0
+      },
+      "synchronous_fla": {
+        "230": 53.0,
+        "460": 26.0,
+        "575": 21.0
+      }
+    },
+    {
+      "hp": 30,
+      "hp_display": "30",
+      "induction_fla": {
+        "200": 92.0,
+        "208": 88.0,
+        "230": 80.0,
+        "460": 40.0,
+        "575": 32.0
+      },
+      "synchronous_fla": {
+        "230": 63.0,
+        "460": 32.0,
+        "575": 26.0
+      }
+    },
+    {
+      "hp": 40,
+      "hp_display": "40",
+      "induction_fla": {
+        "200": 120.0,
+        "208": 114.0,
+        "230": 104.0,
+        "460": 52.0,
+        "575": 41.0
+      },
+      "synchronous_fla": {
+        "230": 83.0,
+        "460": 41.0,
+        "575": 33.0
+      }
+    },
+    {
+      "hp": 50,
+      "hp_display": "50",
+      "induction_fla": {
+        "200": 150.0,
+        "208": 143.0,
+        "230": 130.0,
+        "460": 65.0,
+        "575": 52.0
+      },
+      "synchronous_fla": {
+        "230": 104.0,
+        "460": 52.0,
+        "575": 42.0
+      }
+    },
+    {
+      "hp": 60,
+      "hp_display": "60",
+      "induction_fla": {
+        "200": 177.0,
+        "208": 169.0,
+        "230": 154.0,
+        "460": 77.0,
+        "575": 62.0,
+        "2300": 16.0
+      },
+      "synchronous_fla": {
+        "230": 123.0,
+        "460": 61.0,
+        "575": 49.0,
+        "2300": 12.0
+      }
+    },
+    {
+      "hp": 75,
+      "hp_display": "75",
+      "induction_fla": {
+        "200": 221.0,
+        "208": 211.0,
+        "230": 192.0,
+        "460": 96.0,
+        "575": 77.0,
+        "2300": 20.0
+      },
+      "synchronous_fla": {
+        "230": 155.0,
+        "460": 78.0,
+        "575": 62.0,
+        "2300": 15.0
+      }
+    },
+    {
+      "hp": 100,
+      "hp_display": "100",
+      "induction_fla": {
+        "200": 285.0,
+        "208": 273.0,
+        "230": 248.0,
+        "460": 124.0,
+        "575": 99.0,
+        "2300": 26.0
+      },
+      "synchronous_fla": {
+        "230": 202.0,
+        "460": 101.0,
+        "575": 81.0,
+        "2300": 20.0
+      }
+    },
+    {
+      "hp": 125,
+      "hp_display": "125",
+      "induction_fla": {
+        "200": 359.0,
+        "208": 343.0,
+        "230": 312.0,
+        "460": 156.0,
+        "575": 125.0,
+        "2300": 31.0
+      },
+      "synchronous_fla": {
+        "230": 253.0,
+        "460": 126.0,
+        "575": 101.0,
+        "2300": 25.0
+      }
+    },
+    {
+      "hp": 150,
+      "hp_display": "150",
+      "induction_fla": {
+        "200": 414.0,
+        "208": 396.0,
+        "230": 360.0,
+        "460": 180.0,
+        "575": 144.0,
+        "2300": 37.0
+      },
+      "synchronous_fla": {
+        "230": 302.0,
+        "460": 151.0,
+        "575": 121.0,
+        "2300": 30.0
+      }
+    },
+    {
+      "hp": 200,
+      "hp_display": "200",
+      "induction_fla": {
+        "200": 552.0,
+        "208": 528.0,
+        "230": 480.0,
+        "460": 240.0,
+        "575": 192.0,
+        "2300": 49.0
+      },
+      "synchronous_fla": {
+        "230": 400.0,
+        "460": 201.0,
+        "575": 161.0,
+        "2300": 40.0
+      }
+    },
+    {
+      "hp": 250,
+      "hp_display": "250",
+      "induction_fla": {
+        "460": 302.0,
+        "575": 242.0,
+        "2300": 60.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 300,
+      "hp_display": "300",
+      "induction_fla": {
+        "460": 361.0,
+        "575": 289.0,
+        "2300": 72.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 350,
+      "hp_display": "350",
+      "induction_fla": {
+        "460": 414.0,
+        "575": 336.0,
+        "2300": 83.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 400,
+      "hp_display": "400",
+      "induction_fla": {
+        "460": 477.0,
+        "575": 382.0,
+        "2300": 95.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 450,
+      "hp_display": "450",
+      "induction_fla": {
+        "460": 515.0,
+        "575": 412.0,
+        "2300": 103.0
+      },
+      "synchronous_fla": null
+    },
+    {
+      "hp": 500,
+      "hp_display": "500",
+      "induction_fla": {
+        "460": 590.0,
+        "575": 472.0,
+        "2300": 118.0
+      },
+      "synchronous_fla": null
+    }
+  ]
+}

@@ -1,0 +1,8477 @@
+{
+  "$schema": "sld_topology/v1",
+  "metadata": {
+    "schema_version": "1.0.0",
+    "project_name": "New Hospital — 121,000 SF",
+    "created_date": "2026-04-16"
+  },
+  "sheets": [
+    {
+      "sheet_id": "S1",
+      "sheet_number": "E-501",
+      "title": "MAIN SINGLE-LINE DIAGRAM — NORMAL POWER"
+    },
+    {
+      "sheet_id": "S2",
+      "sheet_number": "E-502",
+      "title": "MAIN SINGLE-LINE DIAGRAM — EMERGENCY POWER"
+    }
+  ],
+  "devices": [
+    {
+      "id": "d-001",
+      "node_type": "L0-1",
+      "designation": "UTILITY-XFMR",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva_rating": 2500,
+        "primary_voltage": "13.2kV",
+        "secondary_voltage": "480Y/277V",
+        "phases": 3,
+        "wires": 4
+      },
+      "calc_fields": {
+        "pct_z": 5.75,
+        "x_over_r": null
+      }
+    },
+    {
+      "id": "d-002",
+      "node_type": "L1-4",
+      "designation": "UTIL-MTR",
+      "sheet_id": "S1",
+      "data_fields": {
+        "meter_type": "utility"
+      }
+    },
+    {
+      "id": "d-003",
+      "node_type": "L2-1",
+      "designation": "CB-FP",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 600,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-004",
+      "node_type": "L1-1",
+      "designation": "MAIN-GFP",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 4000,
+        "at": 3000,
+        "poles": 3,
+        "trip_type": "LSIG"
+      }
+    },
+    {
+      "id": "d-005",
+      "node_type": "L2-1",
+      "designation": "CB-03",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 1200,
+        "at": 1200,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-006",
+      "node_type": "L2-1",
+      "designation": "CB-04",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 800,
+        "at": 800,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-007",
+      "node_type": "L2-1",
+      "designation": "CB-05",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI",
+        "kind": "spare"
+      }
+    },
+    {
+      "id": "d-008",
+      "node_type": "L2-1",
+      "designation": "CB-06",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI",
+        "kind": "spare"
+      }
+    },
+    {
+      "id": "d-009",
+      "node_type": "L2-1",
+      "designation": "CB-08",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 600,
+        "at": 600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-010",
+      "node_type": "L2-1",
+      "designation": "CB-09",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 1000,
+        "at": 1000,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-011",
+      "node_type": "L2-1",
+      "designation": "CB-10",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 600,
+        "at": 600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-012",
+      "node_type": "L2-1",
+      "designation": "CB-11",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-013",
+      "node_type": "L2-1",
+      "designation": "CB-12",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 600,
+        "at": 600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-014",
+      "node_type": "L2-1",
+      "designation": "CB-13",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-015",
+      "node_type": "L2-1",
+      "designation": "CB-01",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 20,
+        "at": 20,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-016",
+      "node_type": "L2-1",
+      "designation": "CB-14",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI",
+        "kind": "spare"
+      }
+    },
+    {
+      "id": "d-017",
+      "node_type": "L2-1",
+      "designation": "CB-15",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "trip_type": "LSI",
+        "kind": "spare"
+      }
+    },
+    {
+      "id": "d-018",
+      "node_type": "L2-7",
+      "designation": "SPACE-01",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kind": "space"
+      }
+    },
+    {
+      "id": "d-019",
+      "node_type": "L1-3",
+      "designation": "NG-BOND",
+      "sheet_id": "S1",
+      "data_fields": {
+        "sds": "service_entrance"
+      }
+    },
+    {
+      "id": "d-020",
+      "node_type": "L2-6",
+      "designation": "SPD-MSB",
+      "sheet_id": "S1",
+      "data_fields": {
+        "type": "Type 1",
+        "mode": "A"
+      }
+    },
+    {
+      "id": "d-021",
+      "node_type": "L2-4",
+      "designation": "4M-R-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "1200A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-022",
+      "node_type": "L2-4",
+      "designation": "4M-R-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "800A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-023",
+      "node_type": "L2-4",
+      "designation": "4M-R-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-024",
+      "node_type": "L2-4",
+      "designation": "4L-1-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "800A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-025",
+      "node_type": "L2-1",
+      "designation": "4L-1-A-CB-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4L-1-A"
+      }
+    },
+    {
+      "id": "d-029",
+      "node_type": "L2-2",
+      "designation": "4T-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-030",
+      "node_type": "L2-4",
+      "designation": "2P-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-031",
+      "node_type": "L2-4",
+      "designation": "4L-2-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-032",
+      "node_type": "L2-1",
+      "designation": null,
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4L-2-A",
+        "kind": "spare"
+      }
+    },
+    {
+      "id": "d-036",
+      "node_type": "L2-2",
+      "designation": "4T-1-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-037",
+      "node_type": "L2-4",
+      "designation": "2P-1-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-038",
+      "node_type": "L2-4",
+      "designation": "4L-3-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-039",
+      "node_type": "L2-1",
+      "designation": null,
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4L-3-A",
+        "kind": "spare"
+      }
+    },
+    {
+      "id": "d-043",
+      "node_type": "L2-2",
+      "designation": "4T-1-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-044",
+      "node_type": "L2-4",
+      "designation": "2P-1-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-045",
+      "node_type": "L2-3",
+      "designation": "E4A-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 600,
+        "poles": 4,
+        "nec_class": "LIFE SAFETY"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-046",
+      "node_type": "L2-3",
+      "designation": "C4A-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 1000,
+        "poles": 4,
+        "nec_class": "CRITICAL"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-047",
+      "node_type": "L2-3",
+      "designation": "EQ4A-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 600,
+        "poles": 4,
+        "nec_class": "EQUIPMENT"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-048",
+      "node_type": "L2-3",
+      "designation": "EQ4A-1-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 400,
+        "poles": 4,
+        "nec_class": "EQUIPMENT"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-049",
+      "node_type": "L2-3",
+      "designation": "O4A-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 600,
+        "poles": 4,
+        "nec_class": "OPTIONAL STANDBY"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-050",
+      "node_type": "L2-3",
+      "designation": "EQ4A-1-C",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 400,
+        "poles": 4,
+        "nec_class": "EQUIPMENT"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-051",
+      "node_type": "L2-3",
+      "designation": "E4A-1-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "continuous_rating": 400,
+        "poles": 4,
+        "nec_class": "LIFE SAFETY"
+      },
+      "calc_fields": {}
+    },
+    {
+      "id": "d-052",
+      "node_type": "L1-5",
+      "designation": "GEN-1",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kw": 2000,
+        "kva": 2500,
+        "voltage": "480Y/277V",
+        "phases": 3,
+        "wires": 4,
+        "nfpa_level": "NFPA 110 Level 1 / Type 10 / Class X",
+        "af": 3000,
+        "at": 2500,
+        "trip_type": "LSIG"
+      }
+    },
+    {
+      "id": "d-053",
+      "node_type": "L1-1",
+      "designation": "EMSB-MAIN",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 3000,
+        "at": 2500,
+        "poles": 3,
+        "trip_type": "LSIG"
+      }
+    },
+    {
+      "id": "d-054",
+      "node_type": "L2-6",
+      "designation": "SPD-EMSB",
+      "sheet_id": "S2",
+      "data_fields": {
+        "type": "Type 1",
+        "mode": "A"
+      }
+    },
+    {
+      "id": "d-055",
+      "node_type": "L2-1",
+      "designation": "CB-04-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 600,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-056",
+      "node_type": "L2-1",
+      "designation": "CB-03-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 600,
+        "at": 600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-057",
+      "node_type": "L2-1",
+      "designation": "CB-02-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 1000,
+        "at": 1000,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-058",
+      "node_type": "L2-1",
+      "designation": "CB-05-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 600,
+        "at": 600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-059",
+      "node_type": "L2-1",
+      "designation": "CB-06-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-060",
+      "node_type": "L2-1",
+      "designation": "CB-07-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-061",
+      "node_type": "L2-1",
+      "designation": "CB-08-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 600,
+        "at": 600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-062",
+      "node_type": "L1-3",
+      "designation": "EM-NG-BOND",
+      "sheet_id": "S2",
+      "data_fields": {
+        "sds": "generator_source"
+      }
+    },
+    {
+      "id": "d-063",
+      "node_type": "L2-7",
+      "designation": "EM-CB-05",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kind": "spare",
+        "rating": "225A/3P"
+      }
+    },
+    {
+      "id": "d-064",
+      "node_type": "L2-7",
+      "designation": "EM-CB-06",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kind": "spare",
+        "rating": "225A/3P"
+      }
+    },
+    {
+      "id": "d-065",
+      "node_type": "L2-7",
+      "designation": "EM-CB-11",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kind": "spare",
+        "rating": "225A/3P"
+      }
+    },
+    {
+      "id": "d-066",
+      "node_type": "L2-4",
+      "designation": "E4S-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "600A",
+        "voltage": "480Y/277V",
+        "mlo": true,
+        "aic": 42
+      }
+    },
+    {
+      "id": "d-067",
+      "node_type": "L2-4",
+      "designation": "E4B-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mcb": true,
+        "aic": 22
+      }
+    },
+    {
+      "id": "d-068",
+      "node_type": "L2-1",
+      "designation": "E4B-1-A-CB",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "E4B-1-A"
+      }
+    },
+    {
+      "id": "d-069",
+      "node_type": "L2-2",
+      "designation": "E4T-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 45,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.45,
+        "x_over_r": 1.5
+      }
+    },
+    {
+      "id": "d-070",
+      "node_type": "L2-4",
+      "designation": "E2L-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-071",
+      "node_type": "L2-4",
+      "designation": "E4B-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mcb": true,
+        "aic": 22
+      }
+    },
+    {
+      "id": "d-072",
+      "node_type": "L2-1",
+      "designation": "E4B-2-A-CB",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "E4B-2-A"
+      }
+    },
+    {
+      "id": "d-073",
+      "node_type": "L2-2",
+      "designation": "E4T-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 45,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.45,
+        "x_over_r": 1.5
+      }
+    },
+    {
+      "id": "d-074",
+      "node_type": "L2-4",
+      "designation": "E2L-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-075",
+      "node_type": "L2-4",
+      "designation": "E4B-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mcb": true,
+        "aic": 22
+      }
+    },
+    {
+      "id": "d-076",
+      "node_type": "L2-1",
+      "designation": "E4B-3-A-CB",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "E4B-3-A"
+      }
+    },
+    {
+      "id": "d-077",
+      "node_type": "L2-2",
+      "designation": "E4T-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 45,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.45,
+        "x_over_r": 1.5
+      }
+    },
+    {
+      "id": "d-078",
+      "node_type": "L2-4",
+      "designation": "E2L-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-079",
+      "node_type": "L2-4",
+      "designation": "C4S-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "1000A",
+        "voltage": "480Y/277V",
+        "mlo": true,
+        "aic": 65
+      }
+    },
+    {
+      "id": "d-080",
+      "node_type": "L2-4",
+      "designation": "C4B-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mcb": true,
+        "aic": 42
+      }
+    },
+    {
+      "id": "d-081",
+      "node_type": "L2-1",
+      "designation": "C4B-1-A-CB-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "C4B-1-A"
+      }
+    },
+    {
+      "id": "d-082",
+      "node_type": "L2-2",
+      "designation": "C4T-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-083",
+      "node_type": "L2-4",
+      "designation": "C2L-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-084",
+      "node_type": "L2-1",
+      "designation": "C4B-1-A-CB-C",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "C4B-1-A"
+      }
+    },
+    {
+      "id": "d-085",
+      "node_type": "L2-2",
+      "designation": "C4T-1-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-086",
+      "node_type": "L2-4",
+      "designation": "C2P-1-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-087",
+      "node_type": "L2-4",
+      "designation": "C4B-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mcb": true,
+        "aic": 42
+      }
+    },
+    {
+      "id": "d-088",
+      "node_type": "L2-1",
+      "designation": "C4B-2-A-CB-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "C4B-2-A"
+      }
+    },
+    {
+      "id": "d-089",
+      "node_type": "L2-2",
+      "designation": "C4T-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-090",
+      "node_type": "L2-4",
+      "designation": "C2L-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-091",
+      "node_type": "L2-1",
+      "designation": "C4B-2-A-CB-C",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "C4B-2-A"
+      }
+    },
+    {
+      "id": "d-092",
+      "node_type": "L2-2",
+      "designation": "C4T-2-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-093",
+      "node_type": "L2-4",
+      "designation": "C2P-2-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-094",
+      "node_type": "L2-4",
+      "designation": "C4B-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mcb": true,
+        "aic": 42
+      }
+    },
+    {
+      "id": "d-095",
+      "node_type": "L2-1",
+      "designation": "C4B-3-A-CB-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "C4B-3-A"
+      }
+    },
+    {
+      "id": "d-096",
+      "node_type": "L2-2",
+      "designation": "C4T-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-097",
+      "node_type": "L2-4",
+      "designation": "C2L-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-098",
+      "node_type": "L2-1",
+      "designation": "C4B-3-A-CB-C",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "C4B-3-A"
+      }
+    },
+    {
+      "id": "d-099",
+      "node_type": "L2-2",
+      "designation": "C4T-3-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-100",
+      "node_type": "L2-4",
+      "designation": "C2P-3-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-101",
+      "node_type": "L2-4",
+      "designation": "EQ4S-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "600A",
+        "voltage": "480Y/277V",
+        "mlo": true,
+        "aic": 42
+      }
+    },
+    {
+      "id": "d-102",
+      "node_type": "L2-4",
+      "designation": "EQ4M-R-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "200A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-103",
+      "node_type": "L2-4",
+      "designation": "EQ4M-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mcb": true
+      }
+    },
+    {
+      "id": "d-104",
+      "node_type": "L2-4",
+      "designation": "EQ4M-2-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mcb": true
+      }
+    },
+    {
+      "id": "d-105",
+      "node_type": "L2-4",
+      "designation": "EQ4M-3-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mcb": true
+      }
+    },
+    {
+      "id": "d-106",
+      "node_type": "L2-4",
+      "designation": "EQ4S-1-B",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mlo": true,
+        "aic": 42
+      }
+    },
+    {
+      "id": "d-107",
+      "node_type": "L2-4",
+      "designation": "O4S-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "600A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-108",
+      "node_type": "L2-1",
+      "designation": "O4S-1-A-CB",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 125,
+        "at": 125,
+        "poles": 3,
+        "internal_to": "O4S-1-A"
+      }
+    },
+    {
+      "id": "d-109",
+      "node_type": "L2-2",
+      "designation": "O4T-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "kva": 75,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 4.45,
+        "x_over_r": 2.25
+      }
+    },
+    {
+      "id": "d-110",
+      "node_type": "L2-4",
+      "designation": "O2B-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-111",
+      "node_type": "L3-3",
+      "designation": "ELEV-01",
+      "sheet_id": "S2",
+      "data_fields": {
+        "hp": 40,
+        "fla": 52,
+        "voltage_phase": "480V-3PH"
+      }
+    },
+    {
+      "id": "d-112",
+      "node_type": "L3-1",
+      "designation": "E4FP-1-A",
+      "sheet_id": "S2",
+      "data_fields": {
+        "hp": 100,
+        "fla": 124,
+        "lra": 725,
+        "voltage_phase": "480V-3PH"
+      }
+    },
+    {
+      "id": "d-113",
+      "node_type": "L2-1",
+      "designation": "CB-01-EM",
+      "sheet_id": "S2",
+      "data_fields": {
+        "af": 20,
+        "at": 20,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-114",
+      "node_type": "L2-1",
+      "designation": "CB-07",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 1600,
+        "at": 1600,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-115",
+      "node_type": "L2-4",
+      "designation": "4S-1-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "1600A",
+        "voltage": "480Y/277V",
+        "mcb": true
+      }
+    },
+    {
+      "id": "d-116",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B"
+      }
+    },
+    {
+      "id": "d-117",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B"
+      }
+    },
+    {
+      "id": "d-118",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B"
+      }
+    },
+    {
+      "id": "d-119",
+      "node_type": "L2-2",
+      "designation": "4T-2-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-120",
+      "node_type": "L2-4",
+      "designation": "2P-2-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-121",
+      "node_type": "L2-2",
+      "designation": "4T-2-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-122",
+      "node_type": "L2-4",
+      "designation": "2P-2-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-123",
+      "node_type": "L2-2",
+      "designation": "4T-2-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-124",
+      "node_type": "L2-4",
+      "designation": "2P-2-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-125",
+      "node_type": "L2-2",
+      "designation": "4T-3-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-126",
+      "node_type": "L2-4",
+      "designation": "2P-3-B",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-127",
+      "node_type": "L2-2",
+      "designation": "4T-3-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "kva": 112.5,
+        "config": "480Δ-208Y/120V"
+      },
+      "calc_fields": {
+        "pct_z": 3.65,
+        "x_over_r": 2.8
+      }
+    },
+    {
+      "id": "d-128",
+      "node_type": "L2-4",
+      "designation": "2P-3-C",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "208Y/120V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-131",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-D",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B",
+        "skip_chain_render": true
+      }
+    },
+    {
+      "id": "d-132",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-E",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B",
+        "skip_chain_render": true
+      }
+    },
+    {
+      "id": "d-133",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-F",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B",
+        "skip_chain_render": true
+      }
+    },
+    {
+      "id": "d-134",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-G",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B",
+        "skip_chain_render": true
+      }
+    },
+    {
+      "id": "d-135",
+      "node_type": "L2-1",
+      "designation": "4S-1-B-CB-H",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 225,
+        "at": 225,
+        "poles": 3,
+        "internal_to": "4S-1-B",
+        "skip_chain_render": true
+      }
+    },
+    {
+      "id": "d-137",
+      "node_type": "L2-1",
+      "designation": "CB-02",
+      "sheet_id": "S1",
+      "data_fields": {
+        "af": 400,
+        "at": 400,
+        "poles": 3,
+        "trip_type": "LSI"
+      }
+    },
+    {
+      "id": "d-138",
+      "node_type": "L2-4",
+      "designation": "4M-1-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "400A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-139",
+      "node_type": "L2-4",
+      "designation": "4M-2-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    },
+    {
+      "id": "d-140",
+      "node_type": "L2-4",
+      "designation": "4M-3-A",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "225A",
+        "voltage": "480Y/277V",
+        "mlo": true
+      }
+    }
+  ],
+  "routed_elements": [
+    {
+      "id": "r-901",
+      "edge_type": "R-2",
+      "designation": "main-bus-4MDP-1-A",
+      "sheet_id": "S1",
+      "bus_level": "main",
+      "stroke_weight": 2.5,
+      "start": null,
+      "end": null,
+      "stub_exempt": null,
+      "data_fields": {},
+      "calc_fields": {
+        "bus_rating": 4000
+      },
+      "annotation_ids": []
+    },
+    {
+      "id": "r-902",
+      "edge_type": "R-2",
+      "designation": "sec-bus-4MDP-1-A",
+      "sheet_id": "S1",
+      "bus_level": "secondary",
+      "stroke_weight": 2,
+      "start": null,
+      "end": null,
+      "stub_exempt": null,
+      "data_fields": {},
+      "calc_fields": {
+        "bus_rating": 3000
+      },
+      "annotation_ids": []
+    },
+    {
+      "id": "r-006",
+      "edge_type": "R-1",
+      "designation": "F-006",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-005",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-021",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "250",
+        "ground_material": "AL",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 5
+      },
+      "annotation_ids": [
+        "a-006",
+        "a-106"
+      ]
+    },
+    {
+      "id": "r-007",
+      "edge_type": "R-1",
+      "designation": "F-007",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-021",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-022",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "ground_size": "1/0",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 3,
+        "neutral_size": "500",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-007",
+        "a-107"
+      ]
+    },
+    {
+      "id": "r-038",
+      "edge_type": "R-1",
+      "designation": "F-038",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-021",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-023",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-008",
+        "a-108"
+      ]
+    },
+    {
+      "id": "r-009",
+      "edge_type": "R-1",
+      "designation": "F-009",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-006",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-024",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "1/0",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-009",
+        "a-109"
+      ]
+    },
+    {
+      "id": "r-020",
+      "edge_type": "R-1",
+      "designation": "F-020",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-116",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-029",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-020",
+        "a-120"
+      ]
+    },
+    {
+      "id": "r-021",
+      "edge_type": "R-1",
+      "designation": "F-021",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-029",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-030",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-021",
+        "a-121"
+      ]
+    },
+    {
+      "id": "r-010",
+      "edge_type": "R-1",
+      "designation": "F-010",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-024",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-031",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-010",
+        "a-110"
+      ]
+    },
+    {
+      "id": "r-022",
+      "edge_type": "R-1",
+      "designation": "F-022",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-117",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-036",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-022",
+        "a-122"
+      ]
+    },
+    {
+      "id": "r-023",
+      "edge_type": "R-1",
+      "designation": "F-023",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-036",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-037",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-023",
+        "a-123"
+      ]
+    },
+    {
+      "id": "r-011",
+      "edge_type": "R-1",
+      "designation": "F-011",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-024",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-038",
+        "port": "feed_bottom",
+        "dst_x_offset": 80
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-011",
+        "a-111"
+      ]
+    },
+    {
+      "id": "r-024",
+      "edge_type": "R-1",
+      "designation": "F-024",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-118",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-043",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-024",
+        "a-124"
+      ]
+    },
+    {
+      "id": "r-025",
+      "edge_type": "R-1",
+      "designation": "F-025",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-043",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-044",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-025",
+        "a-125"
+      ]
+    },
+    {
+      "id": "r-013-s1",
+      "edge_type": "R-1",
+      "designation": "F-013.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-009",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-045",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-013",
+        "a-113",
+        "a-201"
+      ]
+    },
+    {
+      "id": "r-013-s2",
+      "edge_type": "R-1",
+      "designation": "F-013.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-009",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-045",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-202"
+      ]
+    },
+    {
+      "id": "r-014-s1",
+      "edge_type": "R-1",
+      "designation": "F-014.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-010",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-046",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "4/0",
+        "ground_material": "AL",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 4
+      },
+      "annotation_ids": [
+        "a-014",
+        "a-114",
+        "a-203"
+      ]
+    },
+    {
+      "id": "r-014-s2",
+      "edge_type": "R-1",
+      "designation": "F-014.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-010",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-046",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-204"
+      ]
+    },
+    {
+      "id": "r-015-s1",
+      "edge_type": "R-1",
+      "designation": "F-015.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-011",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-047",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-015",
+        "a-115",
+        "a-205"
+      ]
+    },
+    {
+      "id": "r-015-s2",
+      "edge_type": "R-1",
+      "designation": "F-015.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-011",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-047",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-206"
+      ]
+    },
+    {
+      "id": "r-016-s1",
+      "edge_type": "R-1",
+      "designation": "F-016.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-012",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-048",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-016",
+        "a-116",
+        "a-207"
+      ]
+    },
+    {
+      "id": "r-016-s2",
+      "edge_type": "R-1",
+      "designation": "F-016.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-012",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-048",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-208"
+      ]
+    },
+    {
+      "id": "r-017-s1",
+      "edge_type": "R-1",
+      "designation": "F-017.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-013",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-049",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-017",
+        "a-117",
+        "a-209"
+      ]
+    },
+    {
+      "id": "r-017-s2",
+      "edge_type": "R-1",
+      "designation": "F-017.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-013",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-049",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-210"
+      ]
+    },
+    {
+      "id": "r-018-s1",
+      "edge_type": "R-1",
+      "designation": "F-018.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-014",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-050",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-018",
+        "a-118",
+        "a-211"
+      ]
+    },
+    {
+      "id": "r-018-s2",
+      "edge_type": "R-1",
+      "designation": "F-018.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-014",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-050",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-212"
+      ]
+    },
+    {
+      "id": "r-019-s1",
+      "edge_type": "R-1",
+      "designation": "F-019.S1",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-003",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-051",
+        "port": "source1_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-019",
+        "a-119",
+        "a-213"
+      ]
+    },
+    {
+      "id": "r-019-s2",
+      "edge_type": "R-1",
+      "designation": "F-019.S2",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-003",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-051",
+        "port": "source1_in"
+      },
+      "stub_exempt": true,
+      "data_fields": {},
+      "calc_fields": {},
+      "annotation_ids": [
+        "a-214"
+      ]
+    },
+    {
+      "id": "r-903",
+      "edge_type": "R-2",
+      "designation": "main-bus-E4MDP-1-A",
+      "sheet_id": "S2",
+      "bus_level": "main",
+      "stroke_weight": 2.5,
+      "start": null,
+      "end": null,
+      "stub_exempt": null,
+      "data_fields": {},
+      "calc_fields": {
+        "bus_rating": 3000
+      },
+      "annotation_ids": []
+    },
+    {
+      "id": "r-904",
+      "edge_type": "R-2",
+      "designation": "sec-bus-E4MDP-1-A",
+      "sheet_id": "S2",
+      "bus_level": "secondary",
+      "stroke_weight": 2,
+      "start": null,
+      "end": null,
+      "stub_exempt": null,
+      "data_fields": {},
+      "calc_fields": {
+        "bus_rating": 2500
+      },
+      "annotation_ids": []
+    },
+    {
+      "id": "r-040",
+      "edge_type": "R-1",
+      "designation": "F-040",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-052",
+        "port": "gen_out"
+      },
+      "end": {
+        "device_id": "r-903",
+        "port": "bus_tap_bi"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "CU",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "250",
+        "ground_material": "CU",
+        "conduit_type": "RMC",
+        "conduit_size": "4\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-040",
+        "a-140"
+      ]
+    },
+    {
+      "id": "r-052",
+      "edge_type": "R-1",
+      "designation": "F-052",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-055",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-051",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-052",
+        "a-152"
+      ]
+    },
+    {
+      "id": "r-047",
+      "edge_type": "R-1",
+      "designation": "F-047",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-056",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-045",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-047",
+        "a-147"
+      ]
+    },
+    {
+      "id": "r-042",
+      "edge_type": "R-1",
+      "designation": "F-042",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-057",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-046",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "4/0",
+        "ground_material": "AL",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 4
+      },
+      "annotation_ids": [
+        "a-042",
+        "a-142"
+      ]
+    },
+    {
+      "id": "r-054",
+      "edge_type": "R-1",
+      "designation": "F-054",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-058",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-047",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-054",
+        "a-154"
+      ]
+    },
+    {
+      "id": "r-060",
+      "edge_type": "R-1",
+      "designation": "F-060",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-059",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-048",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-060",
+        "a-160"
+      ]
+    },
+    {
+      "id": "r-062",
+      "edge_type": "R-1",
+      "designation": "F-062",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-060",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-050",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-062",
+        "a-162"
+      ]
+    },
+    {
+      "id": "r-064",
+      "edge_type": "R-1",
+      "designation": "F-064",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-061",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-049",
+        "port": "source2_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 3
+      },
+      "annotation_ids": [
+        "a-064",
+        "a-164"
+      ]
+    },
+    {
+      "id": "r-048",
+      "edge_type": "R-1",
+      "designation": "F-048",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-045",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-066",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 3,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-048",
+        "a-148"
+      ]
+    },
+    {
+      "id": "r-049",
+      "edge_type": "R-1",
+      "designation": "F-049",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-066",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-067",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-049",
+        "a-149"
+      ]
+    },
+    {
+      "id": "r-066",
+      "edge_type": "R-1",
+      "designation": "F-066",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-068",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-069",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-066",
+        "a-166"
+      ]
+    },
+    {
+      "id": "r-067",
+      "edge_type": "R-1",
+      "designation": "F-067",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-069",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-070",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "4/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "4/0",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-067",
+        "a-167"
+      ]
+    },
+    {
+      "id": "r-050",
+      "edge_type": "R-1",
+      "designation": "F-050",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-066",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-071",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-050",
+        "a-150"
+      ]
+    },
+    {
+      "id": "r-068",
+      "edge_type": "R-1",
+      "designation": "F-068",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-072",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-073",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-068",
+        "a-168"
+      ]
+    },
+    {
+      "id": "r-069",
+      "edge_type": "R-1",
+      "designation": "F-069",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-073",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-074",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "4/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "4/0",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-069",
+        "a-169"
+      ]
+    },
+    {
+      "id": "r-051",
+      "edge_type": "R-1",
+      "designation": "F-051",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-066",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-075",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-051",
+        "a-151"
+      ]
+    },
+    {
+      "id": "r-070",
+      "edge_type": "R-1",
+      "designation": "F-070",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-076",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-077",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-070",
+        "a-170"
+      ]
+    },
+    {
+      "id": "r-071",
+      "edge_type": "R-1",
+      "designation": "F-071",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-077",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-078",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "4/0",
+        "conductors_per_phase": 4,
+        "neutral_size": "4/0",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-071",
+        "a-171"
+      ]
+    },
+    {
+      "id": "r-043",
+      "edge_type": "R-1",
+      "designation": "F-043",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-046",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-079",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "ground_size": "4/0",
+        "ground_material": "AL",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 4,
+        "neutral_size": "500",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-043",
+        "a-143"
+      ]
+    },
+    {
+      "id": "r-044",
+      "edge_type": "R-1",
+      "designation": "F-044",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-079",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-080",
+        "port": "feed_top",
+        "landing_offset_x": 15
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-044",
+        "a-144"
+      ]
+    },
+    {
+      "id": "r-072",
+      "edge_type": "R-1",
+      "designation": "F-072",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-081",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-082",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-072",
+        "a-172"
+      ]
+    },
+    {
+      "id": "r-073",
+      "edge_type": "R-1",
+      "designation": "F-073",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-082",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-083",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-073",
+        "a-173"
+      ]
+    },
+    {
+      "id": "r-074",
+      "edge_type": "R-1",
+      "designation": "F-074",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-084",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-085",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-074",
+        "a-174"
+      ]
+    },
+    {
+      "id": "r-075",
+      "edge_type": "R-1",
+      "designation": "F-075",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-085",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-086",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-075",
+        "a-175"
+      ]
+    },
+    {
+      "id": "r-045",
+      "edge_type": "R-1",
+      "designation": "F-045",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-079",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-087",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-045",
+        "a-145"
+      ]
+    },
+    {
+      "id": "r-076",
+      "edge_type": "R-1",
+      "designation": "F-076",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-088",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-089",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-076",
+        "a-176"
+      ]
+    },
+    {
+      "id": "r-077",
+      "edge_type": "R-1",
+      "designation": "F-077",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-089",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-090",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-077",
+        "a-177"
+      ]
+    },
+    {
+      "id": "r-078",
+      "edge_type": "R-1",
+      "designation": "F-078",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-091",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-092",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-078",
+        "a-178"
+      ]
+    },
+    {
+      "id": "r-079",
+      "edge_type": "R-1",
+      "designation": "F-079",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-092",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-093",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-079",
+        "a-179"
+      ]
+    },
+    {
+      "id": "r-046",
+      "edge_type": "R-1",
+      "designation": "F-046",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-079",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-094",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-046",
+        "a-146"
+      ]
+    },
+    {
+      "id": "r-080",
+      "edge_type": "R-1",
+      "designation": "F-080",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-095",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-096",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-080",
+        "a-180"
+      ]
+    },
+    {
+      "id": "r-081",
+      "edge_type": "R-1",
+      "designation": "F-081",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-096",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-097",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-081",
+        "a-181"
+      ]
+    },
+    {
+      "id": "r-082",
+      "edge_type": "R-1",
+      "designation": "F-082",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-098",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-099",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-082",
+        "a-182"
+      ]
+    },
+    {
+      "id": "r-083",
+      "edge_type": "R-1",
+      "designation": "F-083",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-099",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-100",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-083",
+        "a-183"
+      ]
+    },
+    {
+      "id": "r-055",
+      "edge_type": "R-1",
+      "designation": "F-055",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-047",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-101",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 3,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-055",
+        "a-155"
+      ]
+    },
+    {
+      "id": "r-058",
+      "edge_type": "R-1",
+      "designation": "F-058",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-101",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-104",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-058",
+        "a-158"
+      ]
+    },
+    {
+      "id": "r-057",
+      "edge_type": "R-1",
+      "designation": "F-057",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-101",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-103",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-057",
+        "a-157"
+      ]
+    },
+    {
+      "id": "r-056",
+      "edge_type": "R-1",
+      "designation": "F-056",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-101",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-102",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-056",
+        "a-156"
+      ]
+    },
+    {
+      "id": "r-059",
+      "edge_type": "R-1",
+      "designation": "F-059",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-101",
+        "port": "feed_bottom"
+      },
+      "end": {
+        "device_id": "d-105",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-059",
+        "a-159"
+      ]
+    },
+    {
+      "id": "r-061",
+      "edge_type": "R-1",
+      "designation": "F-061",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-048",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-106",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-061",
+        "a-161"
+      ]
+    },
+    {
+      "id": "r-065",
+      "edge_type": "R-1",
+      "designation": "F-065",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-049",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-107",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "1",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 3,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-065",
+        "a-165"
+      ]
+    },
+    {
+      "id": "r-084",
+      "edge_type": "R-1",
+      "designation": "F-084",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-108",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-109",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "2/0",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "1 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-084",
+        "a-184"
+      ]
+    },
+    {
+      "id": "r-085",
+      "edge_type": "R-1",
+      "designation": "F-085",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-109",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-110",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "250",
+        "conductors_per_phase": 4,
+        "neutral_size": "250",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-085",
+        "a-185"
+      ]
+    },
+    {
+      "id": "r-063",
+      "edge_type": "R-1",
+      "designation": "F-063",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-050",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-111",
+        "port": "load_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-063",
+        "a-163"
+      ]
+    },
+    {
+      "id": "r-053",
+      "edge_type": "R-1",
+      "designation": "F-053",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-051",
+        "port": "load_out"
+      },
+      "end": {
+        "device_id": "d-112",
+        "port": "load_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_size": "3\"",
+        "num_sets": 2,
+        "neutral_size": "350",
+        "conduit_type": "EMT"
+      },
+      "annotation_ids": [
+        "a-053",
+        "a-153"
+      ]
+    },
+    {
+      "id": "r-041",
+      "edge_type": "R-1",
+      "designation": "F-041",
+      "sheet_id": "S2",
+      "start": {
+        "device_id": "d-113",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-054",
+        "port": "line_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "CU",
+        "conductor_size": "12",
+        "conductors_per_phase": 3,
+        "ground_size": "12",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3/4\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-041",
+        "a-141"
+      ]
+    },
+    {
+      "id": "r-086",
+      "edge_type": "R-1",
+      "designation": "F-086",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-015",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-020",
+        "port": "line_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "CU",
+        "conductor_size": "12",
+        "conductors_per_phase": 3,
+        "ground_size": "12",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3/4\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-086",
+        "a-186"
+      ]
+    },
+    {
+      "id": "r-012",
+      "edge_type": "R-1",
+      "designation": "F-012",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-114",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-115",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "500",
+        "conductors_per_phase": 4,
+        "neutral_size": "500",
+        "ground_size": "4/0",
+        "ground_material": "AL",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 6
+      },
+      "annotation_ids": [
+        "a-012",
+        "a-112"
+      ]
+    },
+    {
+      "id": "r-026",
+      "edge_type": "R-1",
+      "designation": "F-026",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-131",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-119",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\""
+      },
+      "annotation_ids": [
+        "a-026",
+        "a-126"
+      ]
+    },
+    {
+      "id": "r-027",
+      "edge_type": "R-1",
+      "designation": "F-027",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-119",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-120",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\""
+      },
+      "annotation_ids": [
+        "a-027",
+        "a-127"
+      ]
+    },
+    {
+      "id": "r-028",
+      "edge_type": "R-1",
+      "designation": "F-028",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-132",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-121",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\""
+      },
+      "annotation_ids": [
+        "a-028",
+        "a-128"
+      ]
+    },
+    {
+      "id": "r-029",
+      "edge_type": "R-1",
+      "designation": "F-029",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-121",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-122",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\""
+      },
+      "annotation_ids": [
+        "a-029",
+        "a-129"
+      ]
+    },
+    {
+      "id": "r-030",
+      "edge_type": "R-1",
+      "designation": "F-030",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-133",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-123",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\""
+      },
+      "annotation_ids": [
+        "a-030",
+        "a-130"
+      ]
+    },
+    {
+      "id": "r-031",
+      "edge_type": "R-1",
+      "designation": "F-031",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-123",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-124",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\""
+      },
+      "annotation_ids": [
+        "a-031",
+        "a-131"
+      ]
+    },
+    {
+      "id": "r-032",
+      "edge_type": "R-1",
+      "designation": "F-032",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-134",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-125",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\""
+      },
+      "annotation_ids": [
+        "a-032",
+        "a-132"
+      ]
+    },
+    {
+      "id": "r-033",
+      "edge_type": "R-1",
+      "designation": "F-033",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-125",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-126",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\""
+      },
+      "annotation_ids": [
+        "a-033",
+        "a-133"
+      ]
+    },
+    {
+      "id": "r-034",
+      "edge_type": "R-1",
+      "designation": "F-034",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-135",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-127",
+        "port": "primary_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 3,
+        "neutral_size": null,
+        "ground_size": "4",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "2 1/2\""
+      },
+      "annotation_ids": [
+        "a-034",
+        "a-134"
+      ]
+    },
+    {
+      "id": "r-035",
+      "edge_type": "R-1",
+      "designation": "F-035",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-127",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-128",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": null,
+        "ground_material": null,
+        "conduit_type": "EMT",
+        "conduit_size": "3\""
+      },
+      "annotation_ids": [
+        "a-035",
+        "a-135"
+      ]
+    },
+    {
+      "id": "r-001",
+      "edge_type": "R-1",
+      "designation": "F-001",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-137",
+        "port": "line_in"
+      },
+      "end": {
+        "device_id": "d-138",
+        "port": "feed_top"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "3",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3\"",
+        "num_sets": 2
+      },
+      "annotation_ids": [
+        "a-003",
+        "a-103"
+      ]
+    },
+    {
+      "id": "r-002",
+      "edge_type": "R-1",
+      "designation": "F-002",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-001",
+        "port": "secondary_out"
+      },
+      "end": {
+        "device_id": "d-004",
+        "port": "line_in"
+      },
+      "stub_exempt": false,
+      "data_fields": {
+        "is_service_entrance": true
+      },
+      "calc_fields": {
+        "conductor_material": "CU",
+        "conductor_size": "750",
+        "conductors_per_phase": 4,
+        "neutral_size": "750",
+        "ground_size": "1/0",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "4\"",
+        "num_sets": 4,
+        "num_spare_conduits": 2
+      },
+      "annotation_ids": [
+        "a-187"
+      ]
+    },
+    {
+      "id": "r-004",
+      "edge_type": "R-1",
+      "designation": "F-004",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-138",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-139",
+        "port": "feed_bottom"
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-004",
+        "a-104"
+      ]
+    },
+    {
+      "id": "r-005",
+      "edge_type": "R-1",
+      "designation": "F-005",
+      "sheet_id": "S1",
+      "start": {
+        "device_id": "d-138",
+        "port": "feed_top"
+      },
+      "end": {
+        "device_id": "d-140",
+        "port": "feed_bottom",
+        "dst_x_offset": 80
+      },
+      "stub_exempt": false,
+      "data_fields": {},
+      "calc_fields": {
+        "conductor_material": "AL",
+        "conductor_size": "350",
+        "conductors_per_phase": 4,
+        "neutral_size": "350",
+        "ground_size": "6",
+        "ground_material": "CU",
+        "conduit_type": "EMT",
+        "conduit_size": "3 1/2\"",
+        "num_sets": 1
+      },
+      "annotation_ids": [
+        "a-005",
+        "a-105"
+      ]
+    }
+  ],
+  "annotations": [
+    {
+      "id": "a-006",
+      "annotation_type": "A-1",
+      "bound_to": "r-006",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "12004"
+      }
+    },
+    {
+      "id": "a-106",
+      "annotation_type": "A-2",
+      "bound_to": "r-006",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(5) 3 1/2\"C - (4)500 AL + 250 AL GND"
+      }
+    },
+    {
+      "id": "a-007",
+      "annotation_type": "A-1",
+      "bound_to": "r-007",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "8004"
+      }
+    },
+    {
+      "id": "a-107",
+      "annotation_type": "A-2",
+      "bound_to": "r-007",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(3) 3 1/2\"C - (4)500 AL + #1/0 CU GND"
+      }
+    },
+    {
+      "id": "a-008",
+      "annotation_type": "A-1",
+      "bound_to": "r-038",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-108",
+      "annotation_type": "A-2",
+      "bound_to": "r-038",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-009",
+      "annotation_type": "A-1",
+      "bound_to": "r-009",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "8004"
+      }
+    },
+    {
+      "id": "a-109",
+      "annotation_type": "A-2",
+      "bound_to": "r-009",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(3) 3 1/2\"C - (4)500 AL + #1/0 CU GND"
+      }
+    },
+    {
+      "id": "a-020",
+      "annotation_type": "A-1",
+      "bound_to": "r-020",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-120",
+      "annotation_type": "A-2",
+      "bound_to": "r-020",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-021",
+      "annotation_type": "A-1",
+      "bound_to": "r-021",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-121",
+      "annotation_type": "A-2",
+      "bound_to": "r-021",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-010",
+      "annotation_type": "A-1",
+      "bound_to": "r-010",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-110",
+      "annotation_type": "A-2",
+      "bound_to": "r-010",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-022",
+      "annotation_type": "A-1",
+      "bound_to": "r-022",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-122",
+      "annotation_type": "A-2",
+      "bound_to": "r-022",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-023",
+      "annotation_type": "A-1",
+      "bound_to": "r-023",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-123",
+      "annotation_type": "A-2",
+      "bound_to": "r-023",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-011",
+      "annotation_type": "A-1",
+      "bound_to": "r-011",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-111",
+      "annotation_type": "A-2",
+      "bound_to": "r-011",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-024",
+      "annotation_type": "A-1",
+      "bound_to": "r-024",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-124",
+      "annotation_type": "A-2",
+      "bound_to": "r-024",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-025",
+      "annotation_type": "A-1",
+      "bound_to": "r-025",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-125",
+      "annotation_type": "A-2",
+      "bound_to": "r-025",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-013",
+      "annotation_type": "A-1",
+      "bound_to": "r-013-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-113",
+      "annotation_type": "A-2",
+      "bound_to": "r-013-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-201",
+      "annotation_type": "A-3",
+      "bound_to": "r-013-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-022",
+      "content": {
+        "text": "TO E4A-1-A",
+        "direction": "to",
+        "destination_designation": "E4A-1-A"
+      }
+    },
+    {
+      "id": "a-202",
+      "annotation_type": "A-3",
+      "bound_to": "r-013-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-023",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-014",
+      "annotation_type": "A-1",
+      "bound_to": "r-014-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "10004"
+      }
+    },
+    {
+      "id": "a-114",
+      "annotation_type": "A-2",
+      "bound_to": "r-014-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(4) 3 1/2\"C - (4)500 AL + #4/0 AL GND"
+      }
+    },
+    {
+      "id": "a-203",
+      "annotation_type": "A-3",
+      "bound_to": "r-014-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-024",
+      "content": {
+        "text": "TO C4A-1-A",
+        "direction": "to",
+        "destination_designation": "C4A-1-A"
+      }
+    },
+    {
+      "id": "a-204",
+      "annotation_type": "A-3",
+      "bound_to": "r-014-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-025",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-015",
+      "annotation_type": "A-1",
+      "bound_to": "r-015-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-115",
+      "annotation_type": "A-2",
+      "bound_to": "r-015-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-205",
+      "annotation_type": "A-3",
+      "bound_to": "r-015-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-026",
+      "content": {
+        "text": "TO EQ4A-1-A",
+        "direction": "to",
+        "destination_designation": "EQ4A-1-A"
+      }
+    },
+    {
+      "id": "a-206",
+      "annotation_type": "A-3",
+      "bound_to": "r-015-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-027",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-016",
+      "annotation_type": "A-1",
+      "bound_to": "r-016-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-116",
+      "annotation_type": "A-2",
+      "bound_to": "r-016-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-207",
+      "annotation_type": "A-3",
+      "bound_to": "r-016-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-028",
+      "content": {
+        "text": "TO EQ4A-1-B",
+        "direction": "to",
+        "destination_designation": "EQ4A-1-B"
+      }
+    },
+    {
+      "id": "a-208",
+      "annotation_type": "A-3",
+      "bound_to": "r-016-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-029",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-017",
+      "annotation_type": "A-1",
+      "bound_to": "r-017-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-117",
+      "annotation_type": "A-2",
+      "bound_to": "r-017-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-209",
+      "annotation_type": "A-3",
+      "bound_to": "r-017-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-030",
+      "content": {
+        "text": "TO O4A-1-A",
+        "direction": "to",
+        "destination_designation": "O4A-1-A"
+      }
+    },
+    {
+      "id": "a-210",
+      "annotation_type": "A-3",
+      "bound_to": "r-017-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-031",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-018",
+      "annotation_type": "A-1",
+      "bound_to": "r-018-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-118",
+      "annotation_type": "A-2",
+      "bound_to": "r-018-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-211",
+      "annotation_type": "A-3",
+      "bound_to": "r-018-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-032",
+      "content": {
+        "text": "TO EQ4A-1-C",
+        "direction": "to",
+        "destination_designation": "EQ4A-1-C"
+      }
+    },
+    {
+      "id": "a-212",
+      "annotation_type": "A-3",
+      "bound_to": "r-018-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-033",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-019",
+      "annotation_type": "A-1",
+      "bound_to": "r-019-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-119",
+      "annotation_type": "A-2",
+      "bound_to": "r-019-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-213",
+      "annotation_type": "A-3",
+      "bound_to": "r-019-s1",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "designation": "SQ-F-034",
+      "content": {
+        "text": "TO E4A-1-B",
+        "direction": "to",
+        "destination_designation": "E4A-1-B"
+      }
+    },
+    {
+      "id": "a-214",
+      "annotation_type": "A-3",
+      "bound_to": "r-019-s2",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "designation": "SQ-F-035",
+      "content": {
+        "text": "FROM 4MDP-1-A",
+        "direction": "from",
+        "destination_designation": "4MDP-1-A"
+      }
+    },
+    {
+      "id": "a-040",
+      "annotation_type": "A-1",
+      "bound_to": "r-040",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "GEN"
+      }
+    },
+    {
+      "id": "a-140",
+      "annotation_type": "A-2",
+      "bound_to": "r-040",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 4\"C RMC - (4)500 CU + #250 CU EGC  [2-HR RATED]"
+      }
+    },
+    {
+      "id": "a-052",
+      "annotation_type": "A-1",
+      "bound_to": "r-052",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-152",
+      "annotation_type": "A-2",
+      "bound_to": "r-052",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-047",
+      "annotation_type": "A-1",
+      "bound_to": "r-047",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-147",
+      "annotation_type": "A-2",
+      "bound_to": "r-047",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-042",
+      "annotation_type": "A-1",
+      "bound_to": "r-042",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "10004"
+      }
+    },
+    {
+      "id": "a-142",
+      "annotation_type": "A-2",
+      "bound_to": "r-042",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(4) 3 1/2\"C - (4)500 AL + #4/0 AL GND"
+      }
+    },
+    {
+      "id": "a-054",
+      "annotation_type": "A-1",
+      "bound_to": "r-054",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-154",
+      "annotation_type": "A-2",
+      "bound_to": "r-054",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-060",
+      "annotation_type": "A-1",
+      "bound_to": "r-060",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-160",
+      "annotation_type": "A-2",
+      "bound_to": "r-060",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-062",
+      "annotation_type": "A-1",
+      "bound_to": "r-062",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-162",
+      "annotation_type": "A-2",
+      "bound_to": "r-062",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-064",
+      "annotation_type": "A-1",
+      "bound_to": "r-064",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-164",
+      "annotation_type": "A-2",
+      "bound_to": "r-064",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-048",
+      "annotation_type": "A-1",
+      "bound_to": "r-048",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-148",
+      "annotation_type": "A-2",
+      "bound_to": "r-048",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-049",
+      "annotation_type": "A-1",
+      "bound_to": "r-049",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-149",
+      "annotation_type": "A-2",
+      "bound_to": "r-049",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-066",
+      "annotation_type": "A-1",
+      "bound_to": "r-066",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-166",
+      "annotation_type": "A-2",
+      "bound_to": "r-066",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-067",
+      "annotation_type": "A-1",
+      "bound_to": "r-067",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "1504T"
+      }
+    },
+    {
+      "id": "a-167",
+      "annotation_type": "A-2",
+      "bound_to": "r-067",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (4)#4/0 AL + #4 CU SBJ"
+      }
+    },
+    {
+      "id": "a-050",
+      "annotation_type": "A-1",
+      "bound_to": "r-050",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-150",
+      "annotation_type": "A-2",
+      "bound_to": "r-050",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-068",
+      "annotation_type": "A-1",
+      "bound_to": "r-068",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-168",
+      "annotation_type": "A-2",
+      "bound_to": "r-068",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-069",
+      "annotation_type": "A-1",
+      "bound_to": "r-069",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "1504T"
+      }
+    },
+    {
+      "id": "a-169",
+      "annotation_type": "A-2",
+      "bound_to": "r-069",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (4)#4/0 AL + #4 CU SBJ"
+      }
+    },
+    {
+      "id": "a-051",
+      "annotation_type": "A-1",
+      "bound_to": "r-051",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-151",
+      "annotation_type": "A-2",
+      "bound_to": "r-051",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-070",
+      "annotation_type": "A-1",
+      "bound_to": "r-070",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-170",
+      "annotation_type": "A-2",
+      "bound_to": "r-070",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-071",
+      "annotation_type": "A-1",
+      "bound_to": "r-071",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "1504T"
+      }
+    },
+    {
+      "id": "a-171",
+      "annotation_type": "A-2",
+      "bound_to": "r-071",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (4)#4/0 AL + #4 CU SBJ"
+      }
+    },
+    {
+      "id": "a-043",
+      "annotation_type": "A-1",
+      "bound_to": "r-043",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "10004"
+      }
+    },
+    {
+      "id": "a-143",
+      "annotation_type": "A-2",
+      "bound_to": "r-043",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(4) 3 1/2\"C - (4)500 AL + #4/0 AL GND"
+      }
+    },
+    {
+      "id": "a-044",
+      "annotation_type": "A-1",
+      "bound_to": "r-044",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-144",
+      "annotation_type": "A-2",
+      "bound_to": "r-044",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-072",
+      "annotation_type": "A-1",
+      "bound_to": "r-072",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-172",
+      "annotation_type": "A-2",
+      "bound_to": "r-072",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-073",
+      "annotation_type": "A-1",
+      "bound_to": "r-073",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-173",
+      "annotation_type": "A-2",
+      "bound_to": "r-073",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-074",
+      "annotation_type": "A-1",
+      "bound_to": "r-074",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-174",
+      "annotation_type": "A-2",
+      "bound_to": "r-074",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-075",
+      "annotation_type": "A-1",
+      "bound_to": "r-075",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-175",
+      "annotation_type": "A-2",
+      "bound_to": "r-075",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-045",
+      "annotation_type": "A-1",
+      "bound_to": "r-045",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-145",
+      "annotation_type": "A-2",
+      "bound_to": "r-045",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-076",
+      "annotation_type": "A-1",
+      "bound_to": "r-076",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-176",
+      "annotation_type": "A-2",
+      "bound_to": "r-076",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-077",
+      "annotation_type": "A-1",
+      "bound_to": "r-077",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-177",
+      "annotation_type": "A-2",
+      "bound_to": "r-077",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-078",
+      "annotation_type": "A-1",
+      "bound_to": "r-078",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-178",
+      "annotation_type": "A-2",
+      "bound_to": "r-078",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-079",
+      "annotation_type": "A-1",
+      "bound_to": "r-079",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-179",
+      "annotation_type": "A-2",
+      "bound_to": "r-079",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-046",
+      "annotation_type": "A-1",
+      "bound_to": "r-046",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-146",
+      "annotation_type": "A-2",
+      "bound_to": "r-046",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-080",
+      "annotation_type": "A-1",
+      "bound_to": "r-080",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-180",
+      "annotation_type": "A-2",
+      "bound_to": "r-080",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-081",
+      "annotation_type": "A-1",
+      "bound_to": "r-081",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-181",
+      "annotation_type": "A-2",
+      "bound_to": "r-081",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-082",
+      "annotation_type": "A-1",
+      "bound_to": "r-082",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-182",
+      "annotation_type": "A-2",
+      "bound_to": "r-082",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-083",
+      "annotation_type": "A-1",
+      "bound_to": "r-083",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-183",
+      "annotation_type": "A-2",
+      "bound_to": "r-083",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-055",
+      "annotation_type": "A-1",
+      "bound_to": "r-055",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-155",
+      "annotation_type": "A-2",
+      "bound_to": "r-055",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-056",
+      "annotation_type": "A-1",
+      "bound_to": "r-056",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-156",
+      "annotation_type": "A-2",
+      "bound_to": "r-056",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-057",
+      "annotation_type": "A-1",
+      "bound_to": "r-057",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-157",
+      "annotation_type": "A-2",
+      "bound_to": "r-057",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-058",
+      "annotation_type": "A-1",
+      "bound_to": "r-058",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-158",
+      "annotation_type": "A-2",
+      "bound_to": "r-058",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-059",
+      "annotation_type": "A-1",
+      "bound_to": "r-059",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-159",
+      "annotation_type": "A-2",
+      "bound_to": "r-059",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-061",
+      "annotation_type": "A-1",
+      "bound_to": "r-061",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-161",
+      "annotation_type": "A-2",
+      "bound_to": "r-061",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-065",
+      "annotation_type": "A-1",
+      "bound_to": "r-065",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "6004"
+      }
+    },
+    {
+      "id": "a-165",
+      "annotation_type": "A-2",
+      "bound_to": "r-065",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(3) 3\"C - (4)350 AL + #1 CU GND"
+      }
+    },
+    {
+      "id": "a-084",
+      "annotation_type": "A-1",
+      "bound_to": "r-084",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "1253"
+      }
+    },
+    {
+      "id": "a-184",
+      "annotation_type": "A-2",
+      "bound_to": "r-084",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "1 1/2\"C - (3)#2/0 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-085",
+      "annotation_type": "A-1",
+      "bound_to": "r-085",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "2504T"
+      }
+    },
+    {
+      "id": "a-185",
+      "annotation_type": "A-2",
+      "bound_to": "r-085",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3\"C - (4)250 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-063",
+      "annotation_type": "A-1",
+      "bound_to": "r-063",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-163",
+      "annotation_type": "A-2",
+      "bound_to": "r-063",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-053",
+      "annotation_type": "A-1",
+      "bound_to": "r-053",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-153",
+      "annotation_type": "A-2",
+      "bound_to": "r-053",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-041",
+      "annotation_type": "A-1",
+      "bound_to": "r-041",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "tag_text": "204"
+      }
+    },
+    {
+      "id": "a-141",
+      "annotation_type": "A-2",
+      "bound_to": "r-041",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "callout_text": "3/4\"C - (3)#12 CU + #12 CU GND"
+      }
+    },
+    {
+      "id": "a-086",
+      "annotation_type": "A-1",
+      "bound_to": "r-086",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "204"
+      }
+    },
+    {
+      "id": "a-186",
+      "annotation_type": "A-2",
+      "bound_to": "r-086",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3/4\"C - (3)#12 CU + #12 CU GND"
+      }
+    },
+    {
+      "id": "a-187",
+      "annotation_type": "A-2",
+      "bound_to": "r-002",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "4 SETS - 4\"C, (4)750 kcmil CU + 1/0 CU GND; (2) 4\"C SPARE"
+      }
+    },
+    {
+      "id": "a-451",
+      "annotation_type": "A-6",
+      "bound_to": "d-001",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "keynote_number": 1,
+        "keynote_text": "GROUNDING ELECTRODE SYSTEM — SEE DRAWING E-001 SERIES (#2/0 CU GROUND RING, UFER, WATER, ROD ARRAY)."
+      }
+    },
+    {
+      "id": "a-452",
+      "annotation_type": "A-6",
+      "bound_to": "d-004",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "keynote_number": 2,
+        "keynote_text": "TYPE 2 SPD AT EACH DISTRIBUTION PANEL, TYPE 3 AT SENSITIVE LOADS — PER SPD SCHEDULE."
+      }
+    },
+    {
+      "id": "a-453",
+      "annotation_type": "A-6",
+      "bound_to": "r-901",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "keynote_number": 3,
+        "keynote_text": "AIC COORDINATION & ARC-FLASH STUDY — PER SPEC SECTION 26 05 73."
+      }
+    },
+    {
+      "id": "a-454",
+      "annotation_type": "A-6",
+      "bound_to": "d-021",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "keynote_number": 4,
+        "keynote_text": "VFD HARMONIC MITIGATION PER IEEE 519 AT PCC — PER EQUIPMENT SCHEDULE."
+      }
+    },
+    {
+      "id": "a-455",
+      "annotation_type": "A-6",
+      "bound_to": "d-106",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "keynote_number": 1,
+        "keynote_text": "EQ4S-1-B LOADS — NFPA 110 EQ MANUAL BRANCH."
+      }
+    },
+    {
+      "id": "a-456",
+      "annotation_type": "A-6",
+      "bound_to": "d-080",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "keynote_number": 2,
+        "keynote_text": "IPS-OR/CATH/PROC PANELS (10 kVA, 480-120/120V, LIM PER NEC 517.160) FED FROM C4B-N-A. REF IPS SCHEDULE."
+      }
+    },
+    {
+      "id": "a-457",
+      "annotation_type": "A-6",
+      "bound_to": "d-052",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "keynote_number": 3,
+        "keynote_text": "GENERATOR PARALLELING SWITCHGEAR — N+1 CONFIGURATION PENDING (SINGLE GENSET, v1.0.0)."
+      }
+    },
+    {
+      "id": "a-251",
+      "annotation_type": "A-4",
+      "bound_to": "r-901",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "bus"
+      }
+    },
+    {
+      "id": "a-253",
+      "annotation_type": "A-4",
+      "bound_to": "d-001",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-258",
+      "annotation_type": "A-4",
+      "bound_to": "d-021",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-259",
+      "annotation_type": "A-4",
+      "bound_to": "d-022",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-260",
+      "annotation_type": "A-4",
+      "bound_to": "d-023",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-261",
+      "annotation_type": "A-4",
+      "bound_to": "d-024",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-281",
+      "annotation_type": "A-4",
+      "bound_to": "d-029",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-280",
+      "annotation_type": "A-4",
+      "bound_to": "d-029",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-282",
+      "annotation_type": "A-4",
+      "bound_to": "d-030",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-262",
+      "annotation_type": "A-4",
+      "bound_to": "d-031",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-284",
+      "annotation_type": "A-4",
+      "bound_to": "d-036",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-283",
+      "annotation_type": "A-4",
+      "bound_to": "d-036",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-285",
+      "annotation_type": "A-4",
+      "bound_to": "d-037",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-263",
+      "annotation_type": "A-4",
+      "bound_to": "d-038",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-287",
+      "annotation_type": "A-4",
+      "bound_to": "d-043",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-286",
+      "annotation_type": "A-4",
+      "bound_to": "d-043",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-288",
+      "annotation_type": "A-4",
+      "bound_to": "d-044",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-252",
+      "annotation_type": "A-4",
+      "bound_to": "r-903",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "bus"
+      }
+    },
+    {
+      "id": "a-267",
+      "annotation_type": "A-4",
+      "bound_to": "d-045",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-266",
+      "annotation_type": "A-4",
+      "bound_to": "d-045",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-269",
+      "annotation_type": "A-4",
+      "bound_to": "d-046",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-268",
+      "annotation_type": "A-4",
+      "bound_to": "d-046",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-271",
+      "annotation_type": "A-4",
+      "bound_to": "d-047",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-270",
+      "annotation_type": "A-4",
+      "bound_to": "d-047",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-273",
+      "annotation_type": "A-4",
+      "bound_to": "d-048",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-272",
+      "annotation_type": "A-4",
+      "bound_to": "d-048",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-275",
+      "annotation_type": "A-4",
+      "bound_to": "d-049",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-274",
+      "annotation_type": "A-4",
+      "bound_to": "d-049",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-277",
+      "annotation_type": "A-4",
+      "bound_to": "d-050",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-276",
+      "annotation_type": "A-4",
+      "bound_to": "d-050",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-279",
+      "annotation_type": "A-4",
+      "bound_to": "d-051",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-278",
+      "annotation_type": "A-4",
+      "bound_to": "d-051",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "load"
+      }
+    },
+    {
+      "id": "a-310",
+      "annotation_type": "A-4",
+      "bound_to": "d-052",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-320",
+      "annotation_type": "A-4",
+      "bound_to": "d-066",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-319",
+      "annotation_type": "A-4",
+      "bound_to": "d-066",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-322",
+      "annotation_type": "A-4",
+      "bound_to": "d-067",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-321",
+      "annotation_type": "A-4",
+      "bound_to": "d-067",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-348",
+      "annotation_type": "A-4",
+      "bound_to": "d-069",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3386,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-346",
+      "annotation_type": "A-4",
+      "bound_to": "d-069",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3067,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-347",
+      "annotation_type": "A-4",
+      "bound_to": "d-069",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-345",
+      "annotation_type": "A-4",
+      "bound_to": "d-069",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-350",
+      "annotation_type": "A-4",
+      "bound_to": "d-070",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3386,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-349",
+      "annotation_type": "A-4",
+      "bound_to": "d-070",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3067,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-324",
+      "annotation_type": "A-4",
+      "bound_to": "d-071",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-323",
+      "annotation_type": "A-4",
+      "bound_to": "d-071",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-354",
+      "annotation_type": "A-4",
+      "bound_to": "d-073",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3386,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-352",
+      "annotation_type": "A-4",
+      "bound_to": "d-073",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3067,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-353",
+      "annotation_type": "A-4",
+      "bound_to": "d-073",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-351",
+      "annotation_type": "A-4",
+      "bound_to": "d-073",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-356",
+      "annotation_type": "A-4",
+      "bound_to": "d-074",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3386,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-355",
+      "annotation_type": "A-4",
+      "bound_to": "d-074",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3067,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-326",
+      "annotation_type": "A-4",
+      "bound_to": "d-075",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-325",
+      "annotation_type": "A-4",
+      "bound_to": "d-075",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-360",
+      "annotation_type": "A-4",
+      "bound_to": "d-077",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3386,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-358",
+      "annotation_type": "A-4",
+      "bound_to": "d-077",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3067,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-359",
+      "annotation_type": "A-4",
+      "bound_to": "d-077",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-357",
+      "annotation_type": "A-4",
+      "bound_to": "d-077",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-362",
+      "annotation_type": "A-4",
+      "bound_to": "d-078",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3386,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-361",
+      "annotation_type": "A-4",
+      "bound_to": "d-078",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3067,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-312",
+      "annotation_type": "A-4",
+      "bound_to": "d-079",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-311",
+      "annotation_type": "A-4",
+      "bound_to": "d-079",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-314",
+      "annotation_type": "A-4",
+      "bound_to": "d-080",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-313",
+      "annotation_type": "A-4",
+      "bound_to": "d-080",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-366",
+      "annotation_type": "A-4",
+      "bound_to": "d-082",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-364",
+      "annotation_type": "A-4",
+      "bound_to": "d-082",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-365",
+      "annotation_type": "A-4",
+      "bound_to": "d-082",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-363",
+      "annotation_type": "A-4",
+      "bound_to": "d-082",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-368",
+      "annotation_type": "A-4",
+      "bound_to": "d-083",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-367",
+      "annotation_type": "A-4",
+      "bound_to": "d-083",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-372",
+      "annotation_type": "A-4",
+      "bound_to": "d-085",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-370",
+      "annotation_type": "A-4",
+      "bound_to": "d-085",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-371",
+      "annotation_type": "A-4",
+      "bound_to": "d-085",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-369",
+      "annotation_type": "A-4",
+      "bound_to": "d-085",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-374",
+      "annotation_type": "A-4",
+      "bound_to": "d-086",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-373",
+      "annotation_type": "A-4",
+      "bound_to": "d-086",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-316",
+      "annotation_type": "A-4",
+      "bound_to": "d-087",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-315",
+      "annotation_type": "A-4",
+      "bound_to": "d-087",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-378",
+      "annotation_type": "A-4",
+      "bound_to": "d-089",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-376",
+      "annotation_type": "A-4",
+      "bound_to": "d-089",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-377",
+      "annotation_type": "A-4",
+      "bound_to": "d-089",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-375",
+      "annotation_type": "A-4",
+      "bound_to": "d-089",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-380",
+      "annotation_type": "A-4",
+      "bound_to": "d-090",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-379",
+      "annotation_type": "A-4",
+      "bound_to": "d-090",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-384",
+      "annotation_type": "A-4",
+      "bound_to": "d-092",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-382",
+      "annotation_type": "A-4",
+      "bound_to": "d-092",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-383",
+      "annotation_type": "A-4",
+      "bound_to": "d-092",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-381",
+      "annotation_type": "A-4",
+      "bound_to": "d-092",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-386",
+      "annotation_type": "A-4",
+      "bound_to": "d-093",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-385",
+      "annotation_type": "A-4",
+      "bound_to": "d-093",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-318",
+      "annotation_type": "A-4",
+      "bound_to": "d-094",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-317",
+      "annotation_type": "A-4",
+      "bound_to": "d-094",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-390",
+      "annotation_type": "A-4",
+      "bound_to": "d-096",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-388",
+      "annotation_type": "A-4",
+      "bound_to": "d-096",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-389",
+      "annotation_type": "A-4",
+      "bound_to": "d-096",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-387",
+      "annotation_type": "A-4",
+      "bound_to": "d-096",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-392",
+      "annotation_type": "A-4",
+      "bound_to": "d-097",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-391",
+      "annotation_type": "A-4",
+      "bound_to": "d-097",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-396",
+      "annotation_type": "A-4",
+      "bound_to": "d-099",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-394",
+      "annotation_type": "A-4",
+      "bound_to": "d-099",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-395",
+      "annotation_type": "A-4",
+      "bound_to": "d-099",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-393",
+      "annotation_type": "A-4",
+      "bound_to": "d-099",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-398",
+      "annotation_type": "A-4",
+      "bound_to": "d-100",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-397",
+      "annotation_type": "A-4",
+      "bound_to": "d-100",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-330",
+      "annotation_type": "A-4",
+      "bound_to": "d-101",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-329",
+      "annotation_type": "A-4",
+      "bound_to": "d-101",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-332",
+      "annotation_type": "A-4",
+      "bound_to": "d-102",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-331",
+      "annotation_type": "A-4",
+      "bound_to": "d-102",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-334",
+      "annotation_type": "A-4",
+      "bound_to": "d-103",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-333",
+      "annotation_type": "A-4",
+      "bound_to": "d-103",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-336",
+      "annotation_type": "A-4",
+      "bound_to": "d-104",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-335",
+      "annotation_type": "A-4",
+      "bound_to": "d-104",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-338",
+      "annotation_type": "A-4",
+      "bound_to": "d-105",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-337",
+      "annotation_type": "A-4",
+      "bound_to": "d-105",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-340",
+      "annotation_type": "A-4",
+      "bound_to": "d-106",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-339",
+      "annotation_type": "A-4",
+      "bound_to": "d-106",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-344",
+      "annotation_type": "A-4",
+      "bound_to": "d-107",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-343",
+      "annotation_type": "A-4",
+      "bound_to": "d-107",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-402",
+      "annotation_type": "A-4",
+      "bound_to": "d-109",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-400",
+      "annotation_type": "A-4",
+      "bound_to": "d-109",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-401",
+      "annotation_type": "A-4",
+      "bound_to": "d-109",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-399",
+      "annotation_type": "A-4",
+      "bound_to": "d-109",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-404",
+      "annotation_type": "A-4",
+      "bound_to": "d-110",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 4294,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-403",
+      "annotation_type": "A-4",
+      "bound_to": "d-110",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 3793,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-342",
+      "annotation_type": "A-4",
+      "bound_to": "d-111",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-341",
+      "annotation_type": "A-4",
+      "bound_to": "d-111",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-328",
+      "annotation_type": "A-4",
+      "bound_to": "d-112",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 52296,
+        "mode": "N",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-327",
+      "annotation_type": "A-4",
+      "bound_to": "d-112",
+      "bound_to_type": "device",
+      "sheet_id": "S2",
+      "content": {
+        "fc_amps": 20047,
+        "mode": "EM",
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-012",
+      "annotation_type": "A-1",
+      "bound_to": "r-012",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "16006"
+      }
+    },
+    {
+      "id": "a-112",
+      "annotation_type": "A-2",
+      "bound_to": "r-012",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(6) 3 1/2\"C - (4)500 AL + #4/0 AL GND"
+      }
+    },
+    {
+      "id": "a-265",
+      "annotation_type": "A-4",
+      "bound_to": "d-115",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-026",
+      "annotation_type": "A-1",
+      "bound_to": "r-026",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-126",
+      "annotation_type": "A-2",
+      "bound_to": "r-026",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-027",
+      "annotation_type": "A-1",
+      "bound_to": "r-027",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-127",
+      "annotation_type": "A-2",
+      "bound_to": "r-027",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-028",
+      "annotation_type": "A-1",
+      "bound_to": "r-028",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-128",
+      "annotation_type": "A-2",
+      "bound_to": "r-028",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-029",
+      "annotation_type": "A-1",
+      "bound_to": "r-029",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-129",
+      "annotation_type": "A-2",
+      "bound_to": "r-029",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-030",
+      "annotation_type": "A-1",
+      "bound_to": "r-030",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-130",
+      "annotation_type": "A-2",
+      "bound_to": "r-030",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-031",
+      "annotation_type": "A-1",
+      "bound_to": "r-031",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-131",
+      "annotation_type": "A-2",
+      "bound_to": "r-031",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-290",
+      "annotation_type": "A-4",
+      "bound_to": "d-119",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-289",
+      "annotation_type": "A-4",
+      "bound_to": "d-119",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-291",
+      "annotation_type": "A-4",
+      "bound_to": "d-120",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-293",
+      "annotation_type": "A-4",
+      "bound_to": "d-121",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-292",
+      "annotation_type": "A-4",
+      "bound_to": "d-121",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-294",
+      "annotation_type": "A-4",
+      "bound_to": "d-122",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-296",
+      "annotation_type": "A-4",
+      "bound_to": "d-123",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-295",
+      "annotation_type": "A-4",
+      "bound_to": "d-123",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-297",
+      "annotation_type": "A-4",
+      "bound_to": "d-124",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-032",
+      "annotation_type": "A-1",
+      "bound_to": "r-032",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-132",
+      "annotation_type": "A-2",
+      "bound_to": "r-032",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-033",
+      "annotation_type": "A-1",
+      "bound_to": "r-033",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-133",
+      "annotation_type": "A-2",
+      "bound_to": "r-033",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-034",
+      "annotation_type": "A-1",
+      "bound_to": "r-034",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2253"
+      }
+    },
+    {
+      "id": "a-134",
+      "annotation_type": "A-2",
+      "bound_to": "r-034",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "2 1/2\"C - (3)350 AL + #4 CU GND"
+      }
+    },
+    {
+      "id": "a-035",
+      "annotation_type": "A-1",
+      "bound_to": "r-035",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004T"
+      }
+    },
+    {
+      "id": "a-135",
+      "annotation_type": "A-2",
+      "bound_to": "r-035",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #2 CU SBJ"
+      }
+    },
+    {
+      "id": "a-299",
+      "annotation_type": "A-4",
+      "bound_to": "d-125",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-298",
+      "annotation_type": "A-4",
+      "bound_to": "d-125",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-300",
+      "annotation_type": "A-4",
+      "bound_to": "d-126",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-302",
+      "annotation_type": "A-4",
+      "bound_to": "d-127",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "secondary"
+      }
+    },
+    {
+      "id": "a-301",
+      "annotation_type": "A-4",
+      "bound_to": "d-127",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 51000,
+        "mode": null,
+        "anchor": "primary"
+      }
+    },
+    {
+      "id": "a-303",
+      "annotation_type": "A-4",
+      "bound_to": "d-128",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 7200,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-003",
+      "annotation_type": "A-1",
+      "bound_to": "r-001",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "4004"
+      }
+    },
+    {
+      "id": "a-103",
+      "annotation_type": "A-2",
+      "bound_to": "r-001",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "(2) 3\"C - (4)350 AL + #3 CU GND"
+      }
+    },
+    {
+      "id": "a-004",
+      "annotation_type": "A-1",
+      "bound_to": "r-004",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-104",
+      "annotation_type": "A-2",
+      "bound_to": "r-004",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-005",
+      "annotation_type": "A-1",
+      "bound_to": "r-005",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "tag_text": "2254"
+      }
+    },
+    {
+      "id": "a-105",
+      "annotation_type": "A-2",
+      "bound_to": "r-005",
+      "bound_to_type": "routed_element",
+      "sheet_id": "S1",
+      "content": {
+        "callout_text": "3 1/2\"C - (4)350 AL + #6 CU GND"
+      }
+    },
+    {
+      "id": "a-255",
+      "annotation_type": "A-4",
+      "bound_to": "d-138",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-256",
+      "annotation_type": "A-4",
+      "bound_to": "d-139",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    },
+    {
+      "id": "a-257",
+      "annotation_type": "A-4",
+      "bound_to": "d-140",
+      "bound_to_type": "device",
+      "sheet_id": "S1",
+      "content": {
+        "fc_amps": 52296,
+        "mode": null,
+        "anchor": "default"
+      }
+    }
+  ],
+  "switchboards": [
+    {
+      "id": "sw-001",
+      "designation": "4MDP-1-A",
+      "variant": "NP",
+      "bus_architecture": "two-level",
+      "sheet_id": "S1",
+      "data_fields": {
+        "rating": "4000A",
+        "voltage": "480Y/277V",
+        "wires": "4W, 3PH",
+        "aic": "65kAIC"
+      },
+      "secondary_bus_overflow_ids": [],
+      "main_bus_id": "r-901",
+      "secondary_bus_id": "r-902",
+      "distribution_bus_id": null
+    },
+    {
+      "id": "sw-002",
+      "designation": "E4MDP-1-A",
+      "variant": "EM",
+      "bus_architecture": "two-level",
+      "sheet_id": "S2",
+      "data_fields": {
+        "rating": "3000A",
+        "voltage": "480Y/277V",
+        "wires": "4W, 3PH",
+        "aic": "65kAIC"
+      },
+      "secondary_bus_overflow_ids": [],
+      "main_bus_id": "r-903",
+      "secondary_bus_id": "r-904",
+      "distribution_bus_id": null
+    }
+  ],
+  "sections": [
+    {
+      "id": "sec-001",
+      "switchboard_id": "sw-001",
+      "type": "incoming",
+      "order": 1,
+      "nec_class": null,
+      "section_tag": "SEC-1",
+      "device_ids": []
+    },
+    {
+      "id": "sec-002",
+      "switchboard_id": "sw-001",
+      "type": "metering",
+      "order": 2,
+      "nec_class": null,
+      "section_tag": "SEC-2",
+      "device_ids": [
+        "d-002"
+      ]
+    },
+    {
+      "id": "sec-003",
+      "switchboard_id": "sw-001",
+      "type": "fire_pump",
+      "order": 3,
+      "nec_class": null,
+      "section_tag": "SEC-3",
+      "device_ids": [
+        "d-003"
+      ]
+    },
+    {
+      "id": "sec-004",
+      "switchboard_id": "sw-001",
+      "type": "main_breaker",
+      "order": 4,
+      "nec_class": null,
+      "section_tag": "SEC-4",
+      "device_ids": [
+        "d-004"
+      ]
+    },
+    {
+      "id": "sec-005",
+      "switchboard_id": "sw-001",
+      "type": "distribution",
+      "order": 5,
+      "nec_class": null,
+      "section_tag": "SEC-5",
+      "device_ids": [
+        "d-015",
+        "d-137",
+        "d-005",
+        "d-006",
+        "d-007",
+        "d-008"
+      ]
+    },
+    {
+      "id": "sec-006",
+      "switchboard_id": "sw-001",
+      "type": "distribution",
+      "order": 6,
+      "nec_class": null,
+      "section_tag": "SEC-6",
+      "device_ids": [
+        "d-114",
+        "d-009",
+        "d-010",
+        "d-011",
+        "d-012",
+        "d-013",
+        "d-014",
+        "d-016",
+        "d-017",
+        "d-018",
+        "d-019"
+      ]
+    },
+    {
+      "id": "sec-007",
+      "switchboard_id": "sw-002",
+      "type": "incoming",
+      "order": 1,
+      "nec_class": null,
+      "section_tag": "SEC-1-EM",
+      "device_ids": []
+    },
+    {
+      "id": "sec-008",
+      "switchboard_id": "sw-002",
+      "type": "main_breaker",
+      "order": 2,
+      "nec_class": null,
+      "section_tag": "SEC-2-EM",
+      "device_ids": [
+        "d-053"
+      ]
+    },
+    {
+      "id": "sec-009",
+      "switchboard_id": "sw-002",
+      "type": "distribution",
+      "order": 3,
+      "nec_class": null,
+      "section_tag": "SEC-3-EM",
+      "device_ids": [
+        "d-113",
+        "d-056",
+        "d-055",
+        "d-057",
+        "d-063",
+        "d-064"
+      ]
+    },
+    {
+      "id": "sec-010",
+      "switchboard_id": "sw-002",
+      "type": "distribution",
+      "order": 4,
+      "nec_class": null,
+      "section_tag": "SEC-4-EM",
+      "device_ids": [
+        "d-058",
+        "d-059",
+        "d-060",
+        "d-061",
+        "d-062",
+        "d-065"
+      ]
+    }
+  ],
+  "port_assignments": [
+    {
+      "id": "pa-001",
+      "device_id": "d-003",
+      "port": "bus_out",
+      "bus_id": "r-901"
+    },
+    {
+      "id": "pa-002",
+      "device_id": "d-004",
+      "port": "line_in",
+      "bus_id": "r-901"
+    },
+    {
+      "id": "pa-003",
+      "device_id": "d-004",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-004",
+      "device_id": "d-005",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-005",
+      "device_id": "d-006",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-006",
+      "device_id": "d-007",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-007",
+      "device_id": "d-008",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-008",
+      "device_id": "d-009",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-009",
+      "device_id": "d-010",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-010",
+      "device_id": "d-011",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-011",
+      "device_id": "d-012",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-012",
+      "device_id": "d-013",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-013",
+      "device_id": "d-014",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-014",
+      "device_id": "d-015",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-015",
+      "device_id": "d-016",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-016",
+      "device_id": "d-017",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-017",
+      "device_id": "d-018",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-018",
+      "device_id": "d-025",
+      "port": "bus_out",
+      "attached_to_device": "d-024",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-020",
+      "device_id": "d-032",
+      "port": "bus_out",
+      "attached_to_device": "d-031",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-022",
+      "device_id": "d-039",
+      "port": "bus_out",
+      "attached_to_device": "d-038",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-024",
+      "device_id": "d-053",
+      "port": "line_in",
+      "bus_id": "r-903"
+    },
+    {
+      "id": "pa-025",
+      "device_id": "d-053",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-026",
+      "device_id": "d-055",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-027",
+      "device_id": "d-056",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-028",
+      "device_id": "d-057",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-028b",
+      "device_id": "d-113",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-029",
+      "device_id": "d-058",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-030",
+      "device_id": "d-059",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-031",
+      "device_id": "d-060",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-032",
+      "device_id": "d-061",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-033",
+      "device_id": "d-063",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-034",
+      "device_id": "d-064",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-035",
+      "device_id": "d-065",
+      "port": "bus_out",
+      "bus_id": "r-904"
+    },
+    {
+      "id": "pa-036",
+      "device_id": "d-068",
+      "port": "bus_out",
+      "attached_to_device": "d-067",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-037",
+      "device_id": "d-072",
+      "port": "bus_out",
+      "attached_to_device": "d-071",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-038",
+      "device_id": "d-076",
+      "port": "bus_out",
+      "attached_to_device": "d-075",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-039",
+      "device_id": "d-081",
+      "port": "bus_out",
+      "attached_to_device": "d-080",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-040",
+      "device_id": "d-084",
+      "port": "bus_out",
+      "attached_to_device": "d-080",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-041",
+      "device_id": "d-088",
+      "port": "bus_out",
+      "attached_to_device": "d-087",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-042",
+      "device_id": "d-091",
+      "port": "bus_out",
+      "attached_to_device": "d-087",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-043",
+      "device_id": "d-095",
+      "port": "bus_out",
+      "attached_to_device": "d-094",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-044",
+      "device_id": "d-098",
+      "port": "bus_out",
+      "attached_to_device": "d-094",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-045",
+      "device_id": "d-108",
+      "port": "bus_out",
+      "attached_to_device": "d-107",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-046",
+      "device_id": "d-114",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    },
+    {
+      "id": "pa-047",
+      "device_id": "d-116",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-048",
+      "device_id": "d-117",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-049",
+      "device_id": "d-118",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_bottom"
+    },
+    {
+      "id": "pa-050",
+      "device_id": "d-131",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_top"
+    },
+    {
+      "id": "pa-051",
+      "device_id": "d-132",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_top"
+    },
+    {
+      "id": "pa-052",
+      "device_id": "d-133",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_top"
+    },
+    {
+      "id": "pa-053",
+      "device_id": "d-134",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_top"
+    },
+    {
+      "id": "pa-054",
+      "device_id": "d-135",
+      "port": "bus_out",
+      "attached_to_device": "d-115",
+      "attached_to_port": "feed_top"
+    },
+    {
+      "id": "pa-056",
+      "device_id": "d-137",
+      "port": "bus_out",
+      "bus_id": "r-902"
+    }
+  ],
+  "spur_attachments": [],
+  "measurement_attachments": [
+    {
+      "id": "meas-001",
+      "device_id": "d-002",
+      "host_routed_element_id": "r-901",
+      "mode": "ct",
+      "position": "incoming_section"
+    }
+  ],
+  "cross_sheet_refs": [
+    {
+      "id": "cs-001",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-013-s1",
+      "dest_routed_element_id": "r-013-s2"
+    },
+    {
+      "id": "cs-002",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-014-s1",
+      "dest_routed_element_id": "r-014-s2"
+    },
+    {
+      "id": "cs-003",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-015-s1",
+      "dest_routed_element_id": "r-015-s2"
+    },
+    {
+      "id": "cs-004",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-016-s1",
+      "dest_routed_element_id": "r-016-s2"
+    },
+    {
+      "id": "cs-005",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-017-s1",
+      "dest_routed_element_id": "r-017-s2"
+    },
+    {
+      "id": "cs-006",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-018-s1",
+      "dest_routed_element_id": "r-018-s2"
+    },
+    {
+      "id": "cs-007",
+      "kind": "feeder",
+      "source_sheet": "S1",
+      "dest_sheet": "S2",
+      "source_routed_element_id": "r-019-s1",
+      "dest_routed_element_id": "r-019-s2"
+    }
+  ]
+}

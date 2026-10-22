@@ -1,0 +1,49 @@
+{
+  "html": "/home/user/revit_electrical-dedarms_system/claude_sld_generator_system/09_tests/LCC Hotel - 1200A 208V/2_build/lcc_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-21T22:05:47.706Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "lcc_S1_dark.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": -401.2,
+        "y": 3198,
+        "w": 3349.2,
+        "h": 1948
+      },
+      "coverage": {
+        "rendered": 99,
+        "total": 99,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "lcc_S1_light.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": -401.2,
+        "y": 3198,
+        "w": 3349.2,
+        "h": 1948
+      },
+      "coverage": {
+        "rendered": 99,
+        "total": 99,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}
