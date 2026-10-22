@@ -9,7 +9,7 @@ nothing about this list. **This ledger, not the exit code, is the completeness r
 Per `06_deliverables/README.md`: a deliverable with unresolved Tier-3 halts is `unreviewed` **by
 definition**. While §1 below is non-empty, graduation criteria 4 and 5 cannot be met.
 
-**Generated** 2026-10-22T03:24:22.091Z · **Halts** 3 · **Notes** 6 · **Placeholders** 0
+**Generated** 2026-10-22T03:53:35.819Z · **Halts** 3 · **Notes** 6 · **Placeholders** 0
 
 ---
 

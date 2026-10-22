@@ -1,7 +1,7 @@
 {
-  "html": "/home/user/claude_sld_generator_system/09_tests/06_Test 1 - 3000 kVA 2-Level/2_build/test1_sld_viewer_V1_0_0.html",
+  "html": "/workspace/claude_sld_generator_system/09_tests/06_Test Codex - 3000 kVA 480V/2_build/codex3000_sld_viewer_V1_0_0.html",
   "viewer_revision": "1.0.22",
-  "generated": "2026-10-22T03:24:23.388Z",
+  "generated": "2026-10-22T03:34:01.714Z",
   "sheets": [
     {
       "ok": true,

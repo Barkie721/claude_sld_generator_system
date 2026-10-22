@@ -19,7 +19,7 @@ Device, routed and annotation counts and the engine rev are **not restated here*
 ## 1. Run it
 
 ```bash
-cd "09_tests/06_Test 1 - 3000 kVA 2-Level"
+cd "09_tests/07_Test 1 - 3000 kVA 2-Level"
 bash run_pipeline.sh          # phone storage is noexec — bash, never ./
 ```
 
