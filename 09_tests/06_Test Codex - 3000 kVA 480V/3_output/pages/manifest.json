@@ -1,0 +1,39 @@
+{
+  "html": "/workspace/claude_sld_generator_system/09_tests/06_Test Codex - 3000 kVA 480V/2_build/codex3000_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-10-22T03:34:01.822Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "codex3000_S1_light__page.svg",
+      "png": "codex3000_S1_light__page.png",
+      "png_width": 4032,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.60.0"
+      },
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 222,
+        "total": 222,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.6092,
+        "tx": 686.75,
+        "ty": -243.83
+      }
+    }
+  ],
+  "mode": "page"
+}
