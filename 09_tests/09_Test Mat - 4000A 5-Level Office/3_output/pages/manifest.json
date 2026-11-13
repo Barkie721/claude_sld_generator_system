@@ -1,0 +1,39 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/09_Test Mat - 4000A 5-Level Office/2_build/testmat_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-11-13T00:10:59.552Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "testmat_S1_light__page.svg",
+      "png": "testmat_S1_light__page.png",
+      "png_width": 4032,
+      "raster": {
+        "engine": "rsvg",
+        "version": "rsvg-convert version 2.58.0"
+      },
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 340,
+        "total": 340,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.4144,
+        "tx": 1113.79,
+        "ty": 724.12
+      }
+    }
+  ],
+  "mode": "page"
+}

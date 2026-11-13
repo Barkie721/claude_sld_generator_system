@@ -18,6 +18,7 @@ Two different things live in this folder and they follow different rules.
 | `06_Test Codex - 3000 kVA 480V/` | 3,000 kVA 480 V service, 8 risers across four levels, eight Level-3-only transformer taps; branch `test-codex` | the 7-folder standard |
 | `07_Test Claude - 3000 kVA 2-Level/` | a working project — 3000 kVA, 2 storeys, ten two-level risers (5 lighting · 2 power via 150 kVA step-down · 3 mechanical) on one sheet; eight stacks floor-banded via OFF-009; branch `test-claude` | the 7-folder standard |
 | `08_Test Antigravity - 1000 kVA 3-Level/` | a working project — 1000 kVA 480V service, 3 storeys, fire pump ahead of main, 2 plug load panels at 208V, 2 lighting branches at 208V, 4 mechanical branches (one 208V); branch `test-antigravity` | the 7-folder standard |
+| `09_Test Mat - 4000A 5-Level Office/` | a working project — 4000 A 480Y/277V office, 5 storeys, seven L1–L5 risers (4 power with a 75 kVA step-down on every floor = 20 transformers · 1 lighting · 2 mechanical), no emergency power, one sheet; branch `test-mat` | the 7-folder standard |
 | every new project | `cp -r _PROJECT_TEMPLATE "<NN>_<New Project>"` — take the next number | the 7-folder standard |
 
 ### ⚠️ The canonical DEFAULT single line lives in `01_inputs/defaults/`, not here
