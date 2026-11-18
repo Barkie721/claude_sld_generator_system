@@ -38,18 +38,25 @@ and `page_scale` objects exactly, so this table is a transcription, not a re-mea
 | Tag × feeder HARD | 0 | 0 (TIGHT 0, leader-foreign 0) | `check_tag_feeder_clash.mjs` (11) — `tag_feeder_hard` |
 | Level line through device | 0 | 0 | `check_level_bands.mjs` (12) — `line_through_device` |
 | Devices out of band | 0 | 0 | `check_level_bands.mjs` (12) — `out_of_band` |
-| Datum gap 180 ± 250 px | 0 outside | **6 of 15** — all Level-1 (5 on S1, E4P-1-A on S2); base-floor datum artifact (see note) | `check_level_bands.mjs` (12) — `band_outside` |
+| Datum gap 180 ± 250 px | 0 outside | **8 of 19** — 6 Level-1 (5 on S1, E4P-1-A on S2; base-floor datum artifact) + 2P-3-A / 2P-5-A at 477 px (lifted Chain-B secondaries, R-004) — see note | `check_level_bands.mjs` (12) — `band_outside` |
 | A-1 tick detached | 0 | 0 of 30 | `check_tick_detach.mjs` (12b) — `tick_detached` |
 
 > ⚠️ `band_outside` and `out_of_band` are different questions. `out_of_band` is band **membership**
 > (is the device between the right two lines); `band_outside` is the **datum gap** — how far its
 > bottom edge sits from its own line. A device can be in the right band and 900 px off its datum.
 
-> **MOB note — `band_outside` 6.** Every one is a Level-1 device: 4L-1-A, 2P-1-A, 4M-1-A, 2K-1-A,
+> **MOB note — `band_outside` 8.** Six are Level-1 devices: 4L-1-A, 2P-1-A, 4M-1-A, 2K-1-A,
 > 4S-1-A on S1 (614–974 px) and E4P-1-A on S2 (1628 px). The Level-1 line is drawn below the
 > switchboard band on both sheets — the same base-floor datum artifact that reads 10 on Test Claude
 > and 2 on the default 2500 kVA. Every Level 2–5 device sits 40 px (S1) or 180 px (S2) above its own
 > line. Membership (`out_of_band`) is 0. Not a defect.
+>
+> **The other two are 2P-3-A and 2P-5-A (R-004, engine rev 1.0.23, OFF-035 `xfmr_floor_band`).**
+> A lifted Chain-B head stands with its transformer's bottom on the floor datum (40 px above the
+> line, like every other Level 2–5 device), and the 208 V panel sits above it at the unchanged
+> transformer→panel spacing, so the panel's bottom is 477 px above its own line — 47 px past the
+> 430 px tolerance, **inside its band** (`out_of_band` 0). Putting the panel on the datum instead
+> hangs the transformer through its own level line. Not a defect.
 
 ## 3. Legibility
 

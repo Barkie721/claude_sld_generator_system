@@ -26,7 +26,7 @@ INFO  SCHEMA-6   routed_elements[id=r-325].end
 INFO  TV-1       routed_elements[id=r-301]
       r-301: TV-1 service-entrance exemption (is_service_entrance, §15 amendment 8)   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TV-1; schema V1.1 §15 amendment 8]
 RESULT: 0 errors, 0 migration items, 0 warnings, 3 info | rules run: 63, vacuous: 2
-PREFLIGHT: s_pred { S1=0.7924 S2=0.6913 } | calibration {"s_pred_min":0.2,"sh4_inflate_px":1000,"sh5_inflate_px":500,"sh3_overlap_px2":25}
+PREFLIGHT: s_pred { S1=0.702 S2=0.6913 } | calibration {"s_pred_min":0.2,"sh4_inflate_px":1000,"sh5_inflate_px":500,"sh3_overlap_px2":25}
   viewer rebuilt
 [snapshot]  ok  mob_S1_dark  coverage 112/112
 [snapshot]  ok  mob_S1_light  coverage 112/112
@@ -198,11 +198,11 @@ RESULT tag_feeder_clash tag_feeder_hard=0 tag_feeder_tight=0 leader_foreign_hard
 S1 — 5 level lines drawn: 5, 4, 3, 2, 1
 ==============================================================================
   1. LEVEL LINE THROUGH A DEVICE BOX: 0   OK
-  2. DEVICES OUTSIDE THEIR LEVEL BAND: 0 of 12   OK
-  3. line(own) - boxBottom   min 40  median 40  max 974 px   [target 180 +/- 250]   outside tolerance: 5 of 12
-       level 5   n=2   median     40 px   min     40  max     40
+  2. DEVICES OUTSIDE THEIR LEVEL BAND: 0 of 16   OK
+  3. line(own) - boxBottom   min 40  median 40  max 974 px   [target 180 +/- 250]   outside tolerance: 7 of 16
+       level 5   n=4   median     40 px   min     40  max    477
        level 4   n=2   median     40 px   min     40  max     40
-       level 3   n=1   median     40 px   min     40  max     40
+       level 3   n=3   median     40 px   min     40  max    477
        level 2   n=2   median     40 px   min     40  max     40
        level 1   n=5   median    614 px   min    614  max    974  <==
   4. LEVEL-MAPPED DEVICES WITH NO DATUM ON THIS SHEET: 0   OK
@@ -220,9 +220,9 @@ S2 — 3 level lines drawn: 5, 3, 1
 
 ==============================================================================
 TOTAL: 0 line-through-device, 0 out-of-band, 0 orphan
-       datum gap outside 180 +/- 250 px: 6 of 15 level-mapped devices
+       datum gap outside 180 +/- 250 px: 8 of 19 level-mapped devices
   acceptance: 0 / 0 / 0
-RESULT level_bands band_outside=6 band_total=15 line_through_device=0 out_of_band=0 orphan=0
+RESULT level_bands band_outside=8 band_total=19 line_through_device=0 out_of_band=0 orphan=0
 scraped: 30 A-1 ticks across 2 sheets, 32 feeders
 tolerance: a tick is DETACHED when its centre is > 2 px from its own run
 
@@ -235,19 +235,19 @@ RESULT tick_detach tick_detached=0 tick_total=30 tick_feeders=0
 COMPOSED PAGE SCALE   (printable area 3360 x 2688 px, 120 px margin per side, 96 px/in)
 ==============================================================================
   sheet  number   viewBox w x h        s_width  s_height  ->  s        bind     11px on paper
-  S1     E-501      4254 x   3652   0.8371   0.7878   ->  0.7878   height   0.0903 in  <==
+  S1     E-501      4254 x   4089   0.8371   0.6984   ->  0.6983   height   0.0800 in  <==
   S2     E-502      1776 x   4128   2.1875   0.6914   ->  0.6913   height   0.0792 in  <==
 
-  set range   0.6913 .. 0.7878      spread 1.14x   [acceptance: every sheet 0.35-0.46, spread <= 1.25x]
-  on paper    0.0792 .. 0.0903 in   [acceptance: 0.0400-0.0490 in; golden S2 = 0.0455 in at s 0.3972]
+  set range   0.6913 .. 0.6983      spread 1.01x   [acceptance: every sheet 0.35-0.46, spread <= 1.25x]
+  on paper    0.0792 .. 0.0800 in   [acceptance: 0.0400-0.0490 in; golden S2 = 0.0455 in at s 0.3972]
   golden reference: S1 0.5662, S2 0.4841, spread 1.17x — S1 WIDTH-bound, S2 height-bound
                     (was S1 0.4454 / S2 0.3972 / 1.12x / both height-bound through rev
                      1.0.14 — those numbers were phantom-inflated, FL-0007. S1 flipping
                      to width-bound is a REAL change of bind, not a rounding artifact:
                      honest S1 is 6174 x 4949.59, so s_width 0.5662 < s_height 0.5707.)
 
-VERDICT: 2 of 2 sheet(s) outside 0.35-0.46: S1 0.7878, S2 0.6913; spread 1.14x OK
-RESULT page_scale sheets=2 out_of_band=2 s_min=0.6913 s_max=0.7878 spread=1.1396 all_height_bound=true
+VERDICT: 2 of 2 sheet(s) outside 0.35-0.46: S1 0.6983, S2 0.6913; spread 1.01x OK
+RESULT page_scale sheets=2 out_of_band=2 s_min=0.6913 s_max=0.6983 spread=1.0101 all_height_bound=true
 
 ==============================================================================
 FRAME HONESTY   (viewBox minus the 120px pad vs true ink extent, tol ±2px)
@@ -257,6 +257,6 @@ FRAME HONESTY   (viewBox minus the 120px pad vs true ink extent, tol ±2px)
   S2           0.00       0.0 /    0.0 /    0.0 /    0.0    honest
 
 RESULT frame_honesty frame_sheets=2 frame_dishonest=0 frame_worst_px=0.00 frame_tol_px=2
-  wrote 3_output/RESULTS.json — run 5
-  engine 1.0.22 · sheets 2 · P3 0 errors / 63 rules
-  checks non-zero: band_outside=6 frame_sheets=2 frame_tol_px=2
+  wrote 3_output/RESULTS.json — run 9
+  engine 1.0.23 · sheets 2 · P3 0 errors / 63 rules
+  checks non-zero: band_outside=8 frame_sheets=2 frame_tol_px=2

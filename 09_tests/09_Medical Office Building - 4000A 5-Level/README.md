@@ -44,7 +44,8 @@ HTML*, so an omitted `--out` writes to `2_build/snapshots/` and every checker th
 across 0 sheets — indistinguishable from a clean run. Stage 7 asserts the SVG count for this reason.
 
 ⚠️ **Do NOT run `../../run_all_gates.sh`.** That suite is engine regression against the hospital
-golden. This project touches no engine code, so it cannot move those gates. **The pipeline is the
+golden. A project run touches no engine code, so it cannot move those gates (the one engine change this
+project prompted, OFF-035 / R-004, was gated separately at engine rev 1.0.23). **The pipeline is the
 check.**
 
 ---
@@ -106,7 +107,8 @@ its own argv (FL-0027).
 
 | ID | Title | Status |
 |----|-------|--------|
-| _None._ | No engine change, no FL/FU entry — composed from existing config keys (OFF-009, OFF-018, OFF-027, the S2 fixed-pitch stack, `chain_column_nudge`). Two engine gaps met and worked around in composition, both recorded in `7_revisions/REVISIONS.md` as `engine-suspect`: no L2-5 inline-disconnect renderer; no generator-to-ATS drawing without an emergency board on the sheet. | — |
+| OFF-035 | Engine rev 1.0.23 `xfmr_floor_band` — a switchboard-fed Chain-B transformer and its secondary panel lifted onto their `level_map` floor (R-004: 4T-3-A / 2P-3-A → L3, 4T-5-A / 2P-5-A → L5). No FL/FU entry; derivation in `03_contracts/current_state_manifest.json` `engine.note`. | shipped |
+| _(composition)_ | Otherwise composed from existing config keys (OFF-009, OFF-018, OFF-027, the S2 fixed-pitch stack, `chain_column_nudge`). Engine gaps met and worked around in composition, recorded in `7_revisions/REVISIONS.md` as `engine-suspect`: no L2-5 inline-disconnect renderer; no generator-to-ATS drawing without an emergency board on the sheet; S2 sub-feed lift vs level-line pass on empty floors. | open |
 
 ---
 

@@ -132,7 +132,7 @@
       {
         "id": "NOTE-012",
         "topic": "Drawing convention — level bands",
-        "text": "Chain-B transformers and their secondary panels are drawn just above the switchboard, whatever their floor, so 2P-3-A (L3), 2P-5-A (L5) and the site equipment 4S-S-A / 2P-S-A carry no level badge. Their designations still state their level. No Site level line: the engine floor stack starts at the switchboard row.",
+        "text": "4T-3-A / 2P-3-A (L3) and 4T-5-A / 2P-5-A (L5) are drawn in their own level bands, fed by a riser from their switchboard breaker; 2P-4-A (L4) is sub-fed plumb from 2P-3-A. The site equipment 4S-S-A, 4T-S-A and 2P-S-A is drawn just above the switchboard and carries no level badge; its designations still state its level. No Site level line: the engine floor stack starts at the switchboard row.",
         "nec_reference": null
       },
       {
@@ -2742,6 +2742,10 @@
       "2K-1-A",
       "4S-1-A"
     ],
+    "xfmr_floor_band": [
+      "4T-3-A",
+      "4T-5-A"
+    ],
     "level_map": {
       "4L-1-A": "1",
       "4L-2-A": "2",
@@ -2749,8 +2753,12 @@
       "2P-2-A": "2",
       "4L-3-A": "3",
       "4L-4-A": "4",
+      "4T-3-A": "3",
+      "2P-3-A": "3",
       "2P-4-A": "4",
       "4L-5-A": "5",
+      "4T-5-A": "5",
+      "2P-5-A": "5",
       "4M-5-A": "5",
       "4M-1-A": "1",
       "2K-1-A": "1",
@@ -2844,7 +2852,8 @@
         "side": "right"
       },
       "F-312": {
-        "side": "right"
+        "side": "right",
+        "dy": 45
       },
       "F-313": {
         "side": "right"

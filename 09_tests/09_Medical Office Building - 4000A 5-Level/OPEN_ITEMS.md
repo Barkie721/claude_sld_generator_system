@@ -9,7 +9,7 @@ nothing about this list. **This ledger, not the exit code, is the completeness r
 Per `06_deliverables/README.md`: a deliverable with unresolved Tier-3 halts is `unreviewed` **by
 definition**. While §1 below is non-empty, graduation criteria 4 and 5 cannot be met.
 
-**Generated** 2026-11-18T00:43:25.687Z · **Halts** 5 · **Notes** 13 · **Placeholders** 0
+**Generated** 2026-11-18T05:55:04.058Z · **Halts** 5 · **Notes** 13 · **Placeholders** 0
 
 ---
 
@@ -121,7 +121,7 @@ Brief CB-11 is Chain F through DS-IMG 400 A fused disconnect. The engine has no 
 
 ### NOTE-012 — Drawing convention — level bands
 
-Chain-B transformers and their secondary panels are drawn just above the switchboard, whatever their floor, so 2P-3-A (L3), 2P-5-A (L5) and the site equipment 4S-S-A / 2P-S-A carry no level badge. Their designations still state their level. No Site level line: the engine floor stack starts at the switchboard row.
+4T-3-A / 2P-3-A (L3) and 4T-5-A / 2P-5-A (L5) are drawn in their own level bands, fed by a riser from their switchboard breaker; 2P-4-A (L4) is sub-fed plumb from 2P-3-A. The site equipment 4S-S-A, 4T-S-A and 2P-S-A is drawn just above the switchboard and carries no level badge; its designations still state its level. No Site level line: the engine floor stack starts at the switchboard row.
 
 ### NOTE-013 — Design status
 

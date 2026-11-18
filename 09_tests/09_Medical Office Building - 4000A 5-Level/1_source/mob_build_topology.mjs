@@ -90,6 +90,7 @@ const straighten = [];
 const tagPlacement = {};
 const levelMap = {};
 const bandDesigs = [];
+const xfmrBand = [];   // OFF-035 xfmr_floor_band (engine rev 1.0.23)
 
 let dN = 305, aN = 601, rN = 302, paN = 303;
 const nextD = () => `d-${dN++}`;
@@ -195,10 +196,14 @@ function chainA(cbDesig, af, at, tag, head, headRating, floor, sub) {
 }
 
 // Chain B, transformer + MCB panel (optionally with a 208 V sub-feed, Chain G).
-// The engine pins a Chain-B transformer and its secondary panel to fixed rows
-// just above the switchboard (no floor anchor reaches them), so only a Level-1
-// secondary panel is level-mapped; an upper-floor one is left unbanded rather
-// than dragging its level line down onto the switchboard row (NOTE-012).
+// Level 1: the engine's default Chain-B row just above the switchboard; only the
+// secondary panel is level-mapped (as before).
+// Upper floor (R-004): the transformer goes in `xfmr_floor_band` (OFF-035, engine
+// rev 1.0.23), which lifts the transformer and its secondary panel rigidly onto
+// the floor's datum (transformer bottom on the row a Chain-A panel stands on);
+// both are level-mapped so the level checks see them. NOT in
+// floor_band_designations: that key anchors Chain-A heads and sub-feed children.
+// Site ('S') stays on the default row: the floor stack has no Site row (NOTE-012).
 function chainB(cbDesig, kva, tx, sec, floor, sub) {
   const { row } = txRow(kva);
   const at = row.primary.ocpd.rating_a;
@@ -208,10 +213,21 @@ function chainB(cbDesig, kva, tx, sec, floor, sub) {
   feeder('S1', c, 'line_in', t, 'primary_in', row.primary.one_line_tag);
   feeder('S1', t, 'secondary_out', p, 'feed_top', row.secondary.one_line_tag);
   if (floor === '1') band(sec, '1');
+  else if (floor && floor !== 'S') {
+    xfmrBand.push(tx);
+    levelMap[tx] = floor;
+    levelMap[sec] = floor;
+  }
   if (sub) {
     const p2 = panel(sub.desig, 'S1', sub.rating, '208Y/120V', 'mlo');
-    straighten.push(feeder('S1', p, 'feed_top', p2, 'feed_bottom', sub.tag));
+    const f = feeder('S1', p, 'feed_top', p2, 'feed_bottom', sub.tag);
+    straighten.push(f);
     band(sub.desig, sub.floor);
+    // R-004: on a lifted chain the sub-feed hop to the floor above is short and
+    // the next level line crosses it; its default tag attach (5 px above that
+    // line) put the A-1 pill ON the line. Slide the whole tag 45 px down ALONG
+    // its own feeder, into the gap between the line and the secondary panel top.
+    if (xfmrBand.includes(tx)) tagPlacement[f] = { ...(tagPlacement[f] || {}), dy: 45 };
   }
 }
 
@@ -309,6 +325,8 @@ const LAYOUT_CONFIG = {
   floor_anchors: {},
   floor_anchors_mechanical: {},
   floor_band_designations: bandDesigs,
+  // OFF-035 (R-004): 4T-3-A -> L3, 4T-5-A -> L5, with their secondary panels.
+  xfmr_floor_band: xfmrBand,
   level_map: levelMap,
   level_order: ['5', '4', '3', '2', '1'],
   ats_xoffset_overrides: {},
@@ -525,10 +543,11 @@ const NOTES = [
     id: 'NOTE-012',
     topic: 'Drawing convention — level bands',
     text:
-      'Chain-B transformers and their secondary panels are drawn just above the switchboard, ' +
-      'whatever their floor, so 2P-3-A (L3), 2P-5-A (L5) and the site equipment 4S-S-A / 2P-S-A ' +
-      'carry no level badge. Their designations still state their level. No Site level line: ' +
-      'the engine floor stack starts at the switchboard row.',
+      '4T-3-A / 2P-3-A (L3) and 4T-5-A / 2P-5-A (L5) are drawn in their own level bands, fed by a ' +
+      'riser from their switchboard breaker; 2P-4-A (L4) is sub-fed plumb from 2P-3-A. The site ' +
+      'equipment 4S-S-A, 4T-S-A and 2P-S-A is drawn just above the switchboard and carries no level ' +
+      'badge; its designations still state its level. No Site level line: the engine floor stack ' +
+      'starts at the switchboard row.',
     nec_reference: null,
   },
   {

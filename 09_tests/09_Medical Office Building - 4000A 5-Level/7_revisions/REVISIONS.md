@@ -45,7 +45,26 @@ rows, filled bottom-up), so these rows are drawing data, not just bookkeeping.
 
 Newest at the top.
 
-_No post-generation change requests yet._ Rev 0 is the initial composition from the design brief.
+### R-004 · 2026-11-18
+**Asked:** "on the single line 4t-3-a and downstream; 4t-5-a and upstream are shown on level 1 move
+them to their appropriate levels."
+**Actually wrong:** the engine's Chain-B branch (`placeAllChains`, breaker → L2-2) pinned every
+switchboard-fed transformer and its secondary panel to one frozen row just above the switchboard,
+with no floor lookup (the L2-4 branch beside it reads the floor anchors). So 4T-3-A / 2P-3-A (L3) and
+4T-5-A / 2P-5-A (L5) sat in the Level-1 band, unbadged, and 2P-4-A (L4) hung off a ~1,500 px riser from
+2P-3-A. The composition had worked around it by leaving the four unmapped (NOTE-012, brief §9 row 4).
+**Fixed by:** engine rev 1.0.23, OFF-035 `xfmr_floor_band` (opt-in, default `[]`, golden
+byte-identical). `xfmr_floor_band: ['4T-3-A', '4T-5-A']`, and `level_map` now carries 4T-3-A / 2P-3-A
+→ 3 and 4T-5-A / 2P-5-A → 5 (build script `chainB()`). Each chain is lifted rigidly: the
+transformer's bottom on the floor datum (40 px above its line, the same row 4L-3-A / 4L-5-A stand
+on), the 208 V panel above it, the breaker feeder rising to it. 2P-4-A is unchanged in the Level 4
+band and now fed plumb by a 125 px hop from 2P-3-A; that hop's A-1 pill (F-312, `2254`) sat on the
+Level 4 line, so `a1_tag_placement` F-312 gets `dy: 45` (along its own feeder). NOTE-012 and brief
+§9 row 4 updated. All checkers 0 except `band_outside` 6 → 8: 2P-3-A and 2P-5-A sit 477 px above
+their own line (inside the band; see `ACCEPTANCE.md`). S2 byte-identical.
+**Scope:** `engine` — fixed in the engine (OFF-035), not worked around.
+**Promoted:** OFF-035 (engine rev 1.0.23); no FL/FU entry.
+
 The entries below record what the composition itself had to work around while it was being built —
 logged here because all three trace to engine behaviour and belong in the `engine-suspect` harvest.
 

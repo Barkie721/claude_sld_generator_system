@@ -9390,6 +9390,22 @@ const _DEF_ATS_XOFFSET = {
 //                              exit X (the child's whole internal chain rides
 //                              along via G[]). Default [] → the two hardcoded
 //                              golden entries only.
+//
+//   xfmr_floor_band          : [<L2-2 designation>,...]  OFF-035. A Chain-B
+//                              head (switchboard breaker -> transformer ->
+//                              secondary panel) is drawn on the frozen row just
+//                              above the switchboard whatever its floor. Each
+//                              listed transformer takes its floor from
+//                              LEVEL_MAP[transformer] (else LEVEL_MAP[its
+//                              secondary panel]) and the whole chain is lifted
+//                              RIGIDLY so the transformer's primary_in (body
+//                              bottom, the cluster's lowest edge) lands on that
+//                              floor's datum __FLOOR_ROW_Y[floor] + boxH('L2-4')
+//                              — the row a Chain-A panel on that floor stands
+//                              on. The breaker feeder rises to the lifted
+//                              primary_in; transformer->panel spacing, tags,
+//                              pennants and sub-feeds follow G[]. Default [] →
+//                              lift 0 → golden byte-identical.
 // (room reserved for future keys; unknown keys are ignored.)
 // ============================================================
 const _DEF_SHEET_ROLES    = { 'S1': 'normal', 'S2': 'emergency' };
@@ -9462,7 +9478,8 @@ let HOSPITAL_FLOOR_ORDER_S1, HOSPITAL_FLOOR_ANCHOR_S1, HOSPITAL_FLOOR_ANCHOR_S1_
     INTERNAL_CHAIN_EXIT_NUDGE_CFG, ATS_SRC2_TIER_OVERRIDES_CFG,
     CHAIN_DST_X_OFFSET_CFG, CHAIN_COLUMN_NUDGE_CFG, SUBFEED_EXIT_X_NUDGE_CFG,
     A1_LONG_RUN_MIDPOINT_CFG, ATS_ORDER_CFG, SUBFEED_STRAIGHTEN_CFG,
-    EMPTY_FLOOR_LEVEL_LINES, FEED_THROUGH_PANELS_CFG, A2_CALLOUT_FEEDERS_CFG;
+    EMPTY_FLOOR_LEVEL_LINES, FEED_THROUGH_PANELS_CFG, A2_CALLOUT_FEEDERS_CFG,
+    XFMR_FLOOR_BAND_CFG;
 function applyLayoutConfig() {
   const c = (typeof TOPO !== 'undefined' && TOPO && TOPO.layout_config) ? TOPO.layout_config : {};
   const pick = (k, d) => (c[k] !== undefined && c[k] !== null) ? c[k] : d;
@@ -9541,6 +9558,10 @@ function applyLayoutConfig() {
   // sub-feeder as one straight vertical). [] -> the two golden entries only.
   SUBFEED_STRAIGHTEN_CFG        = pick('subfeed_straighten',       []);
   FEED_THROUGH_PANELS_CFG       = pick('feed_through_panels',      {});
+  // OFF-035 — L2-2 designations of switchboard-fed Chain-B heads lifted onto
+  // their LEVEL_MAP floor row. [] -> every Chain-B head stays on the frozen row
+  // just above the switchboard (golden byte-identical).
+  XFMR_FLOOR_BAND_CFG           = pick('xfmr_floor_band',          []);
 }
 applyLayoutConfig();
 
@@ -11449,8 +11470,35 @@ function placeAllChains(sheetId, secBusY, mainBusY, busYByDevice) {
       // not the CB box top, so the row survives a CB box retune). The TX
       // body bottom (primary_in, feeder terminus) is pinned to txBotY; the
       // anchor rides the body height.
-      const txY = (secBusY - DIM.cb_slot_h) - DIM.tag_gap - DIM.equip_gap - DIM.xfmr_ground_clearance;
-      const txBotY = txY + DIM.xfmr_slot_S;  // primary_in row (frozen)
+      //
+      // OFF-035 (rev 1.0.23): xfmr_floor_band. A listed transformer is lifted
+      // with its secondary panel onto its LEVEL_MAP floor: the lift is chosen
+      // so primary_in (txBotY, the chain's lowest edge — the ground stack hangs
+      // 25 px below it, inside renderLevelLines' 40 px MARGIN) lands on the
+      // floor datum __FLOOR_ROW_Y[floor] + boxH('L2-4'), i.e. exactly where a
+      // Chain-A panel's feed_bottom stands on that floor. renderLevelLines
+      // draws each line at max(bottom) + MARGIN, so the floor's line does not
+      // move and the secondary panel sits inside the band above the
+      // transformer. Datum, not the secondary-panel row: anchoring the PANEL
+      // on the row would hang the transformer ~440 px below it, through the
+      // floor's own line and into the band below. Everything else in this
+      // branch reads txY, and the sub-feed / straighten passes read G[], so the
+      // whole chain follows from this one number. Unlisted (or an unmapped
+      // floor / a floor this sheet's stack does not carry) → lift 0 → the
+      // frozen row, byte-identical: `x - 0 === x` for every finite x.
+      const _txY0 = (secBusY - DIM.cb_slot_h) - DIM.tag_gap - DIM.equip_gap - DIM.xfmr_ground_clearance;
+      let _xfLift = 0;
+      if (XFMR_FLOOR_BAND_CFG && XFMR_FLOOR_BAND_CFG.length && XFMR_FLOOR_BAND_CFG.includes(dstDev.designation)) {
+        const _xfSecR1 = TOPO.routed_elements.find(r2 => r2.edge_type === 'R-1' && r2.start && r2.start.device_id === dstDev.id && r2.start.port === 'secondary_out');
+        const _xfSecP = (_xfSecR1 && _xfSecR1.end) ? devMap[_xfSecR1.end.device_id] : null;
+        let _xfFloor = LEVEL_MAP ? LEVEL_MAP[dstDev.designation] : undefined;
+        if ((_xfFloor === undefined || _xfFloor === null) && _xfSecP && LEVEL_MAP) _xfFloor = LEVEL_MAP[_xfSecP.designation];
+        if (_xfFloor !== undefined && _xfFloor !== null && __FLOOR_ROW_Y[_xfFloor] !== undefined) {
+          _xfLift = (_txY0 + DIM.xfmr_slot_S) - (__FLOOR_ROW_Y[_xfFloor] + boxH('L2-4'));
+        }
+      }
+      const txY = _txY0 - _xfLift;
+      const txBotY = txY + DIM.xfmr_slot_S;  // primary_in row (frozen unless OFF-035 lifts it)
       G[dstDev.id] = { x: bx - symbolWidth(dstDev)/2, y: txBotY - bodyHeight(dstDev) };
       svg += renderDevice(dstDev, G[dstDev.id]);
       svg += `<g class="feeder" data-id="${r.id}" style="cursor:pointer"><line x1="${bx}" y1="${topY}" x2="${bx}" y2="${txBotY}" stroke="var(--sld-feeder)" stroke-width="${DIM.feeder_stroke}"/></g>`;

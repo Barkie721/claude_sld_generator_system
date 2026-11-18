@@ -1,4 +1,4 @@
-# SLD Viewer Engine V1.0.0 — Data-Driven Layout (internal rev 1.0.22)
+# SLD Viewer Engine V1.0.0 — Data-Driven Layout (internal rev 1.0.23)
 
 The layout engine reads its building-specific stack from `TOPO.layout_config`
 instead of hard-coded constants. When `layout_config` is absent or partial the
@@ -216,6 +216,17 @@ future keys reserved).
                                                            // emergency-sheet project must set ['feed_bottom','feed_top']
   "a2_callout_feeders":       [],                          // OFF-034 (rev 1.0.22) — R-1 designations whose A-2 callout is
                                                            //   drawn IN PLACE OF the A-1 pill (A-1 kept in topology for TV-1)
+  "xfmr_floor_band":          [],                          // OFF-035 (rev 1.0.23) — L2-2 designations of switchboard-fed
+                                                           //   Chain-B heads lifted RIGIDLY (transformer + secondary panel +
+                                                           //   their tags) onto LEVEL_MAP[transformer] (else LEVEL_MAP[its
+                                                           //   secondary panel]): primary_in (the transformer body bottom)
+                                                           //   lands on the floor datum __FLOOR_ROW_Y[floor] + boxH('L2-4'),
+                                                           //   where a Chain-A panel on that floor stands, so the floor's
+                                                           //   level line does not move. The breaker feeder rises to it;
+                                                           //   sub-feeds out of the secondary panel follow G[]. Unlisted, an
+                                                           //   unmapped floor, or a floor absent from the sheet's floor_order
+                                                           //   → lift 0. Level-map the transformer + panel yourself; do NOT
+                                                           //   also list them in floor_band_designations
   "feed_through_panels":      {},                          // OFF-031 (rev 1.0.18) — {designation: 'left'|'right'}. A panel
                                                            // fed through its neighbour's feed-through lugs is drawn BUTTED
                                                            // against that L2-4 on the given side, same row; the R-1 between
@@ -329,6 +340,7 @@ Every layout function reads the working constant name unchanged:
 | `chain_dst_x_offset` | `CHAIN_DST_X_OFFSET_CFG` | Chain A (`breaker → panel feed_top`) **and Chain D (`breaker → L3-1` fire pump — OFF-019, rev 1.0.9)** child placement + feeder route + tag anchor |
 | `subfeed_exit_x_nudge` | `SUBFEED_EXIT_X_NUDGE_CFG` | `placeSubFeeds()` exit X — consulted before `SUBFEED_EXIT_X_NUDGE`, applied before STRAIGHTEN-TO-EXIT so landings and tags follow |
 | `a2_callout_feeders` | `A2_CALLOUT_FEEDERS_CFG` | `renderR1Tags()` — draws the A-2 callout glyph in place of the A-1 pill for listed R-1s (OFF-034, rev 1.0.22) |
+| `xfmr_floor_band` | `XFMR_FLOOR_BAND_CFG` | `placeAllChains()` Chain-B (`breaker → L2-2 primary_in`) branch — lifts the transformer, its secondary panel and the secondary R-1's tags onto the transformer's `LEVEL_MAP` floor datum (OFF-035, rev 1.0.23) |
 | `a1_long_run_midpoint` | `A1_LONG_RUN_MIDPOINT_CFG` | `placeSubFeeds()` A-1 tag anchor — jog row vs midpoint of the final vertical (OFF-025, rev 1.0.11) |
 | `ats_order` | `ATS_ORDER_CFG` | `placeATSsAndGenerator()` row sort — ranked ahead of `atsNecClass()`, which cannot separate same-class ATSs (OFF-026, rev 1.0.11) |
 | `subfeed_straighten` | `SUBFEED_STRAIGHTEN_CFG` | `placeSubFeeds()` — appended to `SUBFEED_STRAIGHTEN_TO_EXIT` (OFF-027, rev 1.0.11) |
