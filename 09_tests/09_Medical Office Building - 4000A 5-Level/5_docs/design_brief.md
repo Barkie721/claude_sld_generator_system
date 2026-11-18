@@ -126,4 +126,15 @@ sizing (NEC 445.13); actual connected loads; DCFC and imaging equipment nameplat
 
 ## 9. Changes made during SLD build (workstream A fills this in)
 
-_(none yet)_
+Recorded 2026-11-18 by the SLD build (`1_source/mob_build_topology.mjs`, engine rev 1.0.22).
+**Every equipment tag in §3–§4 is kept.** One tag is added, one is not drawn; no rating in the
+brief was changed.
+
+| # | Brief | SLD | Reason | 3D impact |
+|---|---|---|---|---|
+| 1 | GEN-1 → E4A-1-A emergency input directly | GEN-1 → **E4MDP-1-A** (new, 400 A, two-level; main **EMDP-MAIN** 250AF/175AT LSI, no GFP; one breaker **ECB-01** 250AF/175AT) → E4A-1-A emergency input | The engine's emergency-sheet placer positions the generator and ATS row off an emergency switchboard lineup and has nothing to anchor to without one. Brief §4 named this fallback. | Add E4MDP-1-A in the EER (L1, next to E4A-1-A). GEN-1 feeder now lands on E4MDP-1-A, then E4MDP-1-A → E4A-1-A. |
+| 2 | CB-11 → DS-IMG 400 A fused disconnect (inline, Chain F) → 4S-1-A | CB-11 → 4S-1-A directly (Chain A, feeder tag 4004); **DS-IMG not drawn on the SLD** | The engine has no L2-5 (disconnect) renderer, only a bounding box. | None. Keep DS-IMG on the imaging corridor wall; the SLD notes it in NOTE-011. |
+| 3 | GEN-1 designation `E4G-S-A` | GEN-1 tag kept; `E4G-S-A` not used on the drawing | The validator's legend allows `GEN-1` as a special designation; the generator symbol carries one tag. | None. |
+| 4 | Level lines for Levels 1–5 and Site | S1: Levels 1–5. S2: Levels 1, 3, 5 (the floors with emergency equipment). **No Site level line.** 2P-3-A, 2P-5-A, 4S-S-A, 2P-S-A carry no level badge. | The engine draws a transformer and its 208 V panel just above the switchboard whatever their floor, and its floor stack starts at the switchboard row, so it cannot place a Site row below Level 1. Designations still state the level. | None — physical locations in §6 stand. |
+| 5 | Ratings left open in the brief | CB-01 (SPD) 30AF/30AT, feeder 304. Breaker frames: 225 A trips 250AF; 250/175/125 A trips 250AF; 400/600/100 A trips equal frame. E4P-1-A internal breaker to E4T-1-A 100AF/50AT (30 kVA primary). GEN-1 integral breaker 250AF/175AT. | Schedule lookups / Tier-2 defaults. | None. |
+| 6 | Sheets: continuation sheet allowed if 14 breakers overflow | Not needed: all 14 breakers fit E-501. | — | None. |

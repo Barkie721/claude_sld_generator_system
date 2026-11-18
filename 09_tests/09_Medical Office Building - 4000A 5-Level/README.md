@@ -1,17 +1,38 @@
-# \<Project Name\> — \<service kVA\>, \<occupancy\>, \<N\> sheets, \<current state in four words\>
+# Medical Office Building — 4000 A, NEC 700 Emergency, 2 sheets, all checkers clean
 
 > **Canonical:** `09_tests/README.md` owns the standard project structure; this file describes only
 > this project. Repo operations → `00_Docs/repo_runbook_V1_0_0.md`.
 
-**Service** \<kVA\> · **Occupancy** \<type, NEC article\> · **Devices** \<N\> · **Sheets** \<N\>
-**Engine rev** \<X.Y.Z\> · **Status** `in progress` \| `complete` \| `graduated`
+**Service** 4000 A / 480Y-277V, 3000 kVA utility transformer, 4000 A GFP main · **Occupancy**
+medical office building (business), 5 storeys, NEC 2023, NEC 700 Emergency (not NEC 517) ·
+**Sheets** 2 (S1 / E-501 normal, S2 / E-502 emergency) · **Status** `in progress` — 5 Tier-3 halts
+open, so it cannot graduate
+
+Stated scope (2026-11-18): *5-storey MOB, 4000 A service, generator backup for life safety only
+called "Emergency", power, mechanical, lighting, kitchen, EV.* The details were fixed once in
+[`5_docs/design_brief.md`](5_docs/design_brief.md), which a parallel 3D Motion animation also
+builds from — **its tags are the contract**. Fourteen 4MSB-1-A breakers (SPD, three lighting
+risers, three power step-downs, two mechanical, kitchen, imaging, two EV, emergency normal feed);
+100 kW GEN-1 → E4MDP-1-A → 225 A ATS E4A-1-A → E4P-1-A → E4L-3-A → E4L-5-A and E4T-1-A → E2P-1-A.
+Every departure from the brief is in its **§9** (E4MDP-1-A added; DS-IMG not drawn — no L2-5
+renderer; no Site level line). Breaker table and Tier-2 defaults:
+`1_source/mob_SLD_narrative_V1_0_0.md`.
+
+Device, routed and annotation counts and the engine rev are **not restated here**: the newest run in
+[`3_output/RESULTS.json`](3_output/RESULTS.json) is the record.
+
+⚠️ **PNGs.** The first build ran on a machine without `rsvg-convert`, so it was run as
+`SLD_RASTER=none bash run_pipeline.sh` and `3_output/` holds **SVGs only**. Re-run plain
+`bash run_pipeline.sh` where rsvg is installed (or `SLD_RASTER=resvg` on the Windows PC) to get the
+PNGs; nothing else changes. Until then, `3_output/zoom/*__chromium-preview.png` are headless-browser
+rasterisations of the two composed pages, for viewing only — not the pipeline's PNGs.
 
 ---
 
 ## 1. Run it
 
 ```bash
-cd "09_tests/<Project>"
+cd "09_tests/09_Medical Office Building - 4000A 5-Level"
 bash run_pipeline.sh          # phone storage is noexec — bash, never ./
 ```
 
@@ -85,7 +106,7 @@ its own argv (FL-0027).
 
 | ID | Title | Status |
 |----|-------|--------|
-| _None yet._ | — | — |
+| _None._ | No engine change, no FL/FU entry — composed from existing config keys (OFF-009, OFF-018, OFF-027, the S2 fixed-pitch stack, `chain_column_nudge`). Two engine gaps met and worked around in composition, both recorded in `7_revisions/REVISIONS.md` as `engine-suspect`: no L2-5 inline-disconnect renderer; no generator-to-ATS drawing without an emergency board on the sheet. | — |
 
 ---
 
@@ -93,9 +114,9 @@ its own argv (FL-0027).
 
 Per `06_deliverables/README.md`, five criteria. Current state:
 
-- [ ] Validation P1+P2 green
-- [ ] Layout + Preflight P3 green (**63 rules** — 55 means `layout_config` went sidecar-only)
-- [ ] Renders clean — no silent-skip fallback boxes; overflow resolved or accepted in `DELIVERY.md`
+- [x] Validation P1+P2 green
+- [x] Layout + Preflight P3 green (**63 rules** — 55 means `layout_config` went sidecar-only)
+- [x] Renders clean — no silent-skip fallback boxes (coverage 290/290); PNGs pending an rsvg run
 - [ ] EOR sign-off recorded — ⚠️ **blocked while `OPEN_ITEMS.md` §1 is non-empty**, by definition
 - [ ] Drawing quality measured — `4_checks/` clean (or every exception named in `DELIVERY.md`),
       `OPEN_ITEMS.md` §1 empty. Criteria 1 and 2 are exit codes; this one is the drawing.

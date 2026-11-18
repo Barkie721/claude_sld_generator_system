@@ -1,0 +1,197 @@
+{
+  "$comment": "Sidecar layout_config for the Medical Office Building (4000 A, 5 levels). S1 normal power, S2 NEC 700 emergency. Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19).",
+  "sheet_roles": {
+    "S1": "normal",
+    "S2": "emergency"
+  },
+  "sheet_skips": {},
+  "floor_order": {
+    "S1": [
+      "5",
+      "4",
+      "3",
+      "2",
+      "1"
+    ],
+    "S2": [
+      "5",
+      "3",
+      "1"
+    ]
+  },
+  "floor_anchors": {},
+  "floor_anchors_mechanical": {},
+  "floor_band_designations": [
+    "4L-1-A",
+    "4L-2-A",
+    "2P-1-A",
+    "2P-2-A",
+    "4L-3-A",
+    "4L-4-A",
+    "2P-4-A",
+    "4L-5-A",
+    "4M-5-A",
+    "4M-1-A",
+    "2K-1-A",
+    "4S-1-A"
+  ],
+  "level_map": {
+    "4L-1-A": "1",
+    "4L-2-A": "2",
+    "2P-1-A": "1",
+    "2P-2-A": "2",
+    "4L-3-A": "3",
+    "4L-4-A": "4",
+    "2P-4-A": "4",
+    "4L-5-A": "5",
+    "4M-5-A": "5",
+    "4M-1-A": "1",
+    "2K-1-A": "1",
+    "4S-1-A": "1",
+    "E4P-1-A": "1",
+    "E4L-3-A": "3",
+    "E4L-5-A": "5"
+  },
+  "level_order": [
+    "5",
+    "4",
+    "3",
+    "2",
+    "1"
+  ],
+  "ats_xoffset_overrides": {},
+  "riser_step_standard": 650,
+  "riser_step_roof": 650,
+  "subfeed_max_depth": 3,
+  "subfeed_start_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_src_types": [
+    "L2-4"
+  ],
+  "subfeed_dst_types": [
+    "L2-4"
+  ],
+  "ats_extent_subfeed_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_straighten": [
+    "F-304",
+    "F-307",
+    "F-309",
+    "F-312",
+    "F-328",
+    "F-329"
+  ],
+  "subfeed_exit_x_nudge": {
+    "F-328": 20
+  },
+  "internal_chain_exit_nudge": {
+    "E4P-1-A": -20
+  },
+  "chain_column_nudge": {
+    "E2P-1-A": -220
+  },
+  "chain_dst_x_offset": {},
+  "empty_floor_level_lines": [],
+  "s2_level_line_pitch": {
+    "3": 2690,
+    "5": 900
+  },
+  "s2_shift_delta": {
+    "3": 1240,
+    "5": 1240
+  },
+  "subfeed_midy_nudge": {},
+  "a1_tag_placement": {
+    "F-302": {
+      "side": "right"
+    },
+    "F-303": {
+      "side": "right"
+    },
+    "F-304": {
+      "side": "right"
+    },
+    "F-305": {
+      "side": "right"
+    },
+    "F-306": {
+      "side": "right"
+    },
+    "F-307": {
+      "side": "right"
+    },
+    "F-308": {
+      "side": "right"
+    },
+    "F-309": {
+      "side": "right"
+    },
+    "F-310": {
+      "side": "right"
+    },
+    "F-311": {
+      "side": "right"
+    },
+    "F-312": {
+      "side": "right"
+    },
+    "F-313": {
+      "side": "right"
+    },
+    "F-314": {
+      "side": "right"
+    },
+    "F-315": {
+      "side": "right"
+    },
+    "F-316": {
+      "side": "right"
+    },
+    "F-317": {
+      "side": "right"
+    },
+    "F-318": {
+      "side": "right"
+    },
+    "F-319": {
+      "side": "right"
+    },
+    "F-320": {
+      "side": "right"
+    },
+    "F-321": {
+      "side": "right"
+    },
+    "F-322": {
+      "side": "right"
+    },
+    "F-323": {
+      "side": "right"
+    },
+    "F-326": {
+      "side": "right"
+    },
+    "F-327": {
+      "side": "right"
+    },
+    "F-328": {
+      "side": "right"
+    },
+    "F-329": {
+      "side": "right"
+    },
+    "F-330": {
+      "side": "right"
+    },
+    "F-331": {
+      "side": "right"
+    }
+  },
+  "a3_text_placement": {},
+  "fc_pennant_placement": {},
+  "fc_pennant_y_nudges": {}
+}

@@ -1,4 +1,4 @@
-# \<Project\> — acceptance criteria, and what measures each one
+# Medical Office Building — 4000A 5-Level — acceptance criteria, and what measures each one
 
 > **Canonical:** `06_deliverables/README.md` owns the five graduation criteria; this file tracks
 > drawing-quality criteria for this project and names the tool that proves each.
@@ -19,40 +19,46 @@ and `page_scale` objects exactly, so this table is a transcription, not a re-mea
 
 | criterion | target | current | measured by |
 |---|---|---|---|
-| Phase 1+2 clean | 0 errors, 0 warnings | | `validate_topology_V1_0_0.mjs` (stage 2) |
-| Phase 3 SH rules ran | **63 rules** (55 = capability-skip) | | `validate_topology_V1_0_0.mjs` (stage 5) |
-| No silent drops | 0 `DROP` in `layout_warnings` | | stage 4 merge report |
-| Coverage | every entity rendered | | `3_output/sheets/manifest.json` per-capture `coverage` |
-| Nothing dropped at render | `dropped_entity` 0 | | `3_output/sheets/audit.json` `counts` |
+| Phase 1+2 clean | 0 errors, 0 warnings | 0 / 0 (55 rules) | `validate_topology_V1_0_0.mjs` (stage 2) |
+| Phase 3 SH rules ran | **63 rules** (55 = capability-skip) | 63, 0 errors, 0 warnings | `validate_topology_V1_0_0.mjs` (stage 5) |
+| No silent drops | 0 `DROP` in `layout_warnings` | 0 | stage 4 merge report |
+| Coverage | every entity rendered | S1 112/112 · S2 33/33 per theme (290/290 total) | `3_output/sheets/manifest.json` per-capture `coverage` |
+| Nothing dropped at render | `dropped_entity` 0 | 0 | `3_output/sheets/audit.json` `counts` |
 
 ## 2. Geometry
 
 | criterion | target | current | measured by |
 |---|---|---|---|
-| Collinear feeder overlap | 0 | | `check_feeder_overlaps.mjs` (8) — `collinear_h` + `collinear_v` |
-| Exits outside the parent box | 0 | | `check_feeder_overlaps.mjs` (8) — `exits_outside` |
-| Feeder × feeder crossings | 0 | | `trace_feeders.mjs` (9) — `feeder_x_feeder` |
-| Feeder through own symbol | 0 | | `check_symbol_clash.mjs` (10) — `through_symbol` |
-| Tag on symbol | 0 | | `check_symbol_clash.mjs` (10) — `tag_on_symbol` |
-| Feeder through A-8 text | 0 | | `check_symbol_clash.mjs` (10) — `through_text` |
-| Tag × feeder HARD | ≤ \<N\> | | `check_tag_feeder_clash.mjs` (11) — `tag_feeder_hard` |
-| Level line through device | 0 | | `check_level_bands.mjs` (12) — `line_through_device` |
-| Devices out of band | 0 | | `check_level_bands.mjs` (12) — `out_of_band` |
-| Datum gap 180 ± 250 px | 0 outside | | `check_level_bands.mjs` (12) — `band_outside` |
-| A-1 tick detached | 0 | | `check_tick_detach.mjs` (12b) — `tick_detached` |
+| Collinear feeder overlap | 0 | 0 | `check_feeder_overlaps.mjs` (8) — `collinear_h` + `collinear_v` |
+| Exits outside the parent box | 0 | 0 | `check_feeder_overlaps.mjs` (8) — `exits_outside` |
+| Feeder × feeder crossings | 0 | 0 (and `feeder_x_device` 0) | `trace_feeders.mjs` (9) — `feeder_x_feeder` |
+| Feeder through own symbol | 0 | 0 | `check_symbol_clash.mjs` (10) — `through_symbol` |
+| Tag on symbol | 0 | 0 | `check_symbol_clash.mjs` (10) — `tag_on_symbol` |
+| Feeder through A-8 text | 0 | 0 | `check_symbol_clash.mjs` (10) — `through_text` |
+| Tag × feeder HARD | 0 | 0 (TIGHT 0, leader-foreign 0) | `check_tag_feeder_clash.mjs` (11) — `tag_feeder_hard` |
+| Level line through device | 0 | 0 | `check_level_bands.mjs` (12) — `line_through_device` |
+| Devices out of band | 0 | 0 | `check_level_bands.mjs` (12) — `out_of_band` |
+| Datum gap 180 ± 250 px | 0 outside | **6 of 15** — all Level-1 (5 on S1, E4P-1-A on S2); base-floor datum artifact (see note) | `check_level_bands.mjs` (12) — `band_outside` |
+| A-1 tick detached | 0 | 0 of 30 | `check_tick_detach.mjs` (12b) — `tick_detached` |
 
 > ⚠️ `band_outside` and `out_of_band` are different questions. `out_of_band` is band **membership**
 > (is the device between the right two lines); `band_outside` is the **datum gap** — how far its
 > bottom edge sits from its own line. A device can be in the right band and 900 px off its datum.
 
+> **MOB note — `band_outside` 6.** Every one is a Level-1 device: 4L-1-A, 2P-1-A, 4M-1-A, 2K-1-A,
+> 4S-1-A on S1 (614–974 px) and E4P-1-A on S2 (1628 px). The Level-1 line is drawn below the
+> switchboard band on both sheets — the same base-floor datum artifact that reads 10 on Test Claude
+> and 2 on the default 2500 kVA. Every Level 2–5 device sits 40 px (S1) or 180 px (S2) above its own
+> line. Membership (`out_of_band`) is 0. Not a defect.
+
 ## 3. Legibility
 
 | criterion | target | current | measured by |
 |---|---|---|---|
-| Composed scale, every sheet | 0.35–0.46 | | `check_page_scale.mjs` (13) — `out_of_band` |
-| Set spread | ≤ 1.25× | | `check_page_scale.mjs` (13) — `spread` |
-| Every sheet height-bound | true | | `check_page_scale.mjs` (13) — `all_height_bound` |
-| Sheet count | ≤ 6 | | manual |
+| Composed scale, every sheet | 0.35–0.46 | **S1 0.7878 · S2 0.6913** — above the band (band known-stale, FU-0013) | `check_page_scale.mjs` (13) — `out_of_band` |
+| Set spread | ≤ 1.25× | 1.14× | `check_page_scale.mjs` (13) — `spread` |
+| Every sheet height-bound | true | true | `check_page_scale.mjs` (13) — `all_height_bound` |
+| Sheet count | ≤ 6 | 2 | manual |
 
 > Golden reference: **S1 0.5662 · S2 0.4841 — spread 1.17×**, with 11 px body text landing at
 > ~0.0554 in on paper (S2). Judge a new set against those. ⚠️ **These numbers MOVED on 2026-08-01
@@ -72,8 +78,8 @@ and `page_scale` objects exactly, so this table is a transcription, not a re-mea
 
 | criterion | target | current | measured by |
 |---|---|---|---|
-| Tier-3 halts resolved | 0 | | `OPEN_ITEMS.md` §1 (stage 2b) |
-| Placeholder values resolved | 0 | | `OPEN_ITEMS.md` §3 (stage 2b) |
+| Tier-3 halts resolved | 0 | **5 open** (HALT-001…005) | `OPEN_ITEMS.md` §1 (stage 2b) |
+| Placeholder values resolved | 0 | 0 | `OPEN_ITEMS.md` §3 (stage 2b) |
 
 ## 5. Criteria with NO automated guard
 
@@ -82,7 +88,9 @@ how `check_tick_detach.mjs` came to exist, one project too late.
 
 | criterion | why unguarded | who judged it | when |
 |---|---|---|---|
-| | | | |
+| Drawing reads correctly (14 breakers in brief bus order, Chain-B columns separated, plumb risers to L2–L5, tags right) | no checker judges overall legibility | Claude, by eye on the composed pages (rasterised with a headless browser — no rsvg on the build machine) | 2026-11-18 |
+| Every brief tag present on the SLD, or listed in brief §9 | no checker reads `5_docs/design_brief.md` | Claude, against brief §3–§4 | 2026-11-18 |
+| `--audit` `layout_warnings` 1 on S2 is info only | it is the emergency sheet's `LEVEL_LINE_FIXED_PITCH` note, emitted by every emergency sheet with a fixed-pitch stack; severity `info` | Claude | 2026-11-18 |
 
 ---
 

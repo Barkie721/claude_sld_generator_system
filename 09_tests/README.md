@@ -18,6 +18,7 @@ Two different things live in this folder and they follow different rules.
 | `06_Test Codex - 3000 kVA 480V/` | 3,000 kVA 480 V service, 8 risers across four levels, eight Level-3-only transformer taps; branch `test-codex` | the 7-folder standard |
 | `07_Test Claude - 3000 kVA 2-Level/` | a working project — 3000 kVA, 2 storeys, ten two-level risers (5 lighting · 2 power via 150 kVA step-down · 3 mechanical) on one sheet; eight stacks floor-banded via OFF-009; branch `test-claude` | the 7-folder standard |
 | `08_Test Antigravity - 1000 kVA 3-Level/` | a working project — 1000 kVA 480V service, 3 storeys, fire pump ahead of main, 2 plug load panels at 208V, 2 lighting branches at 208V, 4 mechanical branches (one 208V); branch `test-antigravity` | the 7-folder standard |
+| `09_Medical Office Building - 4000A 5-Level/` | a working project — 4000 A 480Y/277V service, 5-storey medical office building, 14 breakers (SPD, 3 lighting risers, 3 power step-downs, 2 mechanical, kitchen, imaging, 2 EV, emergency normal feed) on E-501 + NEC 700 Emergency sheet E-502 (100 kW GEN-1 → E4MDP-1-A → 225 A ATS E4A-1-A → E4P-1-A, risers to L3/L5); built from `5_docs/design_brief.md`, shared with a 3D animation — deviations in its §9 | the 7-folder standard |
 | every new project | `cp -r _PROJECT_TEMPLATE "<NN>_<New Project>"` — take the next number | the 7-folder standard |
 
 ### ⚠️ The canonical DEFAULT single line lives in `01_inputs/defaults/`, not here

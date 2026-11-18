@@ -1,0 +1,166 @@
+<title>MOB 4000 A Single Line</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+<style>
+/* Layout: a drafting-room sheet viewer up top, then the schedules a reviewer checks the drawing against. */
+:root{
+  --bg:#f3f5f8; --paper:#ffffff; --ink:#14202e; --muted:#5a6878; --rule:#d5dbe3;
+  --np:#2f5f98; --em:#c0322b; --ev:#2e8a57; --mech:#c8701e; --img:#7a4bb0; --kit:#b8890f;
+  --chip:#e8edf3;
+  --f-disp:"IBM Plex Sans Condensed","Arial Narrow",Arial,sans-serif;
+  --f-body:"IBM Plex Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,"Courier New",monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1620; --paper:#17212d; --ink:#e4eaf1; --muted:#93a1b1; --rule:#2a3746;
+  --np:#6f9fd8; --em:#ef6a60; --ev:#5cc28a; --mech:#eb9a4f; --img:#ad86de; --kit:#e0b947; --chip:#223040; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1620; --paper:#17212d; --ink:#e4eaf1; --muted:#93a1b1; --rule:#2a3746;
+  --np:#6f9fd8; --em:#ef6a60; --ev:#5cc28a; --mech:#eb9a4f; --img:#ad86de; --kit:#e0b947; --chip:#223040; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.5}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:28px 56px;display:grid;gap:36px}
+header{display:grid;gap:10px}
+.eyebrow{font-family:var(--f-mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+h1{font-family:var(--f-disp);font-weight:700;font-size:clamp(28px,5vw,44px);line-height:1.05;margin:0;text-wrap:balance}
+h2{font-family:var(--f-disp);font-weight:600;font-size:22px;margin:0 0 12px;text-wrap:balance}
+.lede{max-width:68ch;color:var(--muted);margin:0}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+.fact{font-family:var(--f-mono);font-size:13px;background:var(--chip);padding:4px 10px;border-radius:3px;font-variant-numeric:tabular-nums}
+.fact b{font-weight:600}
+.viewer{background:var(--paper);border:1px solid var(--rule);border-radius:4px;display:grid}
+.vbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;justify-content:space-between;padding:10px 12px;border-bottom:1px solid var(--rule)}
+.tabs,.zoom{display:flex;gap:6px;flex-wrap:wrap}
+button{font-family:var(--f-mono);font-size:13px;color:var(--ink);background:transparent;border:1px solid var(--rule);border-radius:3px;padding:6px 12px;cursor:pointer}
+button[aria-selected="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+button:focus-visible{outline:2px solid var(--np);outline-offset:2px}
+.stage{overflow:auto;max-height:78vh;background:#eef2f8;touch-action:pan-x pan-y}
+.stage img{display:block;max-width:none;width:100%;height:auto}
+.hint{font-size:12px;color:var(--muted);padding:8px 12px;border-top:1px solid var(--rule)}
+.tablebox{overflow-x:auto;background:var(--paper);border:1px solid var(--rule);border-radius:4px}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{text-align:left;padding:8px 12px;border-bottom:1px solid var(--rule);vertical-align:top}
+th{font-family:var(--f-mono);font-size:11.5px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);font-weight:500;background:var(--paper);position:sticky;top:0}
+td.n,td.tag{font-family:var(--f-mono);font-size:13px;font-variant-numeric:tabular-nums;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+.br{display:inline-flex;align-items:center;gap:7px;white-space:nowrap}
+.sw{width:10px;height:10px;border-radius:2px;flex:none}
+.two{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:28px}
+.two>section{min-width:0}
+ol.chain{list-style:none;margin:0;padding:0;display:grid;gap:0;border-left:3px solid var(--em);padding-left:16px}
+ol.chain li{padding:6px 0}
+ol.chain .tag{font-family:var(--f-mono);font-weight:600;color:var(--em)}
+.halts{display:grid;gap:10px;margin:0;padding:0;list-style:none}
+.halts li{display:grid;grid-template-columns:auto 1fr;gap:4px 12px;padding:10px 12px;background:var(--paper);border:1px solid var(--rule);border-radius:4px}
+.halts .id{font-family:var(--f-mono);font-size:12.5px;color:var(--em);font-weight:600}
+.halts .nec{grid-column:2;font-family:var(--f-mono);font-size:12px;color:var(--muted)}
+.dev{margin:0;padding-left:20px;display:grid;gap:6px;max-width:80ch}
+.disclaimer{font-size:13px;color:var(--muted);border-top:1px solid var(--rule);padding-top:16px;max-width:80ch}
+p{margin:0 0 10px}
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<header>
+  <div class="eyebrow">E-501 · E-502 · Design development · NEC 2023</div>
+  <h1>Medical Office Building — 4000 A Service, 5 Levels</h1>
+  <p class="lede">A 120,000 sf outpatient building on a 480Y/277 V service. The normal side runs fourteen feeders out of one switchboard. Emergency power is NEC 700 life safety only, kept in its own room and its own riser.</p>
+  <div class="facts">
+    <span class="fact"><b>4000 A</b> main · GFP</span>
+    <span class="fact">480Y/277 V 3Φ 4W</span>
+    <span class="fact">3000 kVA utility xfmr</span>
+    <span class="fact"><b>14</b> feeders · 3725 A of trips</span>
+    <span class="fact">GEN-1 <b>100 kW</b> · NEC 700</span>
+    <span class="fact">50 devices · 2 sheets</span>
+  </div>
+</header>
+
+<section class="viewer" aria-label="Drawing sheets">
+  <div class="vbar">
+    <div class="tabs" role="tablist">
+      <button id="t1" role="tab" aria-selected="true" data-src="sheets/E-501.svg">E-501 Normal Power</button>
+      <button id="t2" role="tab" aria-selected="false" data-src="sheets/E-502.svg">E-502 Emergency</button>
+    </div>
+    <div class="zoom">
+      <button id="zo" aria-label="Zoom out">−</button>
+      <button id="zf">Fit</button>
+      <button id="zi" aria-label="Zoom in">+</button>
+    </div>
+  </div>
+  <div class="stage" id="stage"><img id="sheet" src="sheets/E-501.svg" alt="Sheet E-501, main single-line diagram, normal power" width="4032" height="2880"></div>
+  <div class="hint">Rendered by the repo's layout engine (rev 1.0.22) and validated: 63 rules, 0 errors, 0 warnings. Zoom in and scroll to read tags.</div>
+</section>
+
+<section>
+  <h2>Switchboard 4MSB-1-A — feeders in bus order</h2>
+  <div class="tablebox"><table>
+    <thead><tr><th>Breaker</th><th>Trip</th><th>Branch</th><th>Serves</th><th>Feeder tag</th></tr></thead>
+    <tbody>
+      <tr><td class="tag">CB-01</td><td class="n">30 A</td><td><span class="br"><span class="sw" style="background:var(--muted)"></span>SPD</span></td><td>SPD-1, Type 1 surge protection on the bus</td><td class="n">304</td></tr>
+      <tr><td class="tag">CB-02</td><td class="n">225 A</td><td><span class="br"><span class="sw" style="background:var(--np)"></span>Lighting A</span></td><td>4L-1-A 225 A (L1) → 4L-2-A 100 A (L2)</td><td class="n">2254</td></tr>
+      <tr><td class="tag">CB-03</td><td class="n">250 A</td><td><span class="br"><span class="sw" style="background:var(--np)"></span>Power A</span></td><td>4T-1-A 150 kVA → 2P-1-A 500 A MCB (L1) → 2P-2-A 225 A (L2)</td><td class="n">2503</td></tr>
+      <tr><td class="tag">CB-04</td><td class="n">225 A</td><td><span class="br"><span class="sw" style="background:var(--np)"></span>Lighting B</span></td><td>4L-3-A 225 A (L3) → 4L-4-A 100 A (L4)</td><td class="n">2254</td></tr>
+      <tr><td class="tag">CB-05</td><td class="n">250 A</td><td><span class="br"><span class="sw" style="background:var(--np)"></span>Power B</span></td><td>4T-3-A 150 kVA → 2P-3-A 500 A MCB (L3) → 2P-4-A 225 A (L4)</td><td class="n">2503</td></tr>
+      <tr><td class="tag">CB-06</td><td class="n">100 A</td><td><span class="br"><span class="sw" style="background:var(--np)"></span>Lighting C</span></td><td>4L-5-A 100 A (L5)</td><td class="n">1004</td></tr>
+      <tr><td class="tag">CB-07</td><td class="n">175 A</td><td><span class="br"><span class="sw" style="background:var(--np)"></span>Power C</span></td><td>4T-5-A 112.5 kVA → 2P-5-A 400 A MCB (L5)</td><td class="n">1753</td></tr>
+      <tr><td class="tag">CB-08</td><td class="n">600 A</td><td><span class="br"><span class="sw" style="background:var(--mech)"></span>Mechanical A</span></td><td>4M-5-A 600 A (L5 mech room) — RTU-1, RTU-2, RTU-3 on the roof</td><td class="n">6004</td></tr>
+      <tr><td class="tag">CB-09</td><td class="n">400 A</td><td><span class="br"><span class="sw" style="background:var(--mech)"></span>Mechanical B</span></td><td>4M-1-A 400 A (L1) — elevators, domestic booster, exhaust fans</td><td class="n">4004</td></tr>
+      <tr><td class="tag">CB-10</td><td class="n">125 A</td><td><span class="br"><span class="sw" style="background:var(--kit)"></span>Kitchen</span></td><td>4T-1-B 75 kVA → 2K-1-A 250 A MCB (café kitchen, L1)</td><td class="n">1253</td></tr>
+      <tr><td class="tag">CB-11</td><td class="n">400 A</td><td><span class="br"><span class="sw" style="background:var(--img)"></span>Imaging</span></td><td>4S-1-A 400 A imaging sub-distribution (CT, digital X-ray); DS-IMG fused disconnect in the field</td><td class="n">4004</td></tr>
+      <tr><td class="tag">CB-12</td><td class="n">600 A</td><td><span class="br"><span class="sw" style="background:var(--ev)"></span>EV DC fast</span></td><td>4S-S-A 600 A site panel, NEMA 3R — 2 × 150 kW DCFC</td><td class="n">6004</td></tr>
+      <tr><td class="tag">CB-13</td><td class="n">175 A</td><td><span class="br"><span class="sw" style="background:var(--ev)"></span>EV Level 2</span></td><td>4T-S-A 112.5 kVA → 2P-S-A 400 A MCB — 16 L2 chargers with EVEMS (NEC 625.42)</td><td class="n">1753</td></tr>
+      <tr><td class="tag">CB-14</td><td class="n">200 A</td><td><span class="br"><span class="sw" style="background:var(--em)"></span>Emergency normal</span></td><td>E4A-1-A ATS, normal source (continued on E-502)</td><td class="n">2004</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<div class="two">
+  <section>
+    <h2>Emergency system — NEC 700</h2>
+    <p>Life safety loads only: egress and exit lighting, fire alarm, generator accessories. Elevators and everything else stay on normal power. The emergency gear sits in a 2-hour room apart from the main electrical room and rises in its own closet stack.</p>
+    <ol class="chain">
+      <li><span class="tag">GEN-1</span> 100 kW / 125 kVA diesel, outdoor enclosure, NFPA 110 Level 1, Type 10. Breaker 175 A.</li>
+      <li><span class="tag">E4MDP-1-A</span> 400 A emergency board; main 175 A LSI, ECB-01 175 A.</li>
+      <li><span class="tag">E4A-1-A</span> 225 A 3-pole ATS. Normal source CB-14, emergency source ECB-01.</li>
+      <li><span class="tag">E4P-1-A</span> 225 A emergency distribution panel (EER, L1). Serves L1–L2 egress lighting.</li>
+      <li><span class="tag">E4L-3-A</span> 100 A (L3) → <span class="tag">E4L-5-A</span> 100 A (L5).</li>
+      <li><span class="tag">E4T-1-A</span> 30 kVA → <span class="tag">E2P-1-A</span> 100 A MCB, 208Y/120 V (fire alarm control).</li>
+    </ol>
+  </section>
+  <section>
+    <h2>Open items the engineer of record owes</h2>
+    <ul class="halts">
+      <li><span class="id">HALT-001</span><span>Utility available fault current. Sets equipment AIC and ATS withstand ratings.</span><span class="nec">NEC 110.9 / 110.24</span></li>
+      <li><span class="id">HALT-002</span><span>Utility transformer %Z and X/R.</span><span class="nec">Utility nameplate</span></li>
+      <li><span class="id">HALT-003</span><span>Feeder lengths for voltage drop. Riser runs to L3–L5 and the EV site feeders are the likely upsizes.</span><span class="nec">NEC 210.19(A) IN / 215.2(A)(1) IN</span></li>
+      <li><span class="id">HALT-004</span><span>Generator feeder sizing.</span><span class="nec">NEC 445.12 / 445.13</span></li>
+      <li><span class="id">HALT-005</span><span>Connected loads and nameplates (DCFC, imaging, kitchen). Every rating here is a default size, not a calculated one.</span><span class="nec">NEC 220 / 625.42 / 700.4(B)</span></li>
+    </ul>
+  </section>
+</div>
+
+<section>
+  <h2>What the drawing shows differently from the brief</h2>
+  <ul class="dev">
+    <li>An emergency board, E4MDP-1-A, sits between GEN-1 and the ATS. The layout engine anchors the emergency sheet on a switchboard lineup.</li>
+    <li>DS-IMG, the imaging disconnect, is not drawn because the engine has no disconnect symbol yet. It is still in the field, on the imaging corridor wall.</li>
+    <li>Transformer chains draw just above the switchboard whatever their floor, so 2P-3-A, 2P-5-A and the site EV panels carry their level in the designation rather than a level badge.</li>
+  </ul>
+</section>
+
+<p class="disclaimer">This SLD is for design development and coordination. It requires review and seal by a licensed Professional Engineer before construction use.</p>
+</div>
+
+<script>
+(function(){
+  var img=document.getElementById('sheet'), stage=document.getElementById('stage'), z=1;
+  function apply(){ img.style.width=(z*100)+'%'; }
+  document.getElementById('zi').onclick=function(){ z=Math.min(6,z*1.5); apply(); };
+  document.getElementById('zo').onclick=function(){ z=Math.max(1,z/1.5); apply(); };
+  document.getElementById('zf').onclick=function(){ z=1; apply(); stage.scrollTo(0,0); };
+  var tabs=document.querySelectorAll('[role=tab]');
+  tabs.forEach(function(t){ t.onclick=function(){
+    tabs.forEach(function(o){ o.setAttribute('aria-selected', o===t?'true':'false'); });
+    img.src=t.dataset.src; img.alt=t.textContent+' single-line sheet'; z=1; apply();
+  };});
+})();
+</script>

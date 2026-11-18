@@ -1,0 +1,62 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/09_Medical Office Building - 4000A 5-Level/2_build/mob_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-11-18T00:43:26.086Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "mob_S1_light__page.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 112,
+        "total": 112,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.7878,
+        "tx": 599.81,
+        "ty": -1131.38
+      }
+    },
+    {
+      "sheet": "S2",
+      "theme": "light",
+      "svg": "mob_S2_light__page.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 33,
+        "total": 33,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.6913,
+        "tx": 1452.47,
+        "ty": -582.74
+      }
+    }
+  ],
+  "mode": "page"
+}
