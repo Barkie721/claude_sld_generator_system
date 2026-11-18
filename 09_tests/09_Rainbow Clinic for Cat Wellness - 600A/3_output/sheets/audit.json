@@ -1,0 +1,30 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/09_Rainbow Clinic for Cat Wellness - 600A/2_build/rainbow_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-11-18T20:26:58.678Z",
+  "sheets": [
+    {
+      "ok": true,
+      "sheetId": "S1",
+      "counts": {
+        "label_overlap": 0,
+        "glyph_collision": 0,
+        "out_of_frame": 0,
+        "feeder_crossing": 0,
+        "layout_warnings": 1,
+        "dropped_entity": 0
+      },
+      "findings": [
+        {
+          "type": "layout_warning",
+          "severity": "info",
+          "ids": [
+            "S1"
+          ],
+          "bbox": null,
+          "note": "LEVEL_LINE_FIXED_PITCH: Fixed-pitch level-line stack; per-floor pitch subtracted bottom-up from L1 (authoritative values in the pitches field)."
+        }
+      ]
+    }
+  ]
+}
