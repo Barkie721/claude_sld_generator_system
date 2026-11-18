@@ -228,6 +228,6 @@ FRAME HONESTY   (viewBox minus the 120px pad vs true ink extent, tol ±2px)
   S1           0.00       0.0 /   -0.0 /    0.0 /    0.0    honest
 
 RESULT frame_honesty frame_sheets=1 frame_dishonest=0 frame_worst_px=0.00 frame_tol_px=2
-  wrote 3_output/RESULTS.json — run 2
-  engine 1.0.22 · sheets 1 · P3 0 errors / 63 rules
+  wrote 3_output/RESULTS.json — run 3
+  engine 1.0.23 · sheets 1 · P3 0 errors / 63 rules
   checks non-zero: feeder_x_feeder=3 tag_feeder_hard=1 tag_feeder_tight=3 frame_sheets=1 frame_tol_px=2

@@ -10185,21 +10185,29 @@ RENDER['L1-1'] = (d, g) => {
   s += `<line x1="${cx}" y1="${topBusY+DIM.bus_r_dot}" x2="${cx}" y2="${bkrTopY-DIM.cb_r_node}" stroke="var(--sld-line)" stroke-width="3"/>`;
   s += `<line x1="${cx}" y1="${bkrBotY+DIM.cb_r_node}" x2="${cx}" y2="${botBusY}" stroke="var(--sld-line)" stroke-width="3"/>`;
   s += `<circle cx="${cx}" cy="${botBusY}" r="${DIM.cb_r_bus}" fill="var(--sld-pink)"/>`;
-  // GFP box per spec — gfp_w=24 (was 26), position centered at (cx-24, midY)
-  // so left edge at cx-36 (was cx-42), right edge at cx-12 (was cx-16). Stroke 3.0pt (was 1.5).
-  const gfpW = 24, gfpH = 14, gfpX = cx-36, gfpY = midY-gfpH/2;
-  s += `<rect x="${gfpX}" y="${gfpY}" width="${gfpW}" height="${gfpH}" fill="none" stroke="var(--sld-line)" stroke-width="3"/>`;
-  // GFP label — spec: bold 8px centered (was 7px)
-  s += `<text x="${gfpX+gfpW/2}" y="${midY+3}" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" font-weight="700" fill="var(--sld-text)">GFP</text>`;
-  // Upper sensing line: straight horizontal from GFP box right edge to arc deepest point, + endpoint dot
-  const upperSenseX = cx - DIM.cb_arc_offset;
-  s += `<line x1="${gfpX+gfpW}" y1="${midY}" x2="${upperSenseX}" y2="${midY}" stroke="var(--sld-line)" stroke-width="1.2" stroke-dasharray="4,3"/>`;
-  s += `<circle cx="${upperSenseX}" cy="${midY}" r="1.2" fill="var(--sld-line)" opacity="0.7"/>`;
-  // Lower sensing: L-path from GFP box BOTTOM CENTER down, then right to vertical-link midpoint, + endpoint dot
-  const linkMidY = (bkrBotY+DIM.cb_r_node+botBusY)/2;
-  s += `<line x1="${gfpX+gfpW/2}" y1="${gfpY+gfpH}" x2="${gfpX+gfpW/2}" y2="${linkMidY}" stroke="var(--sld-line)" stroke-width="1.2" stroke-dasharray="4,3"/>`;
-  s += `<line x1="${gfpX+gfpW/2}" y1="${linkMidY}" x2="${cx}" y2="${linkMidY}" stroke="var(--sld-line)" stroke-width="1.2" stroke-dasharray="4,3"/>`;
-  s += `<circle cx="${cx}" cy="${linkMidY}" r="1.2" fill="var(--sld-line)" opacity="0.7"/>`;
+  // GFP box + sensing lines ONLY when the trip unit has ground-fault (trip_type
+  // contains 'G', e.g. 'LSIG'). trip_type absent -> draw (back-compat: every
+  // L1-1 drew GFP before 1.0.23). An LSI main below NEC 230.95's 1000 A
+  // threshold draws the bare breaker ladder (FL entry: GFP on LSI mains).
+  const _df0 = d.data_fields || {};
+  const hasGfp = _df0.trip_type == null || /G/.test(String(_df0.trip_type));   // case-sensitive: LSI/LSIG/TM grammar
+  if (hasGfp) {
+    // GFP box per spec — gfp_w=24 (was 26), position centered at (cx-24, midY)
+    // so left edge at cx-36 (was cx-42), right edge at cx-12 (was cx-16). Stroke 3.0pt (was 1.5).
+    const gfpW = 24, gfpH = 14, gfpX = cx-36, gfpY = midY-gfpH/2;
+    s += `<rect x="${gfpX}" y="${gfpY}" width="${gfpW}" height="${gfpH}" fill="none" stroke="var(--sld-line)" stroke-width="3"/>`;
+    // GFP label — spec: bold 8px centered (was 7px)
+    s += `<text x="${gfpX+gfpW/2}" y="${midY+3}" text-anchor="middle" font-family="'Courier New',monospace" font-size="8" font-weight="700" fill="var(--sld-text)">GFP</text>`;
+    // Upper sensing line: straight horizontal from GFP box right edge to arc deepest point, + endpoint dot
+    const upperSenseX = cx - DIM.cb_arc_offset;
+    s += `<line x1="${gfpX+gfpW}" y1="${midY}" x2="${upperSenseX}" y2="${midY}" stroke="var(--sld-line)" stroke-width="1.2" stroke-dasharray="4,3"/>`;
+    s += `<circle cx="${upperSenseX}" cy="${midY}" r="1.2" fill="var(--sld-line)" opacity="0.7"/>`;
+    // Lower sensing: L-path from GFP box BOTTOM CENTER down, then right to vertical-link midpoint, + endpoint dot
+    const linkMidY = (bkrBotY+DIM.cb_r_node+botBusY)/2;
+    s += `<line x1="${gfpX+gfpW/2}" y1="${gfpY+gfpH}" x2="${gfpX+gfpW/2}" y2="${linkMidY}" stroke="var(--sld-line)" stroke-width="1.2" stroke-dasharray="4,3"/>`;
+    s += `<line x1="${gfpX+gfpW/2}" y1="${linkMidY}" x2="${cx}" y2="${linkMidY}" stroke="var(--sld-line)" stroke-width="1.2" stroke-dasharray="4,3"/>`;
+    s += `<circle cx="${cx}" cy="${linkMidY}" r="1.2" fill="var(--sld-line)" opacity="0.7"/>`;
+  }
   // Data fields: amps bold underlined 12px, poles bold 12px below. No designation line (spec).
   const df = d.data_fields || {};
   const amps = df.at ? `${df.at}A` : (df.af ? `${df.af}A` : '');

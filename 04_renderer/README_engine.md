@@ -1,4 +1,4 @@
-# SLD Viewer Engine V1.0.0 — Data-Driven Layout (internal rev 1.0.22)
+# SLD Viewer Engine V1.0.0 — Data-Driven Layout (internal rev 1.0.23)
 
 The layout engine reads its building-specific stack from `TOPO.layout_config`
 instead of hard-coded constants. When `layout_config` is absent or partial the

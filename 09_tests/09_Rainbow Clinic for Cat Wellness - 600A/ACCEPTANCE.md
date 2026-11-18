@@ -83,7 +83,7 @@ how `check_tick_detach.mjs` came to exist, one project too late.
 | criterion | why unguarded | who judged it | when |
 |---|---|---|---|
 | Sheet reads as one coherent line-up: NP board + 4 normal branches, GEN → EM board → 700/701/702 ATSs in order, panel trees above | no checker for overall legibility | Claude (compositor), light-theme sheet render | 2026-11-18 |
-| L1-1 mains (MAIN-CB, EMSB-MAIN) are drawn WITH a GFP box although both are LSI and NEC 230.95 does not require GFP < 1000 A — engine L1-1 renderer draws GFP unconditionally (contradicts NOTE-003) | engine draws by node_type, not trip_type; no checker compares symbol to trip | Claude (compositor) | 2026-11-18 |
+| L1-1 mains (MAIN-CB, EMSB-MAIN), both LSI, drew a GFP box until engine 1.0.23 fixed it (FL-0029): the sheet now shows 0 GFP boxes, matching NOTE-003 | engine draws by node_type, not trip_type; no checker compares symbol to trip | Claude (compositor) | 2026-11-18 |
 
 ---
 

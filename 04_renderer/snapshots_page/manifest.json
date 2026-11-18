@@ -1,7 +1,7 @@
 {
-  "html": "/mnt/sdcard/Mayo_Claude_Workspace/Claude Revit SLD Generator/claude_sld_generator_system/04_renderer/sld_viewer_engine_V1_0_0.html",
-  "viewer_revision": "1.0.19",
-  "generated": "2026-08-06T02:33:18.060Z",
+  "html": "/home/user/claude_sld_generator_system/04_renderer/sld_viewer_engine_V1_0_0.html",
+  "viewer_revision": "1.0.23",
+  "generated": "2026-11-18T21:06:38.379Z",
   "width": "native-1x (cap 6000)",
   "region": null,
   "captures": [
@@ -9,8 +9,9 @@
       "sheet": "S1",
       "theme": "dark",
       "svg": "hospital_S1_dark__page.svg",
-      "png": "hospital_S1_dark__page.png",
-      "png_width": 4032,
+      "png": null,
+      "png_width": null,
+      "raster": null,
       "viewBox": {
         "x": 0,
         "y": 0,
@@ -34,8 +35,9 @@
       "sheet": "S1",
       "theme": "light",
       "svg": "hospital_S1_light__page.svg",
-      "png": "hospital_S1_light__page.png",
-      "png_width": 4032,
+      "png": null,
+      "png_width": null,
+      "raster": null,
       "viewBox": {
         "x": 0,
         "y": 0,
@@ -59,8 +61,9 @@
       "sheet": "S2",
       "theme": "dark",
       "svg": "hospital_S2_dark__page.svg",
-      "png": "hospital_S2_dark__page.png",
-      "png_width": 4032,
+      "png": null,
+      "png_width": null,
+      "raster": null,
       "viewBox": {
         "x": 0,
         "y": 0,
@@ -84,8 +87,9 @@
       "sheet": "S2",
       "theme": "light",
       "svg": "hospital_S2_light__page.svg",
-      "png": "hospital_S2_light__page.png",
-      "png_width": 4032,
+      "png": null,
+      "png_width": null,
+      "raster": null,
       "viewBox": {
         "x": 0,
         "y": 0,
@@ -107,5 +111,5 @@
     }
   ],
   "mode": "page",
-  "page_meta": "/mnt/sdcard/Mayo_Claude_Workspace/Claude Revit SLD Generator/claude_sld_generator_system/01_inputs/hospital_titleblock_data_V1_0_0.json"
+  "page_meta": "/home/user/claude_sld_generator_system/01_inputs/hospital_titleblock_data_V1_0_0.json"
 }
