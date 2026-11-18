@@ -1,0 +1,7 @@
+{
+  "$comment": "Per-run results for this project. Appended by run_pipeline.sh stage 14 from the RESULT lines in 2_build/run.log plus 3_output/sheets/{audit,manifest}.json. Diff two runs to answer 'did that change help?' without re-reading a phase doc. Generated — do not hand-edit. NOTE: validate_p3.rules_run is the canary — 63 means the merge worked and the SH geometry rules ran; 55 means layout_config went sidecar-only and every SH rule silently skipped.",
+  "schema_version": "1.0.0",
+  "project": null,
+  "slug": null,
+  "runs": []
+}
