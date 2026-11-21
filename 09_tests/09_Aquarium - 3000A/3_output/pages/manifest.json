@@ -1,0 +1,62 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/2_build/aquarium_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-11-21T01:37:22.126Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "aquarium_S1_light__page.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 121,
+        "total": 121,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.5878,
+        "tx": 889.6,
+        "ty": -137.48
+      }
+    },
+    {
+      "sheet": "S2",
+      "theme": "light",
+      "svg": "aquarium_S2_light__page.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": 0,
+        "y": 0,
+        "w": 4032,
+        "h": 2880
+      },
+      "coverage": {
+        "rendered": 102,
+        "total": 102,
+        "ok": true
+      },
+      "warnings": [],
+      "mode": "page",
+      "transform": {
+        "s": 0.6309,
+        "tx": 1220.49,
+        "ty": -288.67
+      }
+    }
+  ],
+  "mode": "page"
+}

@@ -1,0 +1,89 @@
+{
+  "html": "/home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/2_build/aquarium_sld_viewer_V1_0_0.html",
+  "viewer_revision": "1.0.22",
+  "generated": "2026-11-21T01:37:21.970Z",
+  "width": "native-1x (cap 6000)",
+  "region": null,
+  "captures": [
+    {
+      "sheet": "S1",
+      "theme": "dark",
+      "svg": "aquarium_S1_dark.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": -634,
+        "y": 277.4067332602634,
+        "w": 4284,
+        "h": 4812.5932667397365
+      },
+      "coverage": {
+        "rendered": 121,
+        "total": 121,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S1",
+      "theme": "light",
+      "svg": "aquarium_S1_light.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": -634,
+        "y": 277.4067332602634,
+        "w": 4284,
+        "h": 4812.5932667397365
+      },
+      "coverage": {
+        "rendered": 121,
+        "total": 121,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S2",
+      "theme": "dark",
+      "svg": "aquarium_S2_dark.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": -420,
+        "y": 490,
+        "w": 2601,
+        "h": 4500
+      },
+      "coverage": {
+        "rendered": 102,
+        "total": 102,
+        "ok": true
+      },
+      "warnings": []
+    },
+    {
+      "sheet": "S2",
+      "theme": "light",
+      "svg": "aquarium_S2_light.svg",
+      "png": null,
+      "png_width": null,
+      "raster": null,
+      "viewBox": {
+        "x": -420,
+        "y": 490,
+        "w": 2601,
+        "h": 4500
+      },
+      "coverage": {
+        "rendered": 102,
+        "total": 102,
+        "ok": true
+      },
+      "warnings": []
+    }
+  ]
+}

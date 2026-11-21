@@ -1,0 +1,133 @@
+{
+  "$comment": "Sidecar layout_config for the Aquarium (3000 A, 3 storeys + roof). S1 normal power, S2 emergency (LS 700 / LR 701 / EQ 702 / OS 702). Every hospital-golden default that names hospital designations is explicitly cleared — absent keys fall back to the engine's _DEF_* hospital values (schema §19).",
+  "sheet_roles": {
+    "S1": "normal",
+    "S2": "emergency"
+  },
+  "sheet_skips": {},
+  "floor_order": {
+    "S1": [
+      "R",
+      "3",
+      "2",
+      "1"
+    ],
+    "S2": [
+      "3",
+      "2",
+      "1"
+    ]
+  },
+  "floor_anchors": {
+    "1": "4P-1-A",
+    "2": "4P-2-A",
+    "3": "4P-3-A"
+  },
+  "floor_anchors_mechanical": {},
+  "floor_band_designations": [
+    "2P-2-B",
+    "2P-3-B",
+    "4L-3-A",
+    "4M-R-A"
+  ],
+  "level_map": {
+    "4P-1-A": "1",
+    "4P-2-A": "2",
+    "4P-3-A": "3",
+    "2S-1-B": "1",
+    "2P-1-B": "1",
+    "2P-2-B": "2",
+    "2P-3-B": "3",
+    "4L-1-A": "1",
+    "4L-3-A": "3",
+    "2S-1-C": "1",
+    "4M-1-A": "1",
+    "2M-1-A": "1",
+    "4K-1-A": "1",
+    "4M-R-A": "R",
+    "2M-R-A": "R",
+    "E4S-1-A": "1",
+    "E4L-1-A": "1",
+    "E4L-2-A": "2",
+    "E4L-3-A": "3",
+    "E2P-1-A": "1",
+    "L4P-1-A": "1",
+    "EQ4S-1-A": "1",
+    "EQ2P-1-A": "1",
+    "O4P-1-A": "1",
+    "O2P-1-A": "1"
+  },
+  "level_order": [
+    "R",
+    "3",
+    "2",
+    "1"
+  ],
+  "empty_floor_level_lines": [],
+  "ats_xoffset_overrides": {},
+  "ats_order": [
+    "E4A-1-A",
+    "L4A-1-A",
+    "EQ4A-1-A",
+    "O4A-1-A"
+  ],
+  "riser_step_standard": 1100,
+  "riser_step_roof": 650,
+  "subfeed_max_depth": 2,
+  "subfeed_start_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_src_types": [
+    "L2-4"
+  ],
+  "subfeed_dst_types": [
+    "L2-4"
+  ],
+  "ats_extent_subfeed_ports": [
+    "feed_bottom",
+    "feed_top"
+  ],
+  "subfeed_straighten": [
+    "F-311",
+    "F-312",
+    "F-318",
+    "F-321"
+  ],
+  "subfeed_exit_x_nudge": {},
+  "chain_dst_x_offset": {},
+  "s2_level_line_pitch": {
+    "2": 2800,
+    "3": 1250
+  },
+  "s2_shift_delta": {
+    "2": 1328,
+    "3": 1328
+  },
+  "subfeed_midy_nudge": {},
+  "feed_through_panels": {
+    "2P-1-B": "left"
+  },
+  "internal_chain_exit_nudge": {
+    "E4L-1-A": -20
+  },
+  "chain_column_nudge": {
+    "E2P-1-A": -20
+  },
+  "a1_tag_placement": {
+    "F-318": {
+      "side": "left"
+    },
+    "F-357": {
+      "force_orient": "vertical",
+      "side": "right",
+      "dy": -300
+    }
+  },
+  "a1_long_run_midpoint": {
+    "F-319": 400
+  },
+  "a3_text_placement": {},
+  "fc_pennant_placement": {},
+  "fc_pennant_y_nudges": {}
+}

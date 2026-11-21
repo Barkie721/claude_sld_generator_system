@@ -1,0 +1,315 @@
+  wrote aquarium_layout_config.json
+  wrote aquarium_SLD_topology_V1_0_0.json
+  sheets=2 devices=68 routed=51 annotations=111 switchboards=2 sections=12 halts=7
+=== /home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/2_build/aquarium_SLD_topology_V1_0_0.json (schema 1.0.0, 2 sheets, 68 devices, 51 routed) ===
+INFO  CV-14      devices[id=d-336]
+      d-336 (2S-1-B): sub-feed exit port "feed_left" (r-317) is a drawable anchor but not in effective subfeed_start_ports [feed_bottom, feed_top] — the engine silently drops it   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 CV-14]
+INFO  SCHEMA-6   annotations[id=a-694].bound_to
+      a-694 (A-4) binds to bus r-391 — not reverse-indexed per §6/§15 amendment 9   [03_contracts/sld_topology_schema_V1_0_0.md §6; §15 amendments 1–2, 9]
+INFO  SCHEMA-6   annotations[id=a-703].bound_to
+      a-703 (A-4) binds to bus r-393 — not reverse-indexed per §6/§15 amendment 9   [03_contracts/sld_topology_schema_V1_0_0.md §6; §15 amendments 1–2, 9]
+INFO  SCHEMA-6   routed_elements[id=r-350].end
+      r-350: end is a legal R-2 bus tap → r-393 (RE_END_BUSTAP, §15 amendment 1)   [03_contracts/sld_topology_schema_V1_0_0.md §6; §15 amendments 1–2, 9]
+INFO  TV-1       routed_elements[id=r-301]
+      r-301: TV-1 service-entrance exemption (is_service_entrance, §15 amendment 8)   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TV-1; schema V1.1 §15 amendment 8]
+RESULT: 0 errors, 0 migration items, 0 warnings, 5 info | rules run: 55, vacuous: 2 | skipped: SH-2a (missing geometry), SH-5a (missing geometry), SH-2b (missing geometry), SH-4 (missing geometry), SH-5b (missing geometry), SH-3 (missing geometry), SH-3-A7 (missing geometry), SH-6 (missing geometry)
+  wrote OPEN_ITEMS.md — 7 halts, 11 notes, 0 placeholders
+  !! 7 UNRESOLVED TIER-3 HALTS — this project is `unreviewed` by definition and cannot graduate.
+     HALT-001  Feeder distances  — blocks: Voltage-drop calculation · A-5 tags · per-device fault current
+     HALT-002  Utility fault current + transformer impedance — DERIVED, not confirmed  — blocks: AIC ratings released for procurement · DV-4 bus bracing verified against utility data
+     HALT-003  Connected-load schedule / service adequacy  — blocks: Service-size verification · panel schedules · feeder sizing confirmation
+     HALT-004  Fire pump OCPD, controller and source — FILLED by compositor  — blocks: Fire pump breaker certification · fire pump controller · generator sizing (if 695.3(C))
+     HALT-005  Generator breaker, feeder and capacity — Tier-3 values FILLED by compositor  — blocks: Generator feeder release · generator sizing study · EM board main rating
+     HALT-006  Generator subtransient reactance — ASSUMED  — blocks: EM board AIC release · ATS emergency-side withstand verification
+     HALT-007  Equipment branch classification — owner-defined, not a code system  — blocks: EQ branch classification · ATS EQ4A-1-A transfer type · load-shed priority
+RESULT open_items halts=7 notes=11 placeholders=0
+[run_layout] wrote /home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/2_build/aquarium_geom_block.json
+[run_layout] devices=63 routed=50 annotations=49 content=3310x4950
+  merged. layout_warnings: 1 | drops: 0
+=== /home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/2_build/aquarium_SLD_topology_V1_0_0__WITH_GEOMETRY.json (schema 1.0.0, 2 sheets, 68 devices, 51 routed) ===
+INFO  CV-14      devices[id=d-336]
+      d-336 (2S-1-B): sub-feed exit port "feed_left" (r-317) is a drawable anchor but not in effective subfeed_start_ports [feed_bottom, feed_top] — the engine silently drops it   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 CV-14]
+INFO  SCHEMA-14  geometry
+      partial coverage: devices 63/68, routed 50/51, annotations 49/111 (defined semantics §14.2)   [03_contracts/sld_topology_schema_V1_0_0.md §14]
+INFO  SCHEMA-6   annotations[id=a-694].bound_to
+      a-694 (A-4) binds to bus r-391 — not reverse-indexed per §6/§15 amendment 9   [03_contracts/sld_topology_schema_V1_0_0.md §6; §15 amendments 1–2, 9]
+INFO  SCHEMA-6   annotations[id=a-703].bound_to
+      a-703 (A-4) binds to bus r-393 — not reverse-indexed per §6/§15 amendment 9   [03_contracts/sld_topology_schema_V1_0_0.md §6; §15 amendments 1–2, 9]
+INFO  SCHEMA-6   routed_elements[id=r-350].end
+      r-350: end is a legal R-2 bus tap → r-393 (RE_END_BUSTAP, §15 amendment 1)   [03_contracts/sld_topology_schema_V1_0_0.md §6; §15 amendments 1–2, 9]
+INFO  TV-1       routed_elements[id=r-301]
+      r-301: TV-1 service-entrance exemption (is_service_entrance, §15 amendment 8)   [02_specs/drafting/sld_topology_rules_V1_0_0.md §7 TV-1; schema V1.1 §15 amendment 8]
+RESULT: 0 errors, 0 migration items, 0 warnings, 6 info | rules run: 63, vacuous: 2
+PREFLIGHT: s_pred { S1=0.5953 S2=0.6309 } | calibration {"s_pred_min":0.2,"sh4_inflate_px":1000,"sh5_inflate_px":500,"sh3_overlap_px2":25}
+  viewer rebuilt
+[snapshot]  ok  aquarium_S1_dark  coverage 121/121
+[snapshot]  ok  aquarium_S1_light  coverage 121/121
+[snapshot]  ok  aquarium_S2_dark  coverage 102/102
+[snapshot]  ok  aquarium_S2_light  coverage 102/102
+[snapshot] wrote 4 capture(s) → /home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/3_output/sheets
+[snapshot] audit S1: ok  label_overlap 0 · glyph_collision 0 · out_of_frame 0 · feeder_crossing 0 · layout_warnings 0
+[snapshot] audit S2: ok  label_overlap 0 · glyph_collision 0 · out_of_frame 0 · feeder_crossing 0 · layout_warnings 1
+[snapshot] audit → audit.json (advisory)
+[snapshot]  ok  aquarium_S1_light__page  coverage 121/121
+[snapshot]  ok  aquarium_S2_light__page  coverage 102/102
+[snapshot] wrote 2 capture(s) → /home/user/claude_sld_generator_system/09_tests/09_Aquarium - 3000A/3_output/pages
+segments: 10 horizontal, 66 vertical
+
+=== COLLINEAR HORIZONTAL OVERLAPS: 0 ===
+
+=== COLLINEAR VERTICAL OVERLAPS: 0 ===
+
+=== EXITS OUTSIDE THE PARENT BOX (half-width 32) ===
+  0 exits outside the box across 0 parents
+  affected parents: none
+RESULT feeder_overlaps collinear_h=0 collinear_v=0 exits_outside=0
+==============================================================================
+FEEDERS BY SOURCE PANEL
+==============================================================================
+
+S1  2S-1-B   (2 feeders out)
+   F-318    r-318   feed_top      -> 2P-2-B     feed_bottom   4 pts
+   F-319    r-319   feed_top      -> 2P-3-B     feed_bottom   4 pts
+
+S1  4L-1-A   (1 feeder out)
+   F-321    r-321   feed_top      -> 4L-3-A     feed_bottom   4 pts
+
+S1  4M-1-A-CB   (1 feeder out)
+   F-331    r-331   line_in       -> 4T-1-M     primary_in    4 pts
+
+S1  4M-R-A-CB   (1 feeder out)
+   F-336    r-336   line_in       -> 4T-R-M     primary_in    4 pts
+
+S1  4P-1-A   (1 feeder out)
+   F-311    r-311   feed_top      -> 4P-2-A     feed_bottom   4 pts
+
+S1  4P-2-A   (1 feeder out)
+   F-312    r-312   feed_top      -> 4P-3-A     feed_bottom   4 pts
+
+S1  4T-1-B   (1 feeder out)
+   F-316    r-316   secondary_out -> 2S-1-B     feed_top      2 pts
+
+S1  4T-1-C   (1 feeder out)
+   F-326    r-326   secondary_out -> 2S-1-C     feed_top      2 pts
+
+S1  4T-1-M   (1 feeder out)
+   F-332    r-332   secondary_out -> 2M-1-A     feed_top      2 pts
+
+S1  4T-R-M   (1 feeder out)
+   F-337    r-337   secondary_out -> 2M-R-A     feed_top      2 pts
+
+S1  CB-01   (1 feeder out)
+   F-320    r-320   line_in       -> 4L-1-A     feed_top      2 pts
+
+S1  CB-02   (1 feeder out)
+   F-310    r-310   line_in       -> 4P-1-A     feed_top      2 pts
+
+S1  CB-03   (1 feeder out)
+   F-315    r-315   line_in       -> 4T-1-B     primary_in    2 pts
+
+S1  CB-04   (1 feeder out)
+   F-325    r-325   line_in       -> 4T-1-C     primary_in    2 pts
+
+S1  CB-05   (1 feeder out)
+   F-328    r-328   line_in       -> 4K-1-A     feed_top      2 pts
+
+S1  CB-06   (1 feeder out)
+   F-330    r-330   line_in       -> 4M-1-A     feed_top      2 pts
+
+S1  CB-07   (1 feeder out)
+   F-335    r-335   line_in       -> 4M-R-A     feed_top      2 pts
+
+S1  CB-08   (1 feeder out)
+   F-340.S1 r-340-s1 line_in       -> E4A-1-A    source1_in    2 pts
+
+S1  CB-09   (1 feeder out)
+   F-341.S1 r-341-s1 line_in       -> L4A-1-A    source1_in    2 pts
+
+S1  CB-10   (1 feeder out)
+   F-342.S1 r-342-s1 line_in       -> EQ4A-1-A   source1_in    2 pts
+
+S1  CB-11   (1 feeder out)
+   F-343.S1 r-343-s1 line_in       -> O4A-1-A    source1_in    2 pts
+
+S1  CB-FP   (1 feeder out)
+   F-302    r-302   line_in       -> 4FP-1-A    load_in       4 pts
+
+S1  UTILITY-XFMR   (1 feeder out)
+   F-301    r-301   secondary_out -> MAIN-GFP   line_in       4 pts
+
+S2  CB-08   (1 feeder out)
+   F-340.S2 r-340-s2 line_in       -> E4A-1-A    source1_in    2 pts
+
+S2  CB-09   (1 feeder out)
+   F-341.S2 r-341-s2 line_in       -> L4A-1-A    source1_in    2 pts
+
+S2  CB-10   (1 feeder out)
+   F-342.S2 r-342-s2 line_in       -> EQ4A-1-A   source1_in    2 pts
+
+S2  CB-11   (1 feeder out)
+   F-343.S2 r-343-s2 line_in       -> O4A-1-A    source1_in    2 pts
+
+S2  E4A-1-A   (1 feeder out)
+   F-355    r-355   load_out      -> E4S-1-A    feed_top      2 pts
+
+S2  E4L-1-A-CB   (1 feeder out)
+   F-358    r-358   line_in       -> E4T-1-A    primary_in    4 pts
+
+S2  E4S-1-A   (3 feeders out)
+   F-356    r-356   feed_bottom   -> E4L-1-A    feed_top      4 pts
+   F-357    r-357   feed_top      -> E4L-2-A    feed_bottom   4 pts
+   F-361    r-361   feed_bottom   -> E4L-3-A    feed_bottom   4 pts
+
+S2  E4T-1-A   (1 feeder out)
+   F-359    r-359   secondary_out -> E2P-1-A    feed_top      2 pts
+
+S2  ECB-01   (1 feeder out)
+   F-351    r-351   line_in       -> E4A-1-A    source2_in    4 pts
+
+S2  ECB-02   (1 feeder out)
+   F-352    r-352   line_in       -> L4A-1-A    source2_in    4 pts
+
+S2  ECB-03   (1 feeder out)
+   F-353    r-353   line_in       -> EQ4A-1-A   source2_in    4 pts
+
+S2  ECB-04   (1 feeder out)
+   F-354    r-354   line_in       -> O4A-1-A    source2_in    4 pts
+
+S2  EQ4A-1-A   (1 feeder out)
+   F-362    r-362   load_out      -> EQ4S-1-A   feed_top      2 pts
+
+S2  EQ4S-1-A-CB   (1 feeder out)
+   F-363    r-363   line_in       -> EQ4T-1-A   primary_in    4 pts
+
+S2  EQ4T-1-A   (1 feeder out)
+   F-364    r-364   secondary_out -> EQ2P-1-A   feed_top      2 pts
+
+S2  GEN-1   (1 feeder out)
+   F-350    r-350   gen_out       -> ?          bus_tap_bi    4 pts
+
+S2  L4A-1-A   (1 feeder out)
+   F-360    r-360   load_out      -> L4P-1-A    feed_top      2 pts
+
+S2  O4A-1-A   (1 feeder out)
+   F-366    r-366   load_out      -> O4P-1-A    feed_top      2 pts
+
+S2  O4P-1-A-CB   (1 feeder out)
+   F-367    r-367   line_in       -> O4T-1-A    primary_in    4 pts
+
+S2  O4T-1-A   (1 feeder out)
+   F-368    r-368   secondary_out -> O2P-1-A    feed_top      2 pts
+
+==============================================================================
+FEEDER x FEEDER TRUE CROSSINGS: 0 (each listed once per direction)
+==============================================================================
+  none
+
+==============================================================================
+FEEDER x DEVICE BOX: 0
+==============================================================================
+  none
+
+RESULT trace_feeders feeder_x_feeder=0 feeder_x_feeder_directed=0 feeder_x_device=0
+==============================================================================
+A. FEEDER THROUGH A DEVICE INTERIOR (own parent/child included)
+==============================================================================
+  none
+
+==============================================================================
+B. TAG / PILL OVERLAPPING A DEVICE BOX
+==============================================================================
+  none
+
+==============================================================================
+C. FEEDER THROUGH EQUIPMENT TEXT (A-8 label blocks)
+==============================================================================
+  none
+
+TOTAL: 0 feeder-through-symbol, 0 tag-on-symbol, 0 feeder-through-text
+RESULT symbol_clash through_symbol=0 tag_on_symbol=0 through_text=0
+scraped: 76 feeder segments, 69 tag boxes (A-1 pill 41, A-2 callout 1, A-3 label 9, A-4 pennant 18), 85 leader segments, 15 bus/level segments
+tolerance: HARD = ink gap <= 0, TIGHT = ink gap < 6 px
+
+=== TAG x FEEDER — HARD: 1, TIGHT: 4 ===
+  HARD   S1  A-4 pennant "56,535A"            @ (16,4924)              x  F-301     OWN      gap -2.0 px   [seg -88,4950 -> 345,4950]
+  tight  S2  A-4 pennant "56,535A·N"          @ (470,3549)             x  F-355     OWN      gap 0.0 px   [seg 425,3602 -> 425,3212]
+  tight  S2  A-4 pennant "56,535A·N"          @ (1050,3549)            x  F-360     OWN      gap 0.0 px   [seg 1005,3602 -> 1005,3212]
+  tight  S2  A-4 pennant "56,535A·N"          @ (1470,3549)            x  F-362     OWN      gap 0.0 px   [seg 1425,3602 -> 1425,3212]
+  tight  S2  A-4 pennant "56,535A·N"          @ (1910,3549)            x  F-366     OWN      gap 0.0 px   [seg 1865,3602 -> 1865,3212]
+
+--- ADVISORY: leader arm x foreign feeder ---
+  (none)
+
+--- ADVISORY: tag x bus / level-line ---
+  (none)
+
+--- FL-0003: vertical-orient A-1 pills ---
+  39 of 41 pills are side-anchored (pill centre y == attach y by construction)
+  findings among them: 0 HARD, 0 tight
+
+RESULT tag_feeder_clash tag_feeder_hard=1 tag_feeder_tight=4 leader_foreign_hard=0 advisory_rule_hard=0
+==============================================================================
+S1 — 4 level lines drawn: R, 3, 2, 1
+==============================================================================
+  1. LEVEL LINE THROUGH A DEVICE BOX: 0   OK
+  2. DEVICES OUTSIDE THEIR LEVEL BAND: 0 of 15   OK
+  3. line(own) - boxBottom   min 40  median 614  max 1487 px   [target 180 +/- 250]   outside tolerance: 9 of 15
+       level R   n=2   median    913 px   min     40  max    913  <==
+       level 3   n=3   median     40 px   min     40  max     40
+       level 2   n=2   median     40 px   min     40  max     40
+       level 1   n=8   median    974 px   min    614  max   1487  <==
+  4. LEVEL-MAPPED DEVICES WITH NO DATUM ON THIS SHEET: 0   OK
+
+==============================================================================
+S2 — 3 level lines drawn: 3, 2, 1
+==============================================================================
+  1. LEVEL LINE THROUGH A DEVICE BOX: 0   OK
+  2. DEVICES OUTSIDE THEIR LEVEL BAND: 0 of 10   OK
+  3. line(own) - boxBottom   min 92  median 1628  max 2501 px   [target 180 +/- 250]   outside tolerance: 8 of 10
+       level 3   n=1   median     92 px   min     92  max     92
+       level 2   n=1   median     92 px   min     92  max     92
+       level 1   n=8   median   1628 px   min   1420  max   2501  <==
+  4. LEVEL-MAPPED DEVICES WITH NO DATUM ON THIS SHEET: 0   OK
+
+==============================================================================
+TOTAL: 0 line-through-device, 0 out-of-band, 0 orphan
+       datum gap outside 180 +/- 250 px: 17 of 25 level-mapped devices
+  acceptance: 0 / 0 / 0
+RESULT level_bands band_outside=17 band_total=25 line_through_device=0 out_of_band=0 orphan=0
+scraped: 41 A-1 ticks across 2 sheets, 46 feeders
+tolerance: a tick is DETACHED when its centre is > 2 px from its own run
+
+=== A-1 TICK OFF ITS OWN FEEDER — 0 ===
+  (none)
+
+  distinct feeders: 0   [acceptance: 0]
+RESULT tick_detach tick_detached=0 tick_total=41 tick_feeders=0
+==============================================================================
+COMPOSED PAGE SCALE   (printable area 3360 x 2688 px, 120 px margin per side, 96 px/in)
+==============================================================================
+  sheet  number   viewBox w x h        s_width  s_height  ->  s        bind     11px on paper
+  S1     E-501      4284 x   4813   0.8309   0.5879   ->  0.5878   height   0.0674 in  <==
+  S2     E-502      2601 x   4500   1.4231   0.6310   ->  0.6309   height   0.0723 in  <==
+
+  set range   0.5878 .. 0.6309      spread 1.07x   [acceptance: every sheet 0.35-0.46, spread <= 1.25x]
+  on paper    0.0674 .. 0.0723 in   [acceptance: 0.0400-0.0490 in; golden S2 = 0.0455 in at s 0.3972]
+  golden reference: S1 0.5662, S2 0.4841, spread 1.17x — S1 WIDTH-bound, S2 height-bound
+                    (was S1 0.4454 / S2 0.3972 / 1.12x / both height-bound through rev
+                     1.0.14 — those numbers were phantom-inflated, FL-0007. S1 flipping
+                     to width-bound is a REAL change of bind, not a rounding artifact:
+                     honest S1 is 6174 x 4949.59, so s_width 0.5662 < s_height 0.5707.)
+
+VERDICT: 2 of 2 sheet(s) outside 0.35-0.46: S1 0.5878, S2 0.6309; spread 1.07x OK
+RESULT page_scale sheets=2 out_of_band=2 s_min=0.5878 s_max=0.6309 spread=1.0733 all_height_bound=true
+
+==============================================================================
+FRAME HONESTY   (viewBox minus the 120px pad vs true ink extent, tol ±2px)
+==============================================================================
+  sheet   worst side   L / T / R / B slack        verdict
+  S1           0.00       0.0 /   -0.0 /    0.0 /    0.0    honest
+  S2           0.00       0.0 /    0.0 /    0.0 /    0.0    honest
+
+RESULT frame_honesty frame_sheets=2 frame_dishonest=0 frame_worst_px=0.00 frame_tol_px=2
+  wrote 3_output/RESULTS.json — run 6
+  engine 1.0.22 · sheets 2 · P3 0 errors / 63 rules
+  checks non-zero: tag_feeder_hard=1 tag_feeder_tight=4 band_outside=17 frame_sheets=2 frame_tol_px=2
